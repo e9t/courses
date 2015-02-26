@@ -1,22 +1,32 @@
 {% extends "base.html" %}
-{% block description %}Title: {{ article.title }}; Date: {{ article.date|strftime('%Y-%m-%d') }}; Author: {{ article.author }}; Forum: {{ article.forum }}{% endblock %}
+{% block description %}Title: {{ article.title }}; Date: {{ article.date|strftime('%Y-%m-%d') }}; Author: {{ article.author }}; Courseid: {{ article.courseid }}; Metainfo: {{ article.metainfo }}{% endblock %}
 {% block title %}{{ article.title }} — {{ SITENAME }}{% endblock %}
 {% block content %}
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
 		<h1 itemprop="name headline" class="article-title">{{ article.title }}</h1>
-        {% if not article.category=="syllabus" %}
+        {% if article.category=="syllabus" %}
+        <span>{{ article.metainfo }}</span>
+        {% else %}
 		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
 			<h4 itemprop="name">{{article.author or "Wilson Freitas"}}</h4>
 		</span>
 		<time datetime="{{ article.date.isoformat() }}" itemprop="datePublished">{{ article.locale_date }}</time>
         {% endif %}
 	</div>
-	<div itemprop="articleBody" class="article-body">{{ article.content }}</div>
-    {% if article.forum %}
-	{% include 'forum.html' %}
-    {% endif %}
-	{% if article.category %}
+    <div itemprop="articleBody" class="article-body">
+        {{ article.content }}
+
+        {% if article.category=="syllabus" and article.schedule=="True" %}
+        <h2 id="schedule">Schedule</h2>
+        <div id="schedule-table" class="table-responsive"></div>
+        {% endif %}
+
+        {% if article.forum %}
+        {% include 'forum.html' %}
+        {% endif %}
+        {% if article.category %}
+    </div>
 	<div>
 		Category:
 		<span itemprop="articleSection">
@@ -35,4 +45,16 @@
 	</div>
 	{% endif %}
 </div>
+{% endblock %}
+
+{% block extra_scripts %}
+{% if article.category=="syllabus" %}
+<script type="text/javascript" src="/static/js/jquery.csvToTable.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#schedule-table').CSVToTable('/static/data/{{ article.courseid }}-schedule.csv',
+    { tableClass: 'table table-hover table-bordered' });
+});
+</script>
+{% endif %}
 {% endblock %}

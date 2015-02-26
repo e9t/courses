@@ -39,3 +39,4 @@ DEFAULT_PAGINATION = 10
 # Custom settings
 THEME = 'theme'
 ARTICLE_URL = '{slug}'
+STATIC_PATHS = ['static']
