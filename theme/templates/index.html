@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+{% block content %}        
+{% if articles %}
+{% for article in articles_page.object_list %}        
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<a href="{{ SITEURL }}/{{ article.url }}">
+		<h2 itemprop="name headline">{{ article.title }}</h2>
+	</a>
+	<div class="summary">{{ article.summary }}</div>
+</div>
+{% endfor %} {# For article #}
+{% include 'pagination.html' %}
+{% endif %} {# If articles #}
+{% endblock content %}
+
