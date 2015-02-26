@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Lucy Park'
 AUTHORURL = u'http://dm.snu.ac.kr/~epark'
-SITENAME = u'Course pages - Lucy Park'
+SITENAME = u'Courses - Lucy Park'
 SITEURL = ''
 REPOURL = 'http://github.com/e9t/courses'
 
@@ -39,4 +39,4 @@ DEFAULT_PAGINATION = 10
 # Custom settings
 THEME = 'theme'
 ARTICLE_URL = '{slug}'
-STATIC_PATHS = ['static']
+STATIC_PATHS = ['static', 'images']

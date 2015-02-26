@@ -3,7 +3,10 @@
 {% block title %}{{ article.title }} — {{ SITENAME }}{% endblock %}
 {% block content %}
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="text-center article-header">
+	<div class="article-header">
+        {% if article.logo %}
+        <img src="{{ SITEURL }}/images/{{ article.logo }}" class="article-logo pull-right">
+        {% endif %}
 		<h1 itemprop="name headline" class="article-title">{{ article.title }}</h1>
         {% if article.category=="syllabus" %}
         <span>{{ article.metainfo }}</span>
@@ -49,10 +52,10 @@
 
 {% block extra_scripts %}
 {% if article.category=="syllabus" %}
-<script type="text/javascript" src="/static/js/jquery.csvToTable.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/static/js/jquery.csvToTable.js"></script>
 <script type="text/javascript">
 $(function() {
-    $('#schedule-table').CSVToTable('/static/data/{{ article.courseid }}-schedule.csv',
+    $('#schedule-table').CSVToTable('{{ SITEURL }}/static/data/{{ article.courseid }}-schedule.csv',
     { tableClass: 'table table-hover table-bordered' });
 });
 </script>
