@@ -3,8 +3,10 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Lucy Park'
+AUTHORURL = u'http://dm.snu.ac.kr/~epark'
 SITENAME = u'Course pages - Lucy Park'
 SITEURL = ''
+REPOURL = 'http://github.com/e9t/courses'
 
 PATH = 'content'
 
