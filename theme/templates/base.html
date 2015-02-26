@@ -33,10 +33,18 @@
 </div> <!-- /container -->
 <footer class="aw-footer bg-danger">
 	<div class="container"> <!-- footer -->
-		<div class="text-center center-block aw-bottom">
+		<div class="center-block aw-bottom">
             Built by <a href="{{ AUTHORURL }}">{{ AUTHOR }}</a>.<br>
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
             {% if REPOURL %} The code for this site is located at <a href="{{ REPOURL }}">GitHub</a>. {% endif %}
+            <span class="pull-right">
+                {% if FEED_ALL_ATOM %}
+                <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
+                {% endif %}
+                {% if FEED_ALL_RSS %}
+                <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml"><i class="fa fa-rss "></i> rss</a>
+                {% endif %}
+            </span>
 		</div>
 	</div>
 </footer>
