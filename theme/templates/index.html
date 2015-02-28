@@ -2,7 +2,7 @@
 {% block content_title %}{% endblock %}
 {% block content %}        
 {% if articles %}
-{% for article in articles_page.object_list %}        
+{% for article in articles_page.object_list if "syllabus" in article.tags %}
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<a href="{{ SITEURL }}/{{ article.url }}">
 		<h2 itemprop="name headline">{{ article.title }}</h2>
