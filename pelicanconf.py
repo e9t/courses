@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
+
 from __future__ import unicode_literals
 
 AUTHOR = u'Lucy Park'
@@ -36,7 +37,11 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-# Custom settings
+# Custom settings http://docs.getpelican.com/en/3.1.1/settings.html
+import os
 THEME = 'theme'
-ARTICLE_URL = '{slug}'
-STATIC_PATHS = ['static', 'images']
+FILENAME_METADATA = '(?P<slug>.*)'
+USE_FOLDER_AS_CATEGORY = True
+ARTICLE_URL = '{category}/{slug}.html'
+ARTICLE_SAVE_AS = ARTICLE_URL
+STATIC_PATHS = [p for p in os.listdir('./%s' % PATH) if not p.startswith('.')]
