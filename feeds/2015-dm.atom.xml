@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses - Lucy Park</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-dm.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-02T00:00:00+01:00</updated><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Welcome to Data Mining class of 2015!
+Here you'll find all course materials, guides and schedules.
+In case you have questions, feel free to send an email to &lt;a href="mailto:2015-dm@googlegroups.com"&gt;2015-dm@googlegroups.com&lt;/a&gt; (or directly write a new topic at the forum below).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;What you will learn&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;데이터마이닝의 기본 개념, 구축 프로세스 학습 및 비즈니스 활용 사례 인식&lt;/li&gt;
+&lt;li&gt;데이터마이닝의 주요 방법론(다중회귀분석, 연관규칙분석, 의사결정나무, 인공신경망, 군집화 등)의 이론적 토대 학습 및 응용 분야 학습&lt;/li&gt;
+&lt;li&gt;데이터마이닝 분야에서 널리 사용되는 오픈소스 데이터 분석 언어인 R 사용 방법 학습&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Grading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Exams (40%)&lt;/li&gt;
+&lt;li&gt;Assignments (40%)&lt;/li&gt;
+&lt;li&gt;Project (20%)&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="2015"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>

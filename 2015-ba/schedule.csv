@@ -1,5 +1,5 @@
 date,lecture,assignment
-3/06,<a href='docs/intro'>Course introduction</a><ul><li>Course logistics<li>Business problems and data science<li>Writing a CV in HTML<li>Academic integrity</ul>,<a href='http://goo.gl/forms/fE7ZIeL8VK'>Homework 0</a> (Due: 3/10)<ul><li>CV + Self-intro</ul>
+3/06,<a href='intro.html'>Course introduction</a><ul><li>Course logistics<li>Business problems and data science<li>Writing a CV in HTML<li>Academic integrity</ul>,<a href='http://goo.gl/forms/fE7ZIeL8VK'>Homework 0</a> (Due: 3/10)<ul><li>CV + Self-intro</ul>
 3/13,Tools for pragmatic data mining<ul><li>Bash<li>Markdown<li>Reproducibility and version control<li>Having fun with Kaggle</ul>,-
 3/20,Data preparation<ul><li>Scraping from the Web</ul>,<a href='http://goo.gl/forms/A3iWkIcUIe'>Homework 1</a> (Due: 3/17)</a><ul><li>Data crawling</ul>
 3/27,Data exploration<ul><li>R for feature selection</ul>,Project proposals (300 words+)
