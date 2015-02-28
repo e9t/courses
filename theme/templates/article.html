@@ -7,13 +7,15 @@
         {% if article.logo %}
         <img src="{{ SITEURL }}/images/{{ article.logo }}" class="article-logo pull-right">
         {% endif %}
-		<h1 itemprop="name headline" class="article-title">{{ article.title }}</h1>
+        <h1 itemprop="name headline" class="article-title">
+            {% if "lectures" in article.tags %}
+            <a href="{{ SITEURL }}/{{ article.courseid }}">[{{ article.courseid }}]</a>
+            {% endif %}
+            {{ article.title }}
+        </h1>
         {% if "syllabus" in article.tags %}
         <span>{{ article.metainfo }}</span>
         {% else %}
-		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
-			<h4 itemprop="name">{{article.author or "Wilson Freitas"}}</h4>
-		</span>
 		<time datetime="{{ article.date.isoformat() }}" itemprop="datePublished">{{ article.locale_date }}</time>
         {% endif %}
 	</div>
@@ -30,6 +32,12 @@
         {% endif %}
         {% if article.category %}
     </div>
+    <div>
+        Author:
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a href="{{ article.authorurl or AUTHORURL }}"><span itemprop="name">{{ article.author }}</span></a>
+		</span>
+	</div>
 	<div>
 		Category:
 		<span itemprop="articleSection">
