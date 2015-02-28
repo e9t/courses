@@ -1,0 +1,16 @@
+date,lecture,assignment
+3/06,Course introduction,
+3/13,데이터마이닝의 개요 및 프로세스,
+3/20,지도학습 1: Multiple linear regression,
+3/27,지도학습 2: Logistic regression,
+4/03,지도학습 3: Naive Bayes,
+4/10,지도학습 4: k-NN,
+4/17,지도학습 5: Decision trees,
+4/24,Mid-term exam,-
+5/01,지도학습 6: Artificial neural networks,
+5/08,Market basket analysis,
+5/15,텍스트 마이닝 1,
+5/22,텍스트 마이닝 2,
+5/29,비지도학습 1: k-means,
+6/05,비지도학습 2: LSI & LDA,
+6/12,Final Exam,-

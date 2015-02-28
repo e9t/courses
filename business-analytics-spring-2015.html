@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Business Analytics (Spring 2015) — Course pages - Lucy Park</title>
-	<meta name="description" content="Title: Business Analytics (Spring 2015); Date: 2015-03-02; Author: Lucy Park; Forum: 2015-ba">
+	<title>Business Analytics (Spring 2015) — Courses - Lucy Park</title>
+	<meta name="description" content="Title: Business Analytics (Spring 2015); Date: 2015-03-02; Author: Lucy Park; Courseid: 2015-ba; Metainfo: ITM614, Frontier 107, Fri 14:00-18:00">
 	<meta name="author" content="Lucy Park">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -20,15 +20,18 @@
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1><a href="http://lucypark.kr/courses/">Course pages - Lucy Park</a>
+		<h1><a href="http://lucypark.kr/courses/">Courses - Lucy Park</a>
 			<br>	</div>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="text-center article-header">
+	<div class="article-header">
+        <img src="http://lucypark.kr/courses/images/seoultech.png" class="article-logo pull-right">
 		<h1 itemprop="name headline" class="article-title">Business Analytics (Spring 2015)</h1>
+        <span>ITM614, Frontier 107, Fri 14:00-18:00</span>
 	</div>
-	<div itemprop="articleBody" class="article-body"><blockquote>
+    <div itemprop="articleBody" class="article-body">
+        <blockquote>
 <p>Welcome to Business Analytics class of 2015!
 Here you'll find all course materials, guides and schedules.
 In case you have questions, feel free to send an email to <a href="mailto:2015-ba@googlegroups.com">2015-ba@googlegroups.com</a> (or directly write a new topic at the forum below).</p>
@@ -40,7 +43,7 @@ Topics include statistical and quantitative analysis, explanatory and predictive
 Students are required to present progress on their work during the semester, and are assessed by a set of assignments, quizzes and exams.</p>
 <p>Note that this course is the second part of a two part sequence.
 We assume you have already taken
-<a href="http://lucypark.kr/courses/data-mining-spring-2015">Data Mining (ITM522)</a>,
+Data Mining (ex: <a href="http://lucypark.kr/courses/data-mining-spring-2015">ITM522</a>),
 the first part of the sequence, where methods and algorithms for mining data were discussed.
 This course is the latter part of the sequence, and will be more advanced and project-focused.</p>
 <h3>Prerequisites</h3>
@@ -60,10 +63,13 @@ This course is the latter part of the sequence, and will be more advanced and pr
 <li>Mid-term Quiz (20%): A mid-term quiz.</li>
 <li>Final Exam (60%): A final exam and presentation.</li>
 </ul>
-<h2>Schedule</h2>
-<p>TBD</p></div>
+
+        <h2 id="schedule">Schedule</h2>
+        <div id="schedule-table" class="table-responsive"></div>
+
 <h2 id="forum">Forum</h2>
- <iframe id="forum-embed" src="https://groups.google.com/forum/embed/?place=forum/2015-ba" scrolling="no" frameborder="0" width="100%" height="450"></iframe>	<div>
+<iframe id="forum-embed" src="https://groups.google.com/forum/embed/?place=forum/2015-ba" scrolling="no" frameborder="0" width="100%" height="450"></iframe>    </div>
+	<div>
 		Category:
 		<span itemprop="articleSection">
 			<a href="http://lucypark.kr/courses/category/syllabus.html" rel="category">syllabus</a>
@@ -105,7 +111,7 @@ This course is the latter part of the sequence, and will be more advanced and pr
 	</div>
 </div>
 <!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
@@ -118,6 +124,13 @@ jQuery(document).ready(function($) {
 			});
 		});
 	});
+});
+</script>
+<script type="text/javascript" src="http://lucypark.kr/courses/static/js/jquery.csvToTable.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#schedule-table').CSVToTable('http://lucypark.kr/courses/static/data/2015-ba-schedule.csv',
+    { tableClass: 'table table-hover table-bordered' });
 });
 </script>
 </body>

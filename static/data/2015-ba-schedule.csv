@@ -1,0 +1,16 @@
+date,lecture,assignment
+3/06,<a href='docs/intro'>Course introduction</a><ul><li>Course logistics<li>Business problems and data science<li>Writing a CV in HTML<li>Academic integrity</ul>,<a href='http://goo.gl/forms/fE7ZIeL8VK'>Homework 0</a> (Due: 3/10)<ul><li>CV + Self-intro</ul>
+3/13,Tools for pragmatic data mining<ul><li>Bash<li>Markdown<li>Reproducibility and version control<li>Having fun with Kaggle</ul>,-
+3/20,Data preparation<ul><li>Scraping from the Web</ul>,<a href='http://goo.gl/forms/A3iWkIcUIe'>Homework 1</a> (Due: 3/17)</a><ul><li>Data crawling</ul>
+3/27,Data exploration<ul><li>R for feature selection</ul>,Project proposals (300 words+)
+4/03,Predictive modeling,-
+4/10,Mid-term Quiz,-
+4/17,Literature survey (and finding good papers),-
+4/24,Python for NLP,-
+5/01,,Progress report (1K+ words)
+5/08,D3 for visualization,-
+5/15,Going big (1/3): Apache Hadoop,-
+5/22,Going big (2/3): Apache Hive,-
+5/29,Going big (3/3): Apache Spark,-
+6/05,-,Project final report (3K+ words)
+6/12,Final Exam,

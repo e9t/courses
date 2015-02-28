@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Data Mining (Spring 2015) — Course pages - Lucy Park</title>
-	<meta name="description" content="Title: Data Mining (Spring 2015); Date: 2015-03-02; Author: Lucy Park; Forum: 2015-dm">
+	<title>Data Mining (Spring 2015) — Courses - Lucy Park</title>
+	<meta name="description" content="Title: Data Mining (Spring 2015); Date: 2015-03-02; Author: Lucy Park; Courseid: 2015-dm; Metainfo: IISE113503, Frontier 712, Fri 09:00-13:00">
 	<meta name="author" content="Lucy Park">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -20,23 +20,41 @@
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1><a href="http://lucypark.kr/courses/">Course pages - Lucy Park</a>
+		<h1><a href="http://lucypark.kr/courses/">Courses - Lucy Park</a>
 			<br>	</div>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="text-center article-header">
+	<div class="article-header">
+        <img src="http://lucypark.kr/courses/images/seoultech.png" class="article-logo pull-right">
 		<h1 itemprop="name headline" class="article-title">Data Mining (Spring 2015)</h1>
+        <span>IISE113503, Frontier 712, Fri 09:00-13:00</span>
 	</div>
-	<div itemprop="articleBody" class="article-body"><blockquote>
+    <div itemprop="articleBody" class="article-body">
+        <blockquote>
 <p>Welcome to Data Mining class of 2015!
 Here you'll find all course materials, guides and schedules.
 In case you have questions, feel free to send an email to <a href="mailto:2015-dm@googlegroups.com">2015-dm@googlegroups.com</a> (or directly write a new topic at the forum below).</p>
 </blockquote>
-<h2>Schedule</h2>
-<p>TBD</p></div>
+<h3>What you will learn</h3>
+<ol>
+<li>데이터마이닝의 기본 개념, 구축 프로세스 학습 및 비즈니스 활용 사례 인식</li>
+<li>데이터마이닝의 주요 방법론(다중회귀분석, 연관규칙분석, 의사결정나무, 인공신경망, 군집화 등)의 이론적 토대 학습 및 응용 분야 학습</li>
+<li>데이터마이닝 분야에서 널리 사용되는 오픈소스 데이터 분석 언어인 R 사용 방법 학습</li>
+</ol>
+<h3>Grading</h3>
+<ul>
+<li>Exams (40%)</li>
+<li>Assignments (40%)</li>
+<li>Project (20%)</li>
+</ul>
+
+        <h2 id="schedule">Schedule</h2>
+        <div id="schedule-table" class="table-responsive"></div>
+
 <h2 id="forum">Forum</h2>
- <iframe id="forum-embed" src="https://groups.google.com/forum/embed/?place=forum/2015-dm" scrolling="no" frameborder="0" width="100%" height="450"></iframe>	<div>
+<iframe id="forum-embed" src="https://groups.google.com/forum/embed/?place=forum/2015-dm" scrolling="no" frameborder="0" width="100%" height="450"></iframe>    </div>
+	<div>
 		Category:
 		<span itemprop="articleSection">
 			<a href="http://lucypark.kr/courses/category/syllabus.html" rel="category">syllabus</a>
@@ -78,7 +96,7 @@ In case you have questions, feel free to send an email to <a href="mailto:2015-d
 	</div>
 </div>
 <!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
@@ -91,6 +109,13 @@ jQuery(document).ready(function($) {
 			});
 		});
 	});
+});
+</script>
+<script type="text/javascript" src="http://lucypark.kr/courses/static/js/jquery.csvToTable.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#schedule-table').CSVToTable('http://lucypark.kr/courses/static/data/2015-dm-schedule.csv',
+    { tableClass: 'table table-hover table-bordered' });
 });
 </script>
 </body>
