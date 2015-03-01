@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses - Lucy Park</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-dm.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-02T00:00:00+01:00</updated><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses - Lucy Park</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-dm.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-06T09:00:00+01:00</updated><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-dm/intro.html" rel="alternate"></link><updated>2015-03-06T09:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-dm/intro.html</id><summary type="html">&lt;h3&gt;Assignments&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Instead of taking tests, we have homework after every lecture for reviewing purposes&lt;/li&gt;
+&lt;li&gt;Frankly, this is not for assessment, but for you to review, or preview class materials (성악설 기반)&lt;/li&gt;
+&lt;li&gt;Open to everyone at all times&lt;/li&gt;
+&lt;li&gt;Note the submission date&lt;ul&gt;
+&lt;li&gt;If you submit after the due date, the score will be discounted by 20% everyday&lt;/li&gt;
+&lt;li&gt;After 5 days after the due, the quiz will still be open but you won't get any credit for solving it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Projects: Peer assessment&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You will be grading your peers' work&lt;ul&gt;
+&lt;li&gt;Everytime you attend a class, you get three votes&lt;/li&gt;
+&lt;li&gt;You can give one vote to three peers, or give all votes to one peer&lt;/li&gt;
+&lt;li&gt;Be professional, no giving all votes to a best friend&lt;ul&gt;
+&lt;li&gt;I will be detecting outliers and giving penalties&lt;/li&gt;
+&lt;li&gt;Penalty: 30% off your project score (which means, &lt;em&gt;just don't do it&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="http://davidmlane.com/ben/cartoons.html"&gt;&lt;img alt="Out, liar" src="images/outliar.jpg" /&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;h3&gt;Advice on your projects&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The best topics are the topics you are actually interested in&lt;ul&gt;
+&lt;li&gt;You should be able to "dogfood" your own analysis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Don't be afraid to shift the project's direction&lt;ul&gt;
+&lt;li&gt;However, shifting too much will give you less time for real work -- balance!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Feel free to use project results in your graduation project or paper&lt;ul&gt;
+&lt;li&gt;Grab two rabbits at once!&lt;/li&gt;
+&lt;li&gt;These projects have potential to become something in your portfolio&lt;/li&gt;
+&lt;li&gt;May be a plus when you get a job, or apply for grad school&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Presenting project progress&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Update your progress (max 10 minutes)&lt;ol&gt;
+&lt;li&gt;Prepare printouts (for the whole class) or slides or whatever format that best conveys your work&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Please share your materials to the forum before class&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Be brief yet clear&lt;ul&gt;
+&lt;li&gt;Note: &lt;a href="http://echojuliett.tumblr.com/post/32108001510/clarity-brevity"&gt;Clarity wins brevity&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Take notes&lt;ul&gt;
+&lt;li&gt;Keep precise research progress and feedback notes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A good presentation contains the following:
+1. What questions you had
+1. What approach you chose to alleviate such questions
+1. What results you achieved
+1. What questions you further got and what you plan to do next
+1. Tricks and tips you want to share with the class&lt;/p&gt;
+&lt;/blockquote&gt;</summary><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Data Mining class of 2015!
 Here you'll find all course materials, guides and schedules.
 In case you have questions, feel free to send an email to &lt;a href="mailto:2015-dm@googlegroups.com"&gt;2015-dm@googlegroups.com&lt;/a&gt; (or directly write a new topic at the forum below).&lt;/p&gt;
