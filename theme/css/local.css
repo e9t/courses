@@ -105,6 +105,10 @@ div.collapseheader {
 
 
 /* custom styles */
+body {
+    padding: 0;
+}
+
 .article h2 {
     border-top: 1px solid #ddd;
     padding-top: 20px;
@@ -114,4 +118,20 @@ div.collapseheader {
     background-color: #ccc;
     max-width: 400px;
     padding: 10px;
+}
+
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
+
+.margin-top-30 {
+    margin-top: 30px;
+}
+
+.page-header {
+    border-bottom: none;
+}
+
+.nav-tabs > li.active > a:hover {
+    cursor: pointer;
 }

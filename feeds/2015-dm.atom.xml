@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses - Lucy Park</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-dm.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-06T09:00:00+01:00</updated><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-dm/intro.html" rel="alternate"></link><updated>2015-03-06T09:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-dm/intro.html</id><summary type="html">&lt;h3&gt;Assignments&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-dm.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-06T09:00:00+01:00</updated><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-dm/intro.html" rel="alternate"></link><updated>2015-03-06T09:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-dm/intro.html</id><summary type="html">&lt;h3&gt;Assignments&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Instead of taking tests, we have homework after every lecture for reviewing purposes&lt;/li&gt;
 &lt;li&gt;Frankly, this is not for assessment, but for you to review, or preview class materials (성악설 기반)&lt;/li&gt;
@@ -82,4 +82,4 @@ In case you have questions, feel free to send an email to &lt;a href="mailto:201
 &lt;li&gt;Exams (40%)&lt;/li&gt;
 &lt;li&gt;Assignments (40%)&lt;/li&gt;
 &lt;li&gt;Project (20%)&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="2015"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>
+&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>

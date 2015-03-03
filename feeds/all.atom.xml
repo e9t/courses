@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses - Lucy Park</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/all.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-04-02T00:00:00+02:00</updated><entry><title>Bash</title><link href="http://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><updated>2015-04-02T00:00:00+02:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;Key concepts&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/all.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-04-02T00:00:00+02:00</updated><entry><title>Bash</title><link href="http://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><updated>2015-04-02T00:00:00+02:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;Key concepts&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;GNU&lt;/li&gt;
 &lt;li&gt;Bash&lt;/li&gt;
@@ -542,7 +542,7 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;li&gt;Assignments (20%): You will be given four graded assignments during the semester.&lt;/li&gt;
 &lt;li&gt;Mid-term Quiz (20%): A mid-term quiz.&lt;/li&gt;
 &lt;li&gt;Final Exam (60%): A final exam and presentation.&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="2015"></category><category term="lecturer"></category><category term="syllabus"></category></entry><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
+&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Data Mining class of 2015!
 Here you'll find all course materials, guides and schedules.
 In case you have questions, feel free to send an email to &lt;a href="mailto:2015-dm@googlegroups.com"&gt;2015-dm@googlegroups.com&lt;/a&gt; (or directly write a new topic at the forum below).&lt;/p&gt;
@@ -558,7 +558,7 @@ In case you have questions, feel free to send an email to &lt;a href="mailto:201
 &lt;li&gt;Exams (40%)&lt;/li&gt;
 &lt;li&gt;Assignments (40%)&lt;/li&gt;
 &lt;li&gt;Project (20%)&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="2015"></category><category term="lecturer"></category><category term="syllabus"></category></entry><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
+&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Data Mining class of 2015!
 Here you'll find all course materials, guides and schedules.
 In case you have questions, feel free to send an email to &lt;a href="mailto:2015-dm@googlegroups.com"&gt;2015-dm@googlegroups.com&lt;/a&gt; (or directly write a new topic at the forum below).&lt;/p&gt;
@@ -574,7 +574,7 @@ In case you have questions, feel free to send an email to &lt;a href="mailto:201
 &lt;li&gt;Exams (40%)&lt;/li&gt;
 &lt;li&gt;Assignments (40%)&lt;/li&gt;
 &lt;li&gt;Project (20%)&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="2015"></category><category term="lecturer"></category><category term="syllabus"></category></entry><entry><title>Business Analytics (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-ba/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-ba/index.html</id><summary type="html">&lt;blockquote&gt;
+&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry><entry><title>Business Analytics (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-ba/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-ba/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Business Analytics class of 2015!
 Here you'll find all course materials, guides and schedules.
 In case you have questions, feel free to send an email to &lt;a href="mailto:2015-ba@googlegroups.com"&gt;2015-ba@googlegroups.com&lt;/a&gt; (or directly write a new topic at the forum below).&lt;/p&gt;
@@ -605,4 +605,4 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;li&gt;Assignments (20%): You will be given four graded assignments during the semester.&lt;/li&gt;
 &lt;li&gt;Mid-term Quiz (20%): A mid-term quiz.&lt;/li&gt;
 &lt;li&gt;Final Exam (60%): A final exam and presentation.&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="2015"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>
+&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>

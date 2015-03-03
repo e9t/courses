@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Data Mining (Spring 2015) — Courses - Lucy Park</title>
+	<title>Data Mining (Spring 2015) — Courses</title>
 	<meta name="description" content="Title: Data Mining (Spring 2015); Date: 2015-03-02; Author: Lucy Park; Courseid: 2015-dm; Metainfo: IISE113503, Frontier 712, Fri 09:00-13:00">
 	<meta name="author" content="Lucy Park">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,16 +20,18 @@
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1><a href="http://lucypark.kr/courses/">Courses - Lucy Park</a>
-			<br>	</div>
+		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+        </ul>
+	</div>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="article-header">
-        <img src="http://lucypark.kr/courses/images/seoultech.png" class="article-logo pull-right">
-        <h1 itemprop="name headline" class="article-title">
-            Data Mining (Spring 2015)
-        </h1>
+        <img src="http://lucypark.kr/courses/images/seoultech.png" class="article-logo pull-right hidden-xs">
+        <h1 itemprop="name headline">Data Mining (Spring 2015)</h1>
         <span>IISE113503, Frontier 712, Fri 09:00-13:00</span>
 	</div>
     <div itemprop="articleBody" class="article-body">
@@ -78,9 +80,6 @@ In case you have questions, feel free to send an email to <a href="mailto:2015-d
 			<a href="http://lucypark.kr/courses/tag/seoultech.html" rel="tag">seoultech</a>
 		</span>
 		<span itemprop="keywords">
-			<a href="http://lucypark.kr/courses/tag/2015.html" rel="tag">2015</a>
-		</span>
-		<span itemprop="keywords">
 			<a href="http://lucypark.kr/courses/tag/lecturer.html" rel="tag">lecturer</a>
 		</span>
 		<span itemprop="keywords">
@@ -96,7 +95,7 @@ In case you have questions, feel free to send an email to <a href="mailto:2015-d
 		<div class="center-block aw-bottom">
             Built by <a href="http://dm.snu.ac.kr/~epark">Lucy Park</a>.<br>
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
- The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right">
+ The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
                 <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
             </span>
@@ -121,6 +120,18 @@ jQuery(document).ready(function($) {
 			});
 		});
 	});
+});
+
+// add 'active' class to current menu
+$(function(){
+  var activePage = location.pathname.split("/")[1];
+  $('.nav li a').each(function(){
+    var currentPage = $(this).attr('href').split("/")[1];
+
+    if (activePage == currentPage) {
+      $(this).parent().addClass('active');
+    }
+  });
 });
 </script>
 <script type="text/javascript" src="http://lucypark.kr/courses/static/js/jquery.csvToTable.js"></script>
