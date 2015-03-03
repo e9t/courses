@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Lucy Park'
 AUTHORURL = u'http://dm.snu.ac.kr/~epark'
-SITENAME = u'Courses - Lucy Park'
+SITENAME = u'Courses'
 SITEURL = ''
 REPOURL = 'http://github.com/e9t/courses'
 
@@ -45,3 +45,5 @@ USE_FOLDER_AS_CATEGORY = True
 ARTICLE_URL = '{category}/{slug}.html'
 ARTICLE_SAVE_AS = ARTICLE_URL
 STATIC_PATHS = [p for p in os.listdir('./%s' % PATH) if not p.startswith('.')]
+
+COURSES = ['2015-dm', '2015-ba']

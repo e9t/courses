@@ -1,8 +1,8 @@
 Title: Data Mining (Spring 2015)
 Date: 2015-03-02 00:00
-Tags: data, seoultech, 2015, lecturer, syllabus
+Tags: data, seoultech, lecturer, syllabus
 Metainfo: IISE113503, Frontier 712, Fri 09:00-13:00
-Summary: Junior level Data Mining undergraduate course at Seoul National University of Science & Technology
+Summary: Junior level Data Mining undergraduate course at Seoul National University of Science & Technology.
 Courseid: 2015-dm
 Schedule: True
 Forum: True

@@ -5,14 +5,9 @@
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="article-header">
         {% if article.logo %}
-        <img src="{{ SITEURL }}/images/{{ article.logo }}" class="article-logo pull-right">
+        <img src="{{ SITEURL }}/images/{{ article.logo }}" class="article-logo pull-right hidden-xs">
         {% endif %}
-        <h1 itemprop="name headline" class="article-title">
-            {% if "lectures" in article.tags %}
-            <a href="{{ SITEURL }}/{{ article.courseid }}">[{{ article.courseid }}]</a>
-            {% endif %}
-            {{ article.title }}
-        </h1>
+        <h1 itemprop="name headline">{{ article.title }}</h1>
         {% if "syllabus" in article.tags %}
         <span>{{ article.metainfo }}</span>
         {% else %}
