@@ -86,10 +86,14 @@ jQuery(document).ready(function($) {
 
 // add 'active' class to current menu
 $(function(){
-  var activePage = location.pathname.split("/")[1];
+  if (document.location.hostname == "localhost") {
+    var idx = 1;
+  } else {
+    var idx = 2;
+  }
+  var activePage = location.pathname.split("/")[idx];
   $('.nav li a').each(function(){
-    var currentPage = $(this).attr('href').split("/")[1];
-
+    var currentPage = $(this).attr('href').split("/")[idx];
     if (activePage == currentPage) {
       $(this).parent().addClass('active');
     }
