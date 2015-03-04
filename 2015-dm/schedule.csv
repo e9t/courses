@@ -1,16 +1,16 @@
 date,lecture,assignment
-3/06,Course introduction + Univariate linear regression,
-3/13,지도학습 1: Data mining process + Multiple linear regression,
-3/20,지도학습 2: Logistic regression + Regularization,
-3/27,지도학습 3: k-NN,
-4/03,지도학습 4: Decision tree + Random forest,
-4/10,Mid-term exam,-
-4/17,지도학습 5: Artificial neural networks,
-4/24,지도학습 6: Support vector machines,
-5/01,비지도학습 1: k-means,
-5/08,비지도학습 2: Market basket analysis,
-5/15,텍스트 마이닝 1,
-5/22,텍스트 마이닝 2,
-5/29,Variable selection and dimensionality reduction,
-6/05,Large-scale machine learning,
+3/06,<a href='intro.html'>Course introduction</a> + Univariate linear regression,Assignment 0
+3/13,지도학습 1: Data mining process + Multiple linear regression,Assignment 1
+3/20,지도학습 2: Logistic regression,-
+3/27,지도학습 3: Decision tree + k-NN,Assignment 2
+4/03,비지도학습 1: k-means,-
+4/10,비지도학습 2: Market basket analysis,Assignment 3
+4/17,텍스트 마이닝: Bag of words + TF-IDF,-
+4/24,추천 시스템,Assignment 4
+5/01,Project presentations,-
+5/08,지도학습 5: Artificial neural networks,-
+5/15,지도학습 6: Support vector machines,Assignment 5
+5/22,데이터 시각화,Assignment 6
+5/29,변수 선택과 차원 축소,-
+6/05,Large-scale machine learning,-
 6/12,Final Exam,-
