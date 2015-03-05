@@ -18,7 +18,7 @@ Toc: True
 
 - Course objective: **Pragmatic data mining on real data**
 - Work for the course
-    - Class meets every Friday 14:00-18:00
+    - Class meets every Friday 15:00-18:00
     - Most classes will be consisted of two parts
         1. Lectures and/or tutorials
         1. Short presentations by each project team/individual
@@ -27,7 +27,7 @@ Toc: True
     - Schedule/Announcements
 - Schedule: [http://lucypark.kr/courses/2015-ba/#schedule](http://lucypark.kr/courses/2015-ba/#schedule)
 - Office hours
-    - Right after every class
+    - Right before every class
     - You are welcome to ask any kind of questions
     - You are also encouraged to [book ahead](mailto:2015-ba@dm.snu.ac.kr), or your meeting may have to be deferred to another time
 - Grading
@@ -105,3 +105,15 @@ we encourage you to approach your work with honesty and integrity.
     - Do trust your ability
     - Do give credit to others' work (Mind your citations!)
     - Do brag about your acheivements
+
+<!--
+### Tips
+
+1. Writing a good CV
+    - http://tex.stackexchange.com/questions/80/latex-template-for-resume-curriculum-vitae
+1. Writing a good self-introduction
+    - Use positive words.
+    - Divide an conquer!
+        - Step 1. Focus only on the contents! (Using a basic text editor or plain paper might be a good idea)
+        - Step 2. Do the formatting. Formatting matters. (ex: fonts, layouts, tenses, etc.)
+-->
