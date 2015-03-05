@@ -109,6 +109,10 @@ body {
     padding: 0;
 }
 
+table th, table td, table li {
+    text-transform: capitalize;
+}
+
 .article h2 {
     border-top: 1px solid #ddd;
     padding-top: 20px;
@@ -118,6 +122,11 @@ body {
     background-color: #ccc;
     max-width: 400px;
     padding: 10px;
+}
+
+.article-toc {
+    background-color: whitesmoke;
+    padding: 10px 30px;
 }
 
 .footnote {

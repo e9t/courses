@@ -66,12 +66,11 @@
     function makelink(string) {
         if (string.substr(0, 1)==='*' && string.substr(-1, 1)==='*') {
             var text = string.substring(1, string.length-1);
-            return '<a href="' + text + '.html">' + text + '</a>';
+            return '<a href="' + text.replace(/ /g, '-') + '.html">' + text + '</a>';
         } else {
             return string;
         }
     }
-    console.log(makelink('asdf'));
 	String.prototype.splitCSV = function(sep) {
 		for (var thisCSV = this.split(sep = sep || ","), x = thisCSV.length - 1, tl; x >= 0; x--) {
 			if (thisCSV[x].replace(/"\s+$/, '"').charAt(thisCSV[x].length - 1) == '"') {

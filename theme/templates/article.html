@@ -14,6 +14,9 @@
 		<time datetime="{{ article.date.isoformat() }}" itemprop="datePublished">{{ article.locale_date }}</time>
         {% endif %}
 	</div>
+    {% if article.toc=="True" %}
+    <div class="article-toc"><b>Contents</b><p></p></div>
+    {% endif %}
     <div itemprop="articleBody" class="article-body">
         {{ article.content }}
 
@@ -57,12 +60,27 @@
 
 {% block extra_scripts %}
 {% if "syllabus" in article.tags %}
-<script type="text/javascript" src="{{ SITEURL }}/theme/static/js/jquery.csvToTable.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/jquery.csvToTable.js"></script>
 <script type="text/javascript">
 $(function() {
     $('#schedule-table').CSVToTable('schedule.csv',
         { tableClass: 'table table-hover table-bordered' });
 });
+</script>
+{% endif %}
+{% if article.toc=="True" %}
+<script>
+    String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
+
+    var concat = '';
+    var headers = $('.article-body :header');
+    for (var i=0; i<headers.length; i++) {
+        depth = parseInt(headers[i].tagName.substr(-1));
+        if (depth < 4) {
+            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- ' + headers[i].textContent + '<br>';
+        }
+    }
+    $(".article-toc p").append(concat);
 </script>
 {% endif %}
 {% endblock %}
