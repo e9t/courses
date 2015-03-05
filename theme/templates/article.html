@@ -71,7 +71,7 @@ $(function() {
 {% if article.toc=="True" %}
 <script>
     function hyphenate(str) {
-        return str.toLowerCase().replace(/\s/g, '-');
+        return str.toLowerCase().replace(/\s/g, '-').replace('?', '');
     }
 
     String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
