@@ -63,6 +63,15 @@
 	* http://www.greywyvern.com/?post=258
 	*
 	*/
+    function makelink(string) {
+        if (string.substr(0, 1)==='*' && string.substr(-1, 1)==='*') {
+            var text = string.substring(1, string.length-1);
+            return '<a href="' + text + '.html">' + text + '</a>';
+        } else {
+            return string;
+        }
+    }
+    console.log(makelink('asdf'));
 	String.prototype.splitCSV = function(sep) {
 		for (var thisCSV = this.split(sep = sep || ","), x = thisCSV.length - 1, tl; x >= 0; x--) {
 			if (thisCSV[x].replace(/"\s+$/, '"').charAt(thisCSV[x].length - 1) == '"') {
@@ -129,13 +138,13 @@
 							tableHTML += '<tr class="' + options.trClass + ' ' + oddOrEven + '">';
 							$.each(items, function(itemCount, item) {
                                 if(item.indexOf('|') === -1) {
-                                    tableHTML += '<td class="' + options.tdClass + '">' + item + '</td>';
+                                    tableHTML += '<td class="' + options.tdClass + '">' + makelink(item) + '</td>';
                                 } else {
                                     var itemspl = item.split('|');
-                                    var itemstr = itemspl[0] + '<ul>';
+                                    var itemstr = makelink(itemspl[0]) + '<ul>';
                                     itemspl = itemspl.slice(1);
                                     for (i in itemspl) {
-                                        itemstr += '<li>' + itemspl[i] + '</li>';
+                                        itemstr += '<li>' + makelink(itemspl[i]) + '</li>';
                                     }
                                     itemstr += '</ul>';
                                     tableHTML += '<td class="'
