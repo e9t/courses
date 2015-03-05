@@ -1,8 +1,8 @@
 Title: Business Analytics (Spring 2015)
 Date: 2015-03-02 00:00
 Tags: data, seoultech, lecturer, syllabus
-Metainfo: ITM146084, Frontier 107, Fri 14:00-18:00
-Summary: Senior level Business Analytics undergraduate course at Seoul National University of Science & Technology.
+Metainfo: ITM146084, Frontier 108, Fri 15:00-18:00
+Summary: Senior level Business Analytics course at Seoul National University of Science & Technology.
 Courseid: 2015-ba
 Schedule: True
 Forum: True

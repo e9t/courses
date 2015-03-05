@@ -120,6 +120,12 @@ body {
     padding: 10px;
 }
 
+.footnote {
+    background-color: whitesmoke;
+    margin-top: 50px;
+    padding: 10px 30px;
+}
+
 .margin-bottom-30 {
     margin-bottom: 30px;
 }
@@ -128,10 +134,10 @@ body {
     margin-top: 30px;
 }
 
-.page-header {
-    border-bottom: none;
-}
-
 .nav-tabs > li.active > a:hover {
     cursor: pointer;
+}
+
+.page-header {
+    border-bottom: none;
 }

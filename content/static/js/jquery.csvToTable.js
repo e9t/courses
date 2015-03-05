@@ -128,7 +128,22 @@
 							(printedLines % 2) ? oddOrEven = 'odd' : oddOrEven = 'even';
 							tableHTML += '<tr class="' + options.trClass + ' ' + oddOrEven + '">';
 							$.each(items, function(itemCount, item) {
-								tableHTML += '<td class="' + options.tdClass + '">' + item + '</td>';
+                                if(item.indexOf('|') === -1) {
+                                    tableHTML += '<td class="' + options.tdClass + '">' + item + '</td>';
+                                } else {
+                                    var itemspl = item.split('|');
+                                    var itemstr = itemspl[0] + '<ul>';
+                                    itemspl = itemspl.slice(1);
+                                    for (i in itemspl) {
+                                        itemstr += '<li>' + itemspl[i] + '</li>';
+                                    }
+                                    itemstr += '</ul>';
+                                    tableHTML += '<td class="'
+                                                    + options.tdClass + '">'
+                                                    + itemstr
+                                                    + '</td>';
+
+                                }
 							});
 							tableHTML += '</tr>';
 						}

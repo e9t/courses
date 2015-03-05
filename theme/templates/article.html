@@ -27,29 +27,31 @@
         {% endif %}
         {% if article.category %}
     </div>
-    <div>
-        Author:
-		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a href="{{ article.authorurl or AUTHORURL }}"><span itemprop="name">{{ article.author }}</span></a>
-		</span>
-	</div>
-	<div>
-		Category:
-		<span itemprop="articleSection">
-			<a href="{{ SITEURL }}/{{ article.category.url }}" rel="category">{{ article.category }}</a>
-		</span>
-	</div>
-	{% endif %}
-	{% if article.tags %} 
-	<div>
-		Tags:
-		{% for tag in article.tags %}
-		<span itemprop="keywords">
-			<a href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>
-		</span>
-		{% endfor %}
-	</div>
-	{% endif %}
+    <div class="footnote">
+        <p>
+            Author:
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a href="{{ article.authorurl or AUTHORURL }}"><span itemprop="name">{{ article.author }}</span></a>
+            </span>
+        </p>
+        <p>
+            Category:
+            <span itemprop="articleSection">
+                <a href="{{ SITEURL }}/{{ article.category.url }}" rel="category">{{ article.category }}</a>
+            </span>
+        </p>
+        {% endif %}
+        {% if article.tags %}
+        <p>
+            Tags:
+            {% for tag in article.tags %}
+            <span itemprop="keywords">
+                <a href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>
+            </span>
+            {% endfor %}
+        </p>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}
 
