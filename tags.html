@@ -61,13 +61,14 @@ li.tag-4 {
 <h1>Tags</h1>
 <div class="text-center">
 <ul class="tagcloud">
-	<li class="tag-1"><a href="http://lucypark.kr/courses/tag/lectures.html">lectures</a></li>
-	<li class="tag-2"><a href="http://lucypark.kr/courses/tag/data.html">data</a></li>
-	<li class="tag-2"><a href="http://lucypark.kr/courses/tag/intro.html">intro</a></li>
 	<li class="tag-2"><a href="http://lucypark.kr/courses/tag/lecturer.html">lecturer</a></li>
-	<li class="tag-4"><a href="http://lucypark.kr/courses/tag/programming.html">programming</a></li>
-	<li class="tag-2"><a href="http://lucypark.kr/courses/tag/syllabus.html">syllabus</a></li>
+	<li class="tag-1"><a href="http://lucypark.kr/courses/tag/lectures.html">lectures</a></li>
+	<li class="tag-2"><a href="http://lucypark.kr/courses/tag/intro.html">intro</a></li>
 	<li class="tag-1"><a href="http://lucypark.kr/courses/tag/seoultech.html">seoultech</a></li>
+	<li class="tag-2"><a href="http://lucypark.kr/courses/tag/syllabus.html">syllabus</a></li>
+	<li class="tag-4"><a href="http://lucypark.kr/courses/tag/business.html">business</a></li>
+	<li class="tag-4"><a href="http://lucypark.kr/courses/tag/programming.html">programming</a></li>
+	<li class="tag-2"><a href="http://lucypark.kr/courses/tag/data.html">data</a></li>
 </ul>
 </div>
 		</div>
@@ -114,7 +115,7 @@ $(function(){
     var idx = 4;
     var activePage = location.href.split("/")[idx];
   }
-  $('.nav li a').each(function(){
+  $('.nav li a').each(function() {
     var currentPage = $(this).attr('href').split("/")[idx];
     if (activePage == currentPage) {
       $(this).parent().addClass('active');

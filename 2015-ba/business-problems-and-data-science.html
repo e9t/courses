@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Categories — Courses</title>
-	<meta name="description" content="The Categories page lists all categories used to classify the posts. Each post is categorized by a category helping readers find out easily what they are looking for.">
+	<title>Business problems and data science — Courses</title>
+	<meta name="description" content="Title: Business problems and data science; Date: 2015-03-06; Author: Lucy Park; Courseid: 2015-ba; Metainfo: ">
 	<meta name="author" content="Lucy Park">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -28,12 +28,45 @@
 	</div>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-<h1>Categories</h1>
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="article-header">
+        <h1 itemprop="name headline">Business problems and data science</h1>
+		<time datetime="2015-03-06T16:00:00+01:00" itemprop="datePublished">Fri 06 March 2015</time>
+	</div>
+    <div class="article-toc"><b>Contents</b><p></p></div>
+    <div itemprop="articleBody" class="article-body">
+        <h2>Data-based thinking</h2>
+<h2>Problem definition</h2>
 <ul>
-	<li><a href="http://lucypark.kr/courses/category/2015-ba.html">2015-ba</li>
-	<li><a href="http://lucypark.kr/courses/category/2015-dm.html">2015-dm</li>
-	<li><a href="http://lucypark.kr/courses/category/tips.html">tips</li>
+<li>The most important thing in data mining</li>
 </ul>
+
+
+    </div>
+    <div class="footnote">
+        <p>
+            Author:
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a href="http://dm.snu.ac.kr/~epark"><span itemprop="name">Lucy Park</span></a>
+            </span>
+        </p>
+        <p>
+            Category:
+            <span itemprop="articleSection">
+                <a href="http://lucypark.kr/courses/category/2015-ba.html" rel="category">2015-ba</a>
+            </span>
+        </p>
+        <p>
+            Tags:
+            <span itemprop="keywords">
+                <a href="http://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
+            </span>
+            <span itemprop="keywords">
+                <a href="http://lucypark.kr/courses/tag/business.html" rel="tag">business</a>
+            </span>
+        </p>
+    </div>
+</div>
 		</div>
 	</div> 	<!-- <hr> -->
 </div> <!-- /container -->
@@ -85,6 +118,47 @@ $(function(){
     }
   });
 });
+</script>
+<script>
+    function hyphenate(str) {
+        return str.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s/g, '-');
+    }
+
+    String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
+
+    // create toc
+    var t = '';
+    var concat = '';
+    var headers = $('.article-body :header');
+    headers.each(function() {
+        var hyphenated = hyphenate($(this).text());
+            $(this).attr('id', hyphenated);
+        }
+    );
+    for (var i=0; i<headers.length; i++) {
+        depth = parseInt(headers[i].tagName.substr(-1));
+        if (depth < 4) {
+            t = headers[i].textContent;
+            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- <a href="#' + hyphenate(t) + '">' + t + '</a><br>';
+        }
+    }
+    $(".article-toc p").append(concat);
+
+    // scroll animation
+    $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 300, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+    });
 </script>
 </body>
 </html>

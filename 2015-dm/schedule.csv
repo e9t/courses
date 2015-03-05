@@ -1,16 +1,16 @@
 date,lecture,assignment
-3/06,<a href='intro.html'>Course introduction</a> + Univariate linear regression,Assignment 0
-3/13,지도학습 1: Data mining process + Multiple linear regression,Assignment 1
-3/20,지도학습 2: Logistic regression,-
-3/27,지도학습 3: Decision tree + k-NN,Assignment 2
-4/03,비지도학습 1: k-means,-
-4/10,비지도학습 2: Market basket analysis,Assignment 3
-4/17,텍스트 마이닝: Bag of words + TF-IDF,-
-4/24,추천 시스템,Assignment 4
+3/06,*Course introduction*|*Data mining*|Functions and univariate linear regression|Having Fun With Kaggle,<a href="http://goo.gl/forms/1H7nOgjRVG">Assignment 0</a> (Due: 3/11)<br>Project proposal (Due: 3/18)
+3/13,지도학습 1: Data mining process + Multiple linear regression,-
+3/20,지도학습 2: Logistic regression,Assignment 1 (Due: 4/2)
+3/27,지도학습 3: Decision tree + k-NN,-
+4/03,텍스트 마이닝 1: Bag of words,Assignment 2 (Due: 4/16)
+4/10,텍스트 마이닝 2: TF-IDF,-
+4/17,비지도학습 1: k-means + hierarchical clustering,Assignment 3 (Due: 4/30)
+4/24,비지도학습 2: Market basket analysis,-
 5/01,Project presentations,-
 5/08,지도학습 5: Artificial neural networks,-
-5/15,지도학습 6: Support vector machines,Assignment 5
-5/22,데이터 시각화,Assignment 6
+5/15,지도학습 6: Support vector machines,-
+5/22,데이터 시각화,Assignment 4 (Due: 6/11)
 5/29,변수 선택과 차원 축소,-
-6/05,Large-scale machine learning,-
+6/05,대용량 데이터마이닝,-
 6/12,Final Exam,-

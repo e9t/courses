@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-ba.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-04-02T00:00:00+02:00</updated><entry><title>Bash</title><link href="http://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><updated>2015-04-02T00:00:00+02:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;Key concepts&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;GNU&lt;/li&gt;
-&lt;li&gt;Bash&lt;/li&gt;
-&lt;li&gt;Package managing&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Remember these&lt;/p&gt;
-&lt;/blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-ba.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-04-02T00:00:00+02:00</updated><entry><title>Bash</title><link href="http://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><updated>2015-04-02T00:00:00+02:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;Mind your versions&lt;/h2&gt;
 &lt;p&gt;Windows 7
 Windows 8&lt;/p&gt;
 &lt;p&gt;&lt;img src="images/windows-7.jpg" width="400px"&gt;
@@ -16,9 +8,8 @@ Windows 8&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Bash is a shell for the GNU operating system&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img alt="bash" src="images/bash.png" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;&lt;a href="https://www.gnu.org/software/bash/manual/html_node/What-is-a-shell_003f.html###What-is-a-shell_003f"&gt;What is a shell?&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src="images/bash.png" width="500px"&gt;&lt;/p&gt;
+&lt;h3&gt;Then &lt;a href="https://www.gnu.org/software/bash/manual/html_node/What-is-a-shell_003f.html###What-is-a-shell_003f"&gt;what is a shell?&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;A shell is a macro processor that executes commands&lt;/li&gt;
 &lt;/ul&gt;
@@ -28,12 +19,12 @@ Windows 8&lt;/p&gt;
 &lt;li&gt;There are many many alternatives, such as &lt;code&gt;sh&lt;/code&gt;, &lt;code&gt;ksh&lt;/code&gt;, &lt;code&gt;csh&lt;/code&gt; or &lt;code&gt;zsh&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;However, &lt;code&gt;bash&lt;/code&gt; is the default shell in GNU systems&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Can I use &lt;code&gt;bash&lt;/code&gt; only in GNU systems?&lt;/h3&gt;
+&lt;h3&gt;Can I use &lt;code&gt;bash&lt;/code&gt; in GNU systems only?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;No.&lt;/li&gt;
 &lt;li&gt;You can also use bash in Windows and other platforms, using portable versions&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Why should I use Bash?&lt;/h3&gt;
+&lt;h2&gt;Why should I use Bash?&lt;/h2&gt;
 &lt;h3&gt;Package managing&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;What is a package?&lt;/li&gt;
@@ -46,22 +37,25 @@ Windows 8&lt;/p&gt;
 &lt;li&gt;Ubuntu: apt-get&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;https://twitter.com/gardaud/status/357638468572151808&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;https://twitter.com/ddprrt/status/529909875347030016&lt;/li&gt;
 &lt;/ul&gt;
+&lt;!--
+Some jokes about package managing:
+- https://twitter.com/gardaud/status/357638468572151808
+- https://twitter.com/ddprrt/status/529909875347030016
+--&gt;
+
 &lt;h3&gt;Data sampling&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;http://www.ecogwiki.com/Hash-based_sampling&lt;/li&gt;
+&lt;li&gt;ex: http://www.ecogwiki.com/Hash-based_sampling&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;class: center, middle, inverse, full-text&lt;/p&gt;
-&lt;p&gt;감사합니다 :D&lt;/p&gt;
+&lt;h3&gt;Data science&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="mailto:2015-ba@googlegroups.com"&gt;2015-ba@googlegroups.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;http://lucypark.kr/courses/2015-ba&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a rel="license" href="http://creativecommons.org/licenses/by/4.0/"&gt;&lt;img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /&gt;&lt;/a&gt;&lt;/p&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-ba/intro.html" rel="alternate"></link><updated>2015-03-06T15:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-ba/intro.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
+&lt;li&gt;ex: http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Business problems and data science</title><link href="http://lucypark.kr/courses/2015-ba/business-problems-and-data-science.html" rel="alternate"></link><updated>2015-03-06T16:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-ba/business-problems-and-data-science.html</id><summary type="html">&lt;h2&gt;Data-based thinking&lt;/h2&gt;
+&lt;h2&gt;Problem definition&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The most important thing in data mining&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="lectures"></category><category term="business"></category></entry><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-ba/course-logistics.html" rel="alternate"></link><updated>2015-03-06T15:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-ba/course-logistics.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
 &lt;p&gt;&lt;img src="http://lucypark.kr/courses/images/me.jpg" width="150px" class="pull-right"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Eunjeong (Lucy) Park&lt;/li&gt;
@@ -72,20 +66,14 @@ Windows 8&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;a.k.a., &lt;a href="http://lucypark.kr"&gt;lucypark&lt;/a&gt;, &lt;a href="http://twitter.com/echojuliett"&gt;echojuliett&lt;/a&gt;, &lt;a href="http://github.com/e9t"&gt;e9t&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Class survey&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Experience in programming (what language)?&lt;/li&gt;
-&lt;li&gt;Taken statistics courses?&lt;/li&gt;
-&lt;li&gt;Remember linear algebra?&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2&gt;Course logistics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Course objective: &lt;strong&gt;Pragmatic data mining on real data&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Work for the course&lt;ul&gt;
-&lt;li&gt;Class meets every Friday 14:00-18:00&lt;/li&gt;
+&lt;li&gt;Class meets every Friday 15:00-18:00&lt;/li&gt;
 &lt;li&gt;Most classes will be consisted of two parts&lt;ol&gt;
 &lt;li&gt;Lectures and/or tutorials&lt;/li&gt;
-&lt;li&gt;Short presentations by each team/individual&lt;/li&gt;
+&lt;li&gt;Short presentations by each project team/individual&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -95,39 +83,31 @@ Windows 8&lt;/p&gt;
 &lt;li&gt;Schedule/Announcements&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;Schedule: &lt;a href="http://lucypark.kr/courses/2015-ba/#schedule"&gt;http://lucypark.kr/courses/2015-ba/#schedule&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Office hours&lt;ul&gt;
-&lt;li&gt;Right after every class&lt;/li&gt;
+&lt;li&gt;Right before every class&lt;/li&gt;
 &lt;li&gt;You are welcome to ask any kind of questions&lt;/li&gt;
 &lt;li&gt;You are also encouraged to &lt;a href="mailto:2015-ba@dm.snu.ac.kr"&gt;book ahead&lt;/a&gt;, or your meeting may have to be deferred to another time&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Grading&lt;ul&gt;
-&lt;li&gt;Assignments (20%): Four graded assignments related to your project during the semester&lt;/li&gt;
+&lt;li&gt;Assignments (20%): Two graded assignments related to your project, and two reading assignments during the semester&lt;/li&gt;
 &lt;li&gt;Mid-term exam (20%): In-class exam covering the first half of the semester&lt;/li&gt;
-&lt;li&gt;Finals (60%): Finals consist of an exam and a project presentation&lt;/li&gt;
+&lt;li&gt;Finals (60%): Finals consist of an in-class exam and a project presentation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Assignments (20%)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Four graded assignments related to your project during the semester&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Mid-term exam (20%)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;In-class exam covering the first half of the semester&lt;/li&gt;
-&lt;li&gt;Mid-terms will evaluate how you're following up with the course&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Finals (60%)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Finals consist of an in-class exam covering the second half of the semester, and a project presentation&lt;/li&gt;
-&lt;li&gt;Each regard 30% of the whole score&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Term Project&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;You will be conducting a term project throughout the semester&lt;/li&gt;
-&lt;li&gt;There will be four designated assigments according to the project, and one graded presentation at the end of the semester&lt;/li&gt;
 &lt;li&gt;Term projects will be done as individual work&lt;/li&gt;
+&lt;li&gt;There will be two designated assigments according to the project, and one graded presentation at the end of the semester&lt;/li&gt;
 &lt;li&gt;Extra credit will be given to those who submit and/or rank in public tournaments (ex: &lt;a href="http://kaggle.com"&gt;Kaggle&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Reading assignments&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Charles Wheelan, &lt;a href="http://www.amazon.com/gp/product/039334777X"&gt;Naked Statistics: Stripping the Dread from the Data&lt;/a&gt; (There's also a &lt;a href="http://www.yes24.com/24/goods/11257680"&gt;Korean version&lt;/a&gt;, so pick a version that suits you)&lt;/li&gt;
+&lt;li&gt;You will be picking two chapters&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Advice on your projects&lt;/h4&gt;
 &lt;ol&gt;
@@ -146,7 +126,7 @@ Windows 8&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;Presenting project progress&lt;/h3&gt;
+&lt;h4&gt;Presenting project progress&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Update your progress (Max. 10 minutes)&lt;ol&gt;
 &lt;li&gt;Prepare printouts (for the whole class) or slides or whatever format that best conveys your work&lt;ul&gt;
@@ -195,50 +175,36 @@ Windows 8&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Homework 0: Self introduction&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Submit a CV and self-introduction paper in English or Korean
-(Due: 2015-03-12 23:59 to &lt;a href="mailto:2015-bam@dm.snu.ac.kr"&gt;2015-ba@dm.snu.ac.kr&lt;/a&gt;)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This homework is not graded.
-However, you are seniors!
-Use this opportunity as a chance to practice writing and getting feedback on your CV (which you will definitely be sending to companies and/or schools in the near future)&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="http://lmgtfy.com/?q=cv"&gt;CV&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;You are recommended to include the following:&lt;ol&gt;
-&lt;li&gt;Your name, phone number, email address&lt;/li&gt;
-&lt;li&gt;Education history&lt;ul&gt;
-&lt;li&gt;What high school you attended&lt;/li&gt;
-&lt;li&gt;What courses you loved most, what you acheived&lt;/li&gt;
+&lt;h2&gt;Academic integrity&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Academic_integrity"&gt;Academic integrity is the moral code or ethical policy of academia&lt;/a&gt;.
+There may be times you are tempted to be dishonest, cheat, or plagarize other work,
+but in this course (and undoubtfully in all other classes),
+we encourage you to approach your work with honesty and integrity.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is disallowed&lt;ul&gt;
+&lt;li&gt;Don't ask another student to do the work for you&lt;/li&gt;
+&lt;li&gt;Don't fabricate experimental results&lt;/li&gt;
+&lt;li&gt;Don't cheat on exams, and don't let anothers copy your answers&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Working experience: Internships, exchanges, etc.&lt;/li&gt;
-&lt;li&gt;Others&lt;ul&gt;
-&lt;li&gt;Extracurricular activities&lt;/li&gt;
-&lt;li&gt;Honors, awards, language skills etc.&lt;/li&gt;
+&lt;li&gt;What is allowed&lt;ul&gt;
+&lt;li&gt;Do trust your ability&lt;/li&gt;
+&lt;li&gt;Do give credit to others' work (Mind your citations!)&lt;/li&gt;
+&lt;li&gt;Do brag about your acheivements&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;No constraint on formats, but please try to avoid proprietary formats such as hwp, docx (cf. &lt;a href="http://eev.ee/blog/2013/01/09/cvs-and-file-extensions/"&gt;CVs and file extensions&lt;/a&gt;)&lt;ul&gt;
-&lt;li&gt;PDF or HTML would be great&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://linkedin.com"&gt;LinkedIn&lt;/a&gt; is another option&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;No page limits&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Self-introduction paper&lt;ul&gt;
-&lt;li&gt;Please include the following:&lt;ol&gt;
-&lt;li&gt;Your characteristics&lt;/li&gt;
-&lt;li&gt;Why you're taking this course and what you expect from it&lt;/li&gt;
-&lt;li&gt;What you wish to do in the future&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;No page limits (Though I don't think I will be reading after page three)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>Business Analytics (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-ba/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-ba/index.html</id><summary type="html">&lt;blockquote&gt;
+&lt;!--
+### Tips
+
+1. Writing a good CV
+    - http://tex.stackexchange.com/questions/80/latex-template-for-resume-curriculum-vitae
+1. Writing a good self-introduction
+    - Use positive words.
+    - Divide an conquer!
+        - Step 1. Focus only on the contents! (Using a basic text editor or plain paper might be a good idea)
+        - Step 2. Do the formatting. Formatting matters. (ex: fonts, layouts, tenses, etc.)
+--&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>Business Analytics (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-ba/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-ba/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Business Analytics class of 2015!
 Here you'll find all course materials, guides and schedules.
 In case you have questions, feel free to send an email to &lt;a href="mailto:2015-ba@googlegroups.com"&gt;2015-ba@googlegroups.com&lt;/a&gt; (or directly write a new topic at the forum below).&lt;/p&gt;
@@ -250,7 +216,7 @@ Topics include statistical and quantitative analysis, explanatory and predictive
 Students are required to present progress on their work during the semester, and are assessed by a set of assignments, quizzes and exams.&lt;/p&gt;
 &lt;p&gt;Note that this course is the second part of a two part sequence.
 We assume you have already taken
-Data Mining (ex: &lt;a href="http://lucypark.kr/courses/2015-dm/index.html"&gt;ITM522&lt;/a&gt;),
+Data Mining (ex: &lt;a href="http://lucypark.kr/courses/2015-dm/index.html"&gt;IISE113503&lt;/a&gt;),
 the first part of the sequence, where methods and algorithms for mining data were discussed.
 This course is the latter part of the sequence, and will be more advanced and project-focused.&lt;/p&gt;
 &lt;h3&gt;Prerequisites&lt;/h3&gt;

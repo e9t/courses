@@ -85,7 +85,7 @@ $(function(){
     var idx = 4;
     var activePage = location.href.split("/")[idx];
   }
-  $('.nav li a').each(function(){
+  $('.nav li a').each(function() {
     var currentPage = $(this).attr('href').split("/")[idx];
     if (activePage == currentPage) {
       $(this).parent().addClass('active');

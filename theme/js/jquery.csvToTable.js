@@ -63,6 +63,14 @@
 	* http://www.greywyvern.com/?post=258
 	*
 	*/
+    function makelink(string) {
+        if (string.substr(0, 1)==='*' && string.substr(-1, 1)==='*') {
+            var text = string.substring(1, string.length-1);
+            return '<a href="' + text.replace(/ /g, '-') + '.html">' + text + '</a>';
+        } else {
+            return string;
+        }
+    }
 	String.prototype.splitCSV = function(sep) {
 		for (var thisCSV = this.split(sep = sep || ","), x = thisCSV.length - 1, tl; x >= 0; x--) {
 			if (thisCSV[x].replace(/"\s+$/, '"').charAt(thisCSV[x].length - 1) == '"') {
@@ -128,7 +136,22 @@
 							(printedLines % 2) ? oddOrEven = 'odd' : oddOrEven = 'even';
 							tableHTML += '<tr class="' + options.trClass + ' ' + oddOrEven + '">';
 							$.each(items, function(itemCount, item) {
-								tableHTML += '<td class="' + options.tdClass + '">' + item + '</td>';
+                                if(item.indexOf('|') === -1) {
+                                    tableHTML += '<td class="' + options.tdClass + '">' + makelink(item) + '</td>';
+                                } else {
+                                    var itemspl = item.split('|');
+                                    var itemstr = makelink(itemspl[0]) + '<ul>';
+                                    itemspl = itemspl.slice(1);
+                                    for (i in itemspl) {
+                                        itemstr += '<li>' + makelink(itemspl[i]) + '</li>';
+                                    }
+                                    itemstr += '</ul>';
+                                    tableHTML += '<td class="'
+                                                    + options.tdClass + '">'
+                                                    + itemstr
+                                                    + '</td>';
+
+                                }
 							});
 							tableHTML += '</tr>';
 						}

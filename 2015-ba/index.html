@@ -47,7 +47,7 @@ Topics include statistical and quantitative analysis, explanatory and predictive
 Students are required to present progress on their work during the semester, and are assessed by a set of assignments, quizzes and exams.</p>
 <p>Note that this course is the second part of a two part sequence.
 We assume you have already taken
-Data Mining (ex: <a href="http://lucypark.kr/courses/2015-dm/index.html">ITM522</a>),
+Data Mining (ex: <a href="http://lucypark.kr/courses/2015-dm/index.html">IISE113503</a>),
 the first part of the sequence, where methods and algorithms for mining data were discussed.
 This course is the latter part of the sequence, and will be more advanced and project-focused.</p>
 <h3>Prerequisites</h3>
@@ -147,7 +147,7 @@ $(function(){
     var idx = 4;
     var activePage = location.href.split("/")[idx];
   }
-  $('.nav li a').each(function(){
+  $('.nav li a').each(function() {
     var currentPage = $(this).attr('href').split("/")[idx];
     if (activePage == currentPage) {
       $(this).parent().addClass('active');
@@ -155,7 +155,7 @@ $(function(){
   });
 });
 </script>
-<script type="text/javascript" src="http://lucypark.kr/courses/static/js/jquery.csvToTable.js"></script>
+<script type="text/javascript" src="http://lucypark.kr/courses/theme/js/jquery.csvToTable.js"></script>
 <script type="text/javascript">
 $(function() {
     $('#schedule-table').CSVToTable('schedule.csv',

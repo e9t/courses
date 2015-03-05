@@ -33,11 +33,11 @@
     <tbody>
         <tr>
         <td>06 Mar 2015</td>
-        <td><a href='http://lucypark.kr/courses/2015-ba/intro.html'>Course Introduction</a></td>
+        <td><a href='http://lucypark.kr/courses/2015-ba/course-logistics.html'>Course Introduction</a></td>
         </tr>
         <tr>
         <td>06 Mar 2015</td>
-        <td><a href='http://lucypark.kr/courses/2015-dm/intro.html'>Course Introduction</a></td>
+        <td><a href='http://lucypark.kr/courses/2015-dm/course-introduction.html'>Course Introduction</a></td>
         </tr>
     </tbody>
 </table>
@@ -85,7 +85,7 @@ $(function(){
     var idx = 4;
     var activePage = location.href.split("/")[idx];
   }
-  $('.nav li a').each(function(){
+  $('.nav li a').each(function() {
     var currentPage = $(this).attr('href').split("/")[idx];
     if (activePage == currentPage) {
       $(this).parent().addClass('active');
