@@ -70,17 +70,45 @@ $(function() {
 {% endif %}
 {% if article.toc=="True" %}
 <script>
+    function hyphenate(str) {
+        return str.toLowerCase().replace(/\s/g, '-');
+    }
+
     String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
 
+    // create toc
+    var t = '';
     var concat = '';
     var headers = $('.article-body :header');
+    headers.each(function() {
+        var hyphenated = hyphenate($(this).text());
+            $(this).attr('id', hyphenated);
+        }
+    );
     for (var i=0; i<headers.length; i++) {
         depth = parseInt(headers[i].tagName.substr(-1));
         if (depth < 4) {
-            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- ' + headers[i].textContent + '<br>';
+            t = headers[i].textContent;
+            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- <a href="#' + hyphenate(t) + '">' + t + '</a><br>';
         }
     }
     $(".article-toc p").append(concat);
+
+    // scroll animation
+    $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 300, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+    });
 </script>
 {% endif %}
 {% endblock %}
