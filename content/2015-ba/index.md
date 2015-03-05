@@ -21,7 +21,7 @@ Students are required to present progress on their work during the semester, and
 
 Note that this course is the second part of a two part sequence.
 We assume you have already taken
-Data Mining (ex: [ITM522]({filename}/2015-dm/index.md)),
+Data Mining (ex: [IISE113503]({filename}/2015-dm/index.md)),
 the first part of the sequence, where methods and algorithms for mining data were discussed.
 This course is the latter part of the sequence, and will be more advanced and project-focused.
 
