@@ -28,7 +28,6 @@ Logo: seoultech.png
 - Term Project (40%)
 
 ## Schedule
-
 <table id="schedule" class="table table-hover table-bordered"></td></tr>
 <tr><th>date</th><th>lecture</th><th>assignment</th></tr></td></tr>
 <tr><td>3/06</td><td><a href="course-introduction.html">Course introduction</a><ul><li><a href="data-mining.html">Data mining</a></li><li><a href="http://kaggle.com">Having Fun With Kaggle</a></li></ul></td><td><a href="http://goo.gl/forms/1H7nOgjRVG">Assignment 0</a> (Due: 3/11)<br>Project proposal (Due: 3/18)</td></tr>
