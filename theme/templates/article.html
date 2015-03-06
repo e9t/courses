@@ -20,11 +20,6 @@
     <div itemprop="articleBody" class="article-body">
         {{ article.content }}
 
-        {% if "syllabus" in article.tags and article.schedule=="True" %}
-        <h2 id="schedule">Schedule</h2>
-        <div id="schedule-table" class="table-responsive"></div>
-        {% endif %}
-
         {% if article.forum %}
         {% include 'forum.html' %}
         {% endif %}
@@ -59,15 +54,6 @@
 {% endblock %}
 
 {% block extra_scripts %}
-{% if "syllabus" in article.tags %}
-<script type="text/javascript" src="{{ SITEURL }}/theme/js/jquery.csvToTable.js"></script>
-<script type="text/javascript">
-$(function() {
-    $('#schedule-table').CSVToTable('schedule.csv',
-        { tableClass: 'table table-hover table-bordered' });
-});
-</script>
-{% endif %}
 {% if article.toc=="True" %}
 <script>
     function hyphenate(str) {

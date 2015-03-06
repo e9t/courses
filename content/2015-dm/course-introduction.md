@@ -35,7 +35,7 @@ Toc: True
 - Four graded take-home assignments for you to submit online
 - Instead of taking a mid-term exam, we will have assignments for reviewing purposes
 - Assignments consist of a quiz and a programming task
-    - Frankly, the quiz is not for assessment but for you to review and/or preview class materials (성악설 기반)
+    - Frankly, the quiz is not for assessment but for you to review and/or preview class materials
     - Programming tasks will cover what you have studied during class. You will have done most of the work in class already. What you're going to do at home is to wrap up your work and document it.
     - Will be open early, and can be submitted at any time
 - *Note the submission date*
