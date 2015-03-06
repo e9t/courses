@@ -66,7 +66,7 @@
     function makelink(string) {
         if (string.substr(0, 1)==='*' && string.substr(-1, 1)==='*') {
             var text = string.substring(1, string.length-1);
-            return '<a href="' + text.replace(/ /g, '-') + '.html">' + text + '</a>';
+            return '<a href="' + text.toLowerCase().replace(/ /g, '-') + '.html">' + text + '</a>';
         } else {
             return string;
         }
