@@ -254,7 +254,7 @@ In case you have questions, feel free to send an email to &lt;a href="mailto:201
 &lt;li&gt;Term Project (40%)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Schedule&lt;/h2&gt;
-&lt;table id="schedule" class="table table-hover table-bordered"&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;p&gt;&lt;table id="schedule" class="table table-hover table-bordered"&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;th&gt;date&lt;/th&gt;&lt;th&gt;lecture&lt;/th&gt;&lt;th&gt;assignment&lt;/th&gt;&lt;/tr&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;&lt;a href="course-introduction.html"&gt;Course introduction&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="data-mining.html"&gt;Data mining&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://kaggle.com"&gt;Having Fun With Kaggle&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href="http://goo.gl/forms/1H7nOgjRVG"&gt;Assignment 0&lt;/a&gt; (Due: 3/11)&lt;br&gt;Project proposal (Due: 3/18)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;지도학습 1: Multiple linear regression&lt;ul&gt;&lt;li&gt;Data mining process&lt;li&gt;How to write a data mining proposal&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
@@ -271,4 +271,4 @@ In case you have questions, feel free to send an email to &lt;a href="mailto:201
 &lt;tr&gt;&lt;td&gt;5/29&lt;/td&gt;&lt;td&gt;변수 선택과 차원 축소&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;6/05&lt;/td&gt;&lt;td&gt;대용량 데이터마이닝&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;6/12&lt;/td&gt;&lt;td&gt;Final Exam&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>
+&lt;/table&gt;&lt;/p&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>

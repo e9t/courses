@@ -235,4 +235,23 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;li&gt;Assignments (20%): You will be given four graded assignments during the semester.&lt;/li&gt;
 &lt;li&gt;Mid-term Quiz (20%): A mid-term quiz.&lt;/li&gt;
 &lt;li&gt;Final Exam (60%): A final exam and presentation.&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>
+&lt;/ul&gt;
+&lt;h2&gt;Schedule&lt;/h2&gt;
+&lt;p&gt;&lt;table id="schedule" class="table table-hover table-bordered"&gt;
+&lt;tr&gt;&lt;th&gt;date&lt;/th&gt;&lt;th&gt;lecture&lt;/th&gt;&lt;th&gt;assignment&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;course introduction&lt;ul&gt;&lt;li&gt;&lt;a href="course-logistics.html"&gt;course logistics&lt;/a&gt;&lt;li&gt;business problems and data science&lt;li&gt;GitHub&lt;li&gt;Having fun with Kaggle&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='http://goo.gl/forms/fE7ZIeL8VK'&gt;Homework 0&lt;/a&gt; (Due: 3/11)&lt;ul&gt;&lt;li&gt;CV + Self-intro&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;Tools for pragmatic data mining&lt;ul&gt;&lt;li&gt;&lt;a href="bash.html"&gt;Bash&lt;/a&gt;&lt;li&gt;Python|Reproducibility and version control&lt;li&gt;Statistical Summaries and Exploratory Data Analysis&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;Scraping from the Web&lt;/td&gt;&lt;td&gt;Project proposals (300 words+)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Python for NLP&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4/10&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4/17&lt;/td&gt;&lt;td&gt;Mid-term Quiz&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4/24&lt;/td&gt;&lt;td&gt;Clustering and Dimensionality Reduction|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/01&lt;/td&gt;&lt;td&gt;Visualization and storytelling|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/08&lt;/td&gt;&lt;td&gt;Support vector machine and the kernel trick|Share Reading assignment&lt;/td&gt;&lt;td&gt;Progress report (1K+ words)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/15&lt;/td&gt;&lt;td&gt;Going deep: Deep learning|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/22&lt;/td&gt;&lt;td&gt;Going big 1: Map/reduce|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/29&lt;/td&gt;&lt;td&gt;Going big 2: Spark|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;6/05&lt;/td&gt;&lt;td&gt;Final presentation&lt;/td&gt;&lt;td&gt;Project final report (3K+ words)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;6/12&lt;/td&gt;&lt;td&gt;Final exam&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/p&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>
