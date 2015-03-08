@@ -28,7 +28,7 @@
 &lt;li&gt;&lt;code&gt;/some/absolute/path&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;some/relative/path&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img alt="" src="http://book.soundonair.ru/hall1/images/3_39.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://book.soundonair.ru/hall1/images/3_39.jpg"&gt;&lt;/p&gt;
 &lt;h3&gt;Permissions&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Read, Write, eXecute&lt;/li&gt;
