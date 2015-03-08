@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-dm.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-13T09:00:00+01:00</updated><entry><title>How to write a data mining proposal</title><link href="http://lucypark.kr/courses/2015-dm/data-mining-proposal.html" rel="alternate"></link><updated>2015-03-13T09:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-13:courses/2015-dm/data-mining-proposal.html</id><summary type="html">&lt;h2&gt;Data mining process&lt;/h2&gt;</summary></entry><entry><title>Multiple linear regression</title><link href="http://lucypark.kr/courses/2015-dm/multiple-linear-regression.html" rel="alternate"></link><updated>2015-03-13T09:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-13:courses/2015-dm/multiple-linear-regression.html</id><summary type="html">&lt;h4&gt;공지사항&lt;/h4&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-dm.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-13T09:00:00+01:00</updated><entry><title>Multiple linear regression</title><link href="http://lucypark.kr/courses/2015-dm/multiple-linear-regression.html" rel="alternate"></link><updated>2015-03-13T09:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-13:courses/2015-dm/multiple-linear-regression.html</id><summary type="html">&lt;h4&gt;공지사항&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;Assignment 제출방식 변경: 2015-dm@googlegroups.com -&amp;gt; e-class&lt;/li&gt;
 &lt;li&gt;Assignment 개수 변경: 4 -&amp;gt; 3&lt;/li&gt;
@@ -11,6 +11,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2&gt;Supervised learning vs. Unsupervised learning&lt;/h2&gt;
 &lt;h2&gt;Simple linear regression&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;$x$: 독립변수&lt;/li&gt;
