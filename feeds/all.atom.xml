@@ -242,21 +242,16 @@ we encourage you to approach your work with honesty and integrity.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Eunjeong (Lucy) Park&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dm.snu.ac.kr/~epark"&gt;PhDc for data mining&lt;/a&gt; at Seoul National University&lt;/li&gt;
-&lt;li&gt;You can call me &lt;a href="http://www.phdcomics.com/comics/archive.php?comicid=1153"&gt;"Ms. Park"&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;Normally to professors, using "Dr." is a better idea&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;li&gt;a.k.a., &lt;a href="http://lucypark.kr"&gt;lucypark&lt;/a&gt;, &lt;a href="http://twitter.com/echojuliett"&gt;echojuliett&lt;/a&gt;, &lt;a href="http://github.com/e9t"&gt;e9t&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Course logistics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Course objective: &lt;strong&gt;Understanding data mining algorithms&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Course website: &lt;a href="http://lucypark.kr/courses/2015-dm"&gt;http://lucypark.kr/courses/2015-dm&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;Lecture notes&lt;/li&gt;
-&lt;li&gt;Schedule/Announcements&lt;/li&gt;
+&lt;li&gt;Course website&lt;ul&gt;
+&lt;li&gt;Schedule/Lecture notes: &lt;a href="http://lucypark.kr/courses/2015-dm"&gt;http://lucypark.kr/courses/2015-dm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Announcements and everything else: &lt;a href="http://eclass.seoultech.ac.kr/"&gt;e-class&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Schedule: &lt;a href="http://lucypark.kr/courses/2015-dm/#schedule"&gt;http://lucypark.kr/courses/2015-dm/#schedule&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Office hours&lt;ul&gt;
 &lt;li&gt;Right after every class&lt;/li&gt;
 &lt;li&gt;You are welcome to ask any kind of questions&lt;/li&gt;
@@ -372,11 +367,9 @@ we encourage you to approach your work with honesty and integrity.&lt;/p&gt;
 &lt;li&gt;Assignment submissions that regard privacy&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Public questions: &lt;a href="mailto:2015-dm@googlegroups.com"&gt;2015-dm@googlegroups.com&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;This is the class forum&lt;/li&gt;
-&lt;li&gt;Everything else you want to ask goes here&lt;/li&gt;
+&lt;li&gt;Public questions: Everything else you want to ask goes to e-class&lt;ul&gt;
 &lt;li&gt;Using any language of your choice (ex: English, Korean, Java, ...)&lt;/li&gt;
-&lt;li&gt;Asking good questions at the class forum&lt;ul&gt;
+&lt;li&gt;Asking good questions&lt;ul&gt;
 &lt;li&gt;Provide as much details as you can&lt;/li&gt;
 &lt;li&gt;However, be "brief" and "clear"&lt;/li&gt;
 &lt;li&gt;In case of programming questions, explicitly list versions of software being used (including packages and OSs)&lt;/li&gt;
@@ -548,7 +541,7 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;/table&gt;&lt;/p&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Data Mining class of 2015!
 Here you'll find all course materials, guides and schedules.
-In case you have questions, feel free to send an email to &lt;a href="mailto:2015-dm@googlegroups.com"&gt;2015-dm@googlegroups.com&lt;/a&gt; (or directly write a new topic at the forum below).&lt;/p&gt;
+For discussions, please visit the class &lt;a href="http://eclass.seoultech.ac.kr/"&gt;e-class&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;데이터마이닝(data mining)이란 대용량 데이터베이스에 존재하는 데이터에서 관계, 패턴, 규칙 등을 찾아내고 모형화해서 의사결정을 돕는 유용한 정보로 변환하는 일련의 과정이다.
 본 강좌에서는 기술 모델링(descriptive modeling)과 예측 모델링(predictive modeling)에 사용되는 탐색적 통계, 기계학습, 범주형 자료분석 기법들을 공부하고 응용사례 연구와 패키지를 이용한 프로젝트를 수행한다.&lt;/p&gt;
@@ -560,7 +553,7 @@ In case you have questions, feel free to send an email to &lt;a href="mailto:201
 &lt;ul&gt;
 &lt;li&gt;데이터마이닝의 기본 개념, 구축 프로세스 학습 및 비즈니스 활용 사례 인식&lt;/li&gt;
 &lt;li&gt;데이터마이닝의 주요 방법론의 이론적 토대 학습 및 응용 분야 학습&lt;/li&gt;
-&lt;li&gt;데이터마이닝 분야에서 널리 사용되는 오픈소스 데이터 분석 언어인 파이썬 사용 방법 학습&lt;/li&gt;
+&lt;li&gt;데이터마이닝 분야에서 널리 사용되는 오픈소스 데이터 분석 언어인 &lt;a href="https://python.org/"&gt;파이썬&lt;/a&gt; 사용 방법 학습&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Grading&lt;/h3&gt;
 &lt;ul&gt;
@@ -571,7 +564,7 @@ In case you have questions, feel free to send an email to &lt;a href="mailto:201
 &lt;h2&gt;Schedule&lt;/h2&gt;
 &lt;p&gt;&lt;table id="schedule" class="table table-hover table-bordered"&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;th&gt;date&lt;/th&gt;&lt;th&gt;lecture&lt;/th&gt;&lt;th&gt;assignment&lt;/th&gt;&lt;/tr&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;&lt;a href="course-introduction.html"&gt;Course introduction&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="data-mining.html"&gt;Data mining&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://kaggle.com"&gt;Having Fun With Kaggle&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href="http://goo.gl/forms/1H7nOgjRVG"&gt;Assignment 0&lt;/a&gt; (Due: 3/11)&lt;br&gt;Project proposal (Due: 3/18)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;&lt;a href="course-introduction.html"&gt;Course introduction&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="data-mining.html"&gt;Data mining&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href="http://goo.gl/forms/1H7nOgjRVG"&gt;Assignment 0&lt;/a&gt; (Due: 3/11)&lt;br&gt;Project proposal (Due: 3/18)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;지도학습 1: Multiple linear regression&lt;ul&gt;&lt;li&gt;Data mining process&lt;li&gt;How to write a data mining proposal&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;지도학습 2: Logistic regression&lt;/td&gt;&lt;td&gt;Assignment 1 (Due: 4/2)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;지도학습 3: Decision tree + k-NN&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
@@ -589,7 +582,7 @@ In case you have questions, feel free to send an email to &lt;a href="mailto:201
 &lt;/table&gt;&lt;/p&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Data Mining class of 2015!
 Here you'll find all course materials, guides and schedules.
-In case you have questions, feel free to send an email to &lt;a href="mailto:2015-dm@googlegroups.com"&gt;2015-dm@googlegroups.com&lt;/a&gt; (or directly write a new topic at the forum below).&lt;/p&gt;
+For discussions, please visit the class &lt;a href="http://eclass.seoultech.ac.kr/"&gt;e-class&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;데이터마이닝(data mining)이란 대용량 데이터베이스에 존재하는 데이터에서 관계, 패턴, 규칙 등을 찾아내고 모형화해서 의사결정을 돕는 유용한 정보로 변환하는 일련의 과정이다.
 본 강좌에서는 기술 모델링(descriptive modeling)과 예측 모델링(predictive modeling)에 사용되는 탐색적 통계, 기계학습, 범주형 자료분석 기법들을 공부하고 응용사례 연구와 패키지를 이용한 프로젝트를 수행한다.&lt;/p&gt;
@@ -601,7 +594,7 @@ In case you have questions, feel free to send an email to &lt;a href="mailto:201
 &lt;ul&gt;
 &lt;li&gt;데이터마이닝의 기본 개념, 구축 프로세스 학습 및 비즈니스 활용 사례 인식&lt;/li&gt;
 &lt;li&gt;데이터마이닝의 주요 방법론의 이론적 토대 학습 및 응용 분야 학습&lt;/li&gt;
-&lt;li&gt;데이터마이닝 분야에서 널리 사용되는 오픈소스 데이터 분석 언어인 파이썬 사용 방법 학습&lt;/li&gt;
+&lt;li&gt;데이터마이닝 분야에서 널리 사용되는 오픈소스 데이터 분석 언어인 &lt;a href="https://python.org/"&gt;파이썬&lt;/a&gt; 사용 방법 학습&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Grading&lt;/h3&gt;
 &lt;ul&gt;
@@ -612,7 +605,7 @@ In case you have questions, feel free to send an email to &lt;a href="mailto:201
 &lt;h2&gt;Schedule&lt;/h2&gt;
 &lt;p&gt;&lt;table id="schedule" class="table table-hover table-bordered"&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;th&gt;date&lt;/th&gt;&lt;th&gt;lecture&lt;/th&gt;&lt;th&gt;assignment&lt;/th&gt;&lt;/tr&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;&lt;a href="course-introduction.html"&gt;Course introduction&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="data-mining.html"&gt;Data mining&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://kaggle.com"&gt;Having Fun With Kaggle&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href="http://goo.gl/forms/1H7nOgjRVG"&gt;Assignment 0&lt;/a&gt; (Due: 3/11)&lt;br&gt;Project proposal (Due: 3/18)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;&lt;a href="course-introduction.html"&gt;Course introduction&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="data-mining.html"&gt;Data mining&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href="http://goo.gl/forms/1H7nOgjRVG"&gt;Assignment 0&lt;/a&gt; (Due: 3/11)&lt;br&gt;Project proposal (Due: 3/18)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;지도학습 1: Multiple linear regression&lt;ul&gt;&lt;li&gt;Data mining process&lt;li&gt;How to write a data mining proposal&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;지도학습 2: Logistic regression&lt;/td&gt;&lt;td&gt;Assignment 1 (Due: 4/2)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;지도학습 3: Decision tree + k-NN&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
