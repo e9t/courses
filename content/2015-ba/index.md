@@ -42,7 +42,7 @@ This course is the latter part of the sequence, and will be more advanced and pr
 <table id="schedule" class="table table-hover table-bordered">
 <tr><th>date</th><th>lecture</th><th>assignment</th></tr>
 <tr><td>3/06</td><td>course introduction<ul><li><a href="course-logistics.html">course logistics</a><li>business problems and data science<li>GitHub<li>Having fun with Kaggle</ul></td><td><a href='http://goo.gl/forms/fE7ZIeL8VK'>Homework 0</a> (Due: 3/11)<ul><li>CV + Self-intro</ul></td></tr>
-<tr><td>3/13</td><td>Tools for pragmatic data mining<ul><li><a href="bash.html">Bash</a><li>Python|Reproducibility and version control<li>Statistical Summaries and Exploratory Data Analysis</ul></td><td>-</td></tr>
+<tr><td>3/13</td><td>Tools for pragmatic data mining<ul><li><a href="bash.html">Bash</a><li>Python<li>Reproducibility and version control<li>Statistical Summaries and Exploratory Data Analysis</ul></td><td>-</td></tr>
 <tr><td>3/20</td><td>Scraping from the Web</td><td>Project proposals (300 words+)</td></tr>
 <tr><td>3/27</td><td>Python for NLP</td><td>-</td></tr>
 <tr><td>4/03</td><td>Regression and Predictive modeling|Share Reading assignment</td><td>-</td></tr>

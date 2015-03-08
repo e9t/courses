@@ -54,17 +54,19 @@ Toc: True
 - Proposal (10/40)
     - Individual work
     - Submit your ideas within 1 page
-    - Approx. 10 ideas will selected to be carried out as group work
+    - Due: 2015-03-18 23:59
 - Progress presentation (15/40)
     - Group work
     - You will present your project progress in front of the class (Max. 10 min)
     - You will also be grading your peers' work (Peer assessment)
         - You will be given three votes
         - You can give one vote to three peers, or give all votes to one peer
+    - Due: 2015-04-30 23:59
 - Final report (15/40)
     - Group work
     - Present what you have done throughout the whole project
     - 10+ pages in written text
+    - Due: 2015-06-14 23:59
 
 #### Presentation guidelines
 1. Prepare printouts (for the whole class) or slides or whatever format that best conveys your work

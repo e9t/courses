@@ -4,24 +4,56 @@ Tags: programming, seoultech, lectures
 Courseid: 2015-ba
 Toc: True
 
-## Mind your versions
+## What is an OS?
+- DOS, Windows, Linux, Mac OS, iOS, Android, ...
 
-Windows 7
-Windows 8
+## Linux?
+- OS
+- Made by Linus Torvalds
+- Inspired by Unix
+- Debian, CentOS, Ubuntu, Fedora, Redhat Linux, Gentoo, Arch, Suse, Slackware, Mandriva, PintOS, ...
 
-<img src="images/windows-7.jpg" width="400px">
-<img src="images/windows-8.png" width="400px">
+### Why Linux?
+- Custom
+- Free (in some sense)
+- Open source
+- Supports multiple users
+- Has compatibility with Unix-like OSs
+
+## Files
+
+### Directories
+
+- `.`: current directory
+- `..`: parent directory
+- `~/`: home directory
+- `/`: root directory
+- `/some/absolute/path`
+- `some/relative/path`
+
+![](http://book.soundonair.ru/hall1/images/3_39.jpg)
+
+### Permissions
+
+- Read, Write, eXecute
+- Owner, Owner group, Others
+- rwxrwxrwx
+    - All permissions for everyone
 
 
+
+<!-- GNU linux history -->
 ## [What is Bash?](https://www.gnu.org/software/bash/manual/html_node/What-is-Bash_003f.html)
 
-- Bash is a shell for the GNU operating system
+- Bash is a "shell" for the GNU operating system
 
 <img src="images/bash.png" width="500px">
 
 ### Then [what is a shell?](https://www.gnu.org/software/bash/manual/html_node/What-is-a-shell_003f.html###What-is-a-shell_003f)
 
 - A shell is a macro processor that executes commands
+
+<img src="http://2.bp.blogspot.com/-OJTUMIsryCU/T92Eg2IF5VI/AAAAAAAAABc/luBUtgpl2pM/s1600/kernel+shell.png" width="500px">
 
 ### Is Bash the only shell available?
 
