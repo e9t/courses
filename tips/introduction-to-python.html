@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Introduction to Python — Courses</title>
+	<meta name="description" content="Title: Introduction to Python; Date: 2015-03-08; Author: Lucy Park; Courseid: ; Metainfo: ">
+	<meta name="author" content="Lucy Park">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<![endif]-->
+	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
+	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+        </ul>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="article-header">
+        <h1 itemprop="name headline">Introduction to Python</h1>
+		<time datetime="2015-03-08T18:00:00+01:00" itemprop="datePublished">Sun 08 March 2015</time>
+	</div>
+    <div class="article-toc"><b>Contents</b><p></p></div>
+    <div itemprop="articleBody" class="article-body">
+        <h2>들어가기 전에</h2>
+<ol>
+<li>운영체제(OS)란?<ul>
+<li><a href="http://ko.wikipedia.org/wiki/%EC%9A%B4%EC%98%81_%EC%B2%B4%EC%A0%9C">"시스템 하드웨어와 소프트웨어를 실행하기 위한 시스템 소프트웨어"</a><ul>
+<li>ex: 윈도우 7, Mac OS 10.10, Ubuntu 14.04, iOS 6, Android 5.0, ...</li>
+</ul>
+</li>
+<li>프로그래밍을 하기 전에는 내가 어떤 OS의 어떤 버젼을 사용하고 있는지 꼭 알아두자!</li>
+<li><strong>여기서는 윈도우 7을 사용하고 있다는 가정 하에 튜토리얼을 진행합니다.</strong></li>
+</ul>
+</li>
+<li>쉘(shell)이란?<ul>
+<li><a href="http://ko.wikipedia.org/wiki/%EC%85%B8">"운영체제 상에서 다양한 운영체제 기능과 서비스를 구현하는 인터페이스를 제공하는 프로그램"</a></li>
+<li>운영체제의 핵심 부분을 구성하는 "커널(kernel)"을 감싸고 있다는 뜻에서 "쉘"이라는 이름이 붙었죠<br>
+<a href="http://www.quora.com/What-is-the-origin-of-the-name-shell"><img src="images/kernel.gif" width="250px"></a></li>
+</ul>
+</li>
+</ol>
+<h2>왜 파이썬인가?</h2>
+<ol>
+<li>Python is now the most popular introductory language at Top US Universities (July, 2014)<br>
+<a href="http://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext"><img src="images/python.png" width="400px"></a></li>
+<li>Python is a major programming language for data mining (Aug, 2014)<br>
+<a href="http://www.kdnuggets.com/2014/08/four-main-languages-analytics-data-mining-data-science.html"><img src="images/kdnuggets.jpg" width="350px"></a></li>
+</ol>
+<p>So is Python the best programming language ever?</p>
+<ul>
+<li>No, and <a href="http://paulgraham.com/hundred.html">there probably will never be such a thing</a></li>
+<li>But, definitely worth the effort for now</li>
+</ul>
+<p>그렇다면 진짜로 왜?</p>
+<ol>
+<li>쉽다</li>
+<li>간편하다</li>
+</ol>
+<p>...외에도 가독성(readability)이 좋다는 점, 문서화(documentation)가 잘 되어있다는 점, 라이브러리/패키지가 풍부해서 데이터 분석부터 시각화, 웹프로그래밍 등 다양한 영역에 사용할 수 있다는 점, 개발 커뮤니티가 활발하다는 점 등 때문에 <a href="http://blog.trinket.io/why-python/">처음 배우는 프로그래밍 언어로써</a>, 그리고 <a href="http://www.stat.washington.edu/~hoytak/blog/whypython.html">연구용 언어로써</a> 좋다는 평가가 있습니다.</p>
+<blockquote>
+<p>파이썬 프로그래밍을 하다가 궁금한 점이 있을 때는 아래 커뮤니티들에 질문을 던져보세요:<br>
+1. <a href="https://www.facebook.com/groups/pythonkorea/">파이썬 코리아 페이스북 그룹</a><br>
+2. <a href="https://www.facebook.com/groups/codingeverybody/">생활코딩 페이스북 그룹</a><br>
+그 외에도 <a href="https://www.facebook.com/pyjog">파이조그(PyJog)</a>와 같이 주말에 오프라인으로 모여서 각자 코딩하는 모임도 있습니다. 고수님들을 만날 기회이니 프로그래밍을 더 잘해보고 싶은 분은 한 번쯤 참석해보시기 바랍니다.</p>
+</blockquote>
+<h2>Installing Python</h2>
+<ul>
+<li>윈도우에서 자바 프로그래밍 환경을 마련하는 일반적인 절차는?<ul>
+<li>1단계: <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">자바 개발 키트 (JDK)</a> 설치 (2015년 3월 현재, JDK 8u40 배포중)</li>
+<li>2단계: 환경변수 설정 (ex: <code>JAVA_HOME</code>)</li>
+<li>3단계: 자바 IDE 설치 (ex: <a href="https://eclipse.org/">이클립스</a>, <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a>)</li>
+</ul>
+</li>
+<li>윈도우에서 R 프로그래밍 환경을 마련하는 일반적인 절차는?<ul>
+<li>1단계: <a href="http://cran.r-project.org/">R 배포판</a> 설치 (2015년 3월 현재, R 3.1.2 배포중)</li>
+<li>2단계: R IDE 설치 (ex: <a href="http://rstudio.com">RStudio</a>)</li>
+</ul>
+</li>
+<li>윈도우에서 파이썬 프로그래밍 환경을 마련하는 일반적인 절차는?<ul>
+<li>1단계: <a href="http://python.org/download">파이썬 배포판</a> 설치</li>
+<li>2단계: 파이썬 IDE 설치</li>
+</ul>
+</li>
+</ul>
+<p>자, 그럼 시작해봅시다!</p>
+<h3>1단계: 파이썬 배포판 설치</h3>
+<ol>
+<li>Download <a href="http://continuum.io/downloads#34">Continuum's Anaconda</a><ul>
+<li>잠깐, <a href="http://python.org/download">python.com</a>이 아니라 딴데서 설치파일을 다운받으라고?<ul>
+<li>python.com/download: 파이썬 정식 배포판</li>
+<li>continuum.io/downloads#34: 파이썬 사제 배포판<br>
+<img src="images/anaconda.png" width="600px"></li>
+</ul>
+</li>
+<li>파이썬 정식 배포판이 아니라 일반 회사의 사제 배포판을 사용하는 이유는?<ul>
+<li>Windows에서는 파이썬의 몇몇 패키지 설치가 어렵다는 풍문이 있다</li>
+<li>이를 극복하기 위해 <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">윈도우만을 위해 사전에 컴파일 된 패키지를 따로 제공하는 사람도 있다</a></li>
+<li>우리는 패키지 설치의 번거로움에서 벗어나기 위해 사전에 <a href="http://docs.continuum.io/anaconda/pkg-docs.html">195개의 패키지</a>가 한꺼번에 깔리는 배포판을 선택</li>
+</ul>
+</li>
+<li><a href="https://wiki.python.org/moin/Python2orPython3">Python 2 vs Python 3</a><ul>
+<li>아직까지 학계에서는 Python 2도 많이 사용</li>
+<li>하지만 우리는 더 최신 버젼인 Python 3 선택<ol>
+<li>파이썬 3가 유니코드 서포트를 해서 한국어를 사용하는 사람들에게 편리</li>
+<li>파이썬 3 is <a href="http://pythonkr.github.io/pyconkr-2014/pdf/pyconkr-2014-25_geofront.pdf">the way to go</a></li>
+<li><a href="http://python3wos.appspot.com/">이제 많은 라이브러리들이 파이썬 3도 지원</a></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Install Anaconda<ul>
+<li>환경변수 설정은 아나콘다가 알아서 해줌<br>
+<img src="images/anaconda2.png" width="400px"></li>
+</ul>
+</li>
+<li>
+<p>Run Python!</p>
+<ul>
+<li>콘솔을 열어 <code>ipython</code>을 입력해서 파이썬 쉘을 열어보자.</li>
+<li>
+<p>파이썬 쉘이 열리면:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">)</span>
+<span class="n">Hello</span> <span class="n">world</span><span class="err">!</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">+</span><span class="mi">3</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span>
+<span class="mf">0.3333333333333333</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
+<span class="mi">1024</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Now you're a Python programmer! (적어도 계산기로는 쓸 수 있다)</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3>2단계: 파이썬 IDE 설치</h3>
+<p>위와 같이 파이썬을 쉘(shell)에서 실행하는 방법도 있지만,
+스크립트(script) 파일을 이용해서 파이썬을 실행할 수도 있다.</p>
+<p>쉘은 순간적인 실행을 위해서는 아주 편리하지만,
+긴 프로그램을 짜고자 할 때, 또는 프로그램을 저장하고자 할 때는 적합하지 않다.</p>
+<p>이를 위해 다음의 몇 가지 절차를 거치면 파일을 이용해 파이썬 스크립트를 실행할 수 있다.</p>
+<ol>
+<li>윈도우에서 메모장을 열고</li>
+<li>
+<p>다음의 헬로월드 출력문을 파일에 입력한 후 (또는 다른 파이썬 코드를 입력해도 좋다)</p>
+<div class="highlight"><pre>print(&quot;Hello world!&quot;)
+print(&quot;Hello world full of data!&quot;)
+print(&quot;데이터마이닝을 위한 파이썬!&quot;)
+</pre></div>
+
+
+</li>
+<li>
+<p>파일을 바탕화면에 <code>test.py</code>라는 이름으로 저장하자.</p>
+</li>
+<li>
+<p>마지막으로, 콘솔을 열어 아래와 같이 입력하면 파이썬 파일이 실행된다. 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 <code>test.py</code> 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 GUI(graphic user interface)가 아니라 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!</p>
+<div class="highlight"><pre>cd ~/Desktop
+python test.py
+</pre></div>
+
+
+<p>연습삼아, <code>test.py</code>의 내용을 바꿔가며 아래의 다양한 예시를 입력해보자.
+각 예시는 이해를 돕기 위해 자바 1.7과 병렬적으로 배치해두었다.</p>
+</li>
+</ol>
+<h4>예시 1: "Hello world"</h4>
+<p>프로그래밍의 기본! Hello world를 출력해보자.
+자바와 파이썬 코드에 어떤 차이점이 있는가?</p>
+<ol>
+<li>먼저 자바 코드와는 달리 파이썬 코드에서는 <code>public class MyClass { ... }</code> 등과 같이 클래스를 선언하지 않아도 된다.</li>
+<li><code>public static void main (String[] args) { ... }</code> 등과 같이 복잡하게 메인함수를 선언하지 않아도 된다.</li>
+<li>세미콜론(;)을 붙이지 않아도 된다.</li>
+</ol>
+<p>그리하여 파이썬으로는 무려 한 줄 만으로도 Hello world를 출력할 수 있다.</p>
+<ul>
+<li>
+<p>Java 1.7</p>
+<div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello world&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Python 3</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h4>예시 2: 변수 선언</h4>
+<p>변수를 선언해보자.
+아래 코드에서는 앞서 언급된 차이점들 외에도 크게 두 가지 차이점을 발견할 수 있다.</p>
+<ol>
+<li>파이썬에서는 변수의 데이터 타입(type), 즉 String인지 int인지 등을 선언할 필요가 없다.이를 동적 타이핑(dynamic typing)이라고 하는데, 이는 변수의 데이터 타입이 고정되어 있지 않고 변할 수 있다는 말이다. 반면 자바에서는 변수의 데이터 타입을 미리 지정해줘야하고 한 번 지정하고 나면 변수의 타입은 바뀔 수 없다. </li>
+<li>
+<p>자바 코드에서는 변수를 선언할 때 <code>myString</code>과 같이 <a href="http://en.wikipedia.org/wiki/CamelCase">camelCase</a>를 사용하는데 반해 파이썬 코드에서는 <code>my_string</code>과 같이 <a href="http://en.wikipedia.org/wiki/Naming_convention_(programming)#Python_and_Ruby">underscore</a>를 사용한다. 파이썬의 스타일링에 관해서는 <a href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a>에 잘 나와 있다. 이 문서를 지금 당장 다 읽지 않더라도, 중요한 지침을 담고 있으니 반드시 이름은 기억해두자.</p>
+</li>
+<li>
+<p>Java 1.7 (static typed)</p>
+<div class="highlight"><pre><span class="n">String</span> <span class="n">myString</span> <span class="o">=</span> <span class="s">&quot;this is a string&quot;</span><span class="o">;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Python 3 (dynamic typed)</p>
+<div class="highlight"><pre><span class="n">my_string</span> <span class="o">=</span> <span class="s">&quot;this is a string&quot;</span>
+</pre></div>
+
+
+</li>
+</ol>
+<h4>예시 3: 파일 쓰기 (writing)</h4>
+<p>아래는 <code>some_file.txt</code>에 "Hello world full of data!"라는 문자열을 입력하는 코드이다.
+자바에서 파일 입출력(I/O)은 생각만큼 간단하지 않지만, 파이썬에서는 코드도 무척 간단하게 읽힌다.
+이렇게 읽으면 된다: <code>"some_file.txt"</code>를 <code>"w(write)"</code>모드로 읽어서, 그것을 <code>f</code>라고 부르자.
+그리고 <code>f</code>에는 <code>"Hello world full of data!"</code>라는 문자열을 쓰자(<code>write</code>)!</p>
+<ul>
+<li>
+<p>Java 1.7</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WriteFile</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="n">Writer</span> <span class="n">writer</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">writer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span>
+                  <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&quot;some_file.txt&quot;</span><span class="o">),</span> <span class="s">&quot;utf-8&quot;</span><span class="o">));</span>
+            <span class="n">writer</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">&quot;Hello world full of data!&quot;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;An exception occurred during writing file.&quot;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span><span class="n">writer</span><span class="o">.</span><span class="na">close</span><span class="o">();}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Python 3</p>
+<div class="highlight"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;some_file.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;Hello world full of data!&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h4>예시 4: 파일 읽기 (reading)</h4>
+<p>이미 바탕화면에는 <code>some_file.txt</code>라는 파일이 생겼을 것이다. 한 번 확인해보자.
+만일 <code>test.py</code> 파일을 바탕화면이 아니라 다른 폴더 안에 저장했다면, <code>some_file.txt</code>는 그 폴더 안에 있을 것이다.</p>
+<p>이번에는 그 파일의 내용을 읽어보자.
+아마도 "Hello world full of data!"가 출력되겠지?</p>
+<ul>
+<li>
+<p>Java 1.7</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReadFile</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&quot;some_file.txt&quot;</span><span class="o">));</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+            <span class="n">String</span> <span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
+
+            <span class="k">while</span> <span class="o">(</span><span class="n">line</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">lineSeparator</span><span class="o">());</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="n">String</span> <span class="n">everything</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">everything</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>   
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Python 3</p>
+<div class="highlight"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;some_file.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">d</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h4>예시 5: 클래스(class)와 상속(inheritance)</h4>
+<p>예시 1에서도 설명했지만, 파이썬에서는 클래스를 반드시 선언해주지는 않아도 된다.
+하지만, 클래스가 유용한 경우는 종종 있고, 파이썬에서도 클래스를 만들 수 있다.
+아래 코드를 참고하자.</p>
+<ul>
+<li>
+<p>Java 1.7</p>
+<div class="highlight"><pre><span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">protected</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Animal</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>   
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">saySomething</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;I am a &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span><span class="o">);</span>
+    <span class="o">}</span>   
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">Dog</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+    <span class="o">}</span>   
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">saySomething</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;I am a &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;. Bark, bark!&quot;</span><span class="o">);</span>
+    <span class="o">}</span>   
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClassTest</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Dog</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="s">&quot;Chiwawa&quot;</span><span class="o">);</span>
+        <span class="n">dog</span><span class="o">.</span><span class="na">saySomething</span><span class="o">();</span>
+    <span class="o">}</span>   
+<span class="o">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Python 3</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Animal</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="nf">say_something</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;I am a &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">say_something</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&quot;I am a &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;. Bark, bark!&quot;</span>
+
+<span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s">&quot;Chiwawa&quot;</span><span class="p">)</span>
+<span class="n">dog</span><span class="o">.</span><span class="n">say_something</span><span class="p">()</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h2>Appendix</h2>
+<h3>초짜 프로그래머가 프로그래밍 잘하는 법</h3>
+<ol>
+<li>에러 메세지를 잘 <em>읽자</em> (read, not see). 흔히들 시험 볼 때 문제 속에 답이 있다고 하는데, 프로그래밍할 때는 에러 메세지 속에 이유가 있다. 진짜다.</li>
+<li>좋은 레퍼런스 찾기<ol>
+<li>공식 문서 (official documents) / API 보기 (ex: <a href="http://docs.python.org">docs.python.org</a>)</li>
+<li><a href="http://lmgtfy.com/?q=python docs">구글링!</a> (주의: 구글링을 한다고 무조건 좋은 레퍼런스가 찾아지는 것은 아니다)</li>
+</ol>
+</li>
+<li>Learning how to program, rather than just accomplishing the task<ul>
+<li>프로그래밍을 배우는 것과 복/붙하는 것은 다르다 (참고: <a href="http://norvig.com/21-days.html">Teach yourself programming in ten years</a>)</li>
+<li>일단 프로그램이 작동하게 하는데 성공했다면, 왜 작동했는지를 이해하지</li>
+</ul>
+</li>
+<li>Follow coding conventions. 많은 똑똑한 사람들이 선택한 방법에는 이유가 있다.<ul>
+<li><a href="https://www.python.org/dev/peps/pep-0008">PEP-8</a></li>
+</ul>
+</li>
+</ol>
+<h3>윈도우 프로그래머를 위한 팁</h3>
+<ol>
+<li>
+<p>윈도우에서 자주 속썩이는 것들</p>
+<ol>
+<li>인코딩이 골치. UTF8 쓰는게 OS간 호환성에 가장 좋지만, 윈도우는 EUC-KR이 기본. 한글 사용자라면 <a href="http://www.joelonsoftware.com/articles/Unicode.html">유니코드가 뭔지 알고 가자</a>.</li>
+<li>Newlines가 골치. (참고: http://blog.codinghorror.com/the-great-newline-schism/, http://en.wikipedia.org/wiki/Newline)</li>
+<li>역슬래시가 골치<ul>
+<li>왜 내 키보드에는 역슬래시가 없을까? (폰트 문제)</li>
+<li>폴더 구분자를 쓸 때 왜 역슬래시를 두 번 표기해야할까?</li>
+<li>폴더 구분자를 쓸 때 왜 역슬래시 대신 슬래시를 쓸까?</li>
+</ul>
+</li>
+<li>사용자(user)의 홈디렉토리(home directory)에 대한 개념을 익히자<ul>
+<li>보통 사용자가 "lucypark"라면 윈도우에서 홈디렉토리는 <code>C:\Users\lucypark</code>. 맥이나 리눅스에서는 <code>~/</code></li>
+<li>다른 OS를 한번쯤 써보면 금세 익힐 수 있게 된다!</li>
+</ul>
+</li>
+<li>탐색기(Explorer) 설정 변경<br>
+<img src="images/windows.png" width="700px"></li>
+</ol>
+<p>"파일 확장명 숨기기" 선택 해제를 하고 나면 다음과 같이 된다.
+파일이 확장자(extension)가 있는지, 없는지, 있다면 어떤 확장자인지 아는 것은 중요하다.
+확장자는 우리가, 그리고 컴퓨터가, 파일이 어떤 프로그램으로 실행할 수 있는지 알 수 있는 힌트이기 때문이다.</p>
+<p><img src="images/windows2.png" width="700px"></p>
+</li>
+</ol>
+<h3>그 밖의 유용한 참고자료</h3>
+<ul>
+<li>최성철, <a href="http://www.slideshare.net/blissray/w-37771905">산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 1: 파이썬 기초</a>, 2014.</li>
+<li>최성철, <a href="http://www.slideshare.net/blissray/w-part-2">산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 2: 파이썬 활용</a>, 2014.</li>
+</ul>
+
+    </div>
+    <div class="footnote">
+        <p>
+            Author:
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a href="http://dm.snu.ac.kr/~epark"><span itemprop="name">Lucy Park</span></a>
+            </span>
+        </p>
+        <p>
+            Category:
+            <span itemprop="articleSection">
+                <a href="http://lucypark.kr/courses/category/tips.html" rel="category">tips</a>
+            </span>
+        </p>
+    </div>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="center-block aw-bottom">
+            Built by <a href="http://dm.snu.ac.kr/~epark">Lucy Park</a>.<br>
+            Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
+ The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
+            </span>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+
+// add 'active' class to current menu
+$(function(){
+  if (document.location.hostname == "localhost") {
+    var idx = 1;
+    var activePage = location.pathname.split("/")[idx];
+  } else {
+    var idx = 4;
+    var activePage = location.href.split("/")[idx];
+  }
+  $('.nav li a').each(function() {
+    var currentPage = $(this).attr('href').split("/")[idx];
+    if (activePage == currentPage) {
+      $(this).parent().addClass('active');
+    }
+  });
+});
+</script>
+<script>
+    function hyphenate(str) {
+        return str.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s/g, '-');
+    }
+
+    String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
+
+    // create toc
+    var t = '';
+    var concat = '';
+    var headers = $('.article-body :header');
+    headers.each(function() {
+        var hyphenated = hyphenate($(this).text());
+            $(this).attr('id', hyphenated);
+        }
+    );
+    for (var i=0; i<headers.length; i++) {
+        depth = parseInt(headers[i].tagName.substr(-1));
+        if (depth < 4) {
+            t = headers[i].textContent;
+            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- <a href="#' + hyphenate(t) + '">' + t + '</a><br>';
+        }
+    }
+    $(".article-toc p").append(concat);
+
+    // scroll animation
+    $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 300, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+    }});
+</script>
+<script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>

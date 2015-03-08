@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Multiple linear regression — Courses</title>
-	<meta name="description" content="Title: Multiple linear regression; Date: 2015-03-13; Author: Lucy Park; Courseid: 2015-dm; Metainfo: ">
+	<title>Courses</title>
+	<meta name="description" content="Coding, scientific development, finance, data analysis, visualization, statistics, and machine learning">
 	<meta name="author" content="Lucy Park">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -28,57 +28,24 @@
 	</div>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
+        
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="article-header">
-        <h1 itemprop="name headline">Multiple linear regression</h1>
-		<time datetime="2015-03-13T09:00:00+01:00" itemprop="datePublished">Fri 13 March 2015</time>
-	</div>
-    <div class="article-toc"><b>Contents</b><p></p></div>
-    <div itemprop="articleBody" class="article-body">
-        <h4>공지사항</h4>
-<ol>
-<li>Assignment 제출방식 변경: 2015-dm@googlegroups.com -&gt; e-class</li>
-<li>Assignment 개수 변경: 4 -&gt; 3</li>
-<li>Project proposal 제출: 다음주 수요일(3/18)까지 e-class로</li>
-<li>Project team 구성: 다음주 수요일(3/18)까지 e-class로</li>
-<li>수업 시간 변경: 09:00 -&gt; 09:30<ul>
-<li>저는 9시까지 올 것이니 질문 있으신 분들은 미리 와주세요</li>
-<li>9시 반에 출석 부르고 바로 수업 시작할 것</li>
-</ul>
-</li>
-</ol>
-<h2>Simple linear regression</h2>
-<ul>
-<li>$x$: 독립변수</li>
-<li>$y$: 종속변수</li>
-<li>$a, b$: 파라미터</li>
-</ul>
-<p>$$y = ax + b$$</p>
-<h2>Multiple linear regression</h2>
-<ul>
-<li>$X$: 독립변수들</li>
-<li>$y$: 종속변수</li>
-<li>$A, b$: 파라미터</li>
-</ul>
-<p>$$y = AX + b$$</p>
-
-    </div>
-    <div class="footnote">
-        <p>
-            Author:
-            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <a href="http://dm.snu.ac.kr/~epark"><span itemprop="name">Lucy Park</span></a>
-            </span>
-        </p>
-        <p>
-            Category:
-            <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
-            </span>
-        </p>
-    </div>
+	<a href="http://lucypark.kr/courses/2015-dm/index.html">
+		<h2 itemprop="name headline">Data Mining (Spring 2015)</h2>
+	</a>
+	<div class="summary"><p>Junior level Data Mining course at Seoul National University of Science &amp; Technology.</p></div>
 </div>
-		</div>
+ <div class="pagination">
+<ul>
+    <li class="prev"><a href="http://lucypark.kr/courses/index.html">&larr; Previous</a></li>
+
+    <li class=""><a href="http://lucypark.kr/courses/index.html">1</a></li>
+    <li class="active"><a href="http://lucypark.kr/courses/index2.html">2</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div> 		</div>
 	</div> 	<!-- <hr> -->
 </div> <!-- /container -->
 <footer class="aw-footer bg-danger">
@@ -129,56 +96,6 @@ $(function(){
     }
   });
 });
-</script>
-<script>
-    function hyphenate(str) {
-        return str.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s/g, '-');
-    }
-
-    String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
-
-    // create toc
-    var t = '';
-    var concat = '';
-    var headers = $('.article-body :header');
-    headers.each(function() {
-        var hyphenated = hyphenate($(this).text());
-            $(this).attr('id', hyphenated);
-        }
-    );
-    for (var i=0; i<headers.length; i++) {
-        depth = parseInt(headers[i].tagName.substr(-1));
-        if (depth < 4) {
-            t = headers[i].textContent;
-            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- <a href="#' + hyphenate(t) + '">' + t + '</a><br>';
-        }
-    }
-    $(".article-toc p").append(concat);
-
-    // scroll animation
-    $(document).ready(function(){
-        $('a[href^="#"]').on('click',function (e) {
-            e.preventDefault();
-
-            var target = this.hash;
-            var $target = $(target);
-
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
-            }, 300, 'swing', function () {
-                window.location.hash = target;
-            });
-        });
-    });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
-    }});
-</script>
-<script type="text/javascript"
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </body>
 </html>
