@@ -10,29 +10,26 @@ Toc: True
 
 - Eunjeong (Lucy) Park
 - [PhDc for data mining](http://dm.snu.ac.kr/~epark) at Seoul National University
-- You can call me ["Ms. Park"](http://www.phdcomics.com/comics/archive.php?comicid=1153)
-    - Normally to professors, using "Dr." is a better idea
 - a.k.a., [lucypark](http://lucypark.kr), [echojuliett](http://twitter.com/echojuliett), [e9t](http://github.com/e9t)
 
 ## Course logistics
 
 - Course objective: **Understanding data mining algorithms**
-- Course website: [http://lucypark.kr/courses/2015-dm](http://lucypark.kr/courses/2015-dm)
-    - Lecture notes
-    - Schedule/Announcements
-- Schedule: [http://lucypark.kr/courses/2015-dm/#schedule](http://lucypark.kr/courses/2015-dm/#schedule)
+- Course website
+    - Schedule/Lecture notes: [http://lucypark.kr/courses/2015-dm](http://lucypark.kr/courses/2015-dm)
+    - Everything else: [e-class](http://eclass.seoultech.ac.kr/)
 - Office hours
     - Right after every class
     - You are welcome to ask any kind of questions
-    - You are also encouraged to [book ahead](mailto:epark@dm.snu.ac.kr), or your meeting may have to be deferred to another time
+    - You are also encouraged to [book ahead](mailto:2015-dm@dm.snu.ac.kr), or your meeting may have to be deferred to another time
 - Grading
-    - Assignments (30%): Four graded assignments for you to submit online
+    - Assignments (30%): Three graded assignments for you to submit online
     - Final exam (30%): In-class exam covering the whole semester
     - Term project (40%): Group work solving a real world problem
 
 ### Assignments (30%)
 
-- Four graded take-home assignments for you to submit online
+- Three graded take-home assignments for you to submit online
 - Instead of taking a mid-term exam, we will have assignments for reviewing purposes
 - Assignments consist of a quiz and a programming task
     - Frankly, the quiz is not for assessment but for you to review and/or preview class materials
@@ -49,46 +46,46 @@ Toc: True
 
 ### Term Project (40%)
 
-#### Logistics
+#### Proposal (10/40)
+- Individual work
+- Submit 1 data mining project idea within 1 page (Due: 2015-03-18 23:59)
 
-- Proposal (10/40)
-    - Individual work
-    - Submit your ideas within 1 page
-    - Due: 2015-03-18 23:59
-- Progress presentation (15/40)
-    - Group work
+#### Progress presentation (15/40)
+1. Fix the team with a team leader at e-class (Due: 2015-03-18 23:59)
+1. Choose a topic (Due: 2015-03-29 23:59)
+    - Among your teammates' proposals, select one topic and conduct a project as a group
+    - You can also choose topics among [Kaggle](http://kaggle.com)
+1. Submitting slides (Due: 2015-04-30 23:59)
+    - Submit presentation slides to the e-class
+    - No page limits
+1. Presentation day (2015-05-01)
     - You will present your project progress in front of the class (Max. 10 min)
-    - You will also be grading your peers' work (Peer assessment)
+    - Peer assessment
+        - You will also be grading your peers' work on presentation day
         - You will be given three votes
-        - You can give one vote to three peers, or give all votes to one peer
-    - Due: 2015-04-30 23:59
-- Final report (15/40)
-    - Group work
-    - Present what you have done throughout the whole project
-    - 10+ pages in written text
-    - Due: 2015-06-14 23:59
+        - You can give one vote to three teams, or give all votes to one team
+    - Be brief yet clear
+    - A good presentation contains the following:
+        1. What questions you had
+        1. What approach you chose to alleviate such questions
+        1. What results you achieved
+        1. What questions you further got and what you plan to do next
+        1. Tricks and tips you want to share with the class
+    - Record the feedback
+        - One can make the slides
+        - Another can prepare for the presentation
+        - And another can do the presentation
+        - Yet another can take feedback notes
 
-#### Presentation guidelines
-1. Prepare printouts (for the whole class) or slides or whatever format that best conveys your work
-    - **Please share your materials to the forum before class**
-1. Be brief yet clear
-    - Note: [Clarity wins brevity](http://echojuliett.tumblr.com/post/32108001510/clarity-brevity)
-1. Record the feedback
-    - One can prepare for the presentation
-    - Another person can do the presentation
-    - And another can take feedback notes
-1. A good presentation contains the following:
-    1. What questions you had
-    1. What approach you chose to alleviate such questions
-    1. What results you achieved
-    1. What questions you further got and what you plan to do next
-    1. Tricks and tips you want to share with the class
-1. Extra credit will be given to those who submit and/or rank in an open tournament (ex: [Kaggle](http://kaggle.com))
+#### Final report (15/40)
+- Present what your group has done throughout the whole project in more than 10 pages (Due: 2015-06-14 23:59)
+- You will also be grading your teammates, based on their contributions
+- Extra credit will be given to those who submit and/or rank in an open tournament (ex: [Kaggle](http://kaggle.com))
 
 #### More advice on your projects
 
 1. The best topics are the topics you are actually interested in
-    - You should be able to "dogfood" your own analysis
+    - You should be able to "[dogfood](http://en.wikipedia.org/wiki/Eating_your_own_dog_food)" your own analysis
 1. Don't be afraid to shift the project's direction
     - However, shifting too much will give you less time for real work -- balance!
 1. Feel free to use project results in your graduation project or paper
@@ -103,11 +100,9 @@ Toc: True
 - Private questions: [2015-dm@dm.snu.ac.kr](mailto:2015-dm@dm.snu.ac.kr)
     - Personal questions and/or requests
     - Assignment submissions that regard privacy
-- Public questions: [2015-dm@googlegroups.com](mailto:2015-dm@googlegroups.com)
-    - This is the class forum
-    - Everything else you want to ask goes here
+- Public questions: Everything else you want to ask goes to e-class
     - Using any language of your choice (ex: English, Korean, Java, ...)
-    - Asking good questions at the class forum
+    - Asking good questions
         - Provide as much details as you can
         - However, be "brief" and "clear"
         - In case of programming questions, explicitly list versions of software being used (including packages and OSs)

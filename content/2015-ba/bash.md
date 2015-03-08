@@ -31,7 +31,7 @@ Toc: True
 - `/some/absolute/path`
 - `some/relative/path`
 
-![](http://book.soundonair.ru/hall1/images/3_39.jpg)
+<img src="http://book.soundonair.ru/hall1/images/3_39.jpg">
 
 ### Permissions
 

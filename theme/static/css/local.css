@@ -114,7 +114,7 @@ body {
     padding: 0;
 }
 
-table th, table td, table li {
+table th {
     text-transform: capitalize;
 }
 
@@ -142,6 +142,10 @@ table th, table td, table li {
 
 .center {
     text-align: center;
+}
+
+.due-date {
+    background-color: linen;
 }
 
 .footnote {
