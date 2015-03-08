@@ -45,5 +45,6 @@ USE_FOLDER_AS_CATEGORY = True
 ARTICLE_URL = '{category}/{slug}.html'
 ARTICLE_SAVE_AS = ARTICLE_URL
 STATIC_PATHS = [p for p in os.listdir('./%s' % PATH) if not p.startswith('.')]
+DEFAULT_PAGINATION = 30     # 30 items in index page
 
 COURSES = ['2015-dm', '2015-ba']
