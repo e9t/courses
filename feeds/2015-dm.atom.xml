@@ -300,7 +300,7 @@ For discussions, please visit the class &lt;a href="http://eclass.seoultech.ac.k
 &lt;tr&gt;&lt;th&gt;date&lt;/th&gt;&lt;th&gt;lecture&lt;/th&gt;&lt;/tr&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;&lt;a href="course-introduction.html"&gt;Course introduction&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="data-mining.html"&gt;Data mining&lt;/a&gt;&lt;li&gt;Assignment 0 (Due: 3/11) + Project proposal (Due: 3/18)&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr class="due-date"&gt;&lt;td&gt;3/11&lt;/td&gt;&lt;td&gt;Due date: Assignment 0&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;지도학습 1: Multiple linear regression&lt;ul&gt;&lt;li&gt;&lt;a href="/tips/introduction-to-python.html"&gt;Introduction to Python&lt;/a&gt;&lt;li&gt;How to write a data mining proposal&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;지도학습 1: Multiple linear regression&lt;ul&gt;&lt;li&gt;&lt;a href="../tips/introduction-to-python.html"&gt;Introduction to Python&lt;/a&gt;&lt;li&gt;How to write a data mining proposal&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr class="due-date"&gt;&lt;td&gt;3/18&lt;/td&gt;&lt;td&gt;Due date: Project proposal, Fix project teams&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;지도학습 2: Logistic regression&lt;ul&gt;&lt;li&gt;Assignment 1 (Due: 4/2)&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;지도학습 3: Decision tree + k-NN&lt;/td&gt;&lt;/tr&gt;
