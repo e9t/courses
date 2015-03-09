@@ -106,10 +106,9 @@
 <img src="images/anaconda.png" width="600px"></li>
 </ul>
 </li>
-<li>파이썬 정식 배포판이 아니라 일반 회사의 사제 배포판을 사용하는 이유는?<ul>
-<li>Windows에서는 파이썬의 몇몇 패키지 설치가 어렵다는 풍문이 있다</li>
-<li>이를 극복하기 위해 <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">윈도우만을 위해 사전에 컴파일 된 패키지를 따로 제공하는 사람도 있다</a></li>
-<li>우리는 패키지 설치의 번거로움에서 벗어나기 위해 사전에 <a href="http://docs.continuum.io/anaconda/pkg-docs.html">195개의 패키지</a>가 한꺼번에 깔리는 배포판을 선택</li>
+<li>윈도우 32비트? 64비트?<ul>
+<li>아나콘다가 알아서 인식해서 잡아주겠지만, 궁금한 사람은 아래와 같이 내 컴퓨터의 속성 메뉴에서 나의 시스템 종류를 확인하자.<br>
+<img src="images/bit.png" width="600px"></li>
 </ul>
 </li>
 <li><a href="https://wiki.python.org/moin/Python2orPython3">Python 2 vs Python 3</a><ul>
@@ -122,17 +121,23 @@
 </li>
 </ul>
 </li>
+<li>파이썬 정식 배포판이 아니라 일반 회사의 사제 배포판을 사용하는 이유는?<ul>
+<li>Windows에서는 파이썬의 몇몇 패키지 설치가 어렵다는 풍문이 있다</li>
+<li>이를 극복하기 위해 <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">윈도우만을 위해 사전에 컴파일 된 패키지를 따로 제공하는 사람도 있다</a></li>
+<li>우리는 패키지 설치의 번거로움에서 벗어나기 위해 사전에 <a href="http://docs.continuum.io/anaconda/pkg-docs.html">195개의 패키지</a>가 한꺼번에 깔리는 배포판을 선택</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Install Anaconda<ul>
-<li>환경변수 설정은 아나콘다가 알아서 해줌<br>
+<li>고맙게도 파이썬 환경변수 설정은 아나콘다가 알아서 해줌<br>
 <img src="images/anaconda2.png" width="400px"></li>
 </ul>
 </li>
 <li>
 <p>Run Python!</p>
 <ul>
-<li>콘솔을 열어 <code>ipython</code>을 입력해서 파이썬 쉘을 열어보자.<br><ol>
+<li>콘솔을 열어 <code>ipython</code>을 입력해서 파이썬 쉘을 열어보자. 콘솔은 다음과 같이 열 수 있다:<br><ol>
 <li><code>window</code> + <code>r</code> 단축키를 이용해 실행창(Run)을 열고</li>
 <li><code>cmd</code>라고 입력한다.<br>
 <img src="images/cmd.png" width="400px">
@@ -185,24 +190,25 @@
 
 </li>
 <li>
-<p>파일을 바탕화면에 <code>test.py</code>라는 이름으로 저장하자. 다만 이 때 한 가지 유의할 점이 있다! 다음 그림과 같이 Encoding을 UTF-8로 변경해서 저장해줘야 한다. (그렇지 않으면 스크립트를 실행할 때 인코딩 에러가 발생할 것이다)<br>
+<p>파일을 바탕화면에 <code>test.py</code>라는 이름으로 저장하자. 다만 한 가지 유의할 점은, <strong>다음 그림과 같이 Encoding을 UTF-8로 변경해서 저장해줘야 한다.</strong> (그렇지 않으면 스크립트를 실행할 때 인코딩 에러가 발생할 것이다.)<br>
 <img src="images/encoding.png" width="500px"></p>
 </li>
 <li>그 다음에, 다시 콘솔을 열고</li>
 <li>
-<p>아래와 같이 입력하면 파이썬 파일이 실행된다. 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 <code>test.py</code> 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 GUI(graphic user interface)가 아니라 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!</p>
+<p>아래와 같이 입력하면 파이썬 파일이 실행된다. 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 <code>test.py</code> 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 마우스를 클릭하는 GUI(graphic user interface)가 아니라 키보드로 명령어를 입력하는 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!</p>
 <div class="highlight"><pre>cd Desktop
 python test.py
 </pre></div>
 
 
 <p>연습삼아, <code>test.py</code>의 내용을 바꿔가며 아래의 다양한 예시를 입력해보자.
-이미 Desktop 폴더로 이동한 상태이니 앞으로는 콘솔에 <code>python test.py</code>만 입력해서 코드를 실행하면 된다.
-각 예시는 이해를 돕기 위해 자바 1.7과 병렬적으로 배치해두었다.</p>
+이미 Desktop 폴더로 이동한 상태이니 <strong>앞으로는 콘솔에 <code>python test.py</code>만 입력해서 코드를 실행하면 된다.</strong>
+각 예시는 이해를 돕기 위해 자바 1.7의 코드와 병렬적으로 배치해두었다.</p>
 </li>
 </ol>
 <h4>예시 1: "Hello world"</h4>
-<p>앞에서 입력한 파이썬 코드와 아래의 자바 코드를 비교해보자.
+<p>앞에서 우리는 이미 파이썬 스크립트로 Hello world!를 출력하는데 성공했다.
+그렇다면 이번에는 그 코드와 다음의 자바 코드를 비교해보자.
 자바와 파이썬 코드에 어떤 차이점이 있는가?</p>
 <ul>
 <li>
@@ -222,14 +228,14 @@ python test.py
 <li><code>public static void main (String[] args) { ... }</code> 등과 같이 복잡하게 메인함수를 선언하지 않아도 된다.</li>
 <li>세미콜론(;)을 붙이지 않아도 된다.</li>
 </ul>
-<p>그리하여 파이썬으로는 무려 한 줄 만으로도 Hello world를 출력할 수 있다.</p>
+<p>그리하여 파이썬으로는 무려 한 줄 만으로 Hello world를 출력할 수 있다.</p>
 <h4>예시 2: 변수 선언</h4>
 <p>다음으로 변수를 선언해보자.
-아래 코드는 실행해도 출력(print)한 것이 없기 때문에 콘솔 창에 아무 것도 뜨지 않을 것이다.
-그래도 코드는 한 번 자세히 들여다보자.
-언급된 차이점들 외에도 크게 두 가지 차이점을 발견할 수 있다.</p>
-<p>첫째, 파이썬에서는 변수의 데이터 타입(type), 즉 String인지 int인지 등을 선언할 필요가 없다.이를 동적 타이핑(dynamic typing)이라고 하는데, 이는 변수의 데이터 타입이 고정되어 있지 않고 변할 수 있다는 말이다. 반면 자바에서는 변수의 데이터 타입을 미리 지정해줘야하고 한 번 지정하고 나면 변수의 타입은 바뀔 수 없다.</p>
-<p>둘째, 자바 코드에서는 변수를 선언할 때 <code>myString</code>과 같이 <a href="http://en.wikipedia.org/wiki/CamelCase">camelCase</a>를 사용하는데 반해 파이썬 코드에서는 <code>my_string</code>과 같이 <a href="http://en.wikipedia.org/wiki/Naming_convention_(programming)#Python_and_Ruby">under_score</a>를 사용한다. 파이썬의 스타일링에 관해서는 <a href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a>에 잘 나와 있다. 이 문서를 지금 당장 다 읽지 않더라도, 중요한 지침을 담고 있으니 반드시 이름은 기억해두자.</p>
+출력(print)하는 것이 없다면 변수를 선언하는 것만으로는 콘솔 창에 아무 것도 뜨지 않겠지만,
+변수 선언만으로도 중요한 차이점을 많이 발견할 수 있으니 코드는 한 번 자세히 들여다보자.
+이미 위에서 언급된 차이점들 외에도 크게 두 가지 차이점을 발견할 수 있다.</p>
+<p>첫째, 자바는 <a href="http://en.wikipedia.org/wiki/Type_system#Static_type-checking">정적 타이핑(static typing)</a>언어라 변수의 데이터 타입(type), 즉 String인지 int인지 등을 미리 지정해줘야하고, 한 번 지정하고 나면 변수의 타입은 바뀔 수 없다. 반면 파이썬은 <a href="http://en.wikipedia.org/wiki/Type_system#DYNAMIC">동적 타이핑(dynamic typing)</a> 언어라 변수의 데이터 타입(type) 선언할 필요도 없을 뿐더러 다른 것으로 바뀔 수 있다.</p>
+<p>둘째, 자바 코드에서는 변수를 선언할 때 <code>myString</code>과 같이 <a href="http://en.wikipedia.org/wiki/CamelCase">camelCase</a>를 사용하는데 반해 파이썬 코드에서는 <code>my_string</code>과 같이 <a href="http://en.wikipedia.org/wiki/Naming_convention_(programming)#Python_and_Ruby">under_score</a>를 사용한다. 파이썬의 스타일링에 관해서는 <a href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a>에 잘 나와 있다. 만일 파이썬 프로그래밍을 꾸준히 할 마음이 있다면 한 번쯤 훑어보자. 이 문서를 지금 당장 다 읽지 않더라도, 중요한 지침을 담고 있으니 반드시 이름은 기억해두는 것이 좋다.</p>
 <ul>
 <li>
 <p>Java 1.7 (static typed)</p>
