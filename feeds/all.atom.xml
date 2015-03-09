@@ -298,17 +298,26 @@ Some jokes about package managing:
 &lt;li&gt;
 &lt;p&gt;Run Python!&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;콘솔을 열어 &lt;code&gt;ipython&lt;/code&gt;을 입력해서 파이썬 쉘을 열어보자.&lt;/li&gt;
+&lt;li&gt;콘솔을 열어 &lt;code&gt;ipython&lt;/code&gt;을 입력해서 파이썬 쉘을 열어보자.&lt;br&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;window&lt;/code&gt; + &lt;code&gt;r&lt;/code&gt; 단축키를 이용해 실행창(Run)을 열고&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cmd&lt;/code&gt;라고 입력한다.&lt;br&gt;
+&lt;img src="images/cmd.png" width="400px"&gt;
+&lt;img src="images/ipython.png" width="500px"&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;파이썬 쉘이 열리면:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello world!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello world!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;Hello&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
-&lt;span class="mi"&gt;4&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
-&lt;span class="mf"&gt;0.3333333333333333&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;span class="mi"&gt;1024&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mf"&gt;0.3333333333333333&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;1024&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -320,16 +329,20 @@ Some jokes about package managing:
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;1.5단계: 파이썬 스크립트 실행&lt;/h3&gt;
-&lt;p&gt;위와 같이 파이썬을 쉘(shell)에서 실행하는 방법도 있지만,
-스크립트(script) 파일을 이용해서 파이썬을 실행할 수도 있다.&lt;/p&gt;
-&lt;p&gt;쉘은 순간적인 실행을 위해서는 아주 편리하지만,
-긴 프로그램을 짜고자 할 때, 또는 프로그램을 저장하고자 할 때는 적합하지 않다.&lt;/p&gt;
+&lt;p&gt;위와 같이 파이썬을 쉘(shell)에서 실행하는 것은 순간적인 실행을 위해서는 아주 편리하지만,
+긴 프로그램을 짜고자 할 때, 또는 프로그램을 저장하고자 할 때는 적합하지 않다.
+이럴 때는 스크립트(script) 파일을 이용해서 파이썬을 실행할 수도 있다.&lt;/p&gt;
 &lt;p&gt;또, 스크립트 파일 실행을 위해 PyCharm, Eclipse 등의 IDE를 활용할 수도 있지만,
 일단은 IDE없이 한 번 가보자.&lt;/p&gt;
 &lt;p&gt;먼저 프로그래밍의 기본! 파이썬 스크립트를 만들어 Hello world를 출력해볼까?
+이미 우리는 ipython으로 Hello world를 찍을 수 있지만
 다음의 몇 가지 절차를 거치면 IDE 없이도 파일을 이용해 파이썬 스크립트를 실행할 수 있다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;윈도우에서 메모장을 열고&lt;/li&gt;
+&lt;li&gt;윈도우에서 메모장을 열고&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;window&lt;/code&gt; + &lt;code&gt;r&lt;/code&gt; 단축키를 이용해 실행창(Run)을 열고&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;notepad&lt;/code&gt;라고 입력한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;다음의 헬로월드 출력문을 파일에 입력한 후 (또는 다른 파이썬 코드를 입력해도 좋다)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello world!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -338,28 +351,25 @@ Some jokes about package managing:
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;파일을 바탕화면에 &lt;code&gt;test.py&lt;/code&gt;라는 이름으로 저장하자.&lt;/p&gt;
+&lt;p&gt;파일을 바탕화면에 &lt;code&gt;test.py&lt;/code&gt;라는 이름으로 저장하자. 다만 이 때 한 가지 유의할 점이 있다! 다음 그림과 같이 Encoding을 UTF-8로 변경해서 저장해줘야 한다. (그렇지 않으면 스크립트를 실행할 때 인코딩 에러가 발생할 것이다)&lt;br&gt;
+&lt;img src="images/encoding.png" width="500px"&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;그 다음에, 다시 콘솔을 열고&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;마지막으로, 콘솔을 열어 아래와 같이 입력하면 파이썬 파일이 실행된다. 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 &lt;code&gt;test.py&lt;/code&gt; 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 GUI(graphic user interface)가 아니라 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!&lt;/p&gt;
+&lt;p&gt;아래와 같이 입력하면 파이썬 파일이 실행된다. 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 &lt;code&gt;test.py&lt;/code&gt; 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 GUI(graphic user interface)가 아니라 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;cd Desktop
 python test.py
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;연습삼아, &lt;code&gt;test.py&lt;/code&gt;의 내용을 바꿔가며 아래의 다양한 예시를 입력해보자.
+이미 Desktop 폴더로 이동한 상태이니 앞으로는 콘솔에 &lt;code&gt;python test.py&lt;/code&gt;만 입력해서 코드를 실행하면 된다.
 각 예시는 이해를 돕기 위해 자바 1.7과 병렬적으로 배치해두었다.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4&gt;예시 1: "Hello world"&lt;/h4&gt;
 &lt;p&gt;앞에서 입력한 파이썬 코드와 아래의 자바 코드를 비교해보자.
 자바와 파이썬 코드에 어떤 차이점이 있는가?&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;먼저 자바 코드와는 달리 파이썬 코드에서는 &lt;code&gt;public class MyClass { ... }&lt;/code&gt; 등과 같이 클래스를 선언하지 않아도 된다.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;public static void main (String[] args) { ... }&lt;/code&gt; 등과 같이 복잡하게 메인함수를 선언하지 않아도 된다.&lt;/li&gt;
-&lt;li&gt;세미콜론(;)을 붙이지 않아도 된다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;그리하여 파이썬으로는 무려 한 줄 만으로도 Hello world를 출력할 수 있다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Java 1.7&lt;/p&gt;
@@ -373,21 +383,20 @@ python test.py
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Python 3&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello world&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;먼저 자바 코드와는 달리 파이썬 코드에서는 &lt;code&gt;public class MyClass { ... }&lt;/code&gt; 등과 같이 클래스를 선언하지 않아도 된다.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;public static void main (String[] args) { ... }&lt;/code&gt; 등과 같이 복잡하게 메인함수를 선언하지 않아도 된다.&lt;/li&gt;
+&lt;li&gt;세미콜론(;)을 붙이지 않아도 된다.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;그리하여 파이썬으로는 무려 한 줄 만으로도 Hello world를 출력할 수 있다.&lt;/p&gt;
 &lt;h4&gt;예시 2: 변수 선언&lt;/h4&gt;
-&lt;p&gt;변수를 선언해보자.
-아래 코드에서는 앞서 언급된 차이점들 외에도 크게 두 가지 차이점을 발견할 수 있다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;파이썬에서는 변수의 데이터 타입(type), 즉 String인지 int인지 등을 선언할 필요가 없다.이를 동적 타이핑(dynamic typing)이라고 하는데, 이는 변수의 데이터 타입이 고정되어 있지 않고 변할 수 있다는 말이다. 반면 자바에서는 변수의 데이터 타입을 미리 지정해줘야하고 한 번 지정하고 나면 변수의 타입은 바뀔 수 없다. &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;자바 코드에서는 변수를 선언할 때 &lt;code&gt;myString&lt;/code&gt;과 같이 &lt;a href="http://en.wikipedia.org/wiki/CamelCase"&gt;camelCase&lt;/a&gt;를 사용하는데 반해 파이썬 코드에서는 &lt;code&gt;my_string&lt;/code&gt;과 같이 &lt;a href="http://en.wikipedia.org/wiki/Naming_convention_(programming)#Python_and_Ruby"&gt;underscore&lt;/a&gt;를 사용한다. 파이썬의 스타일링에 관해서는 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP-8&lt;/a&gt;에 잘 나와 있다. 이 문서를 지금 당장 다 읽지 않더라도, 중요한 지침을 담고 있으니 반드시 이름은 기억해두자.&lt;/p&gt;
-&lt;/li&gt;
+&lt;p&gt;다음으로 변수를 선언해보자.
+아래 코드는 실행해도 출력(print)한 것이 없기 때문에 콘솔 창에 아무 것도 뜨지 않을 것이다.
+그래도 코드는 한 번 자세히 들여다보자.
+언급된 차이점들 외에도 크게 두 가지 차이점을 발견할 수 있다.&lt;/p&gt;
+&lt;p&gt;첫째, 파이썬에서는 변수의 데이터 타입(type), 즉 String인지 int인지 등을 선언할 필요가 없다.이를 동적 타이핑(dynamic typing)이라고 하는데, 이는 변수의 데이터 타입이 고정되어 있지 않고 변할 수 있다는 말이다. 반면 자바에서는 변수의 데이터 타입을 미리 지정해줘야하고 한 번 지정하고 나면 변수의 타입은 바뀔 수 없다.&lt;/p&gt;
+&lt;p&gt;둘째, 자바 코드에서는 변수를 선언할 때 &lt;code&gt;myString&lt;/code&gt;과 같이 &lt;a href="http://en.wikipedia.org/wiki/CamelCase"&gt;camelCase&lt;/a&gt;를 사용하는데 반해 파이썬 코드에서는 &lt;code&gt;my_string&lt;/code&gt;과 같이 &lt;a href="http://en.wikipedia.org/wiki/Naming_convention_(programming)#Python_and_Ruby"&gt;under_score&lt;/a&gt;를 사용한다. 파이썬의 스타일링에 관해서는 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP-8&lt;/a&gt;에 잘 나와 있다. 이 문서를 지금 당장 다 읽지 않더라도, 중요한 지침을 담고 있으니 반드시 이름은 기억해두자.&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Java 1.7 (static typed)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;myString&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;this is a string&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
@@ -402,7 +411,7 @@ python test.py
 
 
 &lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h4&gt;예시 3: 파일 쓰기 (writing)&lt;/h4&gt;
 &lt;p&gt;아래는 &lt;code&gt;some_file.txt&lt;/code&gt;에 "Hello world full of data!"라는 문자열을 입력하는 코드이다.
 자바에서 파일 입출력(I/O)은 생각만큼 간단하지 않지만, 파이썬에서는 코드도 무척 간단하게 읽힌다.
@@ -468,7 +477,7 @@ python test.py
             &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;everything&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
         &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="k"&gt;finally&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
             &lt;span class="n"&gt;br&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;close&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
-        &lt;span class="o"&gt;}&lt;/span&gt;   
+        &lt;span class="o"&gt;}&lt;/span&gt;
     &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -479,7 +488,7 @@ python test.py
 &lt;p&gt;Python 3&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;some_file.txt&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;r&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -488,6 +497,13 @@ python test.py
 &lt;h4&gt;예시 5: HashMap 또는 Dictionary&lt;/h4&gt;
 &lt;p&gt;Key와 value로 이루어진 데이터 타입을 자바에서는 HashMap, 파이썬에서는 &lt;a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries"&gt;dictionary&lt;/a&gt;라고 부른다.
 Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 점이 독특하며, Dict에 대한 상급 활용법은 &lt;a href="https://speakerdeck.com/jongman/2014-pycon-kr-widaehan-dict-ihaehago-sayonghagi"&gt;이 곳&lt;/a&gt;에서 볼 수 있다.&lt;/p&gt;
+&lt;p&gt;아래 파이썬 코드의 상단에 &lt;code&gt;# -*- coding: utf-8 -*-&lt;/code&gt;이라는 특이한 줄이 생긴 것을 볼 수 있다.
+이 줄은 &lt;a href="https://www.python.org/dev/peps/pep-0263/"&gt;PEP 263&lt;/a&gt;에 의해 제안된 것으로,
+프로그램 상으로는 역할을 하지 않지만 코드에 영문 알파벳 등 기본적인 ASCII 문자 외에 다른 문자가 코드에 있는 경우 반드시 필요한 줄이다.
+우리는 앞서 파일을 UTF-8으로 인코딩하여 저장했으므로, 파일이 utf-8로 되어 있다고 선언한다.
+만일 앞에서 파일을 UTF-8으로 저장하지 않았다면, 윈도우의 시스템 인코딩인 cp949로 선언해야 인코딩 에러를 피할 수 있을 것이다.
+(만일 cp949로 선언해도 인코딩 에러가 발생한다면, 콘솔에서 chcp를 입력하여 내가 어떤 코드 페이지를 사용하고 있는지 확인하자.)
+우리는 가급적이면 OS간 호환성을 위해 항상 UTF-8로 파일을 저장하는 것을 습관화하자.&lt;/p&gt;
 &lt;p&gt;마지막으로, 아래 예시에서는 자바와 파이썬이 주석을 쓰는 문법도 다르다는 점을 보여준다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -520,7 +536,9 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Python 3&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# create dictionary&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+
+&lt;span class="c"&gt;# create dictionary&lt;/span&gt;
 &lt;span class="n"&gt;student_ids&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;홍길동&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;13083301&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                &lt;span class="s"&gt;&amp;quot;김미자&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;11030104&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                &lt;span class="s"&gt;&amp;quot;박은정&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;11121994&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
@@ -595,26 +613,26 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
     &lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="nf"&gt;Animal&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
         &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-    &lt;span class="o"&gt;}&lt;/span&gt;   
+    &lt;span class="o"&gt;}&lt;/span&gt;
     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;saySomething&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
         &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;I am a &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-    &lt;span class="o"&gt;}&lt;/span&gt;   
+    &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;span class="o"&gt;}&lt;/span&gt;
 
 &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Dog&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;Animal&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="nf"&gt;Dog&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
         &lt;span class="kd"&gt;super&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-    &lt;span class="o"&gt;}&lt;/span&gt;   
+    &lt;span class="o"&gt;}&lt;/span&gt;
     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;saySomething&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
         &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;I am a &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;. Bark, bark!&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-    &lt;span class="o"&gt;}&lt;/span&gt;   
+    &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;span class="o"&gt;}&lt;/span&gt;
 
 &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ClassTest&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
         &lt;span class="n"&gt;Dog&lt;/span&gt; &lt;span class="n"&gt;dog&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Dog&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Chiwawa&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
         &lt;span class="n"&gt;dog&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;saySomething&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
-    &lt;span class="o"&gt;}&lt;/span&gt;   
+    &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 

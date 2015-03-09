@@ -132,17 +132,26 @@
 <li>
 <p>Run Python!</p>
 <ul>
-<li>콘솔을 열어 <code>ipython</code>을 입력해서 파이썬 쉘을 열어보자.</li>
+<li>콘솔을 열어 <code>ipython</code>을 입력해서 파이썬 쉘을 열어보자.<br><ol>
+<li><code>window</code> + <code>r</code> 단축키를 이용해 실행창(Run)을 열고</li>
+<li><code>cmd</code>라고 입력한다.<br>
+<img src="images/cmd.png" width="400px">
+<img src="images/ipython.png" width="500px"></li>
+</ol>
+</li>
 <li>
 <p>파이썬 쉘이 열리면:</p>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">)</span>
 <span class="n">Hello</span> <span class="n">world</span><span class="err">!</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">+</span><span class="mi">3</span>
-<span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span>
-<span class="mf">0.3333333333333333</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
-<span class="mi">1024</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="mi">1</span><span class="o">+</span><span class="mi">3</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="mi">4</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="mf">0.3333333333333333</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="mi">1024</span>
 </pre></div>
 
 
@@ -154,16 +163,20 @@
 </li>
 </ol>
 <h3>1.5단계: 파이썬 스크립트 실행</h3>
-<p>위와 같이 파이썬을 쉘(shell)에서 실행하는 방법도 있지만,
-스크립트(script) 파일을 이용해서 파이썬을 실행할 수도 있다.</p>
-<p>쉘은 순간적인 실행을 위해서는 아주 편리하지만,
-긴 프로그램을 짜고자 할 때, 또는 프로그램을 저장하고자 할 때는 적합하지 않다.</p>
+<p>위와 같이 파이썬을 쉘(shell)에서 실행하는 것은 순간적인 실행을 위해서는 아주 편리하지만,
+긴 프로그램을 짜고자 할 때, 또는 프로그램을 저장하고자 할 때는 적합하지 않다.
+이럴 때는 스크립트(script) 파일을 이용해서 파이썬을 실행할 수도 있다.</p>
 <p>또, 스크립트 파일 실행을 위해 PyCharm, Eclipse 등의 IDE를 활용할 수도 있지만,
 일단은 IDE없이 한 번 가보자.</p>
 <p>먼저 프로그래밍의 기본! 파이썬 스크립트를 만들어 Hello world를 출력해볼까?
+이미 우리는 ipython으로 Hello world를 찍을 수 있지만
 다음의 몇 가지 절차를 거치면 IDE 없이도 파일을 이용해 파이썬 스크립트를 실행할 수 있다.</p>
 <ol>
-<li>윈도우에서 메모장을 열고</li>
+<li>윈도우에서 메모장을 열고<ol>
+<li><code>window</code> + <code>r</code> 단축키를 이용해 실행창(Run)을 열고</li>
+<li><code>notepad</code>라고 입력한다.</li>
+</ol>
+</li>
 <li>
 <p>다음의 헬로월드 출력문을 파일에 입력한 후 (또는 다른 파이썬 코드를 입력해도 좋다)</p>
 <div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">)</span>
@@ -172,28 +185,25 @@
 
 </li>
 <li>
-<p>파일을 바탕화면에 <code>test.py</code>라는 이름으로 저장하자.</p>
+<p>파일을 바탕화면에 <code>test.py</code>라는 이름으로 저장하자. 다만 이 때 한 가지 유의할 점이 있다! 다음 그림과 같이 Encoding을 UTF-8로 변경해서 저장해줘야 한다. (그렇지 않으면 스크립트를 실행할 때 인코딩 에러가 발생할 것이다)<br>
+<img src="images/encoding.png" width="500px"></p>
 </li>
+<li>그 다음에, 다시 콘솔을 열고</li>
 <li>
-<p>마지막으로, 콘솔을 열어 아래와 같이 입력하면 파이썬 파일이 실행된다. 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 <code>test.py</code> 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 GUI(graphic user interface)가 아니라 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!</p>
+<p>아래와 같이 입력하면 파이썬 파일이 실행된다. 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 <code>test.py</code> 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 GUI(graphic user interface)가 아니라 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!</p>
 <div class="highlight"><pre>cd Desktop
 python test.py
 </pre></div>
 
 
 <p>연습삼아, <code>test.py</code>의 내용을 바꿔가며 아래의 다양한 예시를 입력해보자.
+이미 Desktop 폴더로 이동한 상태이니 앞으로는 콘솔에 <code>python test.py</code>만 입력해서 코드를 실행하면 된다.
 각 예시는 이해를 돕기 위해 자바 1.7과 병렬적으로 배치해두었다.</p>
 </li>
 </ol>
 <h4>예시 1: "Hello world"</h4>
 <p>앞에서 입력한 파이썬 코드와 아래의 자바 코드를 비교해보자.
 자바와 파이썬 코드에 어떤 차이점이 있는가?</p>
-<ol>
-<li>먼저 자바 코드와는 달리 파이썬 코드에서는 <code>public class MyClass { ... }</code> 등과 같이 클래스를 선언하지 않아도 된다.</li>
-<li><code>public static void main (String[] args) { ... }</code> 등과 같이 복잡하게 메인함수를 선언하지 않아도 된다.</li>
-<li>세미콜론(;)을 붙이지 않아도 된다.</li>
-</ol>
-<p>그리하여 파이썬으로는 무려 한 줄 만으로도 Hello world를 출력할 수 있다.</p>
 <ul>
 <li>
 <p>Java 1.7</p>
@@ -207,21 +217,20 @@ python test.py
 
 </li>
 <li>
-<p>Python 3</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">)</span>
-</pre></div>
-
-
+<p>먼저 자바 코드와는 달리 파이썬 코드에서는 <code>public class MyClass { ... }</code> 등과 같이 클래스를 선언하지 않아도 된다.</p>
 </li>
+<li><code>public static void main (String[] args) { ... }</code> 등과 같이 복잡하게 메인함수를 선언하지 않아도 된다.</li>
+<li>세미콜론(;)을 붙이지 않아도 된다.</li>
 </ul>
+<p>그리하여 파이썬으로는 무려 한 줄 만으로도 Hello world를 출력할 수 있다.</p>
 <h4>예시 2: 변수 선언</h4>
-<p>변수를 선언해보자.
-아래 코드에서는 앞서 언급된 차이점들 외에도 크게 두 가지 차이점을 발견할 수 있다.</p>
-<ol>
-<li>파이썬에서는 변수의 데이터 타입(type), 즉 String인지 int인지 등을 선언할 필요가 없다.이를 동적 타이핑(dynamic typing)이라고 하는데, 이는 변수의 데이터 타입이 고정되어 있지 않고 변할 수 있다는 말이다. 반면 자바에서는 변수의 데이터 타입을 미리 지정해줘야하고 한 번 지정하고 나면 변수의 타입은 바뀔 수 없다. </li>
-<li>
-<p>자바 코드에서는 변수를 선언할 때 <code>myString</code>과 같이 <a href="http://en.wikipedia.org/wiki/CamelCase">camelCase</a>를 사용하는데 반해 파이썬 코드에서는 <code>my_string</code>과 같이 <a href="http://en.wikipedia.org/wiki/Naming_convention_(programming)#Python_and_Ruby">underscore</a>를 사용한다. 파이썬의 스타일링에 관해서는 <a href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a>에 잘 나와 있다. 이 문서를 지금 당장 다 읽지 않더라도, 중요한 지침을 담고 있으니 반드시 이름은 기억해두자.</p>
-</li>
+<p>다음으로 변수를 선언해보자.
+아래 코드는 실행해도 출력(print)한 것이 없기 때문에 콘솔 창에 아무 것도 뜨지 않을 것이다.
+그래도 코드는 한 번 자세히 들여다보자.
+언급된 차이점들 외에도 크게 두 가지 차이점을 발견할 수 있다.</p>
+<p>첫째, 파이썬에서는 변수의 데이터 타입(type), 즉 String인지 int인지 등을 선언할 필요가 없다.이를 동적 타이핑(dynamic typing)이라고 하는데, 이는 변수의 데이터 타입이 고정되어 있지 않고 변할 수 있다는 말이다. 반면 자바에서는 변수의 데이터 타입을 미리 지정해줘야하고 한 번 지정하고 나면 변수의 타입은 바뀔 수 없다.</p>
+<p>둘째, 자바 코드에서는 변수를 선언할 때 <code>myString</code>과 같이 <a href="http://en.wikipedia.org/wiki/CamelCase">camelCase</a>를 사용하는데 반해 파이썬 코드에서는 <code>my_string</code>과 같이 <a href="http://en.wikipedia.org/wiki/Naming_convention_(programming)#Python_and_Ruby">under_score</a>를 사용한다. 파이썬의 스타일링에 관해서는 <a href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a>에 잘 나와 있다. 이 문서를 지금 당장 다 읽지 않더라도, 중요한 지침을 담고 있으니 반드시 이름은 기억해두자.</p>
+<ul>
 <li>
 <p>Java 1.7 (static typed)</p>
 <div class="highlight"><pre><span class="n">String</span> <span class="n">myString</span> <span class="o">=</span> <span class="s">&quot;this is a string&quot;</span><span class="o">;</span>
@@ -236,7 +245,7 @@ python test.py
 
 
 </li>
-</ol>
+</ul>
 <h4>예시 3: 파일 쓰기 (writing)</h4>
 <p>아래는 <code>some_file.txt</code>에 "Hello world full of data!"라는 문자열을 입력하는 코드이다.
 자바에서 파일 입출력(I/O)은 생각만큼 간단하지 않지만, 파이썬에서는 코드도 무척 간단하게 읽힌다.
@@ -302,7 +311,7 @@ python test.py
             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">everything</span><span class="o">);</span>
         <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
             <span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="o">}</span>   
+        <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
@@ -313,7 +322,7 @@ python test.py
 <p>Python 3</p>
 <div class="highlight"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;some_file.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="k">print</span> <span class="n">d</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 
 
@@ -322,6 +331,13 @@ python test.py
 <h4>예시 5: HashMap 또는 Dictionary</h4>
 <p>Key와 value로 이루어진 데이터 타입을 자바에서는 HashMap, 파이썬에서는 <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">dictionary</a>라고 부른다.
 Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 점이 독특하며, Dict에 대한 상급 활용법은 <a href="https://speakerdeck.com/jongman/2014-pycon-kr-widaehan-dict-ihaehago-sayonghagi">이 곳</a>에서 볼 수 있다.</p>
+<p>아래 파이썬 코드의 상단에 <code># -*- coding: utf-8 -*-</code>이라는 특이한 줄이 생긴 것을 볼 수 있다.
+이 줄은 <a href="https://www.python.org/dev/peps/pep-0263/">PEP 263</a>에 의해 제안된 것으로,
+프로그램 상으로는 역할을 하지 않지만 코드에 영문 알파벳 등 기본적인 ASCII 문자 외에 다른 문자가 코드에 있는 경우 반드시 필요한 줄이다.
+우리는 앞서 파일을 UTF-8으로 인코딩하여 저장했으므로, 파일이 utf-8로 되어 있다고 선언한다.
+만일 앞에서 파일을 UTF-8으로 저장하지 않았다면, 윈도우의 시스템 인코딩인 cp949로 선언해야 인코딩 에러를 피할 수 있을 것이다.
+(만일 cp949로 선언해도 인코딩 에러가 발생한다면, 콘솔에서 chcp를 입력하여 내가 어떤 코드 페이지를 사용하고 있는지 확인하자.)
+우리는 가급적이면 OS간 호환성을 위해 항상 UTF-8로 파일을 저장하는 것을 습관화하자.</p>
 <p>마지막으로, 아래 예시에서는 자바와 파이썬이 주석을 쓰는 문법도 다르다는 점을 보여준다.</p>
 <ul>
 <li>
@@ -354,7 +370,9 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 </li>
 <li>
 <p>Python 3</p>
-<div class="highlight"><pre><span class="c"># create dictionary</span>
+<div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="c"># create dictionary</span>
 <span class="n">student_ids</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;홍길동&quot;</span><span class="p">:</span> <span class="s">&quot;13083301&quot;</span><span class="p">,</span>
                <span class="s">&quot;김미자&quot;</span><span class="p">:</span> <span class="s">&quot;11030104&quot;</span><span class="p">,</span>
                <span class="s">&quot;박은정&quot;</span><span class="p">:</span> <span class="s">&quot;11121994&quot;</span> <span class="p">}</span>
@@ -429,26 +447,26 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
     <span class="kd">protected</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
     <span class="kd">public</span> <span class="nf">Animal</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-    <span class="o">}</span>   
+    <span class="o">}</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">saySomething</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;I am a &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span><span class="o">);</span>
-    <span class="o">}</span>   
+    <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="nf">Dog</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
-    <span class="o">}</span>   
+    <span class="o">}</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">saySomething</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;I am a &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;. Bark, bark!&quot;</span><span class="o">);</span>
-    <span class="o">}</span>   
+    <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClassTest</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">Dog</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="s">&quot;Chiwawa&quot;</span><span class="o">);</span>
         <span class="n">dog</span><span class="o">.</span><span class="na">saySomething</span><span class="o">();</span>
-    <span class="o">}</span>   
+    <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
 
