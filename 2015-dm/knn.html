@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>k-NN — Courses</title>
+	<meta name="description" content="Title: k-NN; Date: 2015-03-09; Author: Lucy Park; Courseid: ; Metainfo: ">
+	<meta name="author" content="Lucy Park">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<![endif]-->
+	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
+	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+        </ul>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="article-header">
+        <h1 itemprop="name headline">k-NN</h1>
+		<time datetime="2015-03-09T21:55:00+01:00" itemprop="datePublished">Mon 09 March 2015</time>
+	</div>
+    <div itemprop="articleBody" class="article-body">
+        <h2>k-NN</h2>
+<ul>
+<li>k-NN?</li>
+<li>k-Nearest Neighbors?</li>
+<li>k개의 가까운 이웃?</li>
+<li>아이디어: 내 주변의 이웃 k개를 봐서 내가 어떤 값을 가질지 투표하자!</li>
+</ul>
+<p><img src="http://www.google.co.kr/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=0CAgQjRw&url=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FK-nearest_neighbors_algorithm&ei=qpj9VLysDpa48gWm_ICwBA&psig=AFQjCNHynUZvcUaYRxIAPILc9ZlKegbEkw&ust=1425992234365421" width="400px"></p>
+<p>k-NN에서 가장 중요한 문제: 두 점 사이의 거리가 가까운지 먼지 어떻게 판단할 것인가? (distance를 정의하는 문제)</p>
+<p>코드 출처: http://scikit-learn.org/stable/auto_examples/neighbors/plot_classification.html#example-neighbors-plot-classification-py</p>
+<ol>
+<li>
+<p>데이터 입력하기</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>   <span class="c"># take the first two features</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>파라미터 설정하기</p>
+<div class="highlight"><pre>k = 15
+weights = &#39;uniform&#39;     # uniform, distance 중 택일
+algorihtm = &#39;auto&#39;      # ball_tree, kd_tree, brute 중 택일
+</pre></div>
+
+
+</li>
+<li>
+<p>Train</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">neighbors</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">neighbors</span><span class="o">.</span><span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">algorithm</span><span class="p">)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Plot</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">ListedColormap</span>
+<span class="n">cmap_light</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s">&#39;#FFAAAA&#39;</span><span class="p">,</span> <span class="s">&#39;#AAFFAA&#39;</span><span class="p">,</span> <span class="s">&#39;#AAAAFF&#39;</span><span class="p">])</span>
+<span class="n">cmap_bold</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s">&#39;#FF0000&#39;</span><span class="p">,</span> <span class="s">&#39;#00FF00&#39;</span><span class="p">,</span> <span class="s">&#39;#0000FF&#39;</span><span class="p">])</span>
+
+<span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="kp">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="kp">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="kp">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="kp">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="o">.</span><span class="mo">02</span> <span class="c"># step size in the mesh</span>
+
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="kp">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span>
+                     <span class="n">np</span><span class="o">.</span><span class="kp">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="kp">c_</span><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="kp">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="kp">ravel</span><span class="p">()])</span>
+
+<span class="c"># Put the result into a color plot</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="kp">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="kp">shape</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap_light</span><span class="p">)</span>
+
+<span class="c"># Plot also the training points</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap_bold</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="kp">min</span><span class="p">(),</span> <span class="n">xx</span><span class="o">.</span><span class="kp">max</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">yy</span><span class="o">.</span><span class="kp">min</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="kp">max</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+
+</li>
+</ol>
+
+    </div>
+    <div class="footnote">
+        <p>
+            Author:
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a href="http://dm.snu.ac.kr/~epark"><span itemprop="name">Lucy Park</span></a>
+            </span>
+        </p>
+        <p>
+            Category:
+            <span itemprop="articleSection">
+                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
+            </span>
+        </p>
+    </div>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="center-block aw-bottom">
+            Built by <a href="http://dm.snu.ac.kr/~epark">Lucy Park</a>.<br>
+            Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
+ The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
+            </span>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+
+// add 'active' class to current menu
+$(function(){
+  if (document.location.hostname == "localhost") {
+    var idx = 1;
+    var activePage = location.pathname.split("/")[idx];
+  } else {
+    var idx = 4;
+    var activePage = location.href.split("/")[idx];
+  }
+  $('.nav li a').each(function() {
+    var currentPage = $(this).attr('href').split("/")[idx];
+    if (activePage == currentPage) {
+      $(this).parent().addClass('active');
+    }
+  });
+});
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+    }});
+</script>
+<script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
