@@ -204,7 +204,7 @@ Some jokes about package managing:
 &lt;/ol&gt;</summary></entry><entry><title>파이썬 프로그래밍을 위한 Sublime Text</title><link href="http://lucypark.kr/courses/tips/sublime-text.html" rel="alternate"></link><updated>2015-03-09T13:26:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-09:courses/tips/sublime-text.html</id><summary type="html">&lt;h2&gt;Installation&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Sublime Text 설치&lt;br&gt;
-&lt;a href="http://sublimetext.com"&gt;&lt;img alt="" src="images/sublime.png" /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;a href="http://sublimetext.com"&gt;&lt;img alt="sublime" src="images/sublime.png" /&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://packagecontrol.io/installation#st2"&gt;Sublime Text 패키지 매니저&lt;/a&gt; 설치&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
@@ -237,7 +237,7 @@ Some jokes about package managing:
 &lt;li&gt;방법 2. Install the &lt;strong&gt;Origami&lt;/strong&gt; package (훨씬 다양하게 pane을 나눠 쓸 수 있음)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;SublimeREPL: Python REPL in Sublime&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="" src="images/repl.png" /&gt;&lt;/p&gt;</summary></entry><entry><title>Introduction to Python</title><link href="http://lucypark.kr/courses/tips/introduction-to-python.html" rel="alternate"></link><updated>2015-03-08T18:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-08:courses/tips/introduction-to-python.html</id><summary type="html">&lt;h2&gt;들어가기 전에&lt;/h2&gt;
+&lt;p&gt;&lt;img src="images/repl.png" width="500px"&gt;&lt;/p&gt;</summary></entry><entry><title>Introduction to Python</title><link href="http://lucypark.kr/courses/tips/introduction-to-python.html" rel="alternate"></link><updated>2015-03-08T18:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-08:courses/tips/introduction-to-python.html</id><summary type="html">&lt;h2&gt;들어가기 전에&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;운영체제(OS)란?&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://ko.wikipedia.org/wiki/%EC%9A%B4%EC%98%81_%EC%B2%B4%EC%A0%9C"&gt;"시스템 하드웨어와 소프트웨어를 실행하기 위한 시스템 소프트웨어"&lt;/a&gt;&lt;ul&gt;
