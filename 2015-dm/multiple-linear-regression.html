@@ -47,7 +47,10 @@
 </ul>
 </li>
 </ol>
-<h2>Supervised learning vs. Unsupervised learning</h2>
+<h2>Data mining process</h2>
+<p><img src="http://image.slidesharecdn.com/20121102seminar-121102055512-phpapp01/95/introduction-to-data-mining-for-newbies-11-1024.jpg?cb=1351855294" width="500px">
+<img src="http://image.slidesharecdn.com/20121102seminar-121102055512-phpapp01/95/introduction-to-data-mining-for-newbies-13-1024.jpg?cb=1351855294" width="500px">
+<img src="http://image.slidesharecdn.com/20121102seminar-121102055512-phpapp01/95/introduction-to-data-mining-for-newbies-15-1024.jpg?cb=1351855294" width="500px"></p>
 <h2>Simple linear regression</h2>
 <ul>
 <li>$x$: 독립변수</li>
@@ -55,13 +58,97 @@
 <li>$a, b$: 파라미터</li>
 </ul>
 <p>$$y = ax + b$$</p>
-<h2>Multiple linear regression</h2>
+<h2>Multiple linear regression (MLR)</h2>
 <ul>
 <li>$X$: 독립변수들</li>
 <li>$y$: 종속변수</li>
 <li>$A, b$: 파라미터</li>
 </ul>
 <p>$$y = AX + b$$</p>
+<h3>MLR in Python</h3>
+<ol>
+<li>
+<p>데이터 import 하기</p>
+<ul>
+<li>먼저 파이썬에서 MLR을 시행하기 위해서 <a href="http://scikit-learn.org/">scikit-learn</a> 패키지를 사용해보자.</li>
+<li>보통은 데이터를 어디선가 다운로드 받고, 정제한 후 읽어들어야겠지만, scikit-learn 패키지에 이미 몇 가지 데이터셋이 준비되어 있으니 그 중 한 가지인 diabetes(당뇨병) 데이터셋을 써보자.</li>
+<li>
+<p>파이썬에서 패키지를 사용하기 위해서는 <code>import some_package</code>을 입력하면 되고, 하나의 큰 패키지에서 일부만을 사용할 때는 <code>from some_package import a_subpackage</code>를 입력하면 된다.
+우리는 먼저 scikit-learn의 일부인 <code>dataset</code> subpackage 사용할 것이니 <code>from sklearn import datasets</code>를 하고, 데이터를 로딩해보자.</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>우리가 다른 곳에서 (ex: <a href="http://archive.ics.uci.edu/ml/">UCI Datasets</a>) 데이터를 다운로드 받았다면 별도의 전처리 과정을 거쳐야했겠지만 친절하게도 scikit-learn은 데이터를 이미 전처리해서 data (X), target (y)로 나누어 놓았다. 이를 각각 <code>X</code>, <code>y</code>에 넣어보자.</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>  <span class="c"># returns [&#39;target&#39;, &#39;data&#39;]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;target&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+</li>
+</ul>
+</li>
+<li>
+<p>데이터 탐색: 다른 작업을 진행하기 이전에 X, y 데이터에 대한 탐색을 해보자.</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>      <span class="c"># returns (442, 10)</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Simple linear regression</p>
+<ul>
+<li>
+<p>먼저 하나의 변수를 정해 simple linear regression부터 해보자.</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>변수를 선택하고 나면 X2, y를 각각 training set, validation set으로 나눈다. 현재 데이터의 개수가 442개이므로 validation set을 약 10%인 40개로 한다.</p>
+<div class="highlight"><pre><span class="n">X2_train</span><span class="p">,</span> <span class="n">X2_test</span> <span class="o">=</span> <span class="n">X2</span><span class="p">[:</span><span class="o">-</span><span class="mi">40</span><span class="p">],</span> <span class="n">X2</span><span class="p">[</span><span class="o">-</span><span class="mi">40</span><span class="p">:]</span>
+<span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="o">-</span><span class="mi">40</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">40</span><span class="p">:]</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Train</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="n">linreg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">linreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c"># The coefficients</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Coefficients: </span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">regr</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="c"># The mean square error</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Residual sum of squares: </span><span class="si">%.2f</span><span class="s">&quot;</span>
+      <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">)</span> <span class="o">-</span> <span class="n">diabetes_y_test</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+<span class="c"># Explained variance score: 1 is perfect prediction</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Variance score: </span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">regr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">,</span> <span class="n">diabetes_y_test</span><span class="p">))</span>
+
+<span class="c"># Plot outputs</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">,</span> <span class="n">diabetes_y_test</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">,</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;blue&#39;</span><span class="p">,</span>
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+
+</li>
+</ul>
+</li>
+</ol>
 
     </div>
     <div class="footnote">

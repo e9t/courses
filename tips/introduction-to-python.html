@@ -153,19 +153,20 @@
 </ul>
 </li>
 </ol>
-<h3>2단계: 파이썬 IDE 설치</h3>
+<h3>1.5단계: 파이썬 스크립트 실행</h3>
 <p>위와 같이 파이썬을 쉘(shell)에서 실행하는 방법도 있지만,
 스크립트(script) 파일을 이용해서 파이썬을 실행할 수도 있다.</p>
 <p>쉘은 순간적인 실행을 위해서는 아주 편리하지만,
 긴 프로그램을 짜고자 할 때, 또는 프로그램을 저장하고자 할 때는 적합하지 않다.</p>
-<p>이를 위해 다음의 몇 가지 절차를 거치면 파일을 이용해 파이썬 스크립트를 실행할 수 있다.</p>
+<p>또, 스크립트 파일 실행을 위해 PyCharm, Eclipse 등의 IDE를 활용할 수도 있지만,
+일단은 IDE없이 한 번 가보자.</p>
+<p>먼저 프로그래밍의 기본! 파이썬 스크립트를 만들어 Hello world를 출력해볼까?
+다음의 몇 가지 절차를 거치면 IDE 없이도 파일을 이용해 파이썬 스크립트를 실행할 수 있다.</p>
 <ol>
 <li>윈도우에서 메모장을 열고</li>
 <li>
 <p>다음의 헬로월드 출력문을 파일에 입력한 후 (또는 다른 파이썬 코드를 입력해도 좋다)</p>
-<div class="highlight"><pre>print(&quot;Hello world!&quot;)
-print(&quot;Hello world full of data!&quot;)
-print(&quot;데이터마이닝을 위한 파이썬!&quot;)
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -175,7 +176,7 @@ print(&quot;데이터마이닝을 위한 파이썬!&quot;)
 </li>
 <li>
 <p>마지막으로, 콘솔을 열어 아래와 같이 입력하면 파이썬 파일이 실행된다. 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 <code>test.py</code> 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 GUI(graphic user interface)가 아니라 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!</p>
-<div class="highlight"><pre>cd ~/Desktop
+<div class="highlight"><pre>cd Desktop
 python test.py
 </pre></div>
 
@@ -185,7 +186,7 @@ python test.py
 </li>
 </ol>
 <h4>예시 1: "Hello world"</h4>
-<p>프로그래밍의 기본! Hello world를 출력해보자.
+<p>앞에서 입력한 파이썬 코드와 아래의 자바 코드를 비교해보자.
 자바와 파이썬 코드에 어떤 차이점이 있는가?</p>
 <ol>
 <li>먼저 자바 코드와는 달리 파이썬 코드에서는 <code>public class MyClass { ... }</code> 등과 같이 클래스를 선언하지 않아도 된다.</li>
@@ -198,7 +199,7 @@ python test.py
 <p>Java 1.7</p>
 <div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello world&quot;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello world!&quot;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
@@ -318,7 +319,106 @@ python test.py
 
 </li>
 </ul>
-<h4>예시 5: 클래스(class)와 상속(inheritance)</h4>
+<h4>예시 5: HashMap 또는 Dictionary</h4>
+<p>Key와 value로 이루어진 데이터 타입을 자바에서는 HashMap, 파이썬에서는 <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">dictionary</a>라고 부른다.
+Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 점이 독특하며, Dict에 대한 상급 활용법은 <a href="https://speakerdeck.com/jongman/2014-pycon-kr-widaehan-dict-ihaehago-sayonghagi">이 곳</a>에서 볼 수 있다.</p>
+<p>마지막으로, 아래 예시에서는 자바와 파이썬이 주석을 쓰는 문법도 다르다는 점을 보여준다.</p>
+<ul>
+<li>
+<p>Java 1.7</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HashTest</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// create hashmap</span>
+        <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">studentIds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">studentIds</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;홍길동&quot;</span><span class="o">,</span> <span class="s">&quot;13083301&quot;</span><span class="o">);</span>
+        <span class="n">studentIds</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;김미자&quot;</span><span class="o">,</span> <span class="s">&quot;11030104&quot;</span><span class="o">);</span>
+        <span class="n">studentIds</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;박은정&quot;</span><span class="o">,</span> <span class="s">&quot;11121994&quot;</span><span class="o">);</span>
+
+        <span class="c1">// iterate over hashmap</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">studentIds</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Key: &quot;</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;, Value: &quot;</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+        <span class="o">}</span>
+
+        <span class="c1">// get keys</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">studentIds</span><span class="o">.</span><span class="na">keySet</span><span class="o">());</span>
+
+        <span class="c1">// get value for key</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">studentIds</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;박은정&quot;</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Python 3</p>
+<div class="highlight"><pre><span class="c"># create dictionary</span>
+<span class="n">student_ids</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;홍길동&quot;</span><span class="p">:</span> <span class="s">&quot;13083301&quot;</span><span class="p">,</span>
+               <span class="s">&quot;김미자&quot;</span><span class="p">:</span> <span class="s">&quot;11030104&quot;</span><span class="p">,</span>
+               <span class="s">&quot;박은정&quot;</span><span class="p">:</span> <span class="s">&quot;11121994&quot;</span> <span class="p">}</span>
+
+<span class="c"># iterate over hashmap</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">student_ids</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Key: </span><span class="si">%s</span><span class="s">, Value: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+
+<span class="c"># get keys</span>
+<span class="k">print</span><span class="p">(</span><span class="n">student_ids</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="c"># get value for key</span>
+<span class="k">print</span><span class="p">(</span><span class="n">student_ids</span><span class="p">[</span><span class="s">&quot;박은정&quot;</span><span class="p">])</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h4>예시 6: Array 또는 List</h4>
+<p>순서가 존재하는 데이터 타입인 배열은 어떻게 선언할까?</p>
+<ul>
+<li>
+<p>Java 1.7</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ArrayTest</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// create arraylist</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">myList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">myList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">);</span>
+        <span class="n">myList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;b&quot;</span><span class="o">);</span>
+        <span class="n">myList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;c&quot;</span><span class="o">);</span>
+        <span class="n">myList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;d&quot;</span><span class="o">);</span>
+        <span class="n">myList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;e&quot;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myList</span><span class="o">);</span>
+
+        <span class="c1">// split arraylist</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myList</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">4</span><span class="o">));</span>
+
+        <span class="c1">// get item in arraylist</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Python 3</p>
+<div class="highlight"><pre><span class="c"># create list</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;e&#39;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+
+<span class="c"># split list</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="c"># get item in list</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h4>예시 7: 클래스(class)와 상속(inheritance)</h4>
 <p>예시 1에서도 설명했지만, 파이썬에서는 클래스를 반드시 선언해주지는 않아도 된다.
 하지만, 클래스가 유용한 경우는 종종 있고, 파이썬에서도 클래스를 만들 수 있다.
 아래 코드를 참고하자.</p>
@@ -375,6 +475,15 @@ python test.py
 
 </li>
 </ul>
+<h3>2단계: 파이썬 IDE 설치</h3>
+<p>지금까지 IDE 없이 파이썬 스크립트를 작성하고 실행해보았다.
+어떤가? 좀 불편한가?
+사실 별도의 IDE 없이 파이썬 프로그래밍을 하는 프로그래머도 많이 있다.</p>
+<p>하지만 IDE의 풍부한 기능을 사용하고 싶다면 다음의 몇 가지 대안을 검토해볼 수도 있다.</p>
+<ol>
+<li>PyCharm</li>
+<li>Eclipse</li>
+</ol>
 <h2>Appendix</h2>
 <h3>초짜 프로그래머가 프로그래밍 잘하는 법</h3>
 <ol>
@@ -423,6 +532,7 @@ python test.py
 </ol>
 <h3>그 밖의 유용한 참고자료</h3>
 <ul>
+<li><a href="http://blogs.perceptionsystem.com/images/JavaVsPython.png">Java vs Python</a></li>
 <li>최성철, <a href="http://www.slideshare.net/blissray/w-37771905">산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 1: 파이썬 기초</a>, 2014.</li>
 <li>최성철, <a href="http://www.slideshare.net/blissray/w-part-2">산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 2: 파이썬 활용</a>, 2014.</li>
 </ul>
