@@ -201,7 +201,43 @@ Some jokes about package managing:
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</summary></entry><entry><title>Introduction to Python</title><link href="http://lucypark.kr/courses/tips/introduction-to-python.html" rel="alternate"></link><updated>2015-03-08T18:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-08:courses/tips/introduction-to-python.html</id><summary type="html">&lt;h2&gt;들어가기 전에&lt;/h2&gt;
+&lt;/ol&gt;</summary></entry><entry><title>파이썬 프로그래밍을 위한 Sublime Text</title><link href="http://lucypark.kr/courses/tips/sublime-text.html" rel="alternate"></link><updated>2015-03-09T13:26:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-09:courses/tips/sublime-text.html</id><summary type="html">&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Sublime Text 설치&lt;br&gt;
+&lt;a href="http://sublimetext.com"&gt;&lt;img alt="" src="images/sublime.png" /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://packagecontrol.io/installation#st2"&gt;Sublime Text 패키지 매니저&lt;/a&gt; 설치&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;내가 설치한 Sublime Text의 버젼을 잘 확인하자! 2인가 3인가?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Troubleshooting&lt;/h2&gt;
+&lt;h3&gt;파이썬 build 시 한글 출력문에 &lt;code&gt;[Decode error - output not utf-8]&lt;/code&gt;가 출력되는 문제&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;콘솔에서 &lt;code&gt;chcp&lt;/code&gt;를 입력하여 윈도우 코드 페이지(codepage) 확인 (아마도 949일 것)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\Users\lucypark\AppData\Roaming\Sublime Text 2\Packages\Python\Python.sublime-build&lt;/code&gt; 파일을 열어 아래의 마지막 줄 추가 입력 (바로 직전의 &lt;code&gt;,&lt;/code&gt;도 빼먹지 말 것!)&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &amp;quot;cmd&amp;quot;: [&amp;quot;python&amp;quot;, &amp;quot;-u&amp;quot;, &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;],&lt;/span&gt;
+&lt;span class="x"&gt;    &amp;quot;file_regex&amp;quot;: &amp;quot;^[ ]*File \&amp;quot;(...*?)\&amp;quot;, line ([0-9]*)&amp;quot;,&lt;/span&gt;
+&lt;span class="x"&gt;    &amp;quot;selector&amp;quot;: &amp;quot;source.python&amp;quot;,&lt;/span&gt;
+&lt;span class="x"&gt;    &amp;quot;encoding&amp;quot;: &amp;quot;cp949&amp;quot;&lt;/span&gt;
+&lt;span class="x"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Suggested packages&lt;/h2&gt;
+&lt;h3&gt;IMESupport: 한글 입력이 한 박자 늦게 되는 문제 해결&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://meaningone.tistory.com/116"&gt;&lt;strong&gt;IMESupport&lt;/strong&gt; 패키지 설치&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Origami: Divide window to several panes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;방법 1.&lt;br&gt;
+&lt;img src="images/pane.png" width="500px"&gt;&lt;/li&gt;
+&lt;li&gt;방법 2. Install the &lt;strong&gt;Origami&lt;/strong&gt; package (훨씬 다양하게 pane을 나눠 쓸 수 있음)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;SublimeREPL: Python REPL in Sublime&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="images/repl.png" /&gt;&lt;/p&gt;</summary></entry><entry><title>Introduction to Python</title><link href="http://lucypark.kr/courses/tips/introduction-to-python.html" rel="alternate"></link><updated>2015-03-08T18:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-08:courses/tips/introduction-to-python.html</id><summary type="html">&lt;h2&gt;들어가기 전에&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;운영체제(OS)란?&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://ko.wikipedia.org/wiki/%EC%9A%B4%EC%98%81_%EC%B2%B4%EC%A0%9C"&gt;"시스템 하드웨어와 소프트웨어를 실행하기 위한 시스템 소프트웨어"&lt;/a&gt;&lt;ul&gt;
@@ -649,14 +685,14 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Animal&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
 
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;say_something&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;I am a &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;.&amp;quot;&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;I am a &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;
 
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Dog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Animal&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;say_something&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;I am a &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;. Bark, bark!&amp;quot;&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;I am a &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;. Bark, bark!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;dog&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Dog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Chiwawa&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;dog&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;say_something&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -667,12 +703,20 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;/ul&gt;
 &lt;h3&gt;2단계: 파이썬 IDE 설치&lt;/h3&gt;
 &lt;p&gt;지금까지 IDE 없이 파이썬 스크립트를 작성하고 실행해보았다.
-어떤가? 좀 불편한가?
-사실 별도의 IDE 없이 파이썬 프로그래밍을 하는 프로그래머도 많이 있다.&lt;/p&gt;
-&lt;p&gt;하지만 IDE의 풍부한 기능을 사용하고 싶다면 다음의 몇 가지 대안을 검토해볼 수도 있다.&lt;/p&gt;
+어떤가? 나쁘지 않은가?
+사실 별도의 IDE 없이 좀 더 괜찮은 에디터를 사용해서 파이썬 프로그래밍을 하는 프로그래머도 많이 있다. 가령:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="sublime-text.html"&gt;Sublime Text&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Vim&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://tutorialzine.com/2012/07/battle-of-the-tools-which-is-the-best-code-editor/"&gt;...and more&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;등만 잘 활용해도 충분하다.
+하지만 IDE의 풍부한 기능을 사용하고 싶다면 다음의 몇 가지 대안을 검토해볼 수도 있다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;PyCharm&lt;/li&gt;
 &lt;li&gt;Eclipse&lt;/li&gt;
+&lt;li&gt;Visual Studio &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pedrokroger.net/choosing-best-python-ide/"&gt;...and more&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Appendix&lt;/h2&gt;
 &lt;h3&gt;초짜 프로그래머가 프로그래밍 잘하는 법&lt;/h3&gt;

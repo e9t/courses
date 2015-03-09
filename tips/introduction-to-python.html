@@ -483,14 +483,14 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">Animal</span><span class="p">():</span>
 
     <span class="k">def</span> <span class="nf">say_something</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">&quot;I am a &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;I am a &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
 <span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">say_something</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s">&quot;I am a &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;. Bark, bark!&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;I am a &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;. Bark, bark!&quot;</span><span class="p">)</span>
 
 <span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s">&quot;Chiwawa&quot;</span><span class="p">)</span>
 <span class="n">dog</span><span class="o">.</span><span class="n">say_something</span><span class="p">()</span>
@@ -501,12 +501,20 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 </ul>
 <h3>2단계: 파이썬 IDE 설치</h3>
 <p>지금까지 IDE 없이 파이썬 스크립트를 작성하고 실행해보았다.
-어떤가? 좀 불편한가?
-사실 별도의 IDE 없이 파이썬 프로그래밍을 하는 프로그래머도 많이 있다.</p>
-<p>하지만 IDE의 풍부한 기능을 사용하고 싶다면 다음의 몇 가지 대안을 검토해볼 수도 있다.</p>
+어떤가? 나쁘지 않은가?
+사실 별도의 IDE 없이 좀 더 괜찮은 에디터를 사용해서 파이썬 프로그래밍을 하는 프로그래머도 많이 있다. 가령:</p>
+<ol>
+<li><a href="sublime-text.html">Sublime Text</a></li>
+<li>Vim</li>
+<li><a href="http://tutorialzine.com/2012/07/battle-of-the-tools-which-is-the-best-code-editor/">...and more</a></li>
+</ol>
+<p>등만 잘 활용해도 충분하다.
+하지만 IDE의 풍부한 기능을 사용하고 싶다면 다음의 몇 가지 대안을 검토해볼 수도 있다.</p>
 <ol>
 <li>PyCharm</li>
 <li>Eclipse</li>
+<li>Visual Studio </li>
+<li><a href="http://pedrokroger.net/choosing-best-python-ide/">...and more</a></li>
 </ol>
 <h2>Appendix</h2>
 <h3>초짜 프로그래머가 프로그래밍 잘하는 법</h3>

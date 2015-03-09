@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>파이썬 프로그래밍을 위한 Sublime Text — Courses</title>
+	<meta name="description" content="Title: 파이썬 프로그래밍을 위한 Sublime Text; Date: 2015-03-09; Author: Lucy Park; Courseid: ; Metainfo: ">
+	<meta name="author" content="Lucy Park">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<![endif]-->
+	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
+	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+        </ul>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="article-header">
+        <h1 itemprop="name headline">파이썬 프로그래밍을 위한 Sublime Text</h1>
+		<time datetime="2015-03-09T13:26:00+01:00" itemprop="datePublished">Mon 09 March 2015</time>
+	</div>
+    <div class="article-toc"><b>Contents</b><p></p></div>
+    <div itemprop="articleBody" class="article-body">
+        <h2>Installation</h2>
+<ol>
+<li>Sublime Text 설치<br>
+<a href="http://sublimetext.com"><img alt="" src="images/sublime.png" /></a></li>
+<li><a href="https://packagecontrol.io/installation#st2">Sublime Text 패키지 매니저</a> 설치</li>
+</ol>
+<blockquote>
+<p>내가 설치한 Sublime Text의 버젼을 잘 확인하자! 2인가 3인가?</p>
+</blockquote>
+<h2>Troubleshooting</h2>
+<h3>파이썬 build 시 한글 출력문에 <code>[Decode error - output not utf-8]</code>가 출력되는 문제</h3>
+<ol>
+<li>콘솔에서 <code>chcp</code>를 입력하여 윈도우 코드 페이지(codepage) 확인 (아마도 949일 것)</li>
+<li><code>C:\Users\lucypark\AppData\Roaming\Sublime Text 2\Packages\Python\Python.sublime-build</code> 파일을 열어 아래의 마지막 줄 추가 입력 (바로 직전의 <code>,</code>도 빼먹지 말 것!)<div class="highlight"><pre><span class="err">{</span><span class="x"></span>
+<span class="x">    &quot;cmd&quot;: [&quot;python&quot;, &quot;-u&quot;, &quot;</span><span class="p">$</span><span class="nv">file</span><span class="x">&quot;],</span>
+<span class="x">    &quot;file_regex&quot;: &quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;,</span>
+<span class="x">    &quot;selector&quot;: &quot;source.python&quot;,</span>
+<span class="x">    &quot;encoding&quot;: &quot;cp949&quot;</span>
+<span class="x">}</span>
+</pre></div>
+
+
+</li>
+</ol>
+<h2>Suggested packages</h2>
+<h3>IMESupport: 한글 입력이 한 박자 늦게 되는 문제 해결</h3>
+<ul>
+<li><a href="http://meaningone.tistory.com/116"><strong>IMESupport</strong> 패키지 설치</a></li>
+</ul>
+<h3>Origami: Divide window to several panes</h3>
+<ul>
+<li>방법 1.<br>
+<img src="images/pane.png" width="500px"></li>
+<li>방법 2. Install the <strong>Origami</strong> package (훨씬 다양하게 pane을 나눠 쓸 수 있음)</li>
+</ul>
+<h3>SublimeREPL: Python REPL in Sublime</h3>
+<p><img alt="" src="images/repl.png" /></p>
+
+    </div>
+    <div class="footnote">
+        <p>
+            Author:
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a href="http://dm.snu.ac.kr/~epark"><span itemprop="name">Lucy Park</span></a>
+            </span>
+        </p>
+        <p>
+            Category:
+            <span itemprop="articleSection">
+                <a href="http://lucypark.kr/courses/category/tips.html" rel="category">tips</a>
+            </span>
+        </p>
+    </div>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="center-block aw-bottom">
+            Built by <a href="http://dm.snu.ac.kr/~epark">Lucy Park</a>.<br>
+            Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
+ The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
+            </span>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+
+// add 'active' class to current menu
+$(function(){
+  if (document.location.hostname == "localhost") {
+    var idx = 1;
+    var activePage = location.pathname.split("/")[idx];
+  } else {
+    var idx = 4;
+    var activePage = location.href.split("/")[idx];
+  }
+  $('.nav li a').each(function() {
+    var currentPage = $(this).attr('href').split("/")[idx];
+    if (activePage == currentPage) {
+      $(this).parent().addClass('active');
+    }
+  });
+});
+</script>
+<script>
+    function hyphenate(str) {
+        return str.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s/g, '-');
+    }
+
+    String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
+
+    // create toc
+    var t = '';
+    var concat = '';
+    var headers = $('.article-body :header');
+    headers.each(function() {
+        var hyphenated = hyphenate($(this).text());
+            $(this).attr('id', hyphenated);
+        }
+    );
+    for (var i=0; i<headers.length; i++) {
+        depth = parseInt(headers[i].tagName.substr(-1));
+        if (depth < 4) {
+            t = headers[i].textContent;
+            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- <a href="#' + hyphenate(t) + '">' + t + '</a><br>';
+        }
+    }
+    $(".article-toc p").append(concat);
+
+    // scroll animation
+    $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 300, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+    }});
+</script>
+<script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
