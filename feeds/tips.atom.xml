@@ -102,48 +102,51 @@
 &lt;li&gt;Download &lt;a href="http://continuum.io/downloads#34"&gt;Continuum's Anaconda&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;잠깐, &lt;a href="http://python.org/download"&gt;python.com&lt;/a&gt;이 아니라 딴데서 설치파일을 다운받으라고?&lt;ul&gt;
 &lt;li&gt;python.com/download: 파이썬 정식 배포판&lt;/li&gt;
-&lt;li&gt;continuum.io/downloads#34: 파이썬 사제 배포판&lt;br&gt;
-&lt;img src="images/anaconda.png" width="600px"&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;윈도우 32비트? 64비트?&lt;ul&gt;
-&lt;li&gt;아나콘다가 알아서 인식해서 잡아주겠지만, 궁금한 사람은 아래와 같이 내 컴퓨터의 속성 메뉴에서 나의 시스템 종류를 확인하자.&lt;br&gt;
-&lt;img src="images/bit.png" width="600px"&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://wiki.python.org/moin/Python2orPython3"&gt;Python 2 vs Python 3&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;아직까지 학계에서는 Python 2도 많이 사용&lt;/li&gt;
-&lt;li&gt;하지만 우리는 더 최신 버젼인 Python 3 선택&lt;ol&gt;
-&lt;li&gt;파이썬 3가 유니코드 서포트를 해서 한국어를 사용하는 사람들에게 편리&lt;/li&gt;
-&lt;li&gt;파이썬 3 is &lt;a href="http://pythonkr.github.io/pyconkr-2014/pdf/pyconkr-2014-25_geofront.pdf"&gt;the way to go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://python3wos.appspot.com/"&gt;이제 많은 라이브러리들이 파이썬 3도 지원&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
+&lt;li&gt;continuum.io/downloads#34: 파이썬 사제 배포판&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;파이썬 정식 배포판이 아니라 일반 회사의 사제 배포판을 사용하는 이유는?&lt;ul&gt;
 &lt;li&gt;Windows에서는 파이썬의 몇몇 패키지 설치가 어렵다는 풍문이 있다&lt;/li&gt;
 &lt;li&gt;이를 극복하기 위해 &lt;a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/"&gt;윈도우만을 위해 사전에 컴파일 된 패키지를 따로 제공하는 사람도 있다&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;우리는 패키지 설치의 번거로움에서 벗어나기 위해 사전에 &lt;a href="http://docs.continuum.io/anaconda/pkg-docs.html"&gt;195개의 패키지&lt;/a&gt;가 한꺼번에 깔리는 배포판을 선택&lt;/li&gt;
+&lt;li&gt;우리는 패키지 설치의 번거로움에서 벗어나기 위해 사전에 &lt;a href="http://docs.continuum.io/anaconda/pkg-docs.html"&gt;195개의 패키지&lt;/a&gt;가 한꺼번에 깔리는 배포판을 선택
+&lt;img src="images/anaconda.png" width="600px"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;윈도우 32비트? 64비트?&lt;ul&gt;
+&lt;li&gt;아나콘다가 알아서 인식해서 잡아주겠지만, 궁금한 사람은 &lt;a href="images/bit.png"&gt;내 컴퓨터의 속성 메뉴에서 나의 시스템 종류를 확인하자&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.python.org/moin/Python2orPython3"&gt;Python 2.x? 3.x?&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;아직까지 학계에서는 Python 2도 많이 사용&lt;/li&gt;
+&lt;li&gt;하지만 우리는 더 최신 버젼인 Python 3 선택&lt;ol&gt;
+&lt;li&gt;파이썬 3가 유니코드 서포트를 해서 한국어를 사용하는 사람들에게 편리&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://python3wos.appspot.com/"&gt;이제 많은 라이브러리들이 파이썬 3도 지원&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;파이썬 3 is &lt;a href="http://pythonkr.github.io/pyconkr-2014/pdf/pyconkr-2014-25_geofront.pdf"&gt;the way to go&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Install Anaconda&lt;ul&gt;
-&lt;li&gt;고맙게도 파이썬 환경변수 설정은 아나콘다가 알아서 해줌&lt;br&gt;
+&lt;li&gt;고맙게도 파이썬 환경변수 설정은 따로 할 필요없이 아나콘다가 알아서 해줌&lt;br&gt;
 &lt;img src="images/anaconda2.png" width="400px"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Run Python!&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;콘솔을 열어 &lt;code&gt;ipython&lt;/code&gt;을 입력해서 파이썬 쉘을 열어보자. 콘솔은 다음과 같이 열 수 있다:&lt;br&gt;&lt;ol&gt;
+&lt;li&gt;다음과 같이 터미널을 열자:&lt;ol&gt;
 &lt;li&gt;&lt;code&gt;window&lt;/code&gt; + &lt;code&gt;r&lt;/code&gt; 단축키를 이용해 실행창(Run)을 열고&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;cmd&lt;/code&gt;라고 입력한다.&lt;br&gt;
-&lt;img src="images/cmd.png" width="400px"&gt;
-&lt;img src="images/ipython.png" width="500px"&gt;&lt;/li&gt;
+&lt;img src="images/cmd.png" width="400px"&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ipython&lt;/code&gt;을 입력해서 "파이썬 쉘"을 열어보자.&lt;br&gt;
+    터미널로 작업할 때는 열심히 "독서"하는 습관을 들이는 것이 좋다.
+    우리가 &lt;code&gt;ipython&lt;/code&gt;을 입력하니 무엇이 출력되었는가?
+    파이썬 버젼 3.4.1, 64비트 아나콘다 2.1.0이 구동되었다는 것을 알 수 있고, 그 밖의 소소한 명령어에 대한 소개도 있다.&lt;br&gt;
+    &lt;img src="images/ipython.png" width="500px"&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;파이썬 쉘이 열리면:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello world!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -157,6 +160,8 @@
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
 &lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;1024&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt;    &lt;span class="c"&gt;# exit을 입력하는 대신 단축키 ctrl+d를 사용할 수도 있다&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -171,19 +176,19 @@
 &lt;p&gt;위와 같이 파이썬을 쉘(shell)에서 실행하는 것은 순간적인 실행을 위해서는 아주 편리하지만,
 긴 프로그램을 짜고자 할 때, 또는 프로그램을 저장하고자 할 때는 적합하지 않다.
 이럴 때는 스크립트(script) 파일을 이용해서 파이썬을 실행할 수도 있다.&lt;/p&gt;
-&lt;p&gt;또, 스크립트 파일 실행을 위해 PyCharm, Eclipse 등의 IDE를 활용할 수도 있지만,
+&lt;p&gt;스크립트 파일 실행을 위해 PyCharm, Eclipse 등의 IDE를 활용할 수도 있지만,
 일단은 IDE없이 한 번 가보자.&lt;/p&gt;
 &lt;p&gt;먼저 프로그래밍의 기본! 파이썬 스크립트를 만들어 Hello world를 출력해볼까?
-이미 우리는 ipython으로 Hello world를 찍을 수 있지만
-다음의 몇 가지 절차를 거치면 IDE 없이도 파일을 이용해 파이썬 스크립트를 실행할 수 있다.&lt;/p&gt;
+이미 우리는 ipython을 통해 파이썬 쉘에서 Hello world를 출력해봤지만 
+다음의 몇 가지 절차를 거치면 파일을 이용해 파이썬 스크립트를 실행할 수 있다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;윈도우에서 메모장을 열고&lt;ol&gt;
+&lt;li&gt;아래와 같이 윈도우에서 메모장을 열자.&lt;ol&gt;
 &lt;li&gt;&lt;code&gt;window&lt;/code&gt; + &lt;code&gt;r&lt;/code&gt; 단축키를 이용해 실행창(Run)을 열고&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;notepad&lt;/code&gt;라고 입력한다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;다음의 헬로월드 출력문을 파일에 입력한 후 (또는 다른 파이썬 코드를 입력해도 좋다)&lt;/p&gt;
+&lt;p&gt;다음의 헬로월드 출력문을 파일에 입력한 후&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello world!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -193,23 +198,25 @@
 &lt;p&gt;파일을 바탕화면에 &lt;code&gt;test.py&lt;/code&gt;라는 이름으로 저장하자. 다만 한 가지 유의할 점은, &lt;strong&gt;다음 그림과 같이 Encoding을 UTF-8로 변경해서 저장해줘야 한다.&lt;/strong&gt; (그렇지 않으면 스크립트를 실행할 때 인코딩 에러가 발생할 것이다.)&lt;br&gt;
 &lt;img src="images/encoding.png" width="500px"&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;그 다음에, 다시 콘솔을 열고&lt;/li&gt;
+&lt;li&gt;그 다음에, 다시 터미널을 띄워서 (어떻게 했는지 기억하는가?)&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;아래와 같이 입력하면 파이썬 파일이 실행된다. 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 &lt;code&gt;test.py&lt;/code&gt; 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 마우스를 클릭하는 GUI(graphic user interface)가 아니라 키보드로 명령어를 입력하는 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;cd Desktop
-python test.py
+&lt;p&gt;아래와 같이 입력하면 파이썬 파일이 실행된다.&lt;br&gt;
+첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 &lt;code&gt;test.py&lt;/code&gt; 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 마우스를 클릭하는 GUI(graphic user interface)가 아니라 키보드로 명령어를 입력하는 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&amp;gt; &lt;span class="nb"&gt;cd &lt;/span&gt;Desktop        &lt;span class="c"&gt;# Desktop이라는 디렉토리로 변경하라(**c**hange **d**irectory)&lt;/span&gt;
+&amp;gt; python test.py    &lt;span class="c"&gt;# python이라는 프로그램으로 test.py라는 파일을 실행하라&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;연습삼아, &lt;code&gt;test.py&lt;/code&gt;의 내용을 바꿔가며 아래의 다양한 예시를 입력해보자.
-이미 Desktop 폴더로 이동한 상태이니 &lt;strong&gt;앞으로는 콘솔에 &lt;code&gt;python test.py&lt;/code&gt;만 입력해서 코드를 실행하면 된다.&lt;/strong&gt;
+&lt;p&gt;이제부터 파이썬에서 빈번하게 사용할 기능을 7가지 예시를 통해 배워볼 것이다.&lt;br&gt;
+방금 생성한 &lt;code&gt;test.py&lt;/code&gt;에서 Hello world! 출력문 대신 아래의 다양한 예시를 입력해보자.
+이미 Desktop 폴더로 이동한 상태이니 &lt;strong&gt;앞으로는 터미널에 &lt;code&gt;python test.py&lt;/code&gt;만 입력해서 코드를 실행하면 된다.&lt;/strong&gt;
 각 예시는 이해를 돕기 위해 자바 1.7의 코드와 병렬적으로 배치해두었다.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4&gt;예시 1: "Hello world"&lt;/h4&gt;
-&lt;p&gt;앞에서 우리는 이미 파이썬 스크립트로 Hello world!를 출력하는데 성공했다.
-그렇다면 이번에는 그 코드와 다음의 자바 코드를 비교해보자.
-자바와 파이썬 코드에 어떤 차이점이 있는가?&lt;/p&gt;
+&lt;p&gt;앞에서 우리는 파이썬 쉘과 스크립트로 Hello world!를 출력하는데 성공했다.
+우리의 파이썬 코드와 자바 코드에는 어떤 차이점이 있을까?
+다음은 자바와 파이썬으로 각각 Hello world!를 출력하는 코드이다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Java 1.7&lt;/p&gt;
@@ -223,23 +230,33 @@ python test.py
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;먼저 자바 코드와는 달리 파이썬 코드에서는 &lt;code&gt;public class MyClass { ... }&lt;/code&gt; 등과 같이 클래스를 선언하지 않아도 된다.&lt;/p&gt;
+&lt;p&gt;Python 3&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello world!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;public static void main (String[] args) { ... }&lt;/code&gt; 등과 같이 복잡하게 메인함수를 선언하지 않아도 된다.&lt;/li&gt;
-&lt;li&gt;세미콜론(;)을 붙이지 않아도 된다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;그리하여 파이썬으로는 무려 한 줄 만으로 Hello world를 출력할 수 있다.&lt;/p&gt;
+&lt;p&gt;자바와 파이썬 코드에 어떤 차이점이 있는가? 자바 코드와는 달리 파이썬 코드에서는:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;public class MyClass { ... }&lt;/code&gt; 등과 같이 클래스를 선언하지 않아도 된다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;public static void main (String[] args) { ... }&lt;/code&gt; 등과 같이 메인함수를 선언하지 않아도 된다.&lt;/li&gt;
+&lt;li&gt;라인 끝에 세미콜론(&lt;code&gt;;&lt;/code&gt;)을 붙이지 않아도 된다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;그리하여 파이썬으로는 무려 한 줄 만으로 Hello world!를 출력할 수 있다!
+아주 간결하지 않은가?&lt;/p&gt;
 &lt;h4&gt;예시 2: 변수 선언&lt;/h4&gt;
 &lt;p&gt;다음으로 변수를 선언해보자.
-출력(print)하는 것이 없다면 변수를 선언하는 것만으로는 콘솔 창에 아무 것도 뜨지 않겠지만,
+&lt;code&gt;print&lt;/code&gt;문을 이용해 출력하는 것이 없다면 변수를 선언하는 것만으로는 터미널 창에 아무 것도 뜨지 않겠지만,
 변수 선언만으로도 중요한 차이점을 많이 발견할 수 있으니 코드는 한 번 자세히 들여다보자.
-이미 위에서 언급된 차이점들 외에도 크게 두 가지 차이점을 발견할 수 있다.&lt;/p&gt;
-&lt;p&gt;첫째, 자바는 &lt;a href="http://en.wikipedia.org/wiki/Type_system#Static_type-checking"&gt;정적 타이핑(static typing)&lt;/a&gt;언어라 변수의 데이터 타입(type), 즉 String인지 int인지 등을 미리 지정해줘야하고, 한 번 지정하고 나면 변수의 타입은 바뀔 수 없다. 반면 파이썬은 &lt;a href="http://en.wikipedia.org/wiki/Type_system#DYNAMIC"&gt;동적 타이핑(dynamic typing)&lt;/a&gt; 언어라 변수의 데이터 타입(type) 선언할 필요도 없을 뿐더러 다른 것으로 바뀔 수 있다.&lt;/p&gt;
-&lt;p&gt;둘째, 자바 코드에서는 변수를 선언할 때 &lt;code&gt;myString&lt;/code&gt;과 같이 &lt;a href="http://en.wikipedia.org/wiki/CamelCase"&gt;camelCase&lt;/a&gt;를 사용하는데 반해 파이썬 코드에서는 &lt;code&gt;my_string&lt;/code&gt;과 같이 &lt;a href="http://en.wikipedia.org/wiki/Naming_convention_(programming)#Python_and_Ruby"&gt;under_score&lt;/a&gt;를 사용한다. 파이썬의 스타일링에 관해서는 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP-8&lt;/a&gt;에 잘 나와 있다. 만일 파이썬 프로그래밍을 꾸준히 할 마음이 있다면 한 번쯤 훑어보자. 이 문서를 지금 당장 다 읽지 않더라도, 중요한 지침을 담고 있으니 반드시 이름은 기억해두는 것이 좋다.&lt;/p&gt;
+다음은 자바와 파이썬으로 각각 변수를 선언하는 코드이다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Java 1.7 (static typed)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;myString&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;this is a string&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;myString&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;//  ok&lt;/span&gt;
+&lt;span class="n"&gt;myString&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;3&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;//  Type mismatch: cannot convert from char to String&lt;/span&gt;
+&lt;span class="n"&gt;myString&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;   &lt;span class="c1"&gt;//  Type mismatch: cannot convert from int to String&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -247,16 +264,26 @@ python test.py
 &lt;li&gt;
 &lt;p&gt;Python 3 (dynamic typed)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;my_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;this is a string&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;my_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;3&amp;quot;&lt;/span&gt; &lt;span class="c"&gt;# ok&lt;/span&gt;
+&lt;span class="n"&gt;my_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;3&amp;#39;&lt;/span&gt; &lt;span class="c"&gt;# ok&lt;/span&gt;
+&lt;span class="n"&gt;my_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;   &lt;span class="c"&gt;# ok&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;이미 위에서 언급된 차이점들 외에도 크게 네 가지 차이점을 발견할 수 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;자바는 &lt;a href="http://en.wikipedia.org/wiki/Type_system#Static_type-checking"&gt;정적 타이핑(static typing)&lt;/a&gt;언어라 변수의 데이터 타입(type), 즉 String인지 int인지 등을 미리 지정해줘야하고, 한 번 지정하고 나면 변수의 타입은 바뀔 수 없다. 반면 파이썬은 &lt;a href="http://en.wikipedia.org/wiki/Type_system#DYNAMIC"&gt;동적 타이핑(dynamic typing)&lt;/a&gt; 언어라 변수의 데이터 타입(type) 선언할 필요도 없을 뿐더러 처음 선언이 된 이후에도 다른 타입으로 바뀔 수 있다.&lt;/li&gt;
+&lt;li&gt;자바에서는 작은 따옴표(&lt;code&gt;char&lt;/code&gt;)와 큰 따옴표(&lt;code&gt;String&lt;/code&gt;)의 사용이 구분되지만 파이썬에서는 작은 따옴표나 큰 따옴표로 묶인 문자열은 전부 &lt;code&gt;str&lt;/code&gt; 타입으로 간주된다.&lt;/li&gt;
+&lt;li&gt;자바 코드에서는 변수를 선언할 때 &lt;code&gt;myString&lt;/code&gt;과 같이 &lt;a href="http://en.wikipedia.org/wiki/CamelCase"&gt;camelCase&lt;/a&gt;를 사용하는데 반해 파이썬 코드에서는 &lt;code&gt;my_string&lt;/code&gt;과 같이 &lt;a href="http://en.wikipedia.org/wiki/Naming_convention_(programming)#Python_and_Ruby"&gt;under_score&lt;/a&gt;를 사용한다. 파이썬의 스타일링에 관해서는 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP-8&lt;/a&gt;에 잘 나와 있다. 만일 파이썬 프로그래밍을 꾸준히 할 마음이 있다면 한 번쯤 훑어보자. 이 문서를 지금 당장 다 읽지 않더라도, 중요한 지침을 담고 있으니 반드시 이름은 기억해두는 것이 좋다.&lt;/li&gt;
+&lt;li&gt;주석을 다는 방법이 다르다. 자바에서는 &lt;code&gt;//&lt;/code&gt; 썼다면, 파이썬에서는 &lt;code&gt;#&lt;/code&gt;를 쓴다. 긴 주석의 경우에도 자바는 &lt;code&gt;/* some very long comment */&lt;/code&gt;라면, 파이썬은 &lt;code&gt;""" some very long comment """&lt;/code&gt;와 같다. (긴 주석 내에서는 줄바꿈을 할 수 있다.)&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h4&gt;예시 3: 파일 쓰기 (writing)&lt;/h4&gt;
 &lt;p&gt;아래는 &lt;code&gt;some_file.txt&lt;/code&gt;에 "Hello world full of data!"라는 문자열을 입력하는 코드이다.
-자바에서 파일 입출력(I/O)은 생각만큼 간단하지 않지만, 파이썬에서는 코드도 무척 간단하게 읽힌다.
-이렇게 읽으면 된다: &lt;code&gt;"some_file.txt"&lt;/code&gt;를 &lt;code&gt;"w(write)"&lt;/code&gt;모드로 읽어서, 그것을 &lt;code&gt;f&lt;/code&gt;라고 부르자.
-그리고 &lt;code&gt;f&lt;/code&gt;에는 &lt;code&gt;"Hello world full of data!"&lt;/code&gt;라는 문자열을 쓰자(&lt;code&gt;write&lt;/code&gt;)!&lt;/p&gt;
+자바에서 파일 입출력(I/O)은 생각만큼 간단하지 않지만, 파이썬에서는 무척 간단하다.
+코드를 이렇게 읽어보자: &lt;code&gt;"some_file.txt"&lt;/code&gt;를 &lt;code&gt;"w"&lt;/code&gt;(write) 모드로 &lt;code&gt;open&lt;/code&gt;하고 그것을 &lt;code&gt;f&lt;/code&gt;라고 부르자.
+그리고 &lt;code&gt;f&lt;/code&gt;에는 &lt;code&gt;"Hello world full of data!"&lt;/code&gt;라는 문자열을 &lt;code&gt;write&lt;/code&gt;하자!&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Java 1.7&lt;/p&gt;
@@ -336,15 +363,7 @@ python test.py
 &lt;/ul&gt;
 &lt;h4&gt;예시 5: HashMap 또는 Dictionary&lt;/h4&gt;
 &lt;p&gt;Key와 value로 이루어진 데이터 타입을 자바에서는 HashMap, 파이썬에서는 &lt;a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries"&gt;dictionary&lt;/a&gt;라고 부른다.
-Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 점이 독특하며, Dict에 대한 상급 활용법은 &lt;a href="https://speakerdeck.com/jongman/2014-pycon-kr-widaehan-dict-ihaehago-sayonghagi"&gt;이 곳&lt;/a&gt;에서 볼 수 있다.&lt;/p&gt;
-&lt;p&gt;아래 파이썬 코드의 상단에 &lt;code&gt;# -*- coding: utf-8 -*-&lt;/code&gt;이라는 특이한 줄이 생긴 것을 볼 수 있다.
-이 줄은 &lt;a href="https://www.python.org/dev/peps/pep-0263/"&gt;PEP 263&lt;/a&gt;에 의해 제안된 것으로,
-프로그램 상으로는 역할을 하지 않지만 코드에 영문 알파벳 등 기본적인 ASCII 문자 외에 다른 문자가 코드에 있는 경우 반드시 필요한 줄이다.
-우리는 앞서 파일을 UTF-8으로 인코딩하여 저장했으므로, 파일이 utf-8로 되어 있다고 선언한다.
-만일 앞에서 파일을 UTF-8으로 저장하지 않았다면, 윈도우의 시스템 인코딩인 cp949로 선언해야 인코딩 에러를 피할 수 있을 것이다.
-(만일 cp949로 선언해도 인코딩 에러가 발생한다면, 콘솔에서 chcp를 입력하여 내가 어떤 코드 페이지를 사용하고 있는지 확인하자.)
-우리는 가급적이면 OS간 호환성을 위해 항상 UTF-8로 파일을 저장하는 것을 습관화하자.&lt;/p&gt;
-&lt;p&gt;마지막으로, 아래 예시에서는 자바와 파이썬이 주석을 쓰는 문법도 다르다는 점을 보여준다.&lt;/p&gt;
+Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 점이 독특하다. Dict에 대한 상급 활용법이 궁금한 사람은 &lt;a href="https://speakerdeck.com/jongman/2014-pycon-kr-widaehan-dict-ihaehago-sayonghagi"&gt;이 곳&lt;/a&gt;을 살펴보자.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Java 1.7&lt;/p&gt;
@@ -397,6 +416,17 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;앞서 살펴본 예시와는 달리 아래 파이썬 코드의 상단에 &lt;code&gt;# -*- coding: utf-8 -*-&lt;/code&gt;이라는 특이한 줄이 생긴 것을 볼 수 있다.
+이 줄은 &lt;a href="https://www.python.org/dev/peps/pep-0263/"&gt;PEP 263&lt;/a&gt;에 의해 제안된 것으로,
+프로그램 상으로는 역할을 하지 않지만 코드에 영문 알파벳 등 기본적인 ASCII 문자 외에 다른 문자(ex: 한글)가 코드에 있는 경우 반드시 필요한 줄이다.
+우리는 앞서 파일을 OS간 호환성을 위해 UTF-8으로 인코딩하여 저장했으므로, 파일이 UTF-8로 되어 있다고 선언한다.
+만일 앞에서 파일을 UTF-8으로 저장하지 않았다면, 윈도우의 시스템 인코딩인 cp949로 선언해야 인코딩 에러를 피할 수 있을 것이다.
+(만일 cp949로 선언해도 인코딩 에러가 발생한다면, 터미널에서 &lt;code&gt;chcp&lt;/code&gt;를 입력하여 내가 어떤 코드 페이지를 사용하고 있는지 확인하자.)
+앞으로 고생을 덜기 위해 (그리고 다양한 프로그래밍 환경에서 작업하는 사람들과 원활하게 협업하기 위해) 다음의 두 가지는 습관화하는 것이 좋다:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;파이썬 스크립트를 저장할 때 UTF-8 인코딩을 지정하고&lt;/li&gt;
+&lt;li&gt;파이썬 스크립트 최상단에 &lt;code&gt;# -*- coding: utf-8 -*-&lt;/code&gt;과 같은 방식으로 인코딩을 명시하자.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h4&gt;예시 6: Array 또는 List&lt;/h4&gt;
 &lt;p&gt;순서가 존재하는 데이터 타입인 배열은 어떻게 선언할까?&lt;/p&gt;
 &lt;ul&gt;
@@ -520,28 +550,33 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;h3&gt;초짜 프로그래머가 프로그래밍 잘하는 법&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;에러 메세지를 잘 &lt;em&gt;읽자&lt;/em&gt; (read, not see). 흔히들 시험 볼 때 문제 속에 답이 있다고 하는데, 프로그래밍할 때는 에러 메세지 속에 이유가 있다. 진짜다.&lt;/li&gt;
-&lt;li&gt;좋은 레퍼런스 찾기&lt;ol&gt;
-&lt;li&gt;공식 문서 (official documents) / API 보기 (ex: &lt;a href="http://docs.python.org"&gt;docs.python.org&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://lmgtfy.com/?q=python docs"&gt;구글링!&lt;/a&gt; (주의: 구글링을 한다고 무조건 좋은 레퍼런스가 찾아지는 것은 아니다)&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;a href="http://lmgtfy.com/?q=python3 docs"&gt;구글링!&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;주의: 구글링을 한다고 무조건 좋은 레퍼런스가 찾아지는 것은 아니다&lt;/li&gt;
+&lt;li&gt;보통은 공식 문서 (official documents) / API가 가장 좋은 레퍼런스 (ex: &lt;a href="http://docs.python.org"&gt;docs.python.org&lt;/a&gt; &amp;lt;- 웹문서의 도메인을 잘 보라.)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Learning how to program, rather than just accomplishing the task&lt;ul&gt;
+&lt;li&gt;Learn how to program, rather than just accomplishing the task&lt;ul&gt;
 &lt;li&gt;프로그래밍을 배우는 것과 복/붙하는 것은 다르다 (참고: &lt;a href="http://norvig.com/21-days.html"&gt;Teach yourself programming in ten years&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;일단 프로그램이 작동하게 하는데 성공했다면, 왜 작동했는지를 이해하지&lt;/li&gt;
+&lt;li&gt;일단 프로그램이 작동하게 하는데 성공했다면, 왜 작동했는지를 이해하자.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Follow coding conventions. 많은 똑똑한 사람들이 선택한 방법에는 이유가 있다.&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.python.org/dev/peps/pep-0008"&gt;PEP-8&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;변수/파일에는 직관적인 이름을 붙여주자.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;blockquote class="twitter-tweet" lang="en"&gt;&lt;p&gt;There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.&lt;/p&gt;&amp;mdash; Jeff Atwood (@codinghorror) &lt;a href="https://twitter.com/codinghorror/status/506010907021828096"&gt;August 31, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
 &lt;h3&gt;윈도우 프로그래머를 위한 팁&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;윈도우에서 자주 속썩이는 것들&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;인코딩이 골치. UTF8 쓰는게 OS간 호환성에 가장 좋지만, 윈도우는 EUC-KR이 기본. 한글 사용자라면 &lt;a href="http://www.joelonsoftware.com/articles/Unicode.html"&gt;유니코드가 뭔지 알고 가자&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Newlines가 골치. (참고: http://blog.codinghorror.com/the-great-newline-schism/, http://en.wikipedia.org/wiki/Newline)&lt;/li&gt;
+&lt;li&gt;인코딩이 골치. UTF8 쓰는게 OS간 호환성에 가장 좋지만, 윈도우는 EUC-KR이 기본. 한글 사용자라면 &lt;a href="http://www.joelonsoftware.com/articles/Unicode.html"&gt;유니코드가 뭔지 알아보자&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.codinghorror.com/the-great-newline-schism/"&gt;Newlines가 골치&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;역슬래시가 골치&lt;ul&gt;
 &lt;li&gt;왜 내 키보드에는 역슬래시가 없을까? (폰트 문제)&lt;/li&gt;
 &lt;li&gt;폴더 구분자를 쓸 때 왜 역슬래시를 두 번 표기해야할까?&lt;/li&gt;
@@ -567,6 +602,7 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;li&gt;&lt;a href="http://blogs.perceptionsystem.com/images/JavaVsPython.png"&gt;Java vs Python&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;최성철, &lt;a href="http://www.slideshare.net/blissray/w-37771905"&gt;산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 1: 파이썬 기초&lt;/a&gt;, 2014.&lt;/li&gt;
 &lt;li&gt;최성철, &lt;a href="http://www.slideshare.net/blissray/w-part-2"&gt;산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 2: 파이썬 활용&lt;/a&gt;, 2014.&lt;/li&gt;
+&lt;li&gt;김태훈, &lt;a href="http://carpedm20.github.io/140min-python/#/82"&gt;140분의 Python: 소개부터 문법 실습까지&lt;/a&gt;, 2015.&lt;/li&gt;
 &lt;/ul&gt;</summary></entry><entry><title>How to upload files and get a URL</title><link href="http://lucypark.kr/courses/tips/uploading-files.html" rel="alternate"></link><updated>2015-03-05T21:51:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-05:courses/tips/uploading-files.html</id><summary type="html">&lt;h3&gt;Using Google Drive&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Go to &lt;a href="http://drive.google.com"&gt;Google Drive&lt;/a&gt; and log in.&lt;/li&gt;
