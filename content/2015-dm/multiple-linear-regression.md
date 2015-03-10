@@ -55,6 +55,18 @@ Math: True
 ## Data mining techniques
 <img src="http://image.slidesharecdn.com/20121102seminar-121102055512-phpapp01/95/introduction-to-data-mining-for-newbies-15-1024.jpg?cb=1351855294" width="500px">
 
+## "There's no such thing as a free lunch"
+
+### Bias-variance tradeoff
+
+- Bias-variance decomposition
+http://scott.fortmann-roe.com/docs/BiasVariance.html
+
+
+### Time-performance tradeoff
+
+- TBD
+
 ## Simple linear regression
 
 - $x$: 독립변수
@@ -156,3 +168,11 @@ $$y = AX + b$$
 
             # Explained variance score: 1 is perfect prediction
             print('Variance score: %.2f' % mlr.score(X_test, y_test))
+
+## How to write a data mining proposal
+
+### Choosing a good project topic
+
+1. 이 문제를 푸는 것이 의미가 있는가 (있다면 어떤 의미가 있는가?)
+1. 데이터를 구할 수 있는가 (어디서 구할 수 있는가? 정제는 되어 있는가?)
+1. 내가 주어진 시간 안에 할 수 있는가 (원하는 것을 전부 할 수 없다면, 내가 할 수 있는 범위는 어디까지인가?)

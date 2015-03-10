@@ -30,3 +30,14 @@ A4 용지 1페이지 이내로 자기소개서를 작성해봅시다.
 
 프로젝트에 대한 자세한 사항은 다음 링크를 참고해주세요:
 http://www.lucypark.kr/courses/2015-dm/course-introduction.html#term-project-40
+
+## Assignment 3: 분류기 비교
+
+- 마감일: 2015-06-04 23:59
+- 제출처: e-class
+
+지금까지 우리는 Logistic regression, decision tree, k-NN, Artificial neural networks, SVM 등 5개의 분류기에 대해 배웠다.
+이들의 특성은 어떻게 다른가?
+각각의 알고리즘은 어떤 데이터셋과 상황에 적합하다고 볼 수 있는가?
+
+- 참고: http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html
