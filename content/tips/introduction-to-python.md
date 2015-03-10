@@ -133,7 +133,7 @@ So is Python the best programming language ever?
 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 `test.py` 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 마우스를 클릭하는 GUI(graphic user interface)가 아니라 키보드로 명령어를 입력하는 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!
 
         :::bash
-        > cd Desktop        # Desktop이라는 디렉토리로 변경하라(**c**hange **d**irectory)
+        > cd Desktop        # Desktop이라는 디렉토리로 변경하라(change directory)
         > python test.py    # python이라는 프로그램으로 test.py라는 파일을 실행하라
 
     이제부터 파이썬에서 빈번하게 사용할 기능을 7가지 예시를 통해 배워볼 것이다.<br>
