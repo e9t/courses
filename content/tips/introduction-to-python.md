@@ -3,13 +3,24 @@ Date: 2015-03-08 18:00
 Toc: True
 
 
+## 오늘의 목표
+
+- 나도 할 수 있다, 프로그래밍!
+    - 왜?
+    - 뭐든지 잘할 수 있어야 재밌고 재밌어야 잘할 수 있고 잘 해야 재밌음.
+    - 일단 나도 할 수 있다는 자신감을 느껴보고 더불어 신기함과 재미도 느껴보자!
+    - <s>간지도 좀 남</s>
+
+![programmer](https://s-media-cache-ak0.pinimg.com/236x/7b/b7/06/7bb706cc6f2ac6e62c58b299acf3f362.jpg)
+
 ## 들어가기 전에
 
 1. 운영체제(OS)란?
     - ["시스템 하드웨어와 소프트웨어를 실행하기 위한 시스템 소프트웨어"](http://ko.wikipedia.org/wiki/%EC%9A%B4%EC%98%81_%EC%B2%B4%EC%A0%9C)
         - ex: 윈도우 7, Mac OS 10.10, Ubuntu 14.04, iOS 6, Android 5.0, ...
     - 프로그래밍을 하기 전에는 내가 어떤 OS의 어떤 버젼을 사용하고 있는지 꼭 알아두자!
-    - **여기서는 윈도우 7을 사용하고 있다는 가정 하에 튜토리얼을 진행합니다.**
+    - **여기서는 윈도우 7을 사용하고 있다는 가정 하에 튜토리얼을 진행합니다.**<br>
+    <img src="http://www.tutorialspoint.com/images/os-mini-logo.png">
 1. 쉘(shell)이란?
     - ["운영체제 상에서 다양한 운영체제 기능과 서비스를 구현하는 인터페이스를 제공하는 프로그램"](http://ko.wikipedia.org/wiki/%EC%85%B8)
     - 운영체제의 핵심 부분을 구성하는 "커널(kernel)"을 감싸고 있다는 뜻에서 "쉘"이라는 이름이 붙었죠<br>
@@ -129,6 +140,7 @@ Toc: True
             1. 파이썬 3가 유니코드 서포트를 해서 한국어를 사용하는 사람들에게 편리
             1. [이제 많은 라이브러리들이 파이썬 3도 지원](http://python3wos.appspot.com/)
             1. 파이썬 3 is [the way to go](http://pythonkr.github.io/pyconkr-2014/pdf/pyconkr-2014-25_geofront.pdf)
+    <!-- - 그리고 자꾸 패키지, 패키지하는데 패키지가 뭔가요? -->
 2. Install Anaconda
     - 고맙게도 파이썬 환경변수 설정은 따로 할 필요없이 아나콘다가 알아서 해줌<br>
     <img src="images/anaconda2.png" width="400px">
@@ -373,7 +385,7 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 
         # iterate over hashmap
         for k, v in student_ids.items():
-            print("Key: %s, Value: %s" % (k, v))
+            print("Key: " + k + ", Value: " + v)
 
         # get keys
         print(student_ids.keys())
@@ -503,6 +515,45 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 1. Eclipse
 1. Visual Studio 
 1. [...and more](http://pedrokroger.net/choosing-best-python-ide/)
+
+또는,
+터미널로 돌아가서, `ipython`을 입력하는 대신 `ipython notebook`이라고 입력해보자.
+신세계가 열릴 것이다!
+
+- [IPython notebook official docs](http://ipython.org/notebook.html)
+- [IPython notebook을 사용한 예시들](http://nbviewer.ipython.org/)
+
+
+<!--
+## 좀 더 실질적인걸 해볼까요?
+
+- 문법은 대강 알겠는데, 어디다가 쓸 수 있을까요?
+- 앞에서 사용한 문법을 응용해서 내 컴퓨터에 파일 생성하고 이름 바꾸고 지우기!
+
+        :::python
+        # Create ten files
+        for i in range(10):
+            with open("some file %s.txt" % i, "w") as f:
+                f.write("Hello world full of data!\nThis is the %sth file." % i)
+-->
+
+## What's next?
+
+- 이제 설치도 끝났고 파이썬이 대강 어떻게 돌아갔는지 살펴보았다
+- 그렇다면 다음 단계는 뭘까?
+- 앞으로 우리는 몇 시간에 걸쳐 각종 데이터마이닝 알고리즘에 대해 공부하고, 각각을 파이썬 코드를 이용해 직접 돌려볼 것이다
+- 하지만 파이썬을 책으로 좀 더 깊게 들여다보고 싶다면? 아래 링크들을 참고해보자
+    - 초급: [Learn Python the hard way](http://learnpythonthehardway.org/book/) ([번역본](http://www.yes24.com/24/goods/15240210))
+    - 중/고급: [The hacker's guide to Python](https://julien.danjou.info/books/the-hacker-guide-to-python) ([번역본](http://www.yes24.com/24/goods/15418826))
+- 난 책 같은거 필요없다! 온라인으로 배울 방법이 궁금하다면?
+    - [Code Academy](http://www.codecademy.com/tracks/python)
+- 난 바로 실전으로 들어간다. 파이썬을 활용한 연습문제를 풀어보고 싶다면?
+    - [Python Challenge](http://www.pythonchallenge.com): 파이썬보다는 퀴즈
+    - [Project Euler](https://projecteuler.net/): 파이썬보다는 알고리즘
+- 가장 중요한 것: 여러분이 이 과정을 **즐기는** 것이 가장 중요합니다.
+    - 프로젝트도, 여러분이 스스로 흥미와 재미를 느낄 법한 주제를 골라보는 것이 중요해요.
+    - 과연 그게 뭘까요? 내가 가진, 혹은 앞으로 이 수업을 통해 가질 기술로, 나는 나의 삶을, 우리 학교를, 서울시를, 대한민국을, 세계에 어떤 영향을 줄 수 있을까요?
+- 제안: 프로젝트 팀을 짜고나면 프로젝트 뿐 아니라 파이썬 스터디도 같이 진행해보면 어때요?
 
 ## Appendix
 
