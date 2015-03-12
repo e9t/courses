@@ -37,86 +37,108 @@
     <div itemprop="articleBody" class="article-body">
         <h4>공지사항</h4>
 <ol>
-<li>Assignment 제출방식 변경: 2015-dm@googlegroups.com -&gt; e-class</li>
-<li>Assignment 개수 변경: 4 -&gt; 3</li>
+<li>Assignment 제출방식 변경: 2015-dm@googlegroups.com $\to$ e-class</li>
+<li>Assignment 개수 변경: 4 $\to$ 3</li>
 <li>Project proposal 제출: 다음주 수요일(3/18)까지 e-class로</li>
 <li>Project team 구성: 다음주 수요일(3/18)까지 e-class로</li>
-<li>수업 시간 변경: 09:00 -&gt; 09:30<ul>
+<li>수업 시간 변경: 09:00 $\to$ 09:30<ul>
 <li>저는 9시까지 올 것이니 질문 있으신 분들은 미리 와주세요</li>
 <li>9시 반에 출석 부르고 바로 수업 시작할 것</li>
+</ul>
+</li>
+<li>어렵더라도, 질문은 공개적으로 해주세요.<ul>
+<li>공개로 질문을 하면 답변도 공개여서, 모두가 질문을 하고 답변을 받을 수 있게 됩니다.</li>
+<li>질문을 서면을 하려다보면 질문 자체를 잘 formulation 해야합니다. 그 과정에서 질문자 당사자도 생각을 많이 할 수 있게 되기 때문에 스스로 머릿속으로 내용 정리를 할 수 있게 됩니다.</li>
+<li>참고: Eric Steven Raymond, <a href="http://www.catb.org/esr/faqs/smart-questions.html">How To Ask Questions The Smart Way</a></li>
 </ul>
 </li>
 </ol>
 <h2>Data mining process</h2>
 <p><img src="images/process.png" width="500px"></p>
-<h2>학습(learning)이란 무엇을 의미하는가?</h2>
-<p><img src="images/partition.png" width="500px"></p>
-<h2>목적에 따른 분류: Descriptive modeling vs Predictive modeling</h2>
+<h3>목적에 따른 분류: Predictive methods vs Descriptive methods</h3>
 <ul>
-<li>Descriptive modeling <ul>
-<li>Look back to the past</li>
-<li>To extract compact and easily understood information from large, sometimes gigantic database.</li>
-<li>OLAP (online analytical processing), SQL (structured query language)</li>
-</ul>
-</li>
 <li>Predictive modeling<ul>
-<li>Predict the future</li>
-<li>Identify strong links between variables of data.</li>
-<li>To predict the unknown consequence (dependent variable) based on the information provided (independent variable)</li>
-<li>$y = f(x_1, x_2, ..., x_n) + \epsilon$</li>
+<li>Predict the <strong>future</strong></li>
+<li>Identify strong links between variables of data</li>
+<li>To predict the unknown consequence (dependent variable) based on the information provided (independent variable)<ul>
+<li>과거를 통해 현재를 알고 미래를 내다보자</li>
 </ul>
 </li>
 </ul>
-<h2>학습데이터에 따른 분류: Supervised learning vs Unsupervised learning</h2>
+</li>
+<li>Descriptive modeling<ul>
+<li>Look back to the <strong>past</strong></li>
+<li>To extract compact and easily understood information from large, sometimes gigantic databases</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/methods.png" width="600px"></p>
+<h3>학습데이터에 따른 분류: Supervised learning vs Unsupervised learning</h3>
 <ul>
-<li>Supervised learning<ul>
-<li>Goal: predict a single "target" or "outcome" variable $y$</li>
-<li>Finds relations between $X$ and $y$</li>
-<li>Train (learn) data where target value is known.</li>
-<li>Score data where target value is not known.</li>
-<li>입출력(input-output)의 쌍으로 구성된 training set으로부터 입력을 출력을 사상하는 함수를 학습하는 과정.</li>
-<li>즉, 입력벡터를 x, 그에 대응하는 출력벡터(i.e., label)를 y라고 할 때, training set은 D={(x,y)}로 주어지게 되며, 모델은 이 training set에 기반하여 관측하지 않은 새로운 데이터 x'가 들어왔을 때 그에 해당되는 label, y'을 추론하는 방법을 배우게 된다.</li>
-<li>교사학습은 주로 분류(classification)와 회귀분석(regression) 문제 해결에 적합하다.</li>
+<li><strong>교사학습(Supervised learning)</strong><ul>
+<li>Goal: predict a single "target" or "outcome" variable $y$<ul>
+<li>Finds relations between $X$ and $y$: $y = f(x_1, x_2, ..., x_n) + \epsilon$</li>
+<li>입출력(input-output)의 쌍으로 구성된 training data로부터 입력을 출력을 사상하는 함수를 학습하는 과정</li>
 </ul>
 </li>
-<li>Unsupervised learning
-    - Explores intrinsic characteristics.<ul>
-<li>Estimates underlying distribution.</li>
-<li>Segment data into meaningful groups or detect patterns.</li>
-<li>There is no target (outcome) variable to predict or classify.</li>
-<li>출력값 없이 오직 입력값만 주어지며, 이러한 입력값들의 공통적인 특성을 파악하여 학습하는 과정.</li>
-<li>즉, training set은 D={(x)}로 주어지게 된다.</li>
-<li>비교사학습은 주로 군집화(clustering), 밀도추정(density estimation), 차원축소(dimension reduction) 등에 사용된다.</li>
+<li>Method: <em>Learn</em> on training data, <em>score</em> on validation data<ul>
+<li>즉, 입력벡터를 $X$, 그에 대응하는 출력벡터(i.e., label)를 $y$라고 할 때, training data는 $D={(x, y)}$로 주어지게 되며, 모델은 이 training data에 기반하여 관측하지 않은 새로운 데이터 $x'$가 들어왔을 때 그에 해당되는 label, $y'$을 추론하는 방법을 배우게 된다</li>
+</ul>
+</li>
+<li>ex: 분류(classification)와 회귀분석(regression)</li>
+</ul>
+</li>
+<li><strong>비교사학습(Unsupervised learning)</strong><ul>
+<li>Goal: Explore intrinsic characteristics of data $X$</li>
+<li>Method: Estimate underlying distributions and/or segment data into meaningful groups or detect patterns<ul>
+<li>There is no target (outcome) variable to predict or classify</li>
+<li>출력값 없이 오직 입력값만 주어지며, 이러한 입력값들의 공통적인 특성을 파악하여 학습하는 과정</li>
+<li>Training data는 $D={(x)}$로 주어지게 된다.</li>
+</ul>
+</li>
+<li>ex: 군집화(clustering), 밀도추정(density estimation), 차원축소(dimension reduction)</li>
 </ul>
 </li>
 <li>cf. semi-supervised learning</li>
 </ul>
-<h2>Data mining techniques</h2>
-<p><img src="http://image.slidesharecdn.com/20121102seminar-121102055512-phpapp01/95/introduction-to-data-mining-for-newbies-15-1024.jpg?cb=1351855294" width="500px"></p>
-<h2>"There's no such thing as a free lunch"</h2>
-<h3>Bias-variance tradeoff</h3>
-<ul>
-<li>Bias-variance decomposition
-http://scott.fortmann-roe.com/docs/BiasVariance.html</li>
-</ul>
-<h3>Time-performance tradeoff</h3>
-<ul>
-<li>TBD</li>
-</ul>
+<h3>Training data, validation data이란 무엇을 의미하는가?</h3>
+<p><img src="images/partition.png" width="500px"></p>
 <h2>Simple linear regression</h2>
+<ul>
+<li>Regression<ul>
+<li>대표적인 교사학습(supervised learning) 방법론<ul>
+<li>"right answers" given</li>
+</ul>
+</li>
+<li>Predict continuous valued output</li>
+</ul>
+</li>
+<li>
+<p>Formulation</p>
 <ul>
 <li>$x$: 독립변수</li>
 <li>$y$: 종속변수</li>
 <li>$a, b$: 파라미터</li>
 </ul>
 <p>$$y = ax + b$$</p>
+</li>
+<li>
+<p>ex: Housing price prediction (<a href="https://archive.ics.uci.edu/ml/datasets/Housing">data</a>)<br>
+    <img src="images/house.png" width="400px"></p>
+</li>
+</ul>
 <h2>Multiple linear regression (MLR)</h2>
+<ul>
+<li>
+<p>Formulation</p>
 <ul>
 <li>$X$: 독립변수들</li>
 <li>$y$: 종속변수</li>
 <li>$A, b$: 파라미터</li>
 </ul>
 <p>$$y = AX + b$$</p>
+</li>
+</ul>
 <h3>MLR in Python</h3>
 <ol>
 <li>
@@ -235,12 +257,14 @@ http://scott.fortmann-roe.com/docs/BiasVariance.html</li>
 </li>
 </ol>
 <h2>How to write a data mining proposal</h2>
-<h3>Choosing a good project topic</h3>
-<ol>
+<ul>
+<li>Choosing a good project topic<ol>
 <li>이 문제를 푸는 것이 의미가 있는가 (있다면 어떤 의미가 있는가?)</li>
 <li>데이터를 구할 수 있는가 (어디서 구할 수 있는가? 정제는 되어 있는가?)</li>
 <li>내가 주어진 시간 안에 할 수 있는가 (원하는 것을 전부 할 수 없다면, 내가 할 수 있는 범위는 어디까지인가?)</li>
 </ol>
+</li>
+</ul>
 
     </div>
     <div class="footnote">
@@ -312,7 +336,7 @@ $(function(){
 </script>
 <script>
     function hyphenate(str) {
-        return str.toLowerCase().replace(/[?!:"()%]/gi, '').replace(/\s/g, '-');
+        return str.toLowerCase().replace(/[?!:'"()%]/gi, '').replace(/\s/g, '-');
     }
 
     String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
