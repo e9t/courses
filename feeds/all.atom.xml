@@ -470,31 +470,78 @@ algorihtm = &amp;#39;auto&amp;#39;      # ball_tree, kd_tree, brute 중 택일
 &lt;a href="http://www.quora.com/What-is-the-origin-of-the-name-shell"&gt;&lt;img src="images/kernel.gif" width="250px"&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;GUI? CLI?&lt;ul&gt;
+&lt;li&gt;GUI는 graphic user interface의 약자로, 그래픽으로 컴퓨터를 조작할 수 있게 해준다. &lt;a href="http://en.wikipedia.org/wiki/Windows_shell"&gt;윈도우 쉘&lt;/a&gt;이 대표적인 graphic shell이다.&lt;br&gt;
+&lt;img src="http://upload.wikimedia.org/wikipedia/en/b/bd/Windows_7.png" width="500px"&gt;&lt;/li&gt;
+&lt;li&gt;CLI는 command line interface의 약자로, 텍스트로 컴퓨터를 조작할 수 있게 해준다. 윈도우에서는 &lt;a href="http://en.wikipedia.org/wiki/Cmd.exe"&gt;명령 프롬프트&lt;/a&gt;가 대표적인 text shell이다.&lt;br&gt;
+&lt;img src="http://upload.wikimedia.org/wikipedia/commons/1/10/Dir_command_in_Windows_Command_Prompt.png" width="500px"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;왜 파이썬인가?&lt;/h2&gt;
-&lt;ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.trinket.io/why-python/"&gt;파이썬은, 처음 배우는 프로그래밍 언어로써 좋다&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;Python is now the most popular introductory language at Top US Universities (July, 2014)&lt;br&gt;
 &lt;a href="http://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext"&gt;&lt;img src="images/python.png" width="400px"&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.stat.washington.edu/~hoytak/blog/whypython.html"&gt;파이썬은, 연구용 언어로써 좋다&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;Python is a major programming language for data mining (Aug, 2014)&lt;br&gt;
 &lt;a href="http://www.kdnuggets.com/2014/08/four-main-languages-analytics-data-mining-data-science.html"&gt;&lt;img src="images/kdnuggets.jpg" width="350px"&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;So is Python the best programming language ever?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;No, and &lt;a href="http://paulgraham.com/hundred.html"&gt;there probably will never be such a thing&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;But, definitely worth the effort for now&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;그렇다면 진짜로 왜?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;What's so great about Python?&lt;/h3&gt;
+&lt;p&gt;이번 시간에 계속 살펴보겠지만, 파이썬의 문법은 아주 간결하고 읽기 편합니다.
+게다가 &lt;a href="https://docs.python.org/"&gt;문서화&lt;/a&gt;가 아주 상세하게 잘 되어 있어서 배우기도 쉽고요.&lt;/p&gt;
+&lt;p&gt;하지만 파이썬이 모든 경우에 가장 좋은 언어라고 할 수는 없습니다.
+특히, 파이썬이 현존하는 모든 태스크를 위해 가장 적합하게 설계된 언어는 아닙니다.
+&lt;!-- 프로그래밍 언어는 그 자체로 기술(technology, 技術)이라기보다는 아이디어를 표현하는 기술법(description, 記述)이며 각 태스크에 적합한 언어는 따로 있습니다.  (적어도 2015년 현재에는 그런듯합니다) --&gt;&lt;/p&gt;
+&lt;p&gt;비유를 한 번 들어볼까요?
+나무를 베고, 못을 박고, 나사를 돌릴 때 여러분은 아래에 있는 도구 중 어떤 것을 선택하겠습니까?
+&lt;img src="http://upload.wikimedia.org/wikipedia/commons/d/df/Saw%2C_hammer%2C_screwdriver%2C_wrench%2C_pliers.png"&gt;&lt;/p&gt;
+&lt;p&gt;보통은 나무를 벨 때 톱을, 못을 박을 때는 망치를, 나사를 돌릴 때는 드라이버를 사용하겠죠.
+프로그래밍 언어도 도구여서, 목적에 따라 다른 도구를 사용하는 것이 좋을 때가 있습니다.
+가령, 웹에 시각화를 올리기 위해서는 자바스크립트가, 구조적 데이터를 다룰 때는 R이 더 편할 수도 있는거죠.&lt;/p&gt;
+&lt;p&gt;한편 파이썬은 특정 목적에 적합한 언어라기보다는 범용으로 사용할 수 있는 언어(general purpose language)입니다.&lt;br&gt;
+일종의 Swiss army knife와 같은거죠.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Wenger_EvoGrip_S17.JPG/440px-Wenger_EvoGrip_S17.JPG"&gt;&lt;/p&gt;
+&lt;p&gt;실제로 파이썬을 사용하면 앞서 얘기한 웹에 시각화를 올린다든지 구조적인 데이터를 다룰 수도 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;시각화: matplotlib, mpld3&lt;/li&gt;
+&lt;li&gt;웹프로그래밍: requests, django, flask&lt;/li&gt;
+&lt;li&gt;구조적 데이터 분석: numpy, scipy, scikit-learn&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;하지만 Swiss army knife가 때로는 망치만큼의 강건함이나 만족스러움을 주지 못하듯, 파이썬도 마찬가지 일 수 있습니다.&lt;br&gt;
+그럴 때는 망치를 구하시면 됩니다! (i.e., JavaScript, R 등 새로운 스킬/도구/언어를 또 습득하시면 됩니다! 하지만 그건 이 수업 말고 다른 기회에...)&lt;/p&gt;
+&lt;p&gt;게다가 파이썬에는 활발한 개발 커뮤니티가 있습니다.
+&lt;a href="https://www.python.org/dev/peps/pep-0001/"&gt;PEP&lt;/a&gt;, 즉 Python enhancement proposal이라고 누구나 파이썬 언어 자체에 대한 제안을 할 수도 있고
+아래와 같이 유저(user) 커뮤니티들도 활발하게 돌아가고 있습니다.
+개발을 하다가 질문이 있을 때는 아래 커뮤니티들을 적극 활용해보세요!&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://www.facebook.com/groups/pythonkorea/"&gt;파이썬 코리아 페이스북 그룹&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.facebook.com/groups/codingeverybody/"&gt;생활코딩 페이스북 그룹&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.facebook.com/pyjog"&gt;파이조그(PyJog)&lt;/a&gt;: 이 커뮤니티는 오프라인 커뮤니티입니다. 고수님들을 직접 만날 기회이니 프로그래밍을 더 잘해보고 싶은 분은 한 번쯤 참석해보시기 바랍니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;요약하자면, 파이썬은 아래와 같은 장점들이 있습니다:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;쉽다&lt;/li&gt;
-&lt;li&gt;간편하다&lt;/li&gt;
+&lt;li&gt;간결하고 읽기 쉽다 (readability)&lt;/li&gt;
+&lt;li&gt;문서화가 잘 되어 있다 (documentation)&lt;/li&gt;
+&lt;li&gt;라이브러리/패키지가 풍부하다&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.python.org/community/"&gt;개발 커뮤니티&lt;/a&gt;가 활발하다&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;...외에도 가독성(readability)이 좋다는 점, 문서화(documentation)가 잘 되어있다는 점, 라이브러리/패키지가 풍부해서 데이터 분석부터 시각화, 웹프로그래밍 등 다양한 영역에 사용할 수 있다는 점, 개발 커뮤니티가 활발하다는 점 등 때문에 &lt;a href="http://blog.trinket.io/why-python/"&gt;처음 배우는 프로그래밍 언어로써&lt;/a&gt;, 그리고 &lt;a href="http://www.stat.washington.edu/~hoytak/blog/whypython.html"&gt;연구용 언어로써&lt;/a&gt; 좋다는 평가가 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;파이썬 프로그래밍을 하다가 궁금한 점이 있을 때는 아래 커뮤니티들에 질문을 던져보세요:&lt;br&gt;
-1. &lt;a href="https://www.facebook.com/groups/pythonkorea/"&gt;파이썬 코리아 페이스북 그룹&lt;/a&gt;&lt;br&gt;
-2. &lt;a href="https://www.facebook.com/groups/codingeverybody/"&gt;생활코딩 페이스북 그룹&lt;/a&gt;&lt;br&gt;
-그 외에도 &lt;a href="https://www.facebook.com/pyjog"&gt;파이조그(PyJog)&lt;/a&gt;와 같이 주말에 오프라인으로 모여서 각자 코딩하는 모임도 있습니다. 고수님들을 만날 기회이니 프로그래밍을 더 잘해보고 싶은 분은 한 번쯤 참석해보시기 바랍니다.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h3&gt;Then is Python the best programming language for data mining?&lt;/h3&gt;
+&lt;!-- No, and [there probably will never be such a thing](http://paulgraham.com/hundred.html) --&gt;
+
+&lt;p&gt;데이터마이너는 가장 핵심이 되는 데이터 분석 뿐 아니라, 앞 단의 데이터 수집이나 데이터 정제부터, 데이터 시각화까지
+넓은 영역의 태스크들을 수행하게 됩니다.&lt;/p&gt;
+&lt;p&gt;데이터마이닝을 배우는 이 강좌에서 파이썬을 주 언어로 택한 이유는
+파이썬이 데이터마이닝을 위해 가장 좋은 언어이거나, 데이터마이닝의 특정 태스크를 수행하는데 가장 좋기 때문은 아닙니다.
+다만, 좋은 Swiss army knife를 마련해서 도구는 빨리 습득하고,
+여러분이 데이터마이닝 알고리즘들 자체에 조금 더 focus할 수 있게 하기 위함입니다.&lt;/p&gt;
+&lt;p&gt;게다가 덤으로, 좋은 프로그래밍 언어를 습득함으로써 프로그래밍 자체에 대한 이해를 높이고 흥미를 느낄 수 있으면 좋겠죠!&lt;/p&gt;
+&lt;p&gt;자, 그럼 시작해볼까요 :)&lt;/p&gt;
 &lt;h2&gt;Installing Python&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;윈도우에서 자바 프로그래밍 환경을 마련하는 일반적인 절차는?&lt;ul&gt;
