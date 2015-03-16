@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-ba.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-04-02T00:00:00+02:00</updated><entry><title>Bash</title><link href="http://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><updated>2015-04-02T00:00:00+02:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;What is an OS?&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-ba.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-04-02T00:00:00+09:00</updated><entry><title>Bash</title><link href="http://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><updated>2015-04-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;What is an OS?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;DOS, Windows, Linux, Mac OS, iOS, Android, ...&lt;/li&gt;
 &lt;/ul&gt;
@@ -28,7 +28,7 @@
 &lt;li&gt;&lt;code&gt;/some/absolute/path&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;some/relative/path&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="http://book.soundonair.ru/hall1/images/3_39.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/bash.jpg" width="350px"&gt;&lt;/p&gt;
 &lt;h3&gt;Permissions&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Read, Write, eXecute&lt;/li&gt;
@@ -49,7 +49,7 @@
 &lt;ul&gt;
 &lt;li&gt;A shell is a macro processor that executes commands&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="http://2.bp.blogspot.com/-OJTUMIsryCU/T92Eg2IF5VI/AAAAAAAAABc/luBUtgpl2pM/s1600/kernel+shell.png" width="500px"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/kernel.png" width="500px"&gt;&lt;/p&gt;
 &lt;h3&gt;Is Bash the only shell available?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;No.&lt;/li&gt;
@@ -81,14 +81,13 @@ Some jokes about package managing:
 - https://twitter.com/ddprrt/status/529909875347030016
 --&gt;
 
-&lt;h3&gt;Data sampling&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;ex: http://www.ecogwiki.com/Hash-based_sampling&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h3&gt;Data science&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;ex: http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Pragmatic tools</title><link href="http://lucypark.kr/courses/2015-ba/pragmatic.html" rel="alternate"></link><updated>2015-03-13T15:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-13:courses/2015-ba/pragmatic.html</id><summary type="html">&lt;h1&gt;Great tools&lt;/h1&gt;
+&lt;li&gt;&lt;a href="http://www.ecogwiki.com/Hash-based_sampling"&gt;Data sampling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;...&lt;a href="http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html"&gt;and more&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Scraping from the Web</title><link href="http://lucypark.kr/courses/2015-ba/crawling.html" rel="alternate"></link><updated>2015-03-17T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-17:courses/2015-ba/crawling.html</id><summary type="html">&lt;p&gt;&lt;img src="images/google-spreadsheet.png"&gt;
+&lt;img src="images/excel.png"&gt;&lt;/p&gt;
+&lt;p&gt;import.io&lt;/p&gt;</summary></entry><entry><title>Pragmatic tools</title><link href="http://lucypark.kr/courses/2015-ba/pragmatic.html" rel="alternate"></link><updated>2015-03-13T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-13:courses/2015-ba/pragmatic.html</id><summary type="html">&lt;h1&gt;Great tools&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Stackoverflow&lt;/li&gt;
 &lt;li&gt;Google Scholar&lt;/li&gt;
@@ -128,7 +127,7 @@ Some jokes about package managing:
 &lt;/blockquote&gt;
 &lt;h1&gt;Honor code for BA 2015&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;My answers to homework, quizzes and exams will be my own work (except for assignments that explicitly permit collaboration). I will not make solutions to homework, quizzes or exams available to anyone else. This includes both solutions written by me, as well as any official solutions provided by the course staff. I will not engage in any other activities that will dishonestly improve my results or dishonestly improve/hurt the results of others.&lt;/em&gt;&lt;/p&gt;
-&lt;h1&gt;The benefits of pair programming&lt;/h1&gt;</summary></entry><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-ba/course-logistics.html" rel="alternate"></link><updated>2015-03-06T15:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-ba/course-logistics.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
+&lt;h1&gt;The benefits of pair programming&lt;/h1&gt;</summary></entry><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-ba/course-logistics.html" rel="alternate"></link><updated>2015-03-06T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-ba/course-logistics.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
 &lt;p&gt;&lt;img src="http://lucypark.kr/courses/images/me.jpg" width="150px" class="pull-right"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Eunjeong (Lucy) Park&lt;/li&gt;
@@ -277,7 +276,7 @@ we encourage you to approach your work with honesty and integrity.&lt;/p&gt;
     - Divide an conquer!
         - Step 1. Focus only on the contents! (Using a basic text editor or plain paper might be a good idea)
         - Step 2. Do the formatting. Formatting matters. (ex: fonts, layouts, tenses, etc.)
---&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>Business Analytics (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-ba/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-ba/index.html</id><summary type="html">&lt;blockquote&gt;
+--&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>Business Analytics (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-ba/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-ba/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Business Analytics class of 2015!
 Here you'll find all course materials, guides and schedules.
 In case you have questions, feel free to send an email to &lt;a href="mailto:2015-ba@googlegroups.com"&gt;2015-ba@googlegroups.com&lt;/a&gt; (or directly write a new topic at the forum below).&lt;/p&gt;
@@ -316,15 +315,15 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;Tools for pragmatic data mining&lt;ul&gt;&lt;li&gt;&lt;a href="bash.html"&gt;Bash&lt;/a&gt;&lt;li&gt;&lt;a href="../tips/introduction-to-python.html"&gt;Python&lt;/a&gt;&lt;li&gt;Statistical Summaries and Exploratory Data Analysis&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;Scraping from the Web&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Project proposals (300 words+)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Python for NLP&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/10&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/17&lt;/td&gt;&lt;td&gt;Mid-term Quiz&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4/24&lt;/td&gt;&lt;td&gt;Clustering and Dimensionality Reduction|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5/01&lt;/td&gt;&lt;td&gt;Visualization and storytelling|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5/08&lt;/td&gt;&lt;td&gt;Support vector machine and the kernel trick|Share Reading assignment&lt;/td&gt;&lt;td&gt;Progress report (1K+ words)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5/15&lt;/td&gt;&lt;td&gt;Going deep: Deep learning|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5/22&lt;/td&gt;&lt;td&gt;Going big 1: Map/reduce|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5/29&lt;/td&gt;&lt;td&gt;Going big 2: Spark|Share Reading assignment&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4/24&lt;/td&gt;&lt;td&gt;Clustering and Dimensionality Reduction&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/01&lt;/td&gt;&lt;td&gt;Visualization and storytelling&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/08&lt;/td&gt;&lt;td&gt;Support vector machine and the kernel trick&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Progress report (1K+ words)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/15&lt;/td&gt;&lt;td&gt;Going deep: Deep learning&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/22&lt;/td&gt;&lt;td&gt;Going big 1: Map/reduce&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/29&lt;/td&gt;&lt;td&gt;Going big 2: Spark&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;6/05&lt;/td&gt;&lt;td&gt;Final presentation&lt;/td&gt;&lt;td&gt;Project final report (3K+ words)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;6/12&lt;/td&gt;&lt;td&gt;Final exam&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;&lt;/p&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>

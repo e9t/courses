@@ -31,38 +31,68 @@
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="article-header">
         <h1 itemprop="name headline">Logistic regression</h1>
-		<time datetime="2015-03-20T09:00:00+01:00" itemprop="datePublished">Fri 20 March 2015</time>
+		<time datetime="2015-03-20T09:00:00+09:00" itemprop="datePublished">Fri 20 March 2015</time>
 	</div>
     <div class="article-toc"><b>Contents</b><p></p></div>
     <div itemprop="articleBody" class="article-body">
-        <h4>공지사항</h4>
-<ol>
-<li>이 수업은 프로그래밍 수업이 아니라 데이터마이닝 수업입니다<ul>
-<li>프로그래밍 팁을 공유하고 파이썬 튜토리얼을 병행하는 것은 어디까지나 여러분을 위해 하는 것<ul>
-<li>프로젝트 할 때 막막하지 말라고</li>
-<li>이론에 그치는 데이터마이닝이 아니라 실질적인 마이닝 능력을 키우라고</li>
-<li>프로그래밍 언어 하나라도 자유자재로 쓸 수 있게 돼서 어디 가서 써먹으라고</li>
+        <h2>오늘의 목표</h2>
+<ul>
+<li>MLR의 블랙박스 열어보기</li>
+<li>로지스틱 회귀모형 개념 익히고 파이썬으로 돌려보기</li>
+<li>실제 데이터 파일을 구해서 파이썬으로 로딩하기</li>
+</ul>
+<h2>Multiple linear regression (revisited)</h2>
+<ul>
+<li>지난 시간에 우리는 MLR(multiple linear regression)에 대해 배우고 파이썬으로 실제 데이터에 대해 모델을 구축해보았다</li>
+<li>그런데 우리 컴퓨터는 MLR을 어떻게 학습했을까? (i.e., 파라미터를 어떻게 추정했을까?)</li>
+<li>이번 시간에는 MLR의 <a href="http://en.wikipedia.org/wiki/Function_(mathematics)">블랙박스(black box)</a> 안에 무엇이 있는지를 보자.<br>
+    <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Function_machine2.svg/440px-Function_machine2.svg.png"><img src="images/function.png" width="200px"></a></li>
+<li>
+<p>MLR: Fit a linear relationship between a quantitative dependent variable $y$ and a set of independent variables $X$ (=$[x_1, x_2, ..., x_m]$), such that</p>
+<p>$$y = b_0 + b_1x_1 + b_2x_2 + ... + b_mx_m$$</p>
+<ul>
+<li>$y$: output variable / dependent variable</li>
+<li>$x_j$: $j$th input variable / independent variable</li>
+<li>$b_j$: parameters / coefficients</li>
+<li>$m$: Number of input variables/features</li>
 </ul>
 </li>
-<li>프로그래밍? 시험에도 안 나옴 (혹~시라도 나오게 된다면 사전 공지)</li>
-<li>하지만 프로그래밍은 여러분에게 큰 자산이 될 것이라고 확신</li>
-<li>개인 경험: 프로그래밍 입문 (C 언어), C $to$ Matlab $to$ Java $to$ Python</li>
-<li>팁: 하나의 언어를 제대로 익힌 후 다른 언어를 배우면 훨씬 쉽다</li>
+</ul>
+<h3>OLS(ordinary least squares)</h3>
+<ul>
+<li>MLR의 파라미터 $b_j$들을 추정하기 위해서는 OLS를 사용한다</li>
+<li>여러 개의 변수가 들어가면 복잡해지니까 단변수의 simple linear regression을 가정해보자</li>
+</ul>
+<p>$$y = b_0 + b_1x_1$$</p>
+<ul>
+<li>Formulation<ul>
+<li>Hypothesis: $f(x) = b_0 + b_1x_1$</li>
+<li>Parameters: $b_0, b_1$</li>
+<li>Cost function: $J(b_0, b_1) = \frac{1}{2n}\sum_{i=1}^{n}(f(x_1^{(i)}) - y^{(i)})^2$<ul>
+<li>The MSE(mean squared error, 편차의 제곱의 평균)</li>
 </ul>
 </li>
-<li>fyi. <a href="http://seoul.globalhackathon.io">서울 글로벌 해커톤</a><ul>
-<li>Hackathon? Hack + Marathon<ul>
-<li>n 시간 동안 먹고 마시고 토론하며 단시간 내에 완성된 프로토타입/프로덕트를 만드는 행사</li>
-<li>주로 개발자, 디자이너, 데이터 분석가 등이 모임</li>
-<li>멋진 사람들을 다양하게 만날 기회</li>
+<li>Goal: $arg \min J(b_0, b_1)$<ul>
+<li>비용 $J$를 최소화하는 것이 목표</li>
 </ul>
 </li>
-<li>일정: 2015년 7월 29일 - 2015년 8월 1일 (2박 3일)</li>
-<li>접수마감: 2015년 4월 30일</li>
-<li>저도 가고싶으나...</li>
 </ul>
 </li>
-</ol>
+<li>Solution<ul>
+<li>Numerical solution: <a href="http://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a></li>
+<li>Analytical solution: Normal equation<ul>
+<li>Let $y = b_0 + b_1x_1 = X\beta$, then
+    $$\beta = (X^TX)^{-1}X^Ty$$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Logistic regression</h2>
+<p>TBD</p>
+<h2>[Programming] Loading real datasets</h2>
+<h3>예시: <a href="http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;tradeTypeCd=&amp;hscpTypeCd=&amp;cortarNo=1162010200&amp;mapLevel=10">관악구 신림동 지역의 부동산 가격</a> 예측하기</h3>
+<p><table class="table"><tr><th>공급면적($m^2$)</th><th>전용면적($m^2$)</th><th>층수</th><th>전체층수</th><th>매물가(만원)</th></tr><tr><td>113</td><td>84</td><td>20</td><td>20</td><td>13000</td></tr><tr><td>116</td><td>84</td><td>11</td><td>16</td><td>38800</td></tr><tr><td>81</td><td>59</td><td>17</td><td>20</td><td>31500</td></tr><tr><td>113</td><td>84</td><td>14</td><td>20</td><td>38500</td></tr></table></p>
 
     </div>
     <div class="footnote">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/tips.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-09T13:26:00+01:00</updated><entry><title>파이썬 프로그래밍을 위한 Sublime Text</title><link href="http://lucypark.kr/courses/tips/sublime-text.html" rel="alternate"></link><updated>2015-03-09T13:26:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-09:courses/tips/sublime-text.html</id><summary type="html">&lt;h2&gt;Installation&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/tips.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-09T13:26:00+09:00</updated><entry><title>파이썬 프로그래밍을 위한 Sublime Text</title><link href="http://lucypark.kr/courses/tips/sublime-text.html" rel="alternate"></link><updated>2015-03-09T13:26:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-09:courses/tips/sublime-text.html</id><summary type="html">&lt;h2&gt;Installation&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Sublime Text 설치&lt;br&gt;
 &lt;a href="http://sublimetext.com"&gt;&lt;img alt="sublime" src="images/sublime.png" /&gt;&lt;/a&gt;&lt;/li&gt;
@@ -35,7 +35,7 @@
 &lt;li&gt;방법 2. Install the &lt;strong&gt;Origami&lt;/strong&gt; package (훨씬 다양하게 pane을 나눠 쓸 수 있음)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;SublimeREPL: Python REPL in Sublime&lt;/h3&gt;
-&lt;p&gt;&lt;img src="images/repl.png" width="500px"&gt;&lt;/p&gt;</summary></entry><entry><title>Introduction to Python</title><link href="http://lucypark.kr/courses/tips/introduction-to-python.html" rel="alternate"></link><updated>2015-03-08T18:00:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-08:courses/tips/introduction-to-python.html</id><summary type="html">&lt;h2&gt;오늘의 목표&lt;/h2&gt;
+&lt;p&gt;&lt;img src="images/repl.png" width="500px"&gt;&lt;/p&gt;</summary></entry><entry><title>Introduction to Python</title><link href="http://lucypark.kr/courses/tips/introduction-to-python.html" rel="alternate"></link><updated>2015-03-08T18:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-08:courses/tips/introduction-to-python.html</id><summary type="html">&lt;h2&gt;오늘의 목표&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;나도 할 수 있다, 프로그래밍!&lt;ul&gt;
 &lt;li&gt;왜?&lt;/li&gt;
@@ -712,7 +712,7 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;li&gt;최성철, &lt;a href="http://www.slideshare.net/blissray/w-37771905"&gt;산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 1: 파이썬 기초&lt;/a&gt;, 2014.&lt;/li&gt;
 &lt;li&gt;최성철, &lt;a href="http://www.slideshare.net/blissray/w-part-2"&gt;산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 2: 파이썬 활용&lt;/a&gt;, 2014.&lt;/li&gt;
 &lt;li&gt;김태훈, &lt;a href="http://carpedm20.github.io/140min-python"&gt;140분의 Python: 소개부터 문법 실습까지&lt;/a&gt;, 2015.&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>How to upload files and get a URL</title><link href="http://lucypark.kr/courses/tips/uploading-files.html" rel="alternate"></link><updated>2015-03-05T21:51:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-05:courses/tips/uploading-files.html</id><summary type="html">&lt;h3&gt;Using Google Drive&lt;/h3&gt;
+&lt;/ul&gt;</summary></entry><entry><title>How to upload files and get a URL</title><link href="http://lucypark.kr/courses/tips/uploading-files.html" rel="alternate"></link><updated>2015-03-05T21:51:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-05:courses/tips/uploading-files.html</id><summary type="html">&lt;h3&gt;Using Google Drive&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Go to &lt;a href="http://drive.google.com"&gt;Google Drive&lt;/a&gt; and log in.&lt;/li&gt;
 &lt;li&gt;Upload your file.&lt;ul&gt;
