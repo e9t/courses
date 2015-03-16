@@ -57,8 +57,8 @@ Toc: True
     1. Expected results
     1. Expected (business) implications
 - Evaluation will be based on following criteria
-    1. 아이디어가 가지는 의미
-    1. 아이디어의 구체화 정도
+    1. 아이디어가 가지는 의미 (5점)
+    1. 아이디어의 구체화 정도 (5점)
 - Fix the team with a team leader at e-class (Due: 2015-03-18 23:59)
 - Choose a topic (Due: 2015-03-29 23:59)
     - Among your teammates' proposals, select one topic and conduct a project as a group
