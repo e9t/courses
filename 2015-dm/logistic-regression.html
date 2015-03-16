@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>데이터마이닝을 소개합니다 — Courses</title>
-	<meta name="description" content="Title: 데이터마이닝을 소개합니다; Date: 2015-03-06; Author: Lucy Park; Courseid: 2015-dm; Metainfo: ">
+	<title>Logistic regression — Courses</title>
+	<meta name="description" content="Title: Logistic regression; Date: 2015-03-20; Author: Lucy Park; Courseid: 2015-dm; Metainfo: ">
 	<meta name="author" content="Lucy Park">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -30,96 +30,39 @@
 		<div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="article-header">
-        <h1 itemprop="name headline">데이터마이닝을 소개합니다</h1>
-		<time datetime="2015-03-06T09:00:00+01:00" itemprop="datePublished">Fri 06 March 2015</time>
+        <h1 itemprop="name headline">Logistic regression</h1>
+		<time datetime="2015-03-20T09:00:00+01:00" itemprop="datePublished">Fri 20 March 2015</time>
 	</div>
     <div class="article-toc"><b>Contents</b><p></p></div>
     <div itemprop="articleBody" class="article-body">
-        <blockquote>
-<p>이번 시간이 끝나고 나면:
-데이터마이닝에 대해 정의할 수 있게 됩니다. </p>
-</blockquote>
-<h2>한 마디로 "데이터마이닝"은?</h2>
-<p><strong>대용량의 데이터에 담긴 의미있는 규칙을 찾는 일</strong></p>
-<p>그런데 <a href="http://en.wikipedia.org/wiki/Data_mining">데이터마이닝(data mining)</a>은...</p>
-<ul>
-<li>많은 자료 속에 숨어있는 일정한 패턴(규칙)을 발견하는 일이기에 <a href="http://en.wikipedia.org/wiki/Pattern_recognition">패턴인식(pattern recognition)</a>의 영역과 맞닿아 있으며</li>
-<li>컴퓨터를 학습(훈련)시키는 <a href="http://en.wikipedia.org/wiki/Machine_learning">기계학습(machine learning)</a>과도 유사합니다</li>
-<li>좀더 발전적인 개념으로는 <a href="http://en.wikipedia.org/wiki/Artificial_intelligence">인공지능(artificial Intelligence)</a>도 있어요</li>
-</ul>
-<div class="center">
-<script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=data+mining,+pattern+recognition,+machine+learning,+artificial+intelligence&date=1/2014+12m&cmpt=q&tz&tz&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=680&h=330"></script>
-</div>
-
-<div class="caption">2014년 기준 데이터마이닝, 패턴인식, 기계학습, 인공지능에 대한 구글 트렌드. 음? 그렇다면 <a href="http://www.google.com/trends/explore#q=data%20mining%2C%20pattern%20recognition%2C%20machine%20learning%2C%20artificial%20intelligence%2C%20big%20data&cmpt=q&tz=">빅데이터(big data)</a>는? 데이터사이언스(data science)는?</div>
-
-<p>이 영역들은 각기 다른 탄생 배경을 가지고, 엄밀하게는 철학과 목적이 상당히 다르기도 하지만, 방법론의 측면에서는 상당히 유사해서 각 영역끼리 서로 배우는 점도 많지요.
-사실 공부도 같은 책으로 많이 해요.
-(심도있는 공부를 원하시는 분들은 아래 책들도 한 번 찾아보세요!)</p>
-<p><img src="http://ecx.images-amazon.com/images/I/612j5Uo43eL._AA160_.jpg" height="200px">
-<img src="http://ecx.images-amazon.com/images/I/41LeU3HcBdL._AA160_.jpg" height="200px">
-<img src="http://ecx.images-amazon.com/images/I/419Ml9MDMaL._AA160_.jpg" height="200px">
-<img src="http://ecx.images-amazon.com/images/I/51MucLjt9IL._AA160_.jpg" height="200px"></p>
-<style>
-iframe {
-    width: 700px;
-    height: 330px;
-}
-</style>
-
-<h2>데이터가 우리 삶을 돕는 다섯 가지 방법</h2>
+        <h4>공지사항</h4>
 <ol>
-<li>
-<p><a href="http://readme.skplanet.com/?p=8870">미래 교통정보 예측: SK Planet T map</a><br>
-    <img src="http://i1.daumcdn.net/thumb/R750x0/?fname=http%3A%2F%2Fcfile26.uf.tistory.com%2Fimage%2F2204B946524405E408A53F" width="500px"></p>
+<li>이 수업은 프로그래밍 수업이 아니라 데이터마이닝 수업입니다<ul>
+<li>프로그래밍 팁을 공유하고 파이썬 튜토리얼을 병행하는 것은 어디까지나 여러분을 위해 하는 것<ul>
+<li>프로젝트 할 때 막막하지 말라고</li>
+<li>이론에 그치는 데이터마이닝이 아니라 실질적인 마이닝 능력을 키우라고</li>
+<li>프로그래밍 언어 하나라도 자유자재로 쓸 수 있게 돼서 어디 가서 써먹으라고</li>
+</ul>
 </li>
-<li>
-<p><a href="http://watcha.net">영화 추천: Frograms Watcha</a><br>
-    <img src="images/watcha.png" width="500px"></p>
+<li>프로그래밍? 시험에도 안 나옴 (혹~시라도 나오게 된다면 사전 공지)</li>
+<li>하지만 프로그래밍은 여러분에게 큰 자산이 될 것이라고 확신</li>
+<li>개인 경험: 프로그래밍 입문 (C 언어), C $to$ Matlab $to$ Java $to$ Python</li>
+<li>팁: 하나의 언어를 제대로 익힌 후 다른 언어를 배우면 훨씬 쉽다</li>
+</ul>
 </li>
-<li>
-<p><a href="http://google.com">문서 랭킹: Google</a><br>
-    <img src="images/google.png" width="500px"></p>
+<li>fyi. <a href="http://seoul.globalhackathon.io">서울 글로벌 해커톤</a><ul>
+<li>Hackathon? Hack + Marathon<ul>
+<li>n 시간 동안 먹고 마시고 토론하며 단시간 내에 완성된 프로토타입/프로덕트를 만드는 행사</li>
+<li>주로 개발자, 디자이너, 데이터 분석가 등이 모임</li>
+<li>멋진 사람들을 다양하게 만날 기회</li>
+</ul>
 </li>
-<li>
-<p><a href="http://labs.naver.com/tech.html#multimedia_recognition">음악 인식: Naver 앱 음악 및 와인라벨 인식</a><br>
-    <img src="images/naver.png" width="500px"></p>
-</li>
-<li>
-<p><a href="https://www.apple.com/ios/siri/">질의응답 (QA): Apple Siri</a><br>
-    <img src="images/siri0.jpg" width="30%">
-    <img src="images/siri1.jpg" width="30%">
-    <img src="images/siri2.jpg" width="30%"></p>
-<p>cf. IBM Watson</p>
+<li>일정: 2015년 7월 29일 - 2015년 8월 1일 (2박 3일)</li>
+<li>접수마감: 2015년 4월 30일</li>
+<li>저도 가고싶으나...</li>
+</ul>
 </li>
 </ol>
-<h2>데이터가 우리 삶을 바꿀 가지 방법</h2>
-<ol>
-<li>Jarvis and Samantha<br>
-    <img src="images/jarvis.png" width="40%">
-    <img src="images/samantha.png" width="40%">
-    <!--
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZwOxM0-byvc" frameborder="0" allowfullscreen></iframe>
-    --></li>
-<li>IOT<br>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/NjYTzvAVozo?list=PLl-15sUN2G4eEY2VOqxMEazASNrlMF5FP" frameborder="0" allowfullscreen></iframe></li>
-</ol>
-<h2>데이터마이너가 되면 좋은 점</h2>
-<ul>
-<li>세상의 다양한 면을, 다양한 관점에서 살펴볼 수 있습니다<ul>
-<li>마케팅부터 시작해서,</li>
-<li>주가의 흐름을 예측하거나(금융),</li>
-<li>DNA 분석이나 MRI 영상을 분석하기도 하며(의료),</li>
-<li>디지털 카메라에서 얼굴 인식(기계)을 하기도 합니다.</li>
-</ul>
-</li>
-<li>사실상 직업이 매일 바뀌는 것이나 다름없음</li>
-<li>물론 그 외에도 우리가 상상할 수 있는 대부분의 영역에 데이터마이닝이 적용된다는 사실!</li>
-</ul>
-<blockquote>
-<p>다음 시간 예고:
-데이터마이닝을 할 때 가장 중요한 것은? Asking the right question.</p>
-</blockquote>
 
     </div>
     <div class="footnote">
@@ -133,15 +76,6 @@ iframe {
             Category:
             <span itemprop="articleSection">
                 <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
-            </span>
-        </p>
-        <p>
-            Tags:
-            <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/seoultech.html" rel="tag">seoultech</a>
-            </span>
-            <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
             </span>
         </p>
     </div>

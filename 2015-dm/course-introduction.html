@@ -90,20 +90,46 @@
 <h4>Proposal (10/40)</h4>
 <ul>
 <li>Individual work</li>
-<li>Submit 1 data mining project idea within 1 page (Due: 2015-03-18 23:59)</li>
+<li>Submit 1 data mining project idea within 1 page (Due: 2015-03-18 23:59)<ul>
+<li>Delay penalty: 100% off after due (No delays allowed)</li>
 </ul>
-<h4>Progress presentation (15/40)</h4>
-<ol>
+</li>
+<li>Suggested contents<ol>
+<li>Background: What question do you have? Why is this problem important?</li>
+<li>Formulation: Convert your problem into a data mining problem. What are the inputs and outputs? What algorithms are you going to use? (ex: Classification, clustering, regression, text mining, etc.)</li>
+<li>Data acquisition: How are you going to obtain the data?</li>
+<li>Expected results</li>
+<li>Expected (business) implications</li>
+</ol>
+</li>
+<li>Evaluation will be based on following criteria<ol>
+<li>아이디어가 가지는 의미</li>
+<li>아이디어의 구체화 정도</li>
+</ol>
+</li>
 <li>Fix the team with a team leader at e-class (Due: 2015-03-18 23:59)</li>
 <li>Choose a topic (Due: 2015-03-29 23:59)<ul>
 <li>Among your teammates' proposals, select one topic and conduct a project as a group</li>
 <li>You can also choose topics among <a href="http://kaggle.com">Kaggle</a></li>
 </ul>
 </li>
-<li>Submitting slides (Due: 2015-04-30 23:59)<ul>
+</ul>
+<h4>Progress presentation (15/40)</h4>
+<ul>
+<li>Submit presentation slides (Due: 2015-04-30 23:59)<ul>
+<li>It is recommended that you have done approx. 70-80% of your whole project by this date</li>
 <li>Submit presentation slides to the e-class</li>
 <li>No page limits</li>
+<li>Delay penalty: 50% off (next day) 100% off (after presentation)</li>
 </ul>
+</li>
+<li>Suggested contents: Your proposal + the following<ol>
+<li>Data Exploration</li>
+<li>What approach you chose to alleviate such questions</li>
+<li>What results you achieved</li>
+<li>What questions you further got and what you plan to do next</li>
+<li>Tricks and tips you want to share with the class</li>
+</ol>
 </li>
 <li>Presentation day (2015-05-01)<ul>
 <li>You will present your project progress in front of the class (Max. 10 min)</li>
@@ -114,14 +140,6 @@
 </ul>
 </li>
 <li>Be brief yet clear</li>
-<li>A good presentation contains the following:<ol>
-<li>What questions you had</li>
-<li>What approach you chose to alleviate such questions</li>
-<li>What results you achieved</li>
-<li>What questions you further got and what you plan to do next</li>
-<li>Tricks and tips you want to share with the class</li>
-</ol>
-</li>
 <li>Record the feedback<ul>
 <li>One can make the slides</li>
 <li>Another can prepare for the presentation</li>
@@ -131,12 +149,21 @@
 </li>
 </ul>
 </li>
-</ol>
+</ul>
 <h4>Final report (15/40)</h4>
 <ul>
-<li>Present what your group has done throughout the whole project in more than 10 pages (Due: 2015-06-14 23:59)</li>
+<li>Present what your group has done throughout the whole project in more than 10 pages (Due: 2015-06-14 23:59)<ul>
+<li>Delay penalty: 50% off (next day) 100% off (after that)</li>
+</ul>
+</li>
 <li>You will also be grading your teammates, based on their contributions</li>
 <li>Extra credit will be given to those who submit and/or rank in an open tournament (ex: <a href="http://kaggle.com">Kaggle</a>)</li>
+<li>Suggested contents: Your progress report + the following<ul>
+<li>Enhanced results</li>
+<li>(Business) implications</li>
+<li>Future work</li>
+</ul>
+</li>
 </ul>
 <h4>More advice on your projects</h4>
 <ol>
@@ -256,7 +283,7 @@ $(function(){
 </script>
 <script>
     function hyphenate(str) {
-        return str.toLowerCase().replace(/[?!:'"()%]/gi, '').replace(/\s/g, '-');
+        return str.toLowerCase().replace(/[?!:'"()%,]/gi, '').replace(/\s/g, '-');
     }
 
     String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }

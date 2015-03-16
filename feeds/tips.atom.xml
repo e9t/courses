@@ -100,11 +100,12 @@
 &lt;p&gt;한편 파이썬은 특정 목적에 적합한 언어라기보다는 범용으로 사용할 수 있는 언어(general purpose language)입니다.&lt;br&gt;
 일종의 Swiss army knife와 같은거죠.&lt;/p&gt;
 &lt;p&gt;&lt;img src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Wenger_EvoGrip_S17.JPG/440px-Wenger_EvoGrip_S17.JPG"&gt;&lt;/p&gt;
-&lt;p&gt;실제로 파이썬을 사용하면 앞서 얘기한 웹에 시각화를 올린다든지 구조적인 데이터를 다룰 수도 있습니다.&lt;/p&gt;
+&lt;p&gt;실제로 파이썬의 다양한 3rd-party 패키지들을 사용하면 웹에 시각화를 올린다든지 구조적인 데이터를 다루는 일 등을 할 수 있습니다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;시각화: matplotlib, mpld3&lt;/li&gt;
 &lt;li&gt;웹프로그래밍: requests, django, flask&lt;/li&gt;
 &lt;li&gt;구조적 데이터 분석: numpy, scipy, scikit-learn&lt;/li&gt;
+&lt;li&gt;비구조적 데이터 분석 (또는 자연어 처리): nltk, konlpy&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;하지만 Swiss army knife가 때로는 망치만큼의 강건함이나 만족스러움을 주지 못하듯, 파이썬도 마찬가지 일 수 있습니다.&lt;br&gt;
 그럴 때는 망치를 구하시면 됩니다! (i.e., JavaScript, R 등 새로운 스킬/도구/언어를 또 습득하시면 됩니다! 하지만 그건 이 수업 말고 다른 기회에...)&lt;/p&gt;
@@ -179,7 +180,7 @@
 &lt;li&gt;아직까지 학계에서는 Python 2도 많이 사용&lt;/li&gt;
 &lt;li&gt;하지만 우리는 더 최신 버젼인 Python 3 선택&lt;ol&gt;
 &lt;li&gt;파이썬 3가 유니코드 서포트를 해서 한국어를 사용하는 사람들에게 편리&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://python3wos.appspot.com/"&gt;이제 많은 라이브러리들이 파이썬 3도 지원&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://python3wos.appspot.com/"&gt;이제 많은 패키지들이 파이썬 3도 지원&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;파이썬 3 is &lt;a href="http://pythonkr.github.io/pyconkr-2014/pdf/pyconkr-2014-25_geofront.pdf"&gt;the way to go&lt;/a&gt;
 &lt;!-- - 그리고 자꾸 패키지, 패키지하는데 패키지가 뭔가요? --&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -202,7 +203,7 @@
 &lt;img src="images/cmd.png" width="400px"&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ipython&lt;/code&gt;을 입력해서 "파이썬 쉘"을 열어보자.&lt;br&gt;
+&lt;li&gt;터미널에 &lt;code&gt;ipython&lt;/code&gt;을 입력해서 "파이썬 쉘"을 열어보자.&lt;br&gt;
     터미널로 작업할 때는 열심히 "독서"하는 습관을 들이는 것이 좋다.
     우리가 &lt;code&gt;ipython&lt;/code&gt;을 입력하니 무엇이 출력되었는가?
     파이썬 버젼 3.4.1, 64비트 아나콘다 2.1.0이 구동되었다는 것을 알 수 있고, 그 밖의 소소한 명령어에 대한 소개도 있다.&lt;br&gt;
@@ -256,9 +257,9 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;파일을 바탕화면에 &lt;code&gt;test.py&lt;/code&gt;라는 이름으로 저장하자. 다만 한 가지 유의할 점은, &lt;strong&gt;다음 그림과 같이 Encoding을 UTF-8로 변경해서 저장해줘야 한다.&lt;/strong&gt; (그렇지 않으면 스크립트를 실행할 때 인코딩 에러가 발생할 것이다.)&lt;br&gt;
-&lt;img src="images/encoding.png" width="500px"&gt;&lt;/p&gt;
+&lt;img src="images/notepad.png" width="500px"&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;그 다음에, 다시 터미널을 띄워서 (어떻게 했는지 기억하는가?)&lt;/li&gt;
+&lt;li&gt;그 다음에, 다시 터미널을 띄워서 (앞에서 어떻게 했는지 기억하는가?)&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;아래와 같이 입력하면 파이썬 파일이 실행된다.&lt;br&gt;
 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 &lt;code&gt;test.py&lt;/code&gt; 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 마우스를 클릭하는 GUI(graphic user interface)가 아니라 키보드로 명령어를 입력하는 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!&lt;/p&gt;
@@ -634,10 +635,12 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;li&gt;하지만 파이썬을 책으로 좀 더 깊게 들여다보고 싶다면? 아래 링크들을 참고해보자&lt;ul&gt;
 &lt;li&gt;초급: &lt;a href="http://learnpythonthehardway.org/book/"&gt;Learn Python the hard way&lt;/a&gt; (&lt;a href="http://www.yes24.com/24/goods/15240210"&gt;번역본&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;중/고급: &lt;a href="https://julien.danjou.info/books/the-hacker-guide-to-python"&gt;The hacker's guide to Python&lt;/a&gt; (&lt;a href="http://www.yes24.com/24/goods/15418826"&gt;번역본&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;데이터 분석 (적어도 초급은 떼고 시작하면 좋음): &lt;a href="http://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1449319793"&gt;Python for data analysis&lt;/a&gt; (&lt;a href="http://www.hanbit.co.kr/book/look.html?isbn=978-89-6848-047-8"&gt;번역본&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;난 책 같은거 필요없다! 온라인으로 배울 방법이 궁금하다면?&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.codecademy.com/tracks/python"&gt;Code Academy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.kaggle.com/wiki/GettingStartedWithPythonForDataScience"&gt;Getting started with Python for data science&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;난 바로 실전으로 들어간다. 파이썬을 활용한 연습문제를 풀어보고 싶다면?&lt;ul&gt;
@@ -708,7 +711,7 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;li&gt;&lt;a href="http://blogs.perceptionsystem.com/images/JavaVsPython.png"&gt;Java vs Python&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;최성철, &lt;a href="http://www.slideshare.net/blissray/w-37771905"&gt;산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 1: 파이썬 기초&lt;/a&gt;, 2014.&lt;/li&gt;
 &lt;li&gt;최성철, &lt;a href="http://www.slideshare.net/blissray/w-part-2"&gt;산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 2: 파이썬 활용&lt;/a&gt;, 2014.&lt;/li&gt;
-&lt;li&gt;김태훈, &lt;a href="http://carpedm20.github.io/140min-python/#/82"&gt;140분의 Python: 소개부터 문법 실습까지&lt;/a&gt;, 2015.&lt;/li&gt;
+&lt;li&gt;김태훈, &lt;a href="http://carpedm20.github.io/140min-python"&gt;140분의 Python: 소개부터 문법 실습까지&lt;/a&gt;, 2015.&lt;/li&gt;
 &lt;/ul&gt;</summary></entry><entry><title>How to upload files and get a URL</title><link href="http://lucypark.kr/courses/tips/uploading-files.html" rel="alternate"></link><updated>2015-03-05T21:51:00+01:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-05:courses/tips/uploading-files.html</id><summary type="html">&lt;h3&gt;Using Google Drive&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Go to &lt;a href="http://drive.google.com"&gt;Google Drive&lt;/a&gt; and log in.&lt;/li&gt;
