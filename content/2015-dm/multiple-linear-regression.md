@@ -3,6 +3,7 @@ Date: 2015-03-13 09:00
 Courseid: 2015-dm
 Toc: True
 Math: True
+Modified: 2015-03-16 18:37
 
 #### 공지사항
 
@@ -15,20 +16,20 @@ Math: True
     - 9시 반에 출석 부르고 바로 수업 시작할 것
 1. 어렵더라도, 질문은 공개적으로 해주세요.
     - 공개로 질문을 하면 답변도 공개여서, 모두가 질문을 하고 답변을 받을 수 있게 됩니다.
-    - 질문을 서면을 하려다보면 질문 자체를 잘 formulation 해야합니다. 그 과정에서 질문자 당사자도 생각을 많이 할 수 있게 되기 때문에 스스로 머릿속으로 내용 정리를 할 수 있게 됩니다.
+    - 수업 후에는 공개 게시판을 이용하는 것도 좋습니다. 질문을 서면을 하려다보면 질문 자체를 잘 formulation 해야합니다. 그 과정에서 질문자 당사자도 생각을 많이 할 수 있게 되기 때문에 스스로 머릿속으로 내용 정리를 할 수 있게 됩니다.
     - 참고: Eric Steven Raymond, [How To Ask Questions The Smart Way](http://www.catb.org/esr/faqs/smart-questions.html)
 
 ## Data mining process
 <img src="images/process.png" width="500px">
 
 ### 목적에 따른 분류: Predictive methods vs Descriptive methods
-- Predictive modeling
-    - Predict the **future**
+- **Predictive modeling**
+    - Predict the *future*
     - Identify strong links between variables of data
     - To predict the unknown consequence (dependent variable) based on the information provided (independent variable)
         - 과거를 통해 현재를 알고 미래를 내다보자
-- Descriptive modeling
-    - Look back to the **past**
+- **Descriptive modeling**
+    - Look back to the *past*
     - To extract compact and easily understood information from large, sometimes gigantic databases
 
 <img src="images/methods.png" width="600px">
@@ -53,7 +54,7 @@ Math: True
 ### Training data, validation data이란 무엇을 의미하는가?
 <img src="images/partition.png" width="500px">
 
-## Simple linear regression
+## Simple linear regression (SLR)
 
 - Regression
     - 대표적인 교사학습(supervised learning) 방법론
@@ -78,7 +79,7 @@ Math: True
 
     $$y = AX + b$$
 
-### MLR in Python
+## [Programming] SLR, MLR with scikit-learn
 
 1. 데이터 import 하기
     - 먼저 파이썬에서 MLR을 시행하기 위해서 [scikit-learn](http://scikit-learn.org/) 패키지를 사용해보자.
@@ -164,9 +165,9 @@ Math: True
             # Explained variance score: 1 is perfect prediction
             print('Variance score: %.2f' % mlr.score(X_test, y_test))
 
-## How to write a data mining proposal
+## [Tip] How to write a data mining proposal
 
 - Choosing a good project topic
     1. 이 문제를 푸는 것이 의미가 있는가 (있다면 어떤 의미가 있는가?)
     1. 데이터를 구할 수 있는가 (어디서 구할 수 있는가? 정제는 되어 있는가?)
-    1. 내가 주어진 시간 안에 할 수 있는가 (원하는 것을 전부 할 수 없다면, 내가 할 수 있는 범위는 어디까지인가?)
+    1. 어떤 접근법/방법론을 사용할 것인가? (내가 주어진 시간 안에 할 수 있는가? 원하는 것을 전부 할 수 없다면, 내가 할 수 있는 범위는 어디까지인가?)

@@ -62,11 +62,12 @@ Toc: True
 
 <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Wenger_EvoGrip_S17.JPG/440px-Wenger_EvoGrip_S17.JPG">
 
-실제로 파이썬을 사용하면 앞서 얘기한 웹에 시각화를 올린다든지 구조적인 데이터를 다룰 수도 있습니다.
+실제로 파이썬의 다양한 3rd-party 패키지들을 사용하면 웹에 시각화를 올린다든지 구조적인 데이터를 다루는 일 등을 할 수 있습니다.
 
 - 시각화: matplotlib, mpld3
 - 웹프로그래밍: requests, django, flask
 - 구조적 데이터 분석: numpy, scipy, scikit-learn
+- 비구조적 데이터 분석 (또는 자연어 처리): nltk, konlpy
 
 하지만 Swiss army knife가 때로는 망치만큼의 강건함이나 만족스러움을 주지 못하듯, 파이썬도 마찬가지 일 수 있습니다.<br>
 그럴 때는 망치를 구하시면 됩니다! (i.e., JavaScript, R 등 새로운 스킬/도구/언어를 또 습득하시면 됩니다! 하지만 그건 이 수업 말고 다른 기회에...)
@@ -138,7 +139,7 @@ Toc: True
         - 아직까지 학계에서는 Python 2도 많이 사용
         - 하지만 우리는 더 최신 버젼인 Python 3 선택
             1. 파이썬 3가 유니코드 서포트를 해서 한국어를 사용하는 사람들에게 편리
-            1. [이제 많은 라이브러리들이 파이썬 3도 지원](http://python3wos.appspot.com/)
+            1. [이제 많은 패키지들이 파이썬 3도 지원](http://python3wos.appspot.com/)
             1. 파이썬 3 is [the way to go](http://pythonkr.github.io/pyconkr-2014/pdf/pyconkr-2014-25_geofront.pdf)
     <!-- - 그리고 자꾸 패키지, 패키지하는데 패키지가 뭔가요? -->
 2. Install Anaconda
@@ -149,7 +150,7 @@ Toc: True
         1. `window` + `r` 단축키를 이용해 실행창(Run)을 열고
         2. `cmd`라고 입력한다.<br>
         <img src="images/cmd.png" width="400px">
-    - `ipython`을 입력해서 "파이썬 쉘"을 열어보자.<br>
+    - 터미널에 `ipython`을 입력해서 "파이썬 쉘"을 열어보자.<br>
         터미널로 작업할 때는 열심히 "독서"하는 습관을 들이는 것이 좋다.
         우리가 `ipython`을 입력하니 무엇이 출력되었는가?
         파이썬 버젼 3.4.1, 64비트 아나콘다 2.1.0이 구동되었다는 것을 알 수 있고, 그 밖의 소소한 명령어에 대한 소개도 있다.<br>
@@ -194,8 +195,8 @@ Toc: True
         print("Hello world!")
 
 3. 파일을 바탕화면에 `test.py`라는 이름으로 저장하자. 다만 한 가지 유의할 점은, **다음 그림과 같이 Encoding을 UTF-8로 변경해서 저장해줘야 한다.** (그렇지 않으면 스크립트를 실행할 때 인코딩 에러가 발생할 것이다.)<br>
-<img src="images/encoding.png" width="500px">
-4. 그 다음에, 다시 터미널을 띄워서 (어떻게 했는지 기억하는가?)
+<img src="images/notepad.png" width="500px">
+4. 그 다음에, 다시 터미널을 띄워서 (앞에서 어떻게 했는지 기억하는가?)
 5. 아래와 같이 입력하면 파이썬 파일이 실행된다.<br>
 첫번째 줄은 윈도우 탐색기에서 "바탕화면"으로 이동하라는 버튼을 누른 것과 같고, 두번째 줄은 윈도우 탐색기에서 `test.py` 파일을 클릭하여 실행한 것과 같다. 멋지지 않은가? 이제 우리도 마우스를 클릭하는 GUI(graphic user interface)가 아니라 키보드로 명령어를 입력하는 CLI(command line interface)에서 프로그래밍을 할 수 있게 된 것이다!
 
@@ -545,8 +546,10 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 - 하지만 파이썬을 책으로 좀 더 깊게 들여다보고 싶다면? 아래 링크들을 참고해보자
     - 초급: [Learn Python the hard way](http://learnpythonthehardway.org/book/) ([번역본](http://www.yes24.com/24/goods/15240210))
     - 중/고급: [The hacker's guide to Python](https://julien.danjou.info/books/the-hacker-guide-to-python) ([번역본](http://www.yes24.com/24/goods/15418826))
+    - 데이터 분석 (적어도 초급은 떼고 시작하면 좋음): [Python for data analysis](http://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1449319793) ([번역본](http://www.hanbit.co.kr/book/look.html?isbn=978-89-6848-047-8))
 - 난 책 같은거 필요없다! 온라인으로 배울 방법이 궁금하다면?
     - [Code Academy](http://www.codecademy.com/tracks/python)
+    - [Getting started with Python for data science](https://www.kaggle.com/wiki/GettingStartedWithPythonForDataScience)
 - 난 바로 실전으로 들어간다. 파이썬을 활용한 연습문제를 풀어보고 싶다면?
     - [Python Challenge](http://www.pythonchallenge.com): 파이썬보다는 퀴즈
     - [Project Euler](https://projecteuler.net/): 파이썬보다는 알고리즘
@@ -598,4 +601,4 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 - [Java vs Python](http://blogs.perceptionsystem.com/images/JavaVsPython.png)
 - 최성철, [산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 1: 파이썬 기초](http://www.slideshare.net/blissray/w-37771905), 2014.
 - 최성철, [산업공학과를 위한 프로그래밍 입문 (w/파이썬) Part 2: 파이썬 활용](http://www.slideshare.net/blissray/w-part-2), 2014.
-- 김태훈, [140분의 Python: 소개부터 문법 실습까지](http://carpedm20.github.io/140min-python/#/82), 2015.
+- 김태훈, [140분의 Python: 소개부터 문법 실습까지](http://carpedm20.github.io/140min-python), 2015.

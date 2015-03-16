@@ -49,28 +49,40 @@ Toc: True
 #### Proposal (10/40)
 - Individual work
 - Submit 1 data mining project idea within 1 page (Due: 2015-03-18 23:59)
-
-#### Progress presentation (15/40)
-1. Fix the team with a team leader at e-class (Due: 2015-03-18 23:59)
-1. Choose a topic (Due: 2015-03-29 23:59)
+    - Delay penalty: 100% off after due (No delays allowed)
+- Suggested contents
+    1. Background: What question do you have? Why is this problem important?
+    1. Formulation: Convert your problem into a data mining problem. What are the inputs and outputs? What algorithms are you going to use? (ex: Classification, clustering, regression, text mining, etc.)
+    1. Data acquisition: How are you going to obtain the data?
+    1. Expected results
+    1. Expected (business) implications
+- Evaluation will be based on following criteria
+    1. 아이디어가 가지는 의미
+    1. 아이디어의 구체화 정도
+- Fix the team with a team leader at e-class (Due: 2015-03-18 23:59)
+- Choose a topic (Due: 2015-03-29 23:59)
     - Among your teammates' proposals, select one topic and conduct a project as a group
     - You can also choose topics among [Kaggle](http://kaggle.com)
-1. Submitting slides (Due: 2015-04-30 23:59)
+
+#### Progress presentation (15/40)
+- Submit presentation slides (Due: 2015-04-30 23:59)
+    - It is recommended that you have done approx. 70-80% of your whole project by this date
     - Submit presentation slides to the e-class
     - No page limits
-1. Presentation day (2015-05-01)
+    - Delay penalty: 50% off (next day) 100% off (after presentation)
+- Suggested contents: Your proposal + the following
+    1. Data Exploration
+    1. What approach you chose to alleviate such questions
+    1. What results you achieved
+    1. What questions you further got and what you plan to do next
+    1. Tricks and tips you want to share with the class
+- Presentation day (2015-05-01)
     - You will present your project progress in front of the class (Max. 10 min)
     - Peer assessment
         - You will also be grading your peers' work on presentation day
         - You will be given three votes
         - You can give one vote to three teams, or give all votes to one team
     - Be brief yet clear
-    - A good presentation contains the following:
-        1. What questions you had
-        1. What approach you chose to alleviate such questions
-        1. What results you achieved
-        1. What questions you further got and what you plan to do next
-        1. Tricks and tips you want to share with the class
     - Record the feedback
         - One can make the slides
         - Another can prepare for the presentation
@@ -79,8 +91,13 @@ Toc: True
 
 #### Final report (15/40)
 - Present what your group has done throughout the whole project in more than 10 pages (Due: 2015-06-14 23:59)
+    - Delay penalty: 50% off (next day) 100% off (after that)
 - You will also be grading your teammates, based on their contributions
 - Extra credit will be given to those who submit and/or rank in an open tournament (ex: [Kaggle](http://kaggle.com))
+- Suggested contents: Your progress report + the following
+    - Enhanced results
+    - (Business) implications
+    - Future work
 
 #### More advice on your projects
 
