@@ -11,7 +11,7 @@ REPOURL = 'http://github.com/e9t/courses'
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Asia/Seoul'
 
 DEFAULT_LANG = u'en'
 
@@ -48,3 +48,6 @@ STATIC_PATHS = [p for p in os.listdir('./%s' % PATH) if not p.startswith('.')]
 DEFAULT_PAGINATION = 30     # 30 items in index page
 
 COURSES = ['2015-dm', '2015-ba']
+
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ['loadcsv']
