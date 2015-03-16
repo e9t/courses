@@ -31,7 +31,7 @@ Toc: True
 - `/some/absolute/path`
 - `some/relative/path`
 
-<img src="http://book.soundonair.ru/hall1/images/3_39.jpg">
+<img src="images/bash.jpg" width="350px">
 
 ### Permissions
 
@@ -53,7 +53,7 @@ Toc: True
 
 - A shell is a macro processor that executes commands
 
-<img src="http://2.bp.blogspot.com/-OJTUMIsryCU/T92Eg2IF5VI/AAAAAAAAABc/luBUtgpl2pM/s1600/kernel+shell.png" width="500px">
+<img src="images/kernel.png" width="500px">
 
 ### Is Bash the only shell available?
 
@@ -84,10 +84,7 @@ Some jokes about package managing:
 - https://twitter.com/ddprrt/status/529909875347030016
 -->
 
-### Data sampling
-
-- ex: http://www.ecogwiki.com/Hash-based_sampling
-
 ### Data science
 
-- ex: http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html
+- [Data sampling](http://www.ecogwiki.com/Hash-based_sampling)
+- ...[and more](http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html)

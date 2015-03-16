@@ -45,15 +45,15 @@ This course is the latter part of the sequence, and will be more advanced and pr
 <tr><td>3/13</td><td>Tools for pragmatic data mining<ul><li><a href="bash.html">Bash</a><li><a href="../tips/introduction-to-python.html">Python</a><li>Statistical Summaries and Exploratory Data Analysis</ul></td><td>-</td></tr>
 <tr><td>3/20</td><td>Scraping from the Web<ul><li>Reproducibility and version control</ul></td><td>Project proposals (300 words+)</td></tr>
 <tr><td>3/27</td><td>Python for NLP</td><td>-</td></tr>
-<tr><td>4/03</td><td>Regression and Predictive modeling|Share Reading assignment</td><td>-</td></tr>
+<tr><td>4/03</td><td>Regression and Predictive modeling<ul><li>Share Reading assignment</ul></td><td>-</td></tr>
 <tr><td>4/10</td><td>Regression and Predictive modeling</td><td>-</td></tr>
 <tr><td>4/17</td><td>Mid-term Quiz</td><td>-</td></tr>
-<tr><td>4/24</td><td>Clustering and Dimensionality Reduction|Share Reading assignment</td><td>-</td></tr>
-<tr><td>5/01</td><td>Visualization and storytelling|Share Reading assignment</td><td>-</td></tr>
-<tr><td>5/08</td><td>Support vector machine and the kernel trick|Share Reading assignment</td><td>Progress report (1K+ words)</td></tr>
-<tr><td>5/15</td><td>Going deep: Deep learning|Share Reading assignment</td><td>-</td></tr>
-<tr><td>5/22</td><td>Going big 1: Map/reduce|Share Reading assignment</td><td>-</td></tr>
-<tr><td>5/29</td><td>Going big 2: Spark|Share Reading assignment</td><td>-</td></tr>
+<tr><td>4/24</td><td>Clustering and Dimensionality Reduction<ul><li>Share Reading assignment</ul></td><td>-</td></tr>
+<tr><td>5/01</td><td>Visualization and storytelling<ul><li>Share Reading assignment</ul></td><td>-</td></tr>
+<tr><td>5/08</td><td>Support vector machine and the kernel trick<ul><li>Share Reading assignment</ul></td><td>Progress report (1K+ words)</td></tr>
+<tr><td>5/15</td><td>Going deep: Deep learning<ul><li>Share Reading assignment</ul></td><td>-</td></tr>
+<tr><td>5/22</td><td>Going big 1: Map/reduce<ul><li>Share Reading assignment</ul></td><td>-</td></tr>
+<tr><td>5/29</td><td>Going big 2: Spark<ul><li>Share Reading assignment</ul></td><td>-</td></tr>
 <tr><td>6/05</td><td>Final presentation</td><td>Project final report (3K+ words)</td></tr>
 <tr><td>6/12</td><td>Final exam</td><td></td></tr>
 </table>

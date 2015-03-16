@@ -26,10 +26,10 @@ Toc: True
 사실 공부도 같은 책으로 많이 해요.
 (심도있는 공부를 원하시는 분들은 아래 책들도 한 번 찾아보세요!)
 
-<img src="http://ecx.images-amazon.com/images/I/612j5Uo43eL._AA160_.jpg" height="200px">
-<img src="http://ecx.images-amazon.com/images/I/41LeU3HcBdL._AA160_.jpg" height="200px">
-<img src="http://ecx.images-amazon.com/images/I/419Ml9MDMaL._AA160_.jpg" height="200px">
-<img src="http://ecx.images-amazon.com/images/I/51MucLjt9IL._AA160_.jpg" height="200px">
+[<img src="images/book1.jpg" height="200px">](http://ecx.images-amazon.com/images/I/612j5Uo43eL._AA160_.jpg)
+[<img src="images/book2.jpg" height="200px">](http://ecx.images-amazon.com/images/I/41LeU3HcBdL._AA160_.jpg)
+[<img src="images/book3.jpg" height="200px">](http://ecx.images-amazon.com/images/I/419Ml9MDMaL._AA160_.jpg)
+[<img src="images/book4.jpg" height="200px">](http://ecx.images-amazon.com/images/I/51MucLjt9IL._AA160_.jpg)
 
 <style>
 iframe {
@@ -41,7 +41,7 @@ iframe {
 ## 데이터가 우리 삶을 돕는 다섯 가지 방법
 
 1. [미래 교통정보 예측: SK Planet T map](http://readme.skplanet.com/?p=8870)<br>
-    <img src="http://i1.daumcdn.net/thumb/R750x0/?fname=http%3A%2F%2Fcfile26.uf.tistory.com%2Fimage%2F2204B946524405E408A53F" width="500px">
+    [<img src="images/tmap.png" width="500px">](http://i1.daumcdn.net/thumb/R750x0/?fname=http%3A%2F%2Fcfile26.uf.tistory.com%2Fimage%2F2204B946524405E408A53F)
 
 1. [영화 추천: Frograms Watcha](http://watcha.net)<br>
     <img src="images/watcha.png" width="500px">
