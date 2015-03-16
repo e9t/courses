@@ -154,6 +154,11 @@ table th {
     padding: 10px 30px;
 }
 
+.MathJax_Display {
+    background-color: whitesmoke;
+    padding: 10px;
+}
+
 .margin-bottom-30 {
     margin-bottom: 30px;
 }

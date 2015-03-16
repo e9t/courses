@@ -5,22 +5,15 @@ Toc: True
 Math: True
 Modified: 2015-03-16 18:37
 
-#### 공지사항
-
-1. Assignment 제출방식 변경: 2015-dm@googlegroups.com $\to$ e-class
-1. Assignment 개수 변경: 4 $\to$ 3
-1. Project proposal 제출: 다음주 수요일(3/18)까지 e-class로
-1. Project team 구성: 다음주 수요일(3/18)까지 e-class로
-1. 수업 시간 변경: 09:00 $\to$ 09:30
-    - 저는 9시까지 올 것이니 질문 있으신 분들은 미리 와주세요
-    - 9시 반에 출석 부르고 바로 수업 시작할 것
-1. 어렵더라도, 질문은 공개적으로 해주세요.
-    - 공개로 질문을 하면 답변도 공개여서, 모두가 질문을 하고 답변을 받을 수 있게 됩니다.
-    - 수업 후에는 공개 게시판을 이용하는 것도 좋습니다. 질문을 서면을 하려다보면 질문 자체를 잘 formulation 해야합니다. 그 과정에서 질문자 당사자도 생각을 많이 할 수 있게 되기 때문에 스스로 머릿속으로 내용 정리를 할 수 있게 됩니다.
-    - 참고: Eric Steven Raymond, [How To Ask Questions The Smart Way](http://www.catb.org/esr/faqs/smart-questions.html)
-
 ## Data mining process
 <img src="images/process.png" width="500px">
+
+1. Problem definition
+1. Data acquisition and selection
+1. Data exploration
+1. Data preprocessing
+1. Train and evaluate data mining model
+1. Interpret results
 
 ### 목적에 따른 분류: Predictive methods vs Descriptive methods
 - **Predictive modeling**
@@ -39,7 +32,7 @@ Modified: 2015-03-16 18:37
     - Goal: predict a single "target" or "outcome" variable $y$
         - Finds relations between $X$ and $y$: $y = f(x_1, x_2, ..., x_n) + \epsilon$
         - 입출력(input-output)의 쌍으로 구성된 training data로부터 입력을 출력을 사상하는 함수를 학습하는 과정
-    - Method: *Learn* on training data, *score* on validation data
+    - Method: *Learn* on training data, *score* on test data
         - 즉, 입력벡터를 $X$, 그에 대응하는 출력벡터(i.e., label)를 $y$라고 할 때, training data는 $D={(x, y)}$로 주어지게 되며, 모델은 이 training data에 기반하여 관측하지 않은 새로운 데이터 $x'$가 들어왔을 때 그에 해당되는 label, $y'$을 추론하는 방법을 배우게 된다
     - ex: 분류(classification)와 회귀분석(regression)
 - **비교사학습(Unsupervised learning)**
@@ -51,8 +44,18 @@ Modified: 2015-03-16 18:37
     - ex: 군집화(clustering), 밀도추정(density estimation), 차원축소(dimension reduction)
 - cf. semi-supervised learning
 
-### Training data, validation data이란 무엇을 의미하는가?
-<img src="images/partition.png" width="500px">
+### Data partitioning
+- 데이터를 training data와 test data로 나누는 것
+    - Training data: 모델 학습용
+    - Test data: 모델 성능 측정용
+- 보통은 60:40 정도로 데이터를 분할하지만, 보유하고 있는 데이터 규모에 따라 이 비율은 달라지기도 함
+- 컴퓨터가 모델을 학습하고 평가 받는 것은, 교실에서 학생과 선생님 사이에서 발생하는 일과 매우 유사하다!
+    - Training phase: 교사는 문제($X_{train}$)와 정답($y_{train}$)이 모두 포함된 training data를 이용해 컴퓨터를 훈련(training)시키고, 컴퓨터는 모델을 학습한다(learning).
+    - Testing phase: 컴퓨터가 training data로 모델을 학습한 후에는 교사가 컴퓨터에게 정답($y_{test}$) 없이 문제($X_{test}$)만 포함된 시험(test data)을 전달한다. 이 때, 컴퓨터가 제출한 답안지($\hat{y}$)와 실제 정답($y_{test}$)간의 차이를 비교해서 오답/오류(error)가 얼마나 발생했는지 확인함으로써 모델의 성능/성적을 평가한다.
+- 때로는 training data, validation data, test data 등 세 개의 그룹으로 데이터를 나누기도 함 (참고: [What is the difference between test set and validation set?](http://stats.stackexchange.com/questions/19048/what-is-the-difference-between-test-set-and-validation-set))
+
+<img src="images/partition.png" width="700px">
+
 
 ## Simple linear regression (SLR)
 
@@ -61,9 +64,9 @@ Modified: 2015-03-16 18:37
         - "right answers" given
     - Predict continuous valued output
 - Formulation
-    - $x$: 독립변수
-    - $y$: 종속변수
-    - $a, b$: 파라미터
+    - $x$: 독립변수(independent variable)
+    - $y$: 종속변수(dependent variable)
+    - $a, b$: 파라미터(parameters) or 계수(coefficients)
 
     $$y = ax + b$$
 
@@ -73,9 +76,10 @@ Modified: 2015-03-16 18:37
 ## Multiple linear regression (MLR)
 
 - Formulation
-    - $X$: 독립변수들
-    - $y$: 종속변수
-    - $A, b$: 파라미터
+    - $X$: 독립변수들(independent variables)
+    - $y$: 종속변수(dependent variable)
+    - $A, b$: 파라미터(parameters) or 계수(coefficients)
+
 
     $$y = AX + b$$
 
@@ -110,7 +114,7 @@ Modified: 2015-03-16 18:37
             import numpy as np
             X2 = X[:, np.newaxis][:, :, 2]
 
-    - 변수를 선택하고 나면 X2, y를 각각 training set, validation set으로 나눈다. 현재 데이터의 개수가 442개이므로 validation set을 약 10%인 40개로 해보자.
+    - 변수를 선택하고 나면 X2, y를 각각 training set, test set으로 나눈다. 현재 데이터의 개수가 442개이므로 test set을 약 10%인 40개로 해보자.
 
             :::python
             X2_train, X2_test = X2[:-40], X2[-40:]
