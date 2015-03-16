@@ -5,6 +5,12 @@ Toc: True
 Math: True
 Modified: 2015-03-16 18:37
 
+## 오늘의 목표
+- 데이터마이닝 알고리즘의 분류
+- Data partitioning 개념 익히기
+- 그 외 데이터마이닝에서 빈번히 다루는 용어들 익히기
+- 단변수, 다변수 선형회귀분석(linear regression)의 개념 익히고 파이썬으로 돌려보기
+
 ## Data mining process
 <img src="images/process.png" width="500px">
 
@@ -76,12 +82,12 @@ Modified: 2015-03-16 18:37
 ## Multiple linear regression (MLR)
 
 - Formulation
-    - $X$: 독립변수들(independent variables)
+    - $x_i$: 독립변수들(independent variables)
     - $y$: 종속변수(dependent variable)
-    - $A, b$: 파라미터(parameters) or 계수(coefficients)
+    - $a_i, b$: 파라미터(parameters) or 계수(coefficients)
 
 
-    $$y = AX + b$$
+    $$y = a_1x_1 + a_2x_2 + ... + a_mx_m + b$$
 
 ## [Programming] SLR, MLR with scikit-learn
 
@@ -168,6 +174,8 @@ Modified: 2015-03-16 18:37
 
             # Explained variance score: 1 is perfect prediction
             print('Variance score: %.2f' % mlr.score(X_test, y_test))
+
+> Example source: [Linear regression example](http://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html)
 
 ## [Tip] How to write a data mining proposal
 
