@@ -82,12 +82,12 @@ Modified: 2015-03-16 18:37
 ## Multiple linear regression (MLR)
 
 - Formulation
-    - $x_i$: 독립변수들(independent variables)
+    - $x_j$: 독립변수들(independent variables)
     - $y$: 종속변수(dependent variable)
-    - $a_i, b$: 파라미터(parameters) or 계수(coefficients)
+    - $b_j$: 파라미터(parameters) or 계수(coefficients)
 
 
-    $$y = a_1x_1 + a_2x_2 + ... + a_mx_m + b$$
+    $$y = b_0 + b_1x_1 + b_2x_2 + ... + b_mx_m$$
 
 ## [Programming] SLR, MLR with scikit-learn
 
