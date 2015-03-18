@@ -8,22 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<script src="/theme/html5.js"></script>
 		<![endif]-->
-	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="/theme/css/ipython.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+	<link href="/theme/css/local.css" rel="stylesheet">
+	<link href="/theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+		<h1 class="margin-bottom-30"><a href="/">Courses</a></h1>
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+            <li role="presentation"><a href="/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="/2015-ba">2015-ba</a></li>
         </ul>
 	</div>
 	<div class="row">
@@ -154,38 +154,39 @@
 </ul>
 <h2>[Programming] SLR, MLR with scikit-learn</h2>
 <ol>
-<li>데이터 import 하기<ul>
+<li>
+<p>데이터 import 하기</p>
+<ul>
 <li>먼저 파이썬에서 MLR을 시행하기 위해서 <a href="http://scikit-learn.org/">scikit-learn</a> 패키지를 사용해보자.</li>
 <li>보통은 데이터를 어디선가 다운로드 받고, 정제한 후 읽어들어야겠지만, scikit-learn 패키지에 이미 몇 가지 데이터셋이 준비되어 있으니 그 중 한 가지인 diabetes(당뇨병) 데이터셋을 써보자.</li>
 <li>파이썬에서 패키지를 사용하기 위해서는 <code>import some_package</code>을 입력하면 되고, 하나의 큰 패키지에서 일부만을 사용할 때는 <code>from some_package import a_subpackage</code>를 입력하면 된다.
 우리는 먼저 scikit-learn의 일부인 <code>dataset</code> subpackage 사용할 것이니 <code>from sklearn import datasets</code>를 하고, 데이터를 로딩해보자.</li>
-<li>어렵지 않다. 말 그대로 다른 패키지에서 특정 기능, 혹은 모든 기능을 수입(import)해오겠다는 것이다.<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<li>
+<p>어렵지 않다. 말 그대로 다른 패키지에서 특정 기능, 혹은 모든 기능을 수입(import)해오겠다는 것이다.<br>(참고: <code>import</code>에 대해 더 자세히 알기 위해서는 <a href="https://docs.python.org/3/tutorial/modules.html">모듈에 대한 파이썬 공식 문서</a>를 보자.)</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>우리가 다른 곳에서 (ex: <a href="http://archive.ics.uci.edu/ml/">UCI Datasets</a>) 데이터를 다운로드 받았다면 별도의 전처리 과정을 거쳐야했겠지만 친절하게도 scikit-learn은 데이터를 이미 전처리해서 data (X), target (y)로 나누어 놓았다. 이를 각각 <code>X</code>, <code>y</code>에 넣어보자.</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>  <span class="c"># returns [&#39;target&#39;, &#39;data&#39;]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;target&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>다른 작업을 진행하기 이전에 X, y 데이터에 대한 탐색을 해보자.</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>      <span class="c"># returns (442, 10)</span>
 </pre></div>
 
 
 </li>
 </ul>
 </li>
-</ol>
-<blockquote>
-<p>참고: import에 대해 더 자세히 알기 위해서는 <a href="https://docs.python.org/3/tutorial/modules.html">모듈에 대한 파이썬 공식 문서</a>를 보자.</p>
-</blockquote>
-<div class="highlight"><pre><span class="o">-</span> <span class="err">우리가</span> <span class="err">다른</span> <span class="err">곳에서</span> <span class="p">(</span><span class="nl">ex</span><span class="p">:</span> <span class="p">[</span><span class="n">UCI</span> <span class="n">Datasets</span><span class="p">](</span><span class="nl">http</span><span class="p">:</span><span class="c1">//archive.ics.uci.edu/ml/)) 데이터를 다운로드 받았다면 별도의 전처리 과정을 거쳐야했겠지만 친절하게도 scikit-learn은 데이터를 이미 전처리해서 data (X), target (y)로 나누어 놓았다. 이를 각각 `X`, `y`에 넣어보자.</span>
-
-        <span class="o">:::</span><span class="n">python</span>
-        <span class="n">print</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span>  <span class="err">#</span> <span class="n">returns</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">target</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">data</span><span class="err">&#39;</span><span class="p">]</span>
-        <span class="n">X</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="err">&#39;</span><span class="n">data</span><span class="err">&#39;</span><span class="p">]</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="err">&#39;</span><span class="n">target</span><span class="err">&#39;</span><span class="p">]</span>
-
-<span class="o">-</span> <span class="err">다른</span> <span class="err">작업을</span> <span class="err">진행하기</span> <span class="err">이전에</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="err">데이터에</span> <span class="err">대한</span> <span class="err">탐색을</span> <span class="err">해보자</span><span class="p">.</span>
-
-        <span class="o">:::</span><span class="n">python</span>
-        <span class="n">print</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>      <span class="err">#</span> <span class="n">returns</span> <span class="p">(</span><span class="mi">442</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-
-<ol>
 <li>
 <p>Simple linear regression</p>
 <ul>
@@ -294,7 +295,7 @@
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/multiple-linear-regression.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="/2015-dm/multiple-linear-regression.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -310,7 +311,7 @@
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
+                <a href="/category/2015-dm.html" rel="category">2015-dm</a>
             </span>
         </p>
     </div>
@@ -325,7 +326,6 @@
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
  The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
             </span>
 		</div>
 	</div>
@@ -415,7 +415,7 @@ $(function(){
     }});
 </script>
 <script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,/theme/static/MathJax/MathJax.js">
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </body>
 </html>

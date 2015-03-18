@@ -334,38 +334,39 @@ Some jokes about package managing:
 &lt;/ul&gt;
 &lt;h2&gt;[Programming] SLR, MLR with scikit-learn&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;데이터 import 하기&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;데이터 import 하기&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;먼저 파이썬에서 MLR을 시행하기 위해서 &lt;a href="http://scikit-learn.org/"&gt;scikit-learn&lt;/a&gt; 패키지를 사용해보자.&lt;/li&gt;
 &lt;li&gt;보통은 데이터를 어디선가 다운로드 받고, 정제한 후 읽어들어야겠지만, scikit-learn 패키지에 이미 몇 가지 데이터셋이 준비되어 있으니 그 중 한 가지인 diabetes(당뇨병) 데이터셋을 써보자.&lt;/li&gt;
 &lt;li&gt;파이썬에서 패키지를 사용하기 위해서는 &lt;code&gt;import some_package&lt;/code&gt;을 입력하면 되고, 하나의 큰 패키지에서 일부만을 사용할 때는 &lt;code&gt;from some_package import a_subpackage&lt;/code&gt;를 입력하면 된다.
 우리는 먼저 scikit-learn의 일부인 &lt;code&gt;dataset&lt;/code&gt; subpackage 사용할 것이니 &lt;code&gt;from sklearn import datasets&lt;/code&gt;를 하고, 데이터를 로딩해보자.&lt;/li&gt;
-&lt;li&gt;어렵지 않다. 말 그대로 다른 패키지에서 특정 기능, 혹은 모든 기능을 수입(import)해오겠다는 것이다.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;
+&lt;li&gt;
+&lt;p&gt;어렵지 않다. 말 그대로 다른 패키지에서 특정 기능, 혹은 모든 기능을 수입(import)해오겠다는 것이다.&lt;br&gt;(참고: &lt;code&gt;import&lt;/code&gt;에 대해 더 자세히 알기 위해서는 &lt;a href="https://docs.python.org/3/tutorial/modules.html"&gt;모듈에 대한 파이썬 공식 문서&lt;/a&gt;를 보자.)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;
 &lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load_diabetes&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;우리가 다른 곳에서 (ex: &lt;a href="http://archive.ics.uci.edu/ml/"&gt;UCI Datasets&lt;/a&gt;) 데이터를 다운로드 받았다면 별도의 전처리 과정을 거쳐야했겠지만 친절하게도 scikit-learn은 데이터를 이미 전처리해서 data (X), target (y)로 나누어 놓았다. 이를 각각 &lt;code&gt;X&lt;/code&gt;, &lt;code&gt;y&lt;/code&gt;에 넣어보자.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;  &lt;span class="c"&gt;# returns [&amp;#39;target&amp;#39;, &amp;#39;data&amp;#39;]&lt;/span&gt;
+&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;target&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;다른 작업을 진행하기 이전에 X, y 데이터에 대한 탐색을 해보자.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;      &lt;span class="c"&gt;# returns (442, 10)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;참고: import에 대해 더 자세히 알기 위해서는 &lt;a href="https://docs.python.org/3/tutorial/modules.html"&gt;모듈에 대한 파이썬 공식 문서&lt;/a&gt;를 보자.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="err"&gt;우리가&lt;/span&gt; &lt;span class="err"&gt;다른&lt;/span&gt; &lt;span class="err"&gt;곳에서&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;ex&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;UCI&lt;/span&gt; &lt;span class="n"&gt;Datasets&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="nl"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//archive.ics.uci.edu/ml/)) 데이터를 다운로드 받았다면 별도의 전처리 과정을 거쳐야했겠지만 친절하게도 scikit-learn은 데이터를 이미 전처리해서 data (X), target (y)로 나누어 놓았다. 이를 각각 `X`, `y`에 넣어보자.&lt;/span&gt;
-
-        &lt;span class="o"&gt;:::&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;
-        &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;  &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;returns&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="err"&gt;다른&lt;/span&gt; &lt;span class="err"&gt;작업을&lt;/span&gt; &lt;span class="err"&gt;진행하기&lt;/span&gt; &lt;span class="err"&gt;이전에&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="err"&gt;데이터에&lt;/span&gt; &lt;span class="err"&gt;대한&lt;/span&gt; &lt;span class="err"&gt;탐색을&lt;/span&gt; &lt;span class="err"&gt;해보자&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-
-        &lt;span class="o"&gt;:::&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;
-        &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;      &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;returns&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;442&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Simple linear regression&lt;/p&gt;
 &lt;ul&gt;
@@ -1426,21 +1427,22 @@ we encourage you to approach your work with honesty and integrity.&lt;/p&gt;
 &lt;p&gt;프로젝트에 대한 자세한 사항은 &lt;a href="http://www.lucypark.kr/courses/2015-dm/course-introduction.html#term-project-40"&gt;이 링크&lt;/a&gt;를 참고해주세요.&lt;/p&gt;
 &lt;h2&gt;Assignment 1: 분류기 비교&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;마감일: 2015-06-04 23:59&lt;/li&gt;
+&lt;li&gt;마감일: 2015-04-02 23:59&lt;/li&gt;
 &lt;li&gt;제출처: e-class&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;다음의 질문에 답하자.&lt;/p&gt;
+&lt;p&gt;다음의 두 가지 질문에 답하자.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;지금까지 우리는 logistic regression, decision trees, k-NN 등의 분류 알고리즘에 대해 배웠다.
-이 들의 특성은 어떻게 다른가?
-각각의 알고리즘은 어떤 데이터셋과 상황에 적합하다고 볼 수 있는가?&lt;/p&gt;
+&lt;p&gt;지금까지 우리는 logistic regression, decision trees, k-NN 등의 분류 알고리즘에 대해 배웠거나 배울 것이다.
+이들의 특성은 어떻게 다른가?
+각각의 알고리즘은 어떤 데이터셋과 상황에 적합하다고 볼 수 있는가?
+&lt;a href="http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html"&gt;iris&lt;/a&gt; 데이터셋을 이용해 각 분류기의 성능을 비교해보자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;참고: &lt;a href="http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html"&gt;Scikit-learn classifier comparison&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;그 외에 자주 사용되는 분류 알고리즘에는 무엇이 있는지 조사해보자.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;참고: http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;</summary><category term="assignments"></category></entry><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-dm/course-introduction.html" rel="alternate"></link><updated>2015-03-06T09:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-dm/course-introduction.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
 &lt;p&gt;&lt;img src="http://lucypark.kr/courses/images/me.jpg" width="150px" class="pull-right"&gt;&lt;/p&gt;
