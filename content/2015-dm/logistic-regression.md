@@ -7,13 +7,13 @@ Math: True
 ## 오늘의 목표
 
 - MLR의 블랙박스 열어보기
-- 로지스틱 회귀모형 개념 익히고 파이썬으로 돌려보기
+- 로지스틱 회귀모형 개념 익히기
 - 파이썬으로 실제 데이터 파일을 로딩하기
 
 ## Multiple linear regression (revisited)
 
 - 지난 시간에 우리는 MLR(multiple linear regression)에 대해 배우고 파이썬으로 실제 데이터에 대해 모델을 구축해보았다
-- 그런데 우리 컴퓨터는 MLR을 어떻게 학습했을까? (i.e., 파라미터를 어떻게 추정했을까?)
+- 그런데 우리 컴퓨터는 MLR을 어떻게 학습했을까? (i.e., 파라미터 $b_j$들을 어떻게 추정했을까?)
 - 이번 시간에는 MLR의 [블랙박스(black box)](http://en.wikipedia.org/wiki/Function_(mathematics)) 안에 무엇이 있는지를 보자.<br>
     [<img src="images/function.png" width="200px">](http://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Function_machine2.svg/440px-Function_machine2.svg.png)
 - Multiple linear regression? Fit a linear relationship between a quantitative dependent variable $y$ and a set of independent variables $x_1, x_2, ..., x_m$
@@ -49,7 +49,7 @@ Math: True
         - MSE 말고도 평균 오차(mean error), MAE, MAPE, RMSE 등을 사용할 수도 있다
             - Mean error: $\frac{1}{n}\sum_{i=1}^{n} (f(x_1^{(i)}) - y^{(i)})$
             - Mean absolute error (MAE): $\frac{1}{n}\sum_{i=1}^{n} |f(x_1^{(i)}) - y^{(i)}|$
-            - Mean absolute percentage error (MAPE): $100% \times \frac{1}{n}\sum_{i=1}^{n} \frac{|f(x_1^{(i)}) - y^{(i)}|}{y^{(i)}}$
+            - Mean absolute percentage error (MAPE): $100 \times \frac{1}{n}\sum_{i=1}^{n} \frac{|f(x_1^{(i)}) - y^{(i)}|}{y^{(i)}}$
             - Root mean squared error (RMSE): $\sqrt{\frac{1}{2n}\sum_{i=1}^{n}(f(x_1^{(i)}) - y^{(i)})^2}$
         - 이 값은 작을수록 좋음. 즉, 좋은 MSE가 되게 하는 모델이 좋은 모델
         - 바꿔말하면 좋은 모델을 만들기 위해서는 작은 MSE가 되게 하면 됨
@@ -130,4 +130,3 @@ TBD
 - Predictive models are built using a training data set, and evaluated on a separate test data set.
 - Removing redundant predictors is key to achieving predictive accuracy and robustness.
 - Subset selection methods help find "good" candidate models. These should then be run and assessed.
-

@@ -32,15 +32,18 @@ A4 용지 1페이지 이내로 자기소개서를 작성해봅시다.
 
 ## Assignment 1: 분류기 비교
 
-- 마감일: 2015-06-04 23:59
+- 마감일: 2015-04-02 23:59
 - 제출처: e-class
 
-다음의 질문에 답하자.
+다음의 두 가지 질문에 답하자.
 
-1. 지금까지 우리는 logistic regression, decision trees, k-NN 등의 분류 알고리즘에 대해 배웠다.
-이 들의 특성은 어떻게 다른가?
+1. 지금까지 우리는 logistic regression, decision trees, k-NN 등의 분류 알고리즘에 대해 배웠거나 배울 것이다.
+이들의 특성은 어떻게 다른가?
 각각의 알고리즘은 어떤 데이터셋과 상황에 적합하다고 볼 수 있는가?
+[iris](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html) 데이터셋을 이용해 각 분류기의 성능을 비교해보자.
+    - 참고: [Scikit-learn classifier comparison](http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html)
 
 2. 그 외에 자주 사용되는 분류 알고리즘에는 무엇이 있는지 조사해보자.
 
-- 참고: http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html
+
+
