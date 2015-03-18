@@ -73,10 +73,11 @@ Modified: 2015-03-16 18:37
     - $x$: 독립변수(independent variable)
     - $y$: 종속변수(dependent variable)
     - $a, b$: 파라미터(parameters) or 계수(coefficients)
+    - $\epsilon$: Observation noise
 
-    $$y = ax + b$$
+    $$y = ax + b + \epsilon$$
 
-- ex: Housing price prediction ([data](https://archive.ics.uci.edu/ml/datasets/Housing))<br>
+- ex: Housing price prediction<br>
     <img src="images/house.png" width="400px">
 
 ## Multiple linear regression (MLR)
@@ -85,9 +86,9 @@ Modified: 2015-03-16 18:37
     - $x_j$: 독립변수들(independent variables)
     - $y$: 종속변수(dependent variable)
     - $b_j$: 파라미터(parameters) or 계수(coefficients)
+    - $\epsilon$: Observation noise
 
-
-    $$y = b_0 + b_1x_1 + b_2x_2 + ... + b_mx_m$$
+    $$y = b_0 + b_1x_1 + b_2x_2 + ... + b_mx_m + \epsilon$$
 
 ## [Programming] SLR, MLR with scikit-learn
 
@@ -96,10 +97,13 @@ Modified: 2015-03-16 18:37
     - 보통은 데이터를 어디선가 다운로드 받고, 정제한 후 읽어들어야겠지만, scikit-learn 패키지에 이미 몇 가지 데이터셋이 준비되어 있으니 그 중 한 가지인 diabetes(당뇨병) 데이터셋을 써보자.
     - 파이썬에서 패키지를 사용하기 위해서는 `import some_package`을 입력하면 되고, 하나의 큰 패키지에서 일부만을 사용할 때는 `from some_package import a_subpackage`를 입력하면 된다.
 우리는 먼저 scikit-learn의 일부인 `dataset` subpackage 사용할 것이니 `from sklearn import datasets`를 하고, 데이터를 로딩해보자.
+    - 어렵지 않다. 말 그대로 다른 패키지에서 특정 기능, 혹은 모든 기능을 수입(import)해오겠다는 것이다.
 
             :::python
             from sklearn import datasets
             d = datasets.load_diabetes()
+
+> 참고: import에 대해 더 자세히 알기 위해서는 [모듈에 대한 파이썬 공식 문서](https://docs.python.org/3/tutorial/modules.html)를 보자.
 
     - 우리가 다른 곳에서 (ex: [UCI Datasets](http://archive.ics.uci.edu/ml/)) 데이터를 다운로드 받았다면 별도의 전처리 과정을 거쳐야했겠지만 친절하게도 scikit-learn은 데이터를 이미 전처리해서 data (X), target (y)로 나누어 놓았다. 이를 각각 `X`, `y`에 넣어보자.
 

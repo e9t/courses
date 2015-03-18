@@ -28,16 +28,19 @@ A4 용지 1페이지 이내로 자기소개서를 작성해봅시다.
 팀프로젝트에서 진행할 데이터마이닝 아이디어 한 가지를 제안해주세요.
 제안서는 A4 용지 1페이지 이내로 작성하고 PDF로 변환하여 올려주시기 바랍니다.
 
-프로젝트에 대한 자세한 사항은 다음 링크를 참고해주세요:
-http://www.lucypark.kr/courses/2015-dm/course-introduction.html#term-project-40
+프로젝트에 대한 자세한 사항은 [이 링크](http://www.lucypark.kr/courses/2015-dm/course-introduction.html#term-project-40)를 참고해주세요.
 
-## Assignment 3: 분류기 비교
+## Assignment 1: 분류기 비교
 
 - 마감일: 2015-06-04 23:59
 - 제출처: e-class
 
-지금까지 우리는 Logistic regression, decision tree, k-NN, Artificial neural networks, SVM 등 5개의 분류기에 대해 배웠다.
-이들의 특성은 어떻게 다른가?
+다음의 질문에 답하자.
+
+1. 지금까지 우리는 logistic regression, decision trees, k-NN 등의 분류 알고리즘에 대해 배웠다.
+이 들의 특성은 어떻게 다른가?
 각각의 알고리즘은 어떤 데이터셋과 상황에 적합하다고 볼 수 있는가?
+
+2. 그 외에 자주 사용되는 분류 알고리즘에는 무엇이 있는지 조사해보자.
 
 - 참고: http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html

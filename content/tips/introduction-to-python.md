@@ -345,7 +345,7 @@ Toc: True
 
 #### 예시 5: HashMap 또는 Dictionary
 
-Key와 value로 이루어진 데이터 타입을 자바에서는 HashMap, 파이썬에서는 [dictionary](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)라고 부른다.
+**Key**와 **value**로 이루어진 데이터 타입을 자바에서는 HashMap, 파이썬에서는 [dictionary](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)라고 부른다.
 Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 점이 독특하다. Dict에 대한 상급 활용법이 궁금한 사람은 [이 곳](https://speakerdeck.com/jongman/2014-pycon-kr-widaehan-dict-ihaehago-sayonghagi)을 살펴보자.
 
 - Java 1.7
