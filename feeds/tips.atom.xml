@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/tips.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-09T13:26:00+09:00</updated><entry><title>파이썬 프로그래밍을 위한 Sublime Text</title><link href="http://lucypark.kr/courses/tips/sublime-text.html" rel="alternate"></link><updated>2015-03-09T13:26:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-09:courses/tips/sublime-text.html</id><summary type="html">&lt;h2&gt;Installation&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/tips.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-03-18T15:55:00+09:00</updated><entry><title>터미널에서 프로그래밍하기</title><link href="http://lucypark.kr/courses/tips/terminal.html" rel="alternate"></link><updated>2015-03-18T15:55:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-18:courses/tips/terminal.html</id><summary type="html">&lt;p&gt;이제 프로그래밍에 조금은 익숙해졌죠?
+익숙해지지 않았다면? 지금이라도 열심히 복습하세요. 연습만이 살 길입니다.&lt;/p&gt;
+&lt;p&gt;다음은 터미널에서 프로그래밍할 때, 조금 더 생산성을 높이기 위한 몇 가지 꿀팁입니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;탭(tab) 키를 잘 활용하자!&lt;ul&gt;
+&lt;li&gt;쉘에서 명령어의 일부만 입력한 후 탭 키를 누르면 명령어 자동완성&lt;/li&gt;
+&lt;li&gt;Python 쉘 또는 IPython 쉘에서 특정 모듈 뒤에 쩜(&lt;code&gt;.&lt;/code&gt;)을 입력한 후 탭 키를 누르면 관련 메소드(method)들이 화면에 출력
+&lt;script type="text/javascript" src="https://asciinema.org/a/17805.js" id="asciicast-17805" async&gt;&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;화살표키도 자주 사용됨&lt;ul&gt;
+&lt;li&gt;쉘에서 화살표 키를 위 아래 위위 아래로 누르면 예전에 입력했던 명령어들을 볼 수 있다
+&lt;script type="text/javascript" src="https://asciinema.org/a/17804.js" id="asciicast-17804" async&gt;&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;해커의 생명은 단축키&lt;ul&gt;
+&lt;li&gt;줄의 맨 앞으로 가는 단축키? ctrl+a&lt;/li&gt;
+&lt;li&gt;맨 뒤로 가는 단축키? ctrl+e&lt;/li&gt;
+&lt;li&gt;쉘에서 나가는 단축키? 보통 ctrl+d 또는 ctrl+c
+&lt;script type="text/javascript" src="https://asciinema.org/a/17807.js" id="asciicast-17807" async&gt;&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary></entry><entry><title>파이썬 프로그래밍을 위한 Sublime Text</title><link href="http://lucypark.kr/courses/tips/sublime-text.html" rel="alternate"></link><updated>2015-03-09T13:26:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-09:courses/tips/sublime-text.html</id><summary type="html">&lt;h2&gt;Installation&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Sublime Text 설치&lt;br&gt;
 &lt;a href="http://sublimetext.com"&gt;&lt;img alt="sublime" src="images/sublime.png" /&gt;&lt;/a&gt;&lt;/li&gt;
@@ -423,7 +445,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;예시 5: HashMap 또는 Dictionary&lt;/h4&gt;
-&lt;p&gt;Key와 value로 이루어진 데이터 타입을 자바에서는 HashMap, 파이썬에서는 &lt;a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries"&gt;dictionary&lt;/a&gt;라고 부른다.
+&lt;p&gt;&lt;strong&gt;Key&lt;/strong&gt;와 &lt;strong&gt;value&lt;/strong&gt;로 이루어진 데이터 타입을 자바에서는 HashMap, 파이썬에서는 &lt;a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries"&gt;dictionary&lt;/a&gt;라고 부른다.
 Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 점이 독특하다. Dict에 대한 상급 활용법이 궁금한 사람은 &lt;a href="https://speakerdeck.com/jongman/2014-pycon-kr-widaehan-dict-ihaehago-sayonghagi"&gt;이 곳&lt;/a&gt;을 살펴보자.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;

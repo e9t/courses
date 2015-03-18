@@ -144,6 +144,10 @@ table th {
     text-align: center;
 }
 
+.data-link {
+    background-color: whitesmoke;
+}
+
 .due-date {
     background-color: linen;
 }
@@ -173,4 +177,8 @@ table th {
 
 .page-header {
     border-bottom: none;
+}
+
+.social-links div {
+    margin: 3px;
 }

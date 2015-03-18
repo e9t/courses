@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Recommendation systems — Courses</title>
-	<meta name="description" content="Title: Recommendation systems; Date: 2015-03-16; Author: Lucy Park; Courseid: ; Metainfo: ">
+	<title>Dimensionality reduction — Courses</title>
+	<meta name="description" content="Title: Dimensionality reduction; Date: 2015-03-17; Author: Lucy Park; Courseid: ; Metainfo: ">
 	<meta name="author" content="Lucy Park">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -30,14 +30,47 @@
 		<div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="article-header">
-        <h1 itemprop="name headline">Recommendation systems</h1>
-		<time datetime="2015-03-16T00:00:00+09:00" itemprop="datePublished">Mon 16 March 2015</time>
+        <h1 itemprop="name headline">Dimensionality reduction</h1>
+		<time datetime="2015-03-17T00:00:00+09:00" itemprop="datePublished">Tue 17 March 2015</time>
 	</div>
     <div itemprop="articleBody" class="article-body">
-        <h2>References</h2>
+        <h2>Variable selection in regression</h2>
 <ul>
-<li>http://www.slideshare.net/kyuhwanjung/cvprml-20140111</li>
-<li>http://www.slideshare.net/xlos21/deview-recopick-aws?related=1</li>
+<li>Why should we select a subset of variables?<ul>
+<li>May be expensive or not feasible to collect a full complement of predictors for future prediction.</li>
+<li>May be able to measure fewer predictors more accurately (e.g. in surveys)</li>
+<li>More predictors, more missing values</li>
+<li>Parsimony (a.k.a. Occam’s Razor): the simpler, the better.</li>
+<li>Multicollinearity: presence of two or more predictors sharing the same linear relationship with the outcome variables</li>
+</ul>
+</li>
+<li>Goal: 일반화 성능 향상<ul>
+<li>More robust</li>
+<li>Higher predictive accuracy</li>
+</ul>
+</li>
+</ul>
+<h3>Methods</h3>
+<ul>
+<li>Exhaustive search: 모든 변수 조합의 성능을 살펴봄<ul>
+<li>${x_1}, {x_2}, {x_3}, ..., {x_1, x_2}, {x_2, x_3}, ..., {x_1, x_2, x_3}, ...$</li>
+</ul>
+</li>
+<li>Partial search<ul>
+<li>Forward selection: 유의성이 큰 변수는 하나씩 더함<ul>
+<li>${x_4} \to {x_4, x_5} \to {x_1, x_4, x_5} \to {x_1, x_3, x_4, x_5} \to {x_1, x_2, x_3, x_4, x_5}$</li>
+</ul>
+</li>
+<li>Backward elimination: 유의성이 작은 변수를 하나씩 제거<ul>
+<li>${x_1, x_2, x_3, x_4, x_5} \to {x_1, x_3, x_4, x_5} \to {x_1, x_4, x_5} \to {x_4, x_5} to{x_4}$</li>
+</ul>
+</li>
+<li>Stepwise selection: 유의성이 큰 변수를 더하거나 작은 변수를 하나씩 제거<ul>
+<li>${x_4} \to {x_4, x_5} \to {x_1, x_4, x_5} \to {x_1, x_5} \to ...$</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -52,7 +85,7 @@
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/recommendation-systems.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/dimensionality-reduction.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>

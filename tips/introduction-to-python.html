@@ -423,7 +423,7 @@
 </li>
 </ul>
 <h4>예시 5: HashMap 또는 Dictionary</h4>
-<p>Key와 value로 이루어진 데이터 타입을 자바에서는 HashMap, 파이썬에서는 <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">dictionary</a>라고 부른다.
+<p><strong>Key</strong>와 <strong>value</strong>로 이루어진 데이터 타입을 자바에서는 HashMap, 파이썬에서는 <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">dictionary</a>라고 부른다.
 Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 점이 독특하다. Dict에 대한 상급 활용법이 궁금한 사람은 <a href="https://speakerdeck.com/jongman/2014-pycon-kr-widaehan-dict-ihaehago-sayonghagi">이 곳</a>을 살펴보자.</p>
 <ul>
 <li>
@@ -716,6 +716,23 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 
     </div>
     <div class="footnote">
+        <div class="social-links pull-right">
+            <div id="facebook-like">
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-like" data-href="http://lucypark.kr/courses/tips/introduction-to-python.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+            </div>
+            <div id="twitter-tweet">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.    insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </div>
         <p>
             Author:
             <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -784,7 +801,7 @@ $(function(){
 </script>
 <script>
     function hyphenate(str) {
-        return str.toLowerCase().replace(/[?!:'"()%,]/gi, '').replace(/\s/g, '-');
+        return str.toLowerCase().replace(/[?!:'"\[\]()%,]/gi, '').replace(/\s/g, '-');
     }
 
     String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }

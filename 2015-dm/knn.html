@@ -41,8 +41,17 @@
 <li>k개의 가까운 이웃?</li>
 <li>아이디어: 내 주변의 이웃 k개를 봐서 내가 어떤 값을 가질지 투표하자!</li>
 </ul>
-<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/KnnClassification.svg/440px-KnnClassification.svg.png"><img src="images/knn.png" width="400px"></a></p>
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/KnnClassification.svg/440px-KnnClassification.svg.png"><img src="images/knn.png" width="300px"></a></p>
+<h3>Calculating similarities</h3>
 <p>k-NN에서 가장 중요한 문제: 두 점 사이의 거리가 가까운지 먼지 어떻게 판단할 것인가? (distance를 정의하는 문제)</p>
+<h3>Multiclass classification</h3>
+<p>What if there are not just two classes, but $k$ classes?
+1. One-vs-all
+2. One-vs-one
+    - $k (k − 1) / 2$ binary classifiers for a K-way multiclass problem</p>
+<h3>One class classification</h3>
+<p>TBD</p>
+<h2>[Programming] k-NN with Scikit-learn</h2>
 <p>코드 출처: http://scikit-learn.org/stable/auto_examples/neighbors/plot_classification.html#example-neighbors-plot-classification-py</p>
 <ol>
 <li>
@@ -108,6 +117,23 @@ algorihtm = &#39;auto&#39;      # ball_tree, kd_tree, brute 중 택일
 
     </div>
     <div class="footnote">
+        <div class="social-links pull-right">
+            <div id="facebook-like">
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/knn.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+            </div>
+            <div id="twitter-tweet">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.    insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </div>
         <p>
             Author:
             <span itemprop="author" itemscope itemtype="http://schema.org/Person">
