@@ -13,8 +13,13 @@ import re
 
 from pelican import signals
 
+def read_txt(filepath, encoding='utf-8'):
+    with open(filepath, 'r') as f:
+        doc = f.read().decode(encoding)
+    return doc
+
 def csv_loader(csv_elem, curpath,\
-        encoding='utf-8', linefeed='\n', delim=',', classes=['table'], limit=5):
+        linefeed='\n', delim=',', classes=['table'], limit=5):
 
     if "'''" in csv_elem:
         filename = None
@@ -22,8 +27,7 @@ def csv_loader(csv_elem, curpath,\
     else:
         filename = csv_elem.split("'")[1]
         filepath = os.path.join('output', curpath, filename)
-        with open(filepath, 'r') as f:
-            doc = f.read().decode(encoding)
+        doc = read_txt(filepath)
 
     if classes:
         csv_string = '<table class="%s">' % ' '.join(classes)
