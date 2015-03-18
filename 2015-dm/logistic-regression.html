@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Logistic regression — Courses</title>
+	<meta name="description" content="Title: Logistic regression; Date: 2015-03-20; Author: Lucy Park; Courseid: 2015-dm; Metainfo: ">
+	<meta name="author" content="Lucy Park">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<![endif]-->
+	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
+	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+        </ul>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="article-header">
+        <h1 itemprop="name headline">Logistic regression</h1>
+		<time datetime="2015-03-20T09:00:00+09:00" itemprop="datePublished">Fri 20 March 2015</time>
+	</div>
+    <div class="article-toc"><b>Contents</b><p></p></div>
+    <div itemprop="articleBody" class="article-body">
+        <h2>오늘의 목표</h2>
+<ul>
+<li>MLR의 블랙박스 열어보기</li>
+<li>로지스틱 회귀모형 개념 익히기</li>
+<li>파이썬으로 실제 데이터 파일을 로딩하기</li>
+</ul>
+<h2>Multiple linear regression (revisited)</h2>
+<ul>
+<li>지난 시간에 우리는 MLR(multiple linear regression)에 대해 배우고 파이썬으로 실제 데이터에 대해 모델을 구축해보았다</li>
+<li>그런데 우리 컴퓨터는 MLR을 어떻게 학습했을까? (i.e., 파라미터 $b_j$들을 어떻게 추정했을까?)</li>
+<li>이번 시간에는 MLR의 <a href="http://en.wikipedia.org/wiki/Function_(mathematics)">블랙박스(black box)</a> 안에 무엇이 있는지를 보자.<br>
+    <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Function_machine2.svg/440px-Function_machine2.svg.png"><img src="images/function.png" width="200px"></a></li>
+<li>
+<p>Multiple linear regression? Fit a linear relationship between a quantitative dependent variable $y$ and a set of independent variables $x_1, x_2, ..., x_m$</p>
+<p>$$y = b_0 + b_1x_1 + b_2x_2 + ... + b_mx_m + \epsilon$$</p>
+<ul>
+<li>$y$: output variable / dependent variable</li>
+<li>$x_j$: $j$th input variable / independent variable</li>
+<li>$b_j$: parameters / coefficients</li>
+<li>$m$: Number of input variables/features</li>
+<li>$\epsilon$: Observation noise</li>
+</ul>
+</li>
+<li>
+<p>ex: 33명 성인 여성의 나이와 수축혈압(SBP, systolic blood pressure)<br>
+<div class="row">
+    <div class="col-md-8">
+    <table class="table"><tr><th>Age</th><th>SBP</th></tr><tr><td>22</td><td>131</td></tr><tr><td>23</td><td>128</td></tr><tr><td>24</td><td>116</td></tr><tr><td>27</td><td>106</td></tr><tr><td colspan="2" class="data-link"><a href="data/sbp.csv">data link</a></td></tr></table>
+    </div>
+    <div class="col-md-4">
+    <img src="images/sbp.png" width="300px">
+    </div>
+</div></p>
+</li>
+</ul>
+<h3>OLS(ordinary least squares) for parameter estimation</h3>
+<ul>
+<li>MLR의 파라미터 $b_j$들을 추정하기 위해서는 OLS를 사용한다<ul>
+<li>정답과의 오차를 최소화한다는 의미</li>
+</ul>
+</li>
+<li>Formulation<ul>
+<li>Hypothesis: $f(x) = b_0 + b_1x_1 + b_2x_2 + ... + b_mx_m$</li>
+<li>Parameters: $b_0, b_1, ..., b_m$</li>
+<li>Cost function: $J(b_0, b_1, ..., b_m) = \frac{1}{2n}\sum_{i=1}^{n}(f(x_1^{(i)}) - y^{(i)})^2$<ul>
+<li>The equation above is called the MSE(mean squared error, 오차의 제곱의 평균)</li>
+<li>MSE 말고도 평균 오차(mean error), MAE, MAPE, RMSE 등을 사용할 수도 있다<ul>
+<li>Mean error: $\frac{1}{n}\sum_{i=1}^{n} (f(x_1^{(i)}) - y^{(i)})$</li>
+<li>Mean absolute error (MAE): $\frac{1}{n}\sum_{i=1}^{n} |f(x_1^{(i)}) - y^{(i)}|$</li>
+<li>Mean absolute percentage error (MAPE): $100 \times \frac{1}{n}\sum_{i=1}^{n} \frac{|f(x_1^{(i)}) - y^{(i)}|}{y^{(i)}}$</li>
+<li>Root mean squared error (RMSE): $\sqrt{\frac{1}{2n}\sum_{i=1}^{n}(f(x_1^{(i)}) - y^{(i)})^2}$</li>
+</ul>
+</li>
+<li>이 값은 작을수록 좋음. 즉, 좋은 MSE가 되게 하는 모델이 좋은 모델</li>
+<li>바꿔말하면 좋은 모델을 만들기 위해서는 작은 MSE가 되게 하면 됨</li>
+</ul>
+</li>
+<li>Goal: $arg \min J(b_0, b_1, ..., b_m)$<ul>
+<li>즉, 비용 $J$를 최소화하는 $b_j (j=0, 1, ..., m)$를 찾자</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Solution<ul>
+<li>Numerical solution: <a href="http://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a><ul>
+<li>Local minimum을 찾기 위한 방법론</li>
+</ul>
+</li>
+<li>Analytical solution: Normal equation<ul>
+<li>Let $y = b_0 + b_1x_1 = X\beta$, then
+    $$\beta = (X^TX)^{-1}X^Ty$$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Logistic regression</h2>
+<ul>
+<li>ex: 33명 성인 여성의 나이와 심장동맥병(CD, coronary heart disease) 발병 여부<ul>
+<li><code>CD==1</code>: positive class (normally the minority class, 예측 대상, ex: 불량, 발병, 스팸 등)</li>
+<li><code>CD==0</code>: negative class (normally the majority class)<br>
+<div class="row">
+    <div class="col-md-8">
+    <table class="table"><tr><th>Age</th><th>CD</th></tr><tr><td>22</td><td>0</td></tr><tr><td>23</td><td>0</td></tr><tr><td>24</td><td>0</td></tr><tr><td>27</td><td>0</td></tr><tr><td colspan="2" class="data-link"><a href="data/cd.csv">data link</a></td></tr></table>
+    </div>
+    <div class="col-md-4">
+    <img src="images/cd.png" width="300px">
+    </div>
+</div></li>
+<li>위와 같이 일반적인 linear regression 알고리즘을 fitting한 후 $f(x) = ax+b$에 대해 다음과 같은 모델을 추가할 수 있다<ul>
+<li>if $f(x) \geq 0.5$, then $\hat{y}=1$</li>
+<li>if $f(x) \lt 0.5$, then $\hat{y}=0$</li>
+</ul>
+</li>
+<li>하지만 이 방법은 두 가지 측면에서 적절하지 않다.<ol>
+<li><a href="http://en.wikipedia.org/wiki/Outlier">Outlier</a>에 robust하지 못하다. 가령 나이가 1세이고 CD==0인 단 한 개의 점이 training set에 추가된다면 모델은 어떻게 바뀔까?</li>
+<li>실제로 $y$값은 0, 1의 두 가지 값밖에 가지지 못함에도 불구하고, $-\infty &lt; f(x) &lt; \infty$ 여서 $f(x)$가 0과 1 사이의 값 뿐 아니라 1보다 크거나 0보다 작은 값도 가질 수 있게 된다. (이 때, 분류 오차도 엄청 커질 수 있다)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Logistic Regression? Fit a linear relationship between a <em>categorical</em> dependent variable $y$ and a set of independent variables $x_1,x_2,...,x_m$<ul>
+<li>주의: 이름에 등장하는 "regression"이라는 표현과는 달리 logisitic regression은 분류 문제를 풀기 위한 알고리즘!</li>
+</ul>
+</li>
+<li>
+<p>목표: $0 \leq f(x) \leq 1$가 되는 $f(x)$를 만들어보자.</p>
+<ul>
+<li>$f(x) = g(b_0 + b_1x_1 + ... + b_mx_m)$: Multiple linear regression에 함수 $g(x)$를 씌운 꼴</li>
+<li>where $g(z) = \frac{1}{1+e^{-z}}$ ("logistic function" or "<a href="http://en.wikipedia.org/wiki/Sigmoid_function">sigmoid function</a>")</li>
+</ul>
+<p><img src="images/sigmoid.png" width="300px"></p>
+</li>
+</ul>
+<h3>MLE(maximum likelihood estimation) for parameter estimation</h3>
+<p>TBD</p>
+<h2>[Programming] Handling real datasets</h2>
+<ul>
+<li>예시: <a href="http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;tradeTypeCd=&amp;hscpTypeCd=&amp;cortarNo=1162010200&amp;mapLevel=10">관악구 신림동 지역의 부동산 가격</a> 예측하기</li>
+<li><a href="../tips/terminal.html">들어가기 전 몇 가지 꿀팁</a></li>
+</ul>
+<h3>Data exploration</h3>
+<p><table class="table"><tr><th>공급면적($m^2$)</th><th>전용면적($m^2$)</th><th>층수</th><th>전체층수</th><th>매물가(만원)</th></tr><tr><td>113</td><td>84</td><td>20</td><td>20</td><td>13000</td></tr><tr><td>116</td><td>84</td><td>11</td><td>16</td><td>38800</td></tr><tr><td>81</td><td>59</td><td>17</td><td>20</td><td>31500</td></tr><tr><td>113</td><td>84</td><td>14</td><td>20</td><td>38500</td></tr></table></p>
+<h3>Preprocessing</h3>
+<p>처음 데이터를 받고 나면 무엇부터 할 수 있을까?
+다음은 실제 데이터를 다룰 떄 살펴보는 사항들이다.</p>
+<ol>
+<li>데이터가 크기가 얼마나 되는가?</li>
+<li>$y$ 값으로 설정할만한 실수형 혹은 범주형 변수가 있는가?</li>
+<li>Missing data가 있는가?</li>
+<li>변수의 종류는 무엇인가? 실수형? 범주형?<ul>
+<li>범주형은 1-of-c 코딩 등의 방식으로 변환해주는 것이 일반적</li>
+</ul>
+</li>
+<li>데이터는 어떻게 분할할까?<ul>
+<li>Training:Test=60:40이 일반적이기는 하지만 다른 방법은 없을까?</li>
+<li>10-fold cross validation</li>
+</ul>
+</li>
+</ol>
+<h2>Summary</h2>
+<ul>
+<li>Linear regression models are very popular tools, for both explanatory modeling and prediction.</li>
+<li>A good predictive model has high predictive accuracy (to a useful practical level), precision, and recall.</li>
+<li>Predictive models are built using a training data set, and evaluated on a separate test data set.</li>
+<li>Removing redundant predictors is key to achieving predictive accuracy and robustness.</li>
+<li>Subset selection methods help find "good" candidate models. These should then be run and assessed.</li>
+</ul>
+
+    </div>
+    <div class="footnote">
+        <div class="social-links pull-right">
+            <div id="facebook-like">
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/logistic-regression.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+            </div>
+            <div id="twitter-tweet">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.    insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </div>
+        <p>
+            Author:
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a href="http://dm.snu.ac.kr/~epark"><span itemprop="name">Lucy Park</span></a>
+            </span>
+        </p>
+        <p>
+            Category:
+            <span itemprop="articleSection">
+                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
+            </span>
+        </p>
+    </div>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="center-block aw-bottom">
+            Built by <a href="http://dm.snu.ac.kr/~epark">Lucy Park</a>.<br>
+            Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
+ The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
+            </span>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+
+// add 'active' class to current menu
+$(function(){
+  if (document.location.hostname == "localhost") {
+    var idx = 1;
+    var activePage = location.pathname.split("/")[idx];
+  } else {
+    var idx = 4;
+    var activePage = location.href.split("/")[idx];
+  }
+  $('.nav li a').each(function() {
+    var currentPage = $(this).attr('href').split("/")[idx];
+    if (activePage == currentPage) {
+      $(this).parent().addClass('active');
+    }
+  });
+});
+</script>
+<script>
+    function hyphenate(str) {
+        return str.toLowerCase().replace(/[?!:'"\[\]()%,]/gi, '').replace(/\s/g, '-');
+    }
+
+    String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
+
+    // create toc
+    var t = '';
+    var concat = '';
+    var headers = $('.article-body :header');
+    headers.each(function() {
+        var hyphenated = hyphenate($(this).text());
+            $(this).attr('id', hyphenated);
+        }
+    );
+    for (var i=0; i<headers.length; i++) {
+        depth = parseInt(headers[i].tagName.substr(-1));
+        if (depth < 4) {
+            t = headers[i].textContent;
+            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- <a href="#' + hyphenate(t) + '">' + t + '</a><br>';
+        }
+    }
+    $(".article-toc p").append(concat);
+
+    // scroll animation
+    $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 300, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+    }});
+</script>
+<script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
