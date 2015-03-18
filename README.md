@@ -30,6 +30,10 @@
     sudo pelican-themes --install ~/dev/pkgs/python/pelican-themes/aboutwilson --verbose
     pelican source/content  -s source/pelicanconf.py
 
+## Requirements
+
+    bower install MathJax
+
 ## Run
 
     make regenerate; make serve
