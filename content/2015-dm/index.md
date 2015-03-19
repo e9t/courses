@@ -36,7 +36,7 @@ For assignment guidelines, visit the class <a href="http://eclass.seoultech.ac.k
 <tr class="due-date"><td>3/11</td><td>Due date: Assignment 0</td></tr>
 <tr><td>3/13</td><td><a href="multiple-linear-regression.html">지도학습 1: Multiple linear regression</a><ul><li><a href="../tips/introduction-to-python.html">Introduction to Python</a></ul></td></tr>
 <tr class="due-date"><td>3/18</td><td>Due date: Project proposal, Fix project teams</td></tr>
-<tr><td>3/20</td><td><a href="logistic-regression.html">지도학습 2: Logistic regression</a><ul><li><a href="assignments.html#assignment-1-분류기-비교">Assignment 1 (Due: 4/2)</a></ul></td></tr>
+<tr><td>3/20</td><td><a href="logistic-regression.html">지도학습 2: Logistic regression</a><ul><li><a href="assignments.html#assignment-1-classification">Assignment 1 (Due: 4/2)</a></ul></td></tr>
 <tr><td>3/27</td><td>지도학습 3: Decision tree + k-NN<ul><li>In class project discussions</ul></td></tr>
 <tr class="due-date"><td>3/29</td><td>Due date: Choose team project topic</td></tr>
 <tr class="due-date"><td>4/02</td><td>Due date: Assignment 1</td></tr>

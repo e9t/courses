@@ -54,6 +54,7 @@ Modified: 2015-03-16 18:37
 - 데이터를 training data와 test data로 나누는 것
     - Training data: 모델 학습용
     - Test data: 모델 성능 측정용
+- 왜? Overfitting 방지, 일반화 성능 향상
 - 보통은 60:40 정도로 데이터를 분할하지만, 보유하고 있는 데이터 규모에 따라 이 비율은 달라지기도 함
 - 컴퓨터가 모델을 학습하고 평가 받는 것은, 교실에서 학생과 선생님 사이에서 발생하는 일과 매우 유사하다!
     - Training phase: 교사는 문제($X_{train}$)와 정답($y_{train}$)이 모두 포함된 training data를 이용해 컴퓨터를 훈련(training)시키고, 컴퓨터는 모델을 학습한다(learning).
