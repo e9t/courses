@@ -511,7 +511,7 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;li&gt;파이썬 스크립트 최상단에 &lt;code&gt;# -*- coding: utf-8 -*-&lt;/code&gt;과 같은 방식으로 인코딩을 명시하자.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4&gt;예시 6: Array 또는 List&lt;/h4&gt;
-&lt;p&gt;순서가 존재하는 데이터 타입인 배열은 어떻게 선언할까?&lt;/p&gt;
+&lt;p&gt;순서가 존재하는 데이터 타입인 배열(array)은 어떻게 선언할까?&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Java 1.7&lt;/p&gt;
@@ -528,11 +528,11 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
         &lt;span class="n"&gt;myList&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;add&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;e&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
         &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;myList&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
 
-        &lt;span class="c1"&gt;// split arraylist&lt;/span&gt;
-        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;myList&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;subList&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
-
         &lt;span class="c1"&gt;// get item in arraylist&lt;/span&gt;
         &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;myList&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;get&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+
+        &lt;span class="c1"&gt;// split arraylist&lt;/span&gt;
+        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;myList&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;subList&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
     &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -545,16 +545,32 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;span class="n"&gt;my_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;b&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;d&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;e&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="c"&gt;# split list&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-
 &lt;span class="c"&gt;# get item in list&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;   &lt;span class="c"&gt;# returns &amp;#39;d&amp;#39;&lt;/span&gt;
+
+&lt;span class="c"&gt;# split list&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="c"&gt;# returns [&amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;많은 프로그래밍 언어는 배열에 속하는 item의 번호, 즉 &lt;a href="https://plus.google.com/115212051037621986145/posts/YTUxbXYZyfi"&gt;index를 매길 때 1이 아니라 0부터 시작한다&lt;/a&gt;.
+그러니까 위의 &lt;code&gt;my_list&lt;/code&gt;에서 item 'a'의 index는 0, item 'b'의 index는 1, item 'e'의 index는 4이다.
+이 때 &lt;code&gt;my_list[3]&lt;/code&gt;이라고 입력하면 index 값이 3인 item을 가져오라는 뜻이며, 따라서 'd'를 출력한다.
+한편 list를 분할할 때는 &lt;code&gt;my_list[1:4]&lt;/code&gt;라고 입력하는데, 이는 index가 1인 item부터 index가 4인 item _직전_까지 가져오라는 의미이다.
+list 분할은 데이터 분석에서 데이터를 두 개 이상의 set으로 partitioning할 때 활용할 수 있다.
+가령 위의 &lt;code&gt;my_list&lt;/code&gt;를 ['a', 'b', 'c']와 ['d', 'e']로 나누는 것은 아래와 같이 다양한 방식으로 할 수 있다. (세 경우 모두 같은 결과를 낳는다)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;p1, p2 = my_list[0:3], my_list[3:5]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p1, p2 = my_list[:3], my_list[3:]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p1, p2 = my_list[:-2], my_list[-2:]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;위에서 볼 수 있듯 &lt;code&gt;my_list[:4]&lt;/code&gt;라고 입력하면 처음부터 index가 4인 item _직전_까지 반환하고
+&lt;code&gt;my_list[1:]&lt;/code&gt;을 입력하면 index가 1인 item부터 마지막 item까지 반환한다.
+음수 index를 명시하면 마지막에서부터 index를 세게 되는데,
+(위 예시의 경우 배열의 길이인 &lt;code&gt;len(my_list)&lt;/code&gt;에서 2를 뺀 값)
+이것도 아주 편리하게 이용되는 기능이다.&lt;/p&gt;
 &lt;h4&gt;예시 7: 클래스(class)와 상속(inheritance)&lt;/h4&gt;
 &lt;p&gt;예시 1에서도 설명했지만, 파이썬에서는 클래스를 반드시 선언해주지는 않아도 된다.
 하지만, 클래스가 유용한 경우는 종종 있고, 파이썬에서도 클래스를 만들 수 있다.

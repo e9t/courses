@@ -8,22 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<script src="/theme/html5.js"></script>
 		<![endif]-->
-	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="/theme/css/ipython.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+	<link href="/theme/css/local.css" rel="stylesheet">
+	<link href="/theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+		<h1 class="margin-bottom-30"><a href="/">Courses</a></h1>
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+            <li role="presentation"><a href="/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="/2015-ba">2015-ba</a></li>
         </ul>
 	</div>
 	<div class="row">
@@ -38,8 +38,7 @@
         <h2>오늘의 목표</h2>
 <ul>
 <li>MLR의 블랙박스 열어보기</li>
-<li>로지스틱 회귀모형 개념 익히기</li>
-<li>파이썬으로 실제 데이터 파일을 로딩하기</li>
+<li>로지스틱 회귀모형 개념 익히고 실제로 구현하기</li>
 </ul>
 <h2>Multiple linear regression (revisited)</h2>
 <ul>
@@ -104,12 +103,20 @@
 </ul>
 </li>
 <li>Analytical solution: Normal equation<ul>
-<li>Let $y = b_0 + b_1x_1 = X\beta$, then
+<li>Let $y = X\beta$, then
     $$\beta = (X^TX)^{-1}X^Ty$$</li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<h3>MLR Essentials</h3>
+<ul>
+<li>Linear regression models are very popular tools, for both explanatory modeling and prediction.</li>
+<li>A good predictive model has high predictive accuracy (to a useful practical level), precision, and recall.</li>
+<li>Predictive models are built using a training data set, and evaluated on a separate test data set.</li>
+<li>Removing redundant predictors is key to achieving predictive accuracy and robustness.</li>
+<li>Subset selection methods help find "good" candidate models. These should then be run and assessed.</li>
 </ul>
 <h2>Logistic regression</h2>
 <ul>
@@ -138,6 +145,7 @@
 </li>
 <li>Logistic Regression? Fit a linear relationship between a <em>categorical</em> dependent variable $y$ and a set of independent variables $x_1,x_2,...,x_m$<ul>
 <li>주의: 이름에 등장하는 "regression"이라는 표현과는 달리 logisitic regression은 분류 문제를 풀기 위한 알고리즘!</li>
+<li>logistic regression = logit regression == maximum-entropy classification (MaxEnt) == log-linear classifier</li>
 </ul>
 </li>
 <li>
@@ -146,20 +154,70 @@
 <li>$f(x) = g(b_0 + b_1x_1 + ... + b_mx_m)$: Multiple linear regression에 함수 $g(x)$를 씌운 꼴</li>
 <li>where $g(z) = \frac{1}{1+e^{-z}}$ ("logistic function" or "<a href="http://en.wikipedia.org/wiki/Sigmoid_function">sigmoid function</a>")</li>
 </ul>
-<p><img src="images/sigmoid.png" width="300px"></p>
+<p><img src="images/logistic.png" width="300px"></p>
 </li>
 </ul>
 <h3>MLE(maximum likelihood estimation) for parameter estimation</h3>
 <p>TBD</p>
-<h2>[Programming] Handling real datasets</h2>
+<h2>[Programming] Logistic regression with scikit-learn</h2>
+<h3>1. Data acquisition</h3>
 <ul>
-<li>예시: <a href="http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;tradeTypeCd=&amp;hscpTypeCd=&amp;cortarNo=1162010200&amp;mapLevel=10">관악구 신림동 지역의 부동산 가격</a> 예측하기</li>
-<li><a href="../tips/terminal.html">들어가기 전 몇 가지 꿀팁</a></li>
+<li>오늘도 지난 시간처럼 데이터 파일을 직접 구해서 로딩하기보다는 편의를 위해 scikit-learn 패키지를 이용해보자.<ul>
+<li>단, 이번에는 원래 scikit-learn 패키지에 포함되어 있는 데이터가 아니라 scikit-learn의 <a href="http://scikit-learn.org/0.12/modules/generated/sklearn.datasets.fetch_mldata.html"><code>datasets.fetch_mldata()</code></a> 메소드를 이용해서 <a href="http://mldata.org">mldata.org</a>에 있는 데이터셋을 받아올 것이다.</li>
+<li>그 밖에도 scikit-learn을 통해 접근하거나 다운로드 받을 수 있는 데이터셋에 관해서는 <a href="http://scikit-learn.org/stable/datasets/">이 링크</a>를 참고하자.</li>
 </ul>
-<h3>Data exploration</h3>
-<p><table class="table"><tr><th>공급면적($m^2$)</th><th>전용면적($m^2$)</th><th>층수</th><th>전체층수</th><th>매물가(만원)</th></tr><tr><td>113</td><td>84</td><td>20</td><td>20</td><td>13000</td></tr><tr><td>116</td><td>84</td><td>11</td><td>16</td><td>38800</td></tr><tr><td>81</td><td>59</td><td>17</td><td>20</td><td>31500</td></tr><tr><td>113</td><td>84</td><td>14</td><td>20</td><td>38500</td></tr></table></p>
-<h3>Preprocessing</h3>
+</li>
+<li>이번에 우리가 사용할 데이터셋은 머신러닝계에서 아주 유명한 <a href="http://yann.lecun.com/exdb/mnist/">MNIST 데이터</a>이다.<ul>
+<li>이 데이터셋은 너비 28픽셀, 높이 28픽셀로 된 숫자 필기 이미지 70,000장에 대한 데이터이다.</li>
+<li>오늘 풀어볼 문제는, "임의의 숫자 필기 이미지를 입력받았을 때 컴퓨터가 어떤 숫자에 대한 이미지인지 알게 할 수 있는가?" 즉, 필기 인식이다.</li>
+<li>사실은 사람들도 꾸준한 "학습(learning)"을 통해 생성된 "분류기"를 이용해 숫자를 분류한다.<br>
+<img src='images/mnist.gif'></li>
+</ul>
+</li>
+<li>
+<p>이제 데이터를 다운로드 받아보자. <a href="http://scikit-learn.org/stable/datasets/#downloading-datasets-from-the-mldata-org-repository"><code>datasets.fetch_mldata()</code></a> 메소드에
+우리가 받고 싶은 데이터의 이름 'MNIST original'를 명시한 후,
+데이터를 저장할 곳 <code>data_home</code>을 현재 디렉토리(<code>.</code>)로 정해주면 데이터가 다운로드 된 후 바로 변수 <code>d</code>로 로드(load)된다.</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_mldata</span><span class="p">(</span><span class="s">&#39;MNIST original&#39;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<ul>
+<li><code>data_home</code>은 얼마든지 다른 디렉토리로 지정해줘도 된다.</li>
+<li>한번 데이터를 다운받고 나서 같은 명령어를 재실행하면 다운로드 없이 바로 데이터가 로드된다.</li>
+<li>이번에도 변수 <code>d</code>는 dictionary 형태로 되어 있으며, <a href="multiple-linear-regression.html#programming-slr-mlr-with-scikit-learn">지난 시간에 살펴보았던 당뇨병(diabetes) 데이터셋</a>과 마찬가지로 dictionary를 구성하는 key, value 중 'data', 'target'라는 key를 비롯하여 'COL_NAMES', 'DESCR' 등의 key도 있다.
+(이 key들이 어떤 value를 담고 있는지 궁금하다면 출력해보자.)</li>
+</ul>
+</li>
+<li>
+<p>여기서는 곧바로 당뇨병 데이터와 마찬가지로 'data' key의 value를 <code>X</code>에, 'target' key의 value를 <code>y</code>라는 변수에 저장하고,</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>     <span class="c"># python shell에서 실행하는 경우 `print()`는 필요없음</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;target&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><code>X</code>, <code>y</code>의 차원(dimension)을 확인해보자.</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c"># check data type of variable X, y</span>
+<span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c"># returns (70000, 784) (70000,)</span>
+</pre></div>
+
+
+<ul>
+<li>출력된 결과를 보니 <code>X</code>에는 70,000개의 record(row)와 784개의 attribute(column, variable)가 있고, <code>y</code>는 70,000개의 record로 구성된 1차원 데이터라고 한다.</li>
+<li>또, 넘어가기 전에 <strong>X의 record수와 y의 record 수가 일치</strong>하고 <strong>y는 1차원</strong>임을 반드시 확인하고 넘어가자.  위의 두 가지 사항이 맞지 않는다면 꽤 골치 아파질 것이다.
+(왜 그럴까? 각자 생각해보자.)</li>
+<li>한편, 여기서 사용하는 <code>shape</code>는 numpy의 <code>ndarray</code>나  pandas의 <code>DataFrame</code> 등 특정 데이터 타입을 사용할 때만 적용할 수 있다는 점을 알아두면 좋다.
+(즉, 파이썬의 <code>list</code> 데이터 타입을 사용할 때는 <code>shape</code>를 사용할 수 없는데, 무슨 말인지 모르겠으면 일단 넘어가자. 다음에 이런 일이 발생하게 된다면 어차피 에러가 뜰테니까.)</li>
+</ul>
+</li>
+</ul>
+<h3>2. Data exploration</h3>
 <p>처음 데이터를 받고 나면 무엇부터 할 수 있을까?
+바로 데이터 학습? 아니다.
 다음은 실제 데이터를 다룰 떄 살펴보는 사항들이다.</p>
 <ol>
 <li>데이터가 크기가 얼마나 되는가?</li>
@@ -171,18 +229,126 @@
 </li>
 <li>데이터는 어떻게 분할할까?<ul>
 <li>Training:Test=60:40이 일반적이기는 하지만 다른 방법은 없을까?</li>
-<li>10-fold cross validation</li>
+<li><a href="http://en.wikipedia.org/wiki/Cross-validation_(statistics)">10-fold cross validation</a></li>
 </ul>
 </li>
 </ol>
-<h2>Summary</h2>
+<p>우리도 본격적으로 logistic regression 알고리즘으로 분류 모델을 만들기 전에 우리가 가진 데이터를 이리저리 살펴보자.
+Data exploration은 현재 가지고 있는 데이터를 이리저리 굴려가며 모양새를 확인하는 것이다.</p>
 <ul>
-<li>Linear regression models are very popular tools, for both explanatory modeling and prediction.</li>
-<li>A good predictive model has high predictive accuracy (to a useful practical level), precision, and recall.</li>
-<li>Predictive models are built using a training data set, and evaluated on a separate test data set.</li>
-<li>Removing redundant predictors is key to achieving predictive accuracy and robustness.</li>
-<li>Subset selection methods help find "good" candidate models. These should then be run and assessed.</li>
+<li>
+<p>X, y는 각각 어떤 값들로 이루어졌는지 확인해보기 위해 X, y 각각의 첫번째 값을 출력해보자. (배열의 첫번째 index는 1이 아니라 0이라는 사실이 기억나는가?)</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>X는 특히 0과 256 미만의 숫자들로 구성이 되어 있는데 이것은 어떤 의미를 가질까? (256이라는 숫자가 힌트!)</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>쉽게 이해하기 위해 <code>matplotlib</code> 패키지를 이용해 첫 번째 record를 한 번 그려보자. (원래 matplotlib은 3rd party 패키지여서 따로 설치해야하지만, 다행히도 anaconda가 matplotlib을 미리 설치해줬다.)</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">X0</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>           <span class="c"># reshape 1*784 array to 28*28 array</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;binary&#39;</span><span class="p">)</span>      <span class="c"># set runtime configurations (rc) for color maps</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">X0</span><span class="p">)</span>                     <span class="c"># plot matrix</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&#39;X0.png&#39;</span><span class="p">)</span>               <span class="c"># save plot to image file</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                          <span class="c"># show plot on screen</span>
+</pre></div>
+
+
+<ul>
+<li>무슨 모양 같은가? 그렇다. 숫자 '0'이다.<br><img src="images/X0.png" width="300px"></li>
+<li>그럼 <code>y[0]</code>의 값을 출력해보면? 마찬가지로 '0'이다. <code>y[0]</code>는 <code>X[0]</code>의 "정답"이다. </li>
+<li>여유가 된다면 X, y의 첫번째 record가 아니라 42번째, 10000번째, 마지막 record 등도 그려보자.</li>
 </ul>
+</li>
+<li>
+<p>이번에는 y가 어떤 값들을 가질 수 있는지 확인해보기 위해 다음을 입력해보자.</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>   <span class="c"># returns {0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0}</span>
+</pre></div>
+
+
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/datastructures.html#sets"><code>set()</code></a>은 파이썬에서 제공하는 기본 함수로, 배열을 입력받으면 unique한 값들을 반환한다.<ul>
+<li>예를들어, [1,2,3,2,2,1,1,1,3,1,1]이라는 배열을 입력받았을 때 [1,2,3]을 반환한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>우리가 하려는 것이 뭔지 대충 감이 잡히는가?</p>
+<ul>
+<li>우리는 <code>X</code>에 손글씨로 숫자를 쓴 필기 이미지와, <code>y</code>에 그 이미지의 label(정답)을 가지고 있으며 정답셋은 0-9까지의 숫자로 구성되어 있다.</li>
+<li>지난 시간에 다룬 당뇨병 데이터는 $y$가 실수형 벡터였던 것과 달리 이번 시간에 다루는 MNIST 데이터는 $y$가 범주형(categorical) 벡터이다. $y$가 실수형일 때는 regression problem이지만, $y$가 범주형일 때는 classification problem이다.</li>
+<li>보다시피 필기체 인식은, 가장 대표적인 분류 문제 중 하나이다.<br>
+<img src='images/diotek.jpg' width="300px"></li>
+</ul>
+</li>
+</ul>
+<h3>3. Data partitioning</h3>
+<ul>
+<li>이번에는 데이터를 partitioning 해보자.<ul>
+<li>다시 한 번 얘기하지만, data partitioning은 <strong>overfitting 방지, 일반화 성능 향상</strong>을 위해 하는 것이다.</li>
+<li>Data partitioning의 의미를 잊었다면 <a href="http://www.lucypark.kr/courses/2015-dm/multiple-linear-regression.html#data-partitioning">이 곳</a>에 가서 복습하고 오자.
+ 데이터로 컴퓨터를 학습시킬 때 가장 중요한 개념 중 하나이니 반드시 익혀둬야 한다.</li>
+</ul>
+</li>
+<li>
+<p>당뇨병 데이터셋에서는 X, y를 단순한 list split을 통해 440개 record 중에서 400개를 training set, 40개를 test set으로 설정했다.
+이번에는 record가 70,000개인데, 어떻게 나누는 것이 좋을까?</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>
+</pre></div>
+
+
+<ul>
+<li>다시 list split을 사용해도 되지만, 이번에는 scikit-learn에서 제공하는 <a href="http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.train_test_split.html"><code>train_test_split()</code></a>을 써보자.</li>
+<li>이 메소드는 데이터를 비율에 맞게 랜덤 샘플링(random sampling)해준다는 점에서 단순히 list split을 하는 것보다 바람직하다. 왜일까? <code>y</code>의 값들이 오름차순으로 정렬되어 있기 때문이다.</li>
+<li><code>test_size</code> 파라미터는 test set의 비율이다. 0.4로 했으니 training set은 0.6이 될 것이고, 따라서 test set에는 70,000의 40%인 28,000개의 record가 random으로 selection돼서 들어간다. 이 값을 명시해주지 않으면 scikit-learn v0.15.2를 기준으로 test set이 0.25, training set이 0.75가 된다.</li>
+<li><code>random_state</code>는 랜덤 샘플링할 때 사용하는 seed이다.
+이 seed를 같은 숫자로 설정해주면 같은 결과를 얻게 되고, 설정해주지 않으면 실행할 때마다 다른 결과를 얻게 된다.
+실험 재현(reproduction)의 측면에서 random number를 generation하는 seed를 지정해주는 것은 아주 중요하다.
+여기서 사용한 1234가 아니라 51321, 0 등 어떤 숫자를 사용해도 되는데,
+중요한 것은 실험 조작 등을 방지하고, 누구라도 같은 코드를 돌렸을 때 동일한 실험 결과를
+낳을 수 있게 하기 위해 가급적이면 명시하는 것이 좋다.</li>
+<li>또, 여기서 사용한 서브패키지 <code>cross_validation</code>은 사실 단순히 데이터를 두 개의 파티션으로 나누는 일 외에도 중요한 일을 하는데, 아직은 몰라도 되지만 곧 학기 중에 반드시 다루게 될 중요한 개념이니 이름을 익혀두도록 하자.</li>
+</ul>
+</li>
+</ul>
+<h3>4. Training</h3>
+<p>자, 이제 드디어 로지스틱 회귀분석 모델을 학습해보자!
+고맙고 신기하게도 scikit-learn 패키지를 이용하면 모델 학습은 단 세 줄만에 끝난다.
+(물론 내부에는 누군가가 이미 고생해서 짜놓은 어마어마한 "black box"가 존재한다는 것을 잊지 말자.)
+MLR을 학습할 때와 마찬가지로 LogisticRegression 클래스를 import한 후, instance를 생성하고, training set으로 모델을 학습하면 된다</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>      <span class="c"># LR instance 생성</span>
+<span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>                        <span class="c"># LR 학습</span>
+</pre></div>
+
+
+<ul>
+<li>그런데... 결과가 뜨지 않는다.
+컴퓨터가 먹통됐나? 아니다. 실제로 컴퓨터는 엄청 열심히 돌고 있다.</li>
+<li>당뇨병 데이터로 MLR을 돌릴 때는 뭔가 돌긴 돌았나 싶을 정도로 빨리 끝났지만,
+이번에는 경우가 다르다.</li>
+<li>데이터 개수도 440개에서 70,000개로 늘어난데다가 무엇보다 차원의 수가 10개에서 784개로 늘어났다.<ul>
+<li>데이터 크기가 10배가 증가했다고 해서 학습/처리 시간이 10배만큼 늘어나는 것이 아니라, 때로는 100배, 1000배씩 증가할 때도 있다.</li>
+<li>특히 차원의 개수가 늘어날 때 우리는 <a href="http://en.wikipedia.org/wiki/Curse_of_dimensionality">차원의 저주(curse of dimensionality)</a>를 겪는다고 말한다.</li>
+<li>학습은 아니지만 계산 속도가 기하급수적으로 증가하는 간단한 실험: <code>sum(range(10**7))</code>, <code>sum(range(10**8))</code>, <code>sum(range(10**9)</code>의 계산 속도를 비교해보자.</li>
+</ul>
+</li>
+<li>쿼드 코어 노트북 기준으로 이 로지스틱 회귀분석 모델을 학습하는데는 약 45분이 걸렸다. (..)</li>
+<li>따라서 이 데이터 전체를 돌리는 것은 숙제다.</li>
+</ul>
+<p>실제로 데이터로 좋은 모델은 학습 <strong>시간</strong>이 짧고 <strong>성능(performance)</strong>이 좋다.</p>
+<p>어떻게 하면 빠르게 학습시킬 수 있는가? 어떻게 하면 더 좋은 성능을 낼 수 있는가?
+이런 질문들은 데이터마이너들에게 아주 익숙한 질문이다.</p>
 
     </div>
     <div class="footnote">
@@ -196,7 +362,7 @@
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/logistic-regression.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="/2015-dm/logistic-regression.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -212,7 +378,7 @@
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
+                <a href="/category/2015-dm.html" rel="category">2015-dm</a>
             </span>
         </p>
     </div>
@@ -227,7 +393,6 @@
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
  The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
             </span>
 		</div>
 	</div>

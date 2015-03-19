@@ -8,22 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<script src="/theme/html5.js"></script>
 		<![endif]-->
-	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="/theme/css/ipython.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+	<link href="/theme/css/local.css" rel="stylesheet">
+	<link href="/theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+		<h1 class="margin-bottom-30"><a href="/">Courses</a></h1>
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+            <li role="presentation"><a href="/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="/2015-ba">2015-ba</a></li>
         </ul>
 	</div>
 	<div class="row">
@@ -489,7 +489,7 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 <li>파이썬 스크립트 최상단에 <code># -*- coding: utf-8 -*-</code>과 같은 방식으로 인코딩을 명시하자.</li>
 </ol>
 <h4>예시 6: Array 또는 List</h4>
-<p>순서가 존재하는 데이터 타입인 배열은 어떻게 선언할까?</p>
+<p>순서가 존재하는 데이터 타입인 배열(array)은 어떻게 선언할까?</p>
 <ul>
 <li>
 <p>Java 1.7</p>
@@ -506,11 +506,11 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
         <span class="n">myList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;e&quot;</span><span class="o">);</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myList</span><span class="o">);</span>
 
-        <span class="c1">// split arraylist</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myList</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">4</span><span class="o">));</span>
-
         <span class="c1">// get item in arraylist</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>
+
+        <span class="c1">// split arraylist</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myList</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">4</span><span class="o">));</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
@@ -523,16 +523,32 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;e&#39;</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 
-<span class="c"># split list</span>
-<span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
-
 <span class="c"># get item in list</span>
-<span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>   <span class="c"># returns &#39;d&#39;</span>
+
+<span class="c"># split list</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="c"># returns [&#39;b&#39;, &#39;c&#39;, &#39;d&#39;]</span>
 </pre></div>
 
 
 </li>
 </ul>
+<p>많은 프로그래밍 언어는 배열에 속하는 item의 번호, 즉 <a href="https://plus.google.com/115212051037621986145/posts/YTUxbXYZyfi">index를 매길 때 1이 아니라 0부터 시작한다</a>.
+그러니까 위의 <code>my_list</code>에서 item 'a'의 index는 0, item 'b'의 index는 1, item 'e'의 index는 4이다.
+이 때 <code>my_list[3]</code>이라고 입력하면 index 값이 3인 item을 가져오라는 뜻이며, 따라서 'd'를 출력한다.
+한편 list를 분할할 때는 <code>my_list[1:4]</code>라고 입력하는데, 이는 index가 1인 item부터 index가 4인 item _직전_까지 가져오라는 의미이다.
+list 분할은 데이터 분석에서 데이터를 두 개 이상의 set으로 partitioning할 때 활용할 수 있다.
+가령 위의 <code>my_list</code>를 ['a', 'b', 'c']와 ['d', 'e']로 나누는 것은 아래와 같이 다양한 방식으로 할 수 있다. (세 경우 모두 같은 결과를 낳는다)</p>
+<ul>
+<li><code>p1, p2 = my_list[0:3], my_list[3:5]</code></li>
+<li><code>p1, p2 = my_list[:3], my_list[3:]</code></li>
+<li><code>p1, p2 = my_list[:-2], my_list[-2:]</code></li>
+</ul>
+<p>위에서 볼 수 있듯 <code>my_list[:4]</code>라고 입력하면 처음부터 index가 4인 item _직전_까지 반환하고
+<code>my_list[1:]</code>을 입력하면 index가 1인 item부터 마지막 item까지 반환한다.
+음수 index를 명시하면 마지막에서부터 index를 세게 되는데,
+(위 예시의 경우 배열의 길이인 <code>len(my_list)</code>에서 2를 뺀 값)
+이것도 아주 편리하게 이용되는 기능이다.</p>
 <h4>예시 7: 클래스(class)와 상속(inheritance)</h4>
 <p>예시 1에서도 설명했지만, 파이썬에서는 클래스를 반드시 선언해주지는 않아도 된다.
 하지만, 클래스가 유용한 경우는 종종 있고, 파이썬에서도 클래스를 만들 수 있다.
@@ -726,7 +742,7 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/tips/introduction-to-python.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="/tips/introduction-to-python.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -742,7 +758,7 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/tips.html" rel="category">tips</a>
+                <a href="/category/tips.html" rel="category">tips</a>
             </span>
         </p>
     </div>
@@ -757,7 +773,6 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
  The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
             </span>
 		</div>
 	</div>

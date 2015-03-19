@@ -8,22 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<script src="/theme/html5.js"></script>
 		<![endif]-->
-	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="/theme/css/ipython.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+	<link href="/theme/css/local.css" rel="stylesheet">
+	<link href="/theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+		<h1 class="margin-bottom-30"><a href="/">Courses</a></h1>
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+            <li role="presentation"><a href="/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="/2015-ba">2015-ba</a></li>
         </ul>
 	</div>
 	<div class="row">
@@ -58,26 +58,87 @@
 <p>팀프로젝트에서 진행할 데이터마이닝 아이디어 한 가지를 제안해주세요.
 제안서는 A4 용지 1페이지 이내로 작성하고 PDF로 변환하여 올려주시기 바랍니다.</p>
 <p>프로젝트에 대한 자세한 사항은 <a href="http://www.lucypark.kr/courses/2015-dm/course-introduction.html#term-project-40">이 링크</a>를 참고해주세요.</p>
-<h2>Assignment 1: 분류기 비교</h2>
-<ul>
-<li>마감일: 2015-04-02 23:59</li>
-<li>제출처: e-class</li>
-</ul>
-<p>다음의 두 가지 질문에 답하자.</p>
+<h2>Assignment 1: 로지스틱</h2>
 <ol>
-<li>
-<p>지금까지 우리는 logistic regression, decision trees, k-NN 등의 분류 알고리즘에 대해 배웠거나 배울 것이다.
-이들의 특성은 어떻게 다른가?
-각각의 알고리즘은 어떤 데이터셋과 상황에 적합하다고 볼 수 있는가?
-<a href="http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html">iris</a> 데이터셋을 이용해 각 분류기의 성능을 비교해보자.</p>
-<ul>
-<li>참고: <a href="http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html">Scikit-learn classifier comparison</a></li>
-</ul>
-</li>
-<li>
-<p>그 외에 자주 사용되는 분류 알고리즘에는 무엇이 있는지 조사해보자.</p>
+<li>수업 시간에 배운 logistic regression 모델을 학습해보자.
+단, 이번에는 성능과 학습 시간을 모두 측정해볼 것이다.
+먼저 학습시간을 측정하기 위해 다음과 같이 time 모듈을 사용해보자.
+시간이 오래걸릴 것이니 밥을 먹고 와도 좋다.<div class="highlight"><pre><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">time</span><span class="p">();</span> <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">);</span> <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">s</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+
 </li>
 </ol>
+<p>시간이 얼마나 걸렸는지 기록하자.</p>
+<ol>
+<li>학습이 다 됐는가? Training하느라 우리 컴퓨터가 수고 많았다.
+매번 그 과정을 거치지는 것은 힘드니까 모델을 저장해보자.
+이 때 모델의 이름은 길더라도 의미있게 짓는 것이 좋다.
+(여기서는 random_state라는 파라미터를 입력했으니 그것을 변수명에 넣어보겠다.)
+여기서 파일 확장자로 사용한 <code>pkl</code>은 <a href="https://docs.python.org/3/library/pickle.html">pickle</a> 파일이라는 것을 나타낸다.
+pickle은 파이썬에서
+오브젝트(object)를 binary로 저장하는 방식 중 하나이다.<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.externals</span> <span class="kn">import</span> <span class="n">joblib</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">lr</span><span class="p">,</span> <span class="s">&#39;lr_randomstate_1234.pkl&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+</ol>
+<p>위 코드를 입력하면 내 컴퓨터에 한 개(혹은 그 이상)의 파일이 생성되는 것을 확인할 수 있다.</p>
+<p>이렇게 모델을 파일로 저장하고나면 다음부터는 다시 많은 시간을 투자해서 모델을 학습하지 않고 아래와 같이 모델을 로딩할 수 있다.</p>
+<div class="highlight"><pre>    :::python
+    lr = joblib.load(&#39;lr_randomstate_1234.pkl&#39;)
+</pre></div>
+
+
+<p>생성된 파일명과 파일의 크기가 몇 KB인지 기록하자.
+파일이 여러개 생성되었다면 각 파일의 이름과 크기를 모두 기록하자.
+(참고: <a href="http://scikit-learn.org/stable/modules/model_persistence.html">Model persistence</a>)</p>
+<ol>
+<li>
+<p>우리가 LogisticRegression 클래스의 instance를 생성할 때 사용한 파라미터는 아래의 명령어로 찾을 수 있다. 어떤 값들이 출력되는가? 각 파라미터는 어떤 의미를 가지는지 설명해보자.</p>
+<div class="highlight"><pre><span class="n">p</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Training set의 정확도와 test set의 정확도(accuracy)를 구해보자.</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>분류문제의 성능을 측정할 때는 앞의 정확도 뿐 아니라</p>
+</li>
+<li>
+<p>아래의 코드로 logistic regression의 coefficient들을 그림으로 그려보자.
+어떤 모양을 가지는가? 이것이 뜻하는 바는 무엇일까?</p>
+<div class="highlight"><pre><span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&#39;lr_coef.png&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+</ol>
+<!--
+## Assignment 3: 분류기 비교
+
+- 마감일: 2015-04-02 23:59
+- 제출처: e-class
+
+지금까지 우리는 logistic regression, decision trees, k-NN, ANN, SVM 등의 분류 알고리즘에 대해 배웠거나 배울 것이다.
+이들의 특성은 어떻게 다른가?
+각각의 알고리즘은 어떤 데이터셋과 상황에 적합하다고 볼 수 있는가?
+[iris](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html) 데이터셋을 이용해 각 분류기의 성능을 비교해보자.
+    - 참고: [Scikit-learn classifier comparison](http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html)
+-->
 
     </div>
     <div class="footnote">
@@ -91,7 +152,7 @@
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/assignments.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="/2015-dm/assignments.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -107,13 +168,13 @@
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
+                <a href="/category/2015-dm.html" rel="category">2015-dm</a>
             </span>
         </p>
         <p>
             Tags:
             <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/assignments.html" rel="tag">assignments</a>
+                <a href="/tag/assignments.html" rel="tag">assignments</a>
             </span>
         </p>
     </div>
@@ -128,7 +189,6 @@
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
  The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
             </span>
 		</div>
 	</div>

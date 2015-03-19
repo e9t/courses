@@ -112,8 +112,7 @@ Some jokes about package managing:
 &lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Logistic regression</title><link href="http://lucypark.kr/courses/2015-dm/logistic-regression.html" rel="alternate"></link><updated>2015-03-20T09:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-dm/logistic-regression.html</id><summary type="html">&lt;h2&gt;오늘의 목표&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;MLR의 블랙박스 열어보기&lt;/li&gt;
-&lt;li&gt;로지스틱 회귀모형 개념 익히기&lt;/li&gt;
-&lt;li&gt;파이썬으로 실제 데이터 파일을 로딩하기&lt;/li&gt;
+&lt;li&gt;로지스틱 회귀모형 개념 익히고 실제로 구현하기&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Multiple linear regression (revisited)&lt;/h2&gt;
 &lt;ul&gt;
@@ -178,12 +177,20 @@ Some jokes about package managing:
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Analytical solution: Normal equation&lt;ul&gt;
-&lt;li&gt;Let $y = b_0 + b_1x_1 = X\beta$, then
+&lt;li&gt;Let $y = X\beta$, then
     $$\beta = (X^TX)^{-1}X^Ty$$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;MLR Essentials&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear regression models are very popular tools, for both explanatory modeling and prediction.&lt;/li&gt;
+&lt;li&gt;A good predictive model has high predictive accuracy (to a useful practical level), precision, and recall.&lt;/li&gt;
+&lt;li&gt;Predictive models are built using a training data set, and evaluated on a separate test data set.&lt;/li&gt;
+&lt;li&gt;Removing redundant predictors is key to achieving predictive accuracy and robustness.&lt;/li&gt;
+&lt;li&gt;Subset selection methods help find "good" candidate models. These should then be run and assessed.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Logistic regression&lt;/h2&gt;
 &lt;ul&gt;
@@ -212,6 +219,7 @@ Some jokes about package managing:
 &lt;/li&gt;
 &lt;li&gt;Logistic Regression? Fit a linear relationship between a &lt;em&gt;categorical&lt;/em&gt; dependent variable $y$ and a set of independent variables $x_1,x_2,...,x_m$&lt;ul&gt;
 &lt;li&gt;주의: 이름에 등장하는 "regression"이라는 표현과는 달리 logisitic regression은 분류 문제를 풀기 위한 알고리즘!&lt;/li&gt;
+&lt;li&gt;logistic regression = logit regression == maximum-entropy classification (MaxEnt) == log-linear classifier&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -220,20 +228,70 @@ Some jokes about package managing:
 &lt;li&gt;$f(x) = g(b_0 + b_1x_1 + ... + b_mx_m)$: Multiple linear regression에 함수 $g(x)$를 씌운 꼴&lt;/li&gt;
 &lt;li&gt;where $g(z) = \frac{1}{1+e^{-z}}$ ("logistic function" or "&lt;a href="http://en.wikipedia.org/wiki/Sigmoid_function"&gt;sigmoid function&lt;/a&gt;")&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="images/sigmoid.png" width="300px"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/logistic.png" width="300px"&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;MLE(maximum likelihood estimation) for parameter estimation&lt;/h3&gt;
 &lt;p&gt;TBD&lt;/p&gt;
-&lt;h2&gt;[Programming] Handling real datasets&lt;/h2&gt;
+&lt;h2&gt;[Programming] Logistic regression with scikit-learn&lt;/h2&gt;
+&lt;h3&gt;1. Data acquisition&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;예시: &lt;a href="http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;amp;tradeTypeCd=&amp;amp;hscpTypeCd=&amp;amp;cortarNo=1162010200&amp;amp;mapLevel=10"&gt;관악구 신림동 지역의 부동산 가격&lt;/a&gt; 예측하기&lt;/li&gt;
-&lt;li&gt;&lt;a href="../tips/terminal.html"&gt;들어가기 전 몇 가지 꿀팁&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;오늘도 지난 시간처럼 데이터 파일을 직접 구해서 로딩하기보다는 편의를 위해 scikit-learn 패키지를 이용해보자.&lt;ul&gt;
+&lt;li&gt;단, 이번에는 원래 scikit-learn 패키지에 포함되어 있는 데이터가 아니라 scikit-learn의 &lt;a href="http://scikit-learn.org/0.12/modules/generated/sklearn.datasets.fetch_mldata.html"&gt;&lt;code&gt;datasets.fetch_mldata()&lt;/code&gt;&lt;/a&gt; 메소드를 이용해서 &lt;a href="http://mldata.org"&gt;mldata.org&lt;/a&gt;에 있는 데이터셋을 받아올 것이다.&lt;/li&gt;
+&lt;li&gt;그 밖에도 scikit-learn을 통해 접근하거나 다운로드 받을 수 있는 데이터셋에 관해서는 &lt;a href="http://scikit-learn.org/stable/datasets/"&gt;이 링크&lt;/a&gt;를 참고하자.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Data exploration&lt;/h3&gt;
-&lt;p&gt;&lt;table class="table"&gt;&lt;tr&gt;&lt;th&gt;공급면적($m^2$)&lt;/th&gt;&lt;th&gt;전용면적($m^2$)&lt;/th&gt;&lt;th&gt;층수&lt;/th&gt;&lt;th&gt;전체층수&lt;/th&gt;&lt;th&gt;매물가(만원)&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;113&lt;/td&gt;&lt;td&gt;84&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;13000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;116&lt;/td&gt;&lt;td&gt;84&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;38800&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;81&lt;/td&gt;&lt;td&gt;59&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;31500&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;113&lt;/td&gt;&lt;td&gt;84&lt;/td&gt;&lt;td&gt;14&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;38500&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;
-&lt;h3&gt;Preprocessing&lt;/h3&gt;
+&lt;/li&gt;
+&lt;li&gt;이번에 우리가 사용할 데이터셋은 머신러닝계에서 아주 유명한 &lt;a href="http://yann.lecun.com/exdb/mnist/"&gt;MNIST 데이터&lt;/a&gt;이다.&lt;ul&gt;
+&lt;li&gt;이 데이터셋은 너비 28픽셀, 높이 28픽셀로 된 숫자 필기 이미지 70,000장에 대한 데이터이다.&lt;/li&gt;
+&lt;li&gt;오늘 풀어볼 문제는, "임의의 숫자 필기 이미지를 입력받았을 때 컴퓨터가 어떤 숫자에 대한 이미지인지 알게 할 수 있는가?" 즉, 필기 인식이다.&lt;/li&gt;
+&lt;li&gt;사실은 사람들도 꾸준한 "학습(learning)"을 통해 생성된 "분류기"를 이용해 숫자를 분류한다.&lt;br&gt;
+&lt;img src='images/mnist.gif'&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이제 데이터를 다운로드 받아보자. &lt;a href="http://scikit-learn.org/stable/datasets/#downloading-datasets-from-the-mldata-org-repository"&gt;&lt;code&gt;datasets.fetch_mldata()&lt;/code&gt;&lt;/a&gt; 메소드에
+우리가 받고 싶은 데이터의 이름 'MNIST original'를 명시한 후,
+데이터를 저장할 곳 &lt;code&gt;data_home&lt;/code&gt;을 현재 디렉토리(&lt;code&gt;.&lt;/code&gt;)로 정해주면 데이터가 다운로드 된 후 바로 변수 &lt;code&gt;d&lt;/code&gt;로 로드(load)된다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;
+&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fetch_mldata&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;MNIST original&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data_home&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;data_home&lt;/code&gt;은 얼마든지 다른 디렉토리로 지정해줘도 된다.&lt;/li&gt;
+&lt;li&gt;한번 데이터를 다운받고 나서 같은 명령어를 재실행하면 다운로드 없이 바로 데이터가 로드된다.&lt;/li&gt;
+&lt;li&gt;이번에도 변수 &lt;code&gt;d&lt;/code&gt;는 dictionary 형태로 되어 있으며, &lt;a href="multiple-linear-regression.html#programming-slr-mlr-with-scikit-learn"&gt;지난 시간에 살펴보았던 당뇨병(diabetes) 데이터셋&lt;/a&gt;과 마찬가지로 dictionary를 구성하는 key, value 중 'data', 'target'라는 key를 비롯하여 'COL_NAMES', 'DESCR' 등의 key도 있다.
+(이 key들이 어떤 value를 담고 있는지 궁금하다면 출력해보자.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;여기서는 곧바로 당뇨병 데이터와 마찬가지로 'data' key의 value를 &lt;code&gt;X&lt;/code&gt;에, 'target' key의 value를 &lt;code&gt;y&lt;/code&gt;라는 변수에 저장하고,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;     &lt;span class="c"&gt;# python shell에서 실행하는 경우 `print()`는 필요없음&lt;/span&gt;
+&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;target&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;X&lt;/code&gt;, &lt;code&gt;y&lt;/code&gt;의 차원(dimension)을 확인해보자.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c"&gt;# check data type of variable X, y&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# returns (70000, 784) (70000,)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;출력된 결과를 보니 &lt;code&gt;X&lt;/code&gt;에는 70,000개의 record(row)와 784개의 attribute(column, variable)가 있고, &lt;code&gt;y&lt;/code&gt;는 70,000개의 record로 구성된 1차원 데이터라고 한다.&lt;/li&gt;
+&lt;li&gt;또, 넘어가기 전에 &lt;strong&gt;X의 record수와 y의 record 수가 일치&lt;/strong&gt;하고 &lt;strong&gt;y는 1차원&lt;/strong&gt;임을 반드시 확인하고 넘어가자.  위의 두 가지 사항이 맞지 않는다면 꽤 골치 아파질 것이다.
+(왜 그럴까? 각자 생각해보자.)&lt;/li&gt;
+&lt;li&gt;한편, 여기서 사용하는 &lt;code&gt;shape&lt;/code&gt;는 numpy의 &lt;code&gt;ndarray&lt;/code&gt;나  pandas의 &lt;code&gt;DataFrame&lt;/code&gt; 등 특정 데이터 타입을 사용할 때만 적용할 수 있다는 점을 알아두면 좋다.
+(즉, 파이썬의 &lt;code&gt;list&lt;/code&gt; 데이터 타입을 사용할 때는 &lt;code&gt;shape&lt;/code&gt;를 사용할 수 없는데, 무슨 말인지 모르겠으면 일단 넘어가자. 다음에 이런 일이 발생하게 된다면 어차피 에러가 뜰테니까.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Data exploration&lt;/h3&gt;
 &lt;p&gt;처음 데이터를 받고 나면 무엇부터 할 수 있을까?
+바로 데이터 학습? 아니다.
 다음은 실제 데이터를 다룰 떄 살펴보는 사항들이다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;데이터가 크기가 얼마나 되는가?&lt;/li&gt;
@@ -245,18 +303,126 @@ Some jokes about package managing:
 &lt;/li&gt;
 &lt;li&gt;데이터는 어떻게 분할할까?&lt;ul&gt;
 &lt;li&gt;Training:Test=60:40이 일반적이기는 하지만 다른 방법은 없을까?&lt;/li&gt;
-&lt;li&gt;10-fold cross validation&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Cross-validation_(statistics)"&gt;10-fold cross validation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;우리도 본격적으로 logistic regression 알고리즘으로 분류 모델을 만들기 전에 우리가 가진 데이터를 이리저리 살펴보자.
+Data exploration은 현재 가지고 있는 데이터를 이리저리 굴려가며 모양새를 확인하는 것이다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Linear regression models are very popular tools, for both explanatory modeling and prediction.&lt;/li&gt;
-&lt;li&gt;A good predictive model has high predictive accuracy (to a useful practical level), precision, and recall.&lt;/li&gt;
-&lt;li&gt;Predictive models are built using a training data set, and evaluated on a separate test data set.&lt;/li&gt;
-&lt;li&gt;Removing redundant predictors is key to achieving predictive accuracy and robustness.&lt;/li&gt;
-&lt;li&gt;Subset selection methods help find "good" candidate models. These should then be run and assessed.&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>터미널에서 프로그래밍하기</title><link href="http://lucypark.kr/courses/tips/terminal.html" rel="alternate"></link><updated>2015-03-18T15:55:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-18:courses/tips/terminal.html</id><summary type="html">&lt;p&gt;이제 프로그래밍에 조금은 익숙해졌죠?
+&lt;li&gt;
+&lt;p&gt;X, y는 각각 어떤 값들로 이루어졌는지 확인해보기 위해 X, y 각각의 첫번째 값을 출력해보자. (배열의 첫번째 index는 1이 아니라 0이라는 사실이 기억나는가?)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;X는 특히 0과 256 미만의 숫자들로 구성이 되어 있는데 이것은 어떤 의미를 가질까? (256이라는 숫자가 힌트!)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt; &lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;쉽게 이해하기 위해 &lt;code&gt;matplotlib&lt;/code&gt; 패키지를 이용해 첫 번째 record를 한 번 그려보자. (원래 matplotlib은 3rd party 패키지여서 따로 설치해야하지만, 다행히도 anaconda가 matplotlib을 미리 설치해줬다.)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;matplotlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;plt&lt;/span&gt;
+&lt;span class="n"&gt;X0&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;           &lt;span class="c"&gt;# reshape 1*784 array to 28*28 array&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;image&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cmap&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;binary&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;      &lt;span class="c"&gt;# set runtime configurations (rc) for color maps&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;matshow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;                     &lt;span class="c"&gt;# plot matrix&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;savefig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;X0.png&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;               &lt;span class="c"&gt;# save plot to image file&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;                          &lt;span class="c"&gt;# show plot on screen&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;무슨 모양 같은가? 그렇다. 숫자 '0'이다.&lt;br&gt;&lt;img src="images/X0.png" width="300px"&gt;&lt;/li&gt;
+&lt;li&gt;그럼 &lt;code&gt;y[0]&lt;/code&gt;의 값을 출력해보면? 마찬가지로 '0'이다. &lt;code&gt;y[0]&lt;/code&gt;는 &lt;code&gt;X[0]&lt;/code&gt;의 "정답"이다. &lt;/li&gt;
+&lt;li&gt;여유가 된다면 X, y의 첫번째 record가 아니라 42번째, 10000번째, 마지막 record 등도 그려보자.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이번에는 y가 어떤 값들을 가질 수 있는지 확인해보기 위해 다음을 입력해보자.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;   &lt;span class="c"&gt;# returns {0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.python.org/3/tutorial/datastructures.html#sets"&gt;&lt;code&gt;set()&lt;/code&gt;&lt;/a&gt;은 파이썬에서 제공하는 기본 함수로, 배열을 입력받으면 unique한 값들을 반환한다.&lt;ul&gt;
+&lt;li&gt;예를들어, [1,2,3,2,2,1,1,1,3,1,1]이라는 배열을 입력받았을 때 [1,2,3]을 반환한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;우리가 하려는 것이 뭔지 대충 감이 잡히는가?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;우리는 &lt;code&gt;X&lt;/code&gt;에 손글씨로 숫자를 쓴 필기 이미지와, &lt;code&gt;y&lt;/code&gt;에 그 이미지의 label(정답)을 가지고 있으며 정답셋은 0-9까지의 숫자로 구성되어 있다.&lt;/li&gt;
+&lt;li&gt;지난 시간에 다룬 당뇨병 데이터는 $y$가 실수형 벡터였던 것과 달리 이번 시간에 다루는 MNIST 데이터는 $y$가 범주형(categorical) 벡터이다. $y$가 실수형일 때는 regression problem이지만, $y$가 범주형일 때는 classification problem이다.&lt;/li&gt;
+&lt;li&gt;보다시피 필기체 인식은, 가장 대표적인 분류 문제 중 하나이다.&lt;br&gt;
+&lt;img src='images/diotek.jpg' width="300px"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. Data partitioning&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;이번에는 데이터를 partitioning 해보자.&lt;ul&gt;
+&lt;li&gt;다시 한 번 얘기하지만, data partitioning은 &lt;strong&gt;overfitting 방지, 일반화 성능 향상&lt;/strong&gt;을 위해 하는 것이다.&lt;/li&gt;
+&lt;li&gt;Data partitioning의 의미를 잊었다면 &lt;a href="http://www.lucypark.kr/courses/2015-dm/multiple-linear-regression.html#data-partitioning"&gt;이 곳&lt;/a&gt;에 가서 복습하고 오자.
+ 데이터로 컴퓨터를 학습시킬 때 가장 중요한 개념 중 하나이니 반드시 익혀둬야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;당뇨병 데이터셋에서는 X, y를 단순한 list split을 통해 440개 record 중에서 400개를 training set, 40개를 test set으로 설정했다.
+이번에는 record가 70,000개인데, 어떻게 나누는 것이 좋을까?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;cross_validation&lt;/span&gt;
+&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_test&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cross_validation&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;train_test_split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;test_size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;다시 list split을 사용해도 되지만, 이번에는 scikit-learn에서 제공하는 &lt;a href="http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.train_test_split.html"&gt;&lt;code&gt;train_test_split()&lt;/code&gt;&lt;/a&gt;을 써보자.&lt;/li&gt;
+&lt;li&gt;이 메소드는 데이터를 비율에 맞게 랜덤 샘플링(random sampling)해준다는 점에서 단순히 list split을 하는 것보다 바람직하다. 왜일까? &lt;code&gt;y&lt;/code&gt;의 값들이 오름차순으로 정렬되어 있기 때문이다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;test_size&lt;/code&gt; 파라미터는 test set의 비율이다. 0.4로 했으니 training set은 0.6이 될 것이고, 따라서 test set에는 70,000의 40%인 28,000개의 record가 random으로 selection돼서 들어간다. 이 값을 명시해주지 않으면 scikit-learn v0.15.2를 기준으로 test set이 0.25, training set이 0.75가 된다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;random_state&lt;/code&gt;는 랜덤 샘플링할 때 사용하는 seed이다.
+이 seed를 같은 숫자로 설정해주면 같은 결과를 얻게 되고, 설정해주지 않으면 실행할 때마다 다른 결과를 얻게 된다.
+실험 재현(reproduction)의 측면에서 random number를 generation하는 seed를 지정해주는 것은 아주 중요하다.
+여기서 사용한 1234가 아니라 51321, 0 등 어떤 숫자를 사용해도 되는데,
+중요한 것은 실험 조작 등을 방지하고, 누구라도 같은 코드를 돌렸을 때 동일한 실험 결과를
+낳을 수 있게 하기 위해 가급적이면 명시하는 것이 좋다.&lt;/li&gt;
+&lt;li&gt;또, 여기서 사용한 서브패키지 &lt;code&gt;cross_validation&lt;/code&gt;은 사실 단순히 데이터를 두 개의 파티션으로 나누는 일 외에도 중요한 일을 하는데, 아직은 몰라도 되지만 곧 학기 중에 반드시 다루게 될 중요한 개념이니 이름을 익혀두도록 하자.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4. Training&lt;/h3&gt;
+&lt;p&gt;자, 이제 드디어 로지스틱 회귀분석 모델을 학습해보자!
+고맙고 신기하게도 scikit-learn 패키지를 이용하면 모델 학습은 단 세 줄만에 끝난다.
+(물론 내부에는 누군가가 이미 고생해서 짜놓은 어마어마한 "black box"가 존재한다는 것을 잊지 말자.)
+MLR을 학습할 때와 마찬가지로 LogisticRegression 클래스를 import한 후, instance를 생성하고, training set으로 모델을 학습하면 된다&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.linear_model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LogisticRegression&lt;/span&gt;
+&lt;span class="n"&gt;lr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LogisticRegression&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;      &lt;span class="c"&gt;# LR instance 생성&lt;/span&gt;
+&lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;                        &lt;span class="c"&gt;# LR 학습&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;그런데... 결과가 뜨지 않는다.
+컴퓨터가 먹통됐나? 아니다. 실제로 컴퓨터는 엄청 열심히 돌고 있다.&lt;/li&gt;
+&lt;li&gt;당뇨병 데이터로 MLR을 돌릴 때는 뭔가 돌긴 돌았나 싶을 정도로 빨리 끝났지만,
+이번에는 경우가 다르다.&lt;/li&gt;
+&lt;li&gt;데이터 개수도 440개에서 70,000개로 늘어난데다가 무엇보다 차원의 수가 10개에서 784개로 늘어났다.&lt;ul&gt;
+&lt;li&gt;데이터 크기가 10배가 증가했다고 해서 학습/처리 시간이 10배만큼 늘어나는 것이 아니라, 때로는 100배, 1000배씩 증가할 때도 있다.&lt;/li&gt;
+&lt;li&gt;특히 차원의 개수가 늘어날 때 우리는 &lt;a href="http://en.wikipedia.org/wiki/Curse_of_dimensionality"&gt;차원의 저주(curse of dimensionality)&lt;/a&gt;를 겪는다고 말한다.&lt;/li&gt;
+&lt;li&gt;학습은 아니지만 계산 속도가 기하급수적으로 증가하는 간단한 실험: &lt;code&gt;sum(range(10**7))&lt;/code&gt;, &lt;code&gt;sum(range(10**8))&lt;/code&gt;, &lt;code&gt;sum(range(10**9)&lt;/code&gt;의 계산 속도를 비교해보자.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;쿼드 코어 노트북 기준으로 이 로지스틱 회귀분석 모델을 학습하는데는 약 45분이 걸렸다. (..)&lt;/li&gt;
+&lt;li&gt;따라서 이 데이터 전체를 돌리는 것은 숙제다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;실제로 데이터로 좋은 모델은 학습 &lt;strong&gt;시간&lt;/strong&gt;이 짧고 &lt;strong&gt;성능(performance)&lt;/strong&gt;이 좋다.&lt;/p&gt;
+&lt;p&gt;어떻게 하면 빠르게 학습시킬 수 있는가? 어떻게 하면 더 좋은 성능을 낼 수 있는가?
+이런 질문들은 데이터마이너들에게 아주 익숙한 질문이다.&lt;/p&gt;</summary></entry><entry><title>터미널에서 프로그래밍하기</title><link href="http://lucypark.kr/courses/tips/terminal.html" rel="alternate"></link><updated>2015-03-18T15:55:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-18:courses/tips/terminal.html</id><summary type="html">&lt;p&gt;이제 프로그래밍에 조금은 익숙해졌죠?
 익숙해지지 않았다면? 지금이라도 열심히 복습하세요. 연습만이 살 길입니다.&lt;/p&gt;
 &lt;p&gt;다음은 터미널에서 프로그래밍할 때, 조금 더 생산성을 높이기 위한 몇 가지 꿀팁입니다.&lt;/p&gt;
 &lt;ol&gt;
@@ -432,6 +598,7 @@ Some jokes about package managing:
 &lt;li&gt;Test data: 모델 성능 측정용&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;왜? Overfitting 방지, 일반화 성능 향상&lt;/li&gt;
 &lt;li&gt;보통은 60:40 정도로 데이터를 분할하지만, 보유하고 있는 데이터 규모에 따라 이 비율은 달라지기도 함&lt;/li&gt;
 &lt;li&gt;컴퓨터가 모델을 학습하고 평가 받는 것은, 교실에서 학생과 선생님 사이에서 발생하는 일과 매우 유사하다!&lt;ul&gt;
 &lt;li&gt;Training phase: 교사는 문제($X_{train}$)와 정답($y_{train}$)이 모두 포함된 training data를 이용해 컴퓨터를 훈련(training)시키고, 컴퓨터는 모델을 학습한다(learning).&lt;/li&gt;
@@ -687,7 +854,16 @@ algorihtm = &amp;#39;auto&amp;#39;      # ball_tree, kd_tree, brute 중 택일
 
 
 &lt;/li&gt;
-&lt;/ol&gt;</summary></entry><entry><title>파이썬 프로그래밍을 위한 Sublime Text</title><link href="http://lucypark.kr/courses/tips/sublime-text.html" rel="alternate"></link><updated>2015-03-09T13:26:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-09:courses/tips/sublime-text.html</id><summary type="html">&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;/ol&gt;
+&lt;h2&gt;[Programming] Handling real datasets&lt;/h2&gt;
+&lt;p&gt;다시 한 번 얘기하지만, 실제 데이터는 이렇게 구조화되어 있지 않다. 보통은 우리가 데이터를 구하고, 전처리해서 지금 로딩하는 데이터의 형태, 또는 우리가 데이터 마이닝 알고리즘을 편하게 돌릴 수 있는 형태로 만들어야 할 것이다.
+(그리고 보통 실제 데이터는 아주아주아주 지저분하기 때문에 그렇게 데이터를 전처리하는 시간이 전체 데이터마이닝 프로세스의 절반 이상을 차지하기도 한다.)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;예시: &lt;a href="http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;amp;tradeTypeCd=&amp;amp;hscpTypeCd=&amp;amp;cortarNo=1162010200&amp;amp;mapLevel=10"&gt;관악구 신림동 지역의 부동산 가격&lt;/a&gt; 예측하기&lt;/li&gt;
+&lt;li&gt;&lt;a href="../tips/terminal.html"&gt;들어가기 전 몇 가지 꿀팁&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Data exploration&lt;/h3&gt;
+&lt;p&gt;&lt;table class="table"&gt;&lt;tr&gt;&lt;th&gt;공급면적($m^2$)&lt;/th&gt;&lt;th&gt;전용면적($m^2$)&lt;/th&gt;&lt;th&gt;층수&lt;/th&gt;&lt;th&gt;전체층수&lt;/th&gt;&lt;th&gt;매물가(만원)&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;113&lt;/td&gt;&lt;td&gt;84&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;13000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;116&lt;/td&gt;&lt;td&gt;84&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;38800&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;81&lt;/td&gt;&lt;td&gt;59&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;31500&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;113&lt;/td&gt;&lt;td&gt;84&lt;/td&gt;&lt;td&gt;14&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;38500&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</summary></entry><entry><title>파이썬 프로그래밍을 위한 Sublime Text</title><link href="http://lucypark.kr/courses/tips/sublime-text.html" rel="alternate"></link><updated>2015-03-09T13:26:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-09:courses/tips/sublime-text.html</id><summary type="html">&lt;h2&gt;Installation&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Sublime Text 설치&lt;br&gt;
 &lt;a href="http://sublimetext.com"&gt;&lt;img alt="sublime" src="images/sublime.png" /&gt;&lt;/a&gt;&lt;/li&gt;
@@ -1177,7 +1353,7 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;li&gt;파이썬 스크립트 최상단에 &lt;code&gt;# -*- coding: utf-8 -*-&lt;/code&gt;과 같은 방식으로 인코딩을 명시하자.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4&gt;예시 6: Array 또는 List&lt;/h4&gt;
-&lt;p&gt;순서가 존재하는 데이터 타입인 배열은 어떻게 선언할까?&lt;/p&gt;
+&lt;p&gt;순서가 존재하는 데이터 타입인 배열(array)은 어떻게 선언할까?&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Java 1.7&lt;/p&gt;
@@ -1194,11 +1370,11 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
         &lt;span class="n"&gt;myList&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;add&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;e&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
         &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;myList&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
 
-        &lt;span class="c1"&gt;// split arraylist&lt;/span&gt;
-        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;myList&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;subList&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
-
         &lt;span class="c1"&gt;// get item in arraylist&lt;/span&gt;
         &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;myList&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;get&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+
+        &lt;span class="c1"&gt;// split arraylist&lt;/span&gt;
+        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;myList&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;subList&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
     &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1211,16 +1387,32 @@ Dictionary는 1) key가 unique하다는 점과 2) item에 순서가 없다는 �
 &lt;span class="n"&gt;my_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;b&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;d&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;e&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="c"&gt;# split list&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-
 &lt;span class="c"&gt;# get item in list&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;   &lt;span class="c"&gt;# returns &amp;#39;d&amp;#39;&lt;/span&gt;
+
+&lt;span class="c"&gt;# split list&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="c"&gt;# returns [&amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;많은 프로그래밍 언어는 배열에 속하는 item의 번호, 즉 &lt;a href="https://plus.google.com/115212051037621986145/posts/YTUxbXYZyfi"&gt;index를 매길 때 1이 아니라 0부터 시작한다&lt;/a&gt;.
+그러니까 위의 &lt;code&gt;my_list&lt;/code&gt;에서 item 'a'의 index는 0, item 'b'의 index는 1, item 'e'의 index는 4이다.
+이 때 &lt;code&gt;my_list[3]&lt;/code&gt;이라고 입력하면 index 값이 3인 item을 가져오라는 뜻이며, 따라서 'd'를 출력한다.
+한편 list를 분할할 때는 &lt;code&gt;my_list[1:4]&lt;/code&gt;라고 입력하는데, 이는 index가 1인 item부터 index가 4인 item _직전_까지 가져오라는 의미이다.
+list 분할은 데이터 분석에서 데이터를 두 개 이상의 set으로 partitioning할 때 활용할 수 있다.
+가령 위의 &lt;code&gt;my_list&lt;/code&gt;를 ['a', 'b', 'c']와 ['d', 'e']로 나누는 것은 아래와 같이 다양한 방식으로 할 수 있다. (세 경우 모두 같은 결과를 낳는다)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;p1, p2 = my_list[0:3], my_list[3:5]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p1, p2 = my_list[:3], my_list[3:]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p1, p2 = my_list[:-2], my_list[-2:]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;위에서 볼 수 있듯 &lt;code&gt;my_list[:4]&lt;/code&gt;라고 입력하면 처음부터 index가 4인 item _직전_까지 반환하고
+&lt;code&gt;my_list[1:]&lt;/code&gt;을 입력하면 index가 1인 item부터 마지막 item까지 반환한다.
+음수 index를 명시하면 마지막에서부터 index를 세게 되는데,
+(위 예시의 경우 배열의 길이인 &lt;code&gt;len(my_list)&lt;/code&gt;에서 2를 뺀 값)
+이것도 아주 편리하게 이용되는 기능이다.&lt;/p&gt;
 &lt;h4&gt;예시 7: 클래스(class)와 상속(inheritance)&lt;/h4&gt;
 &lt;p&gt;예시 1에서도 설명했지만, 파이썬에서는 클래스를 반드시 선언해주지는 않아도 된다.
 하지만, 클래스가 유용한 경우는 종종 있고, 파이썬에서도 클래스를 만들 수 있다.
@@ -1572,26 +1764,87 @@ we encourage you to approach your work with honesty and integrity.&lt;/p&gt;
 &lt;p&gt;팀프로젝트에서 진행할 데이터마이닝 아이디어 한 가지를 제안해주세요.
 제안서는 A4 용지 1페이지 이내로 작성하고 PDF로 변환하여 올려주시기 바랍니다.&lt;/p&gt;
 &lt;p&gt;프로젝트에 대한 자세한 사항은 &lt;a href="http://www.lucypark.kr/courses/2015-dm/course-introduction.html#term-project-40"&gt;이 링크&lt;/a&gt;를 참고해주세요.&lt;/p&gt;
-&lt;h2&gt;Assignment 1: 분류기 비교&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;마감일: 2015-04-02 23:59&lt;/li&gt;
-&lt;li&gt;제출처: e-class&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;다음의 두 가지 질문에 답하자.&lt;/p&gt;
+&lt;h2&gt;Assignment 1: 로지스틱&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;수업 시간에 배운 logistic regression 모델을 학습해보자.
+단, 이번에는 성능과 학습 시간을 모두 측정해볼 것이다.
+먼저 학습시간을 측정하기 위해 다음과 같이 time 모듈을 사용해보자.
+시간이 오래걸릴 것이니 밥을 먹고 와도 좋다.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;
+&lt;span class="n"&gt;lr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LogisticRegression&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;시간이 얼마나 걸렸는지 기록하자.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;학습이 다 됐는가? Training하느라 우리 컴퓨터가 수고 많았다.
+매번 그 과정을 거치지는 것은 힘드니까 모델을 저장해보자.
+이 때 모델의 이름은 길더라도 의미있게 짓는 것이 좋다.
+(여기서는 random_state라는 파라미터를 입력했으니 그것을 변수명에 넣어보겠다.)
+여기서 파일 확장자로 사용한 &lt;code&gt;pkl&lt;/code&gt;은 &lt;a href="https://docs.python.org/3/library/pickle.html"&gt;pickle&lt;/a&gt; 파일이라는 것을 나타낸다.
+pickle은 파이썬에서
+오브젝트(object)를 binary로 저장하는 방식 중 하나이다.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.externals&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;joblib&lt;/span&gt;
+&lt;span class="n"&gt;joblib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dump&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;lr_randomstate_1234.pkl&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위 코드를 입력하면 내 컴퓨터에 한 개(혹은 그 이상)의 파일이 생성되는 것을 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;이렇게 모델을 파일로 저장하고나면 다음부터는 다시 많은 시간을 투자해서 모델을 학습하지 않고 아래와 같이 모델을 로딩할 수 있다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    :::python
+    lr = joblib.load(&amp;#39;lr_randomstate_1234.pkl&amp;#39;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;생성된 파일명과 파일의 크기가 몇 KB인지 기록하자.
+파일이 여러개 생성되었다면 각 파일의 이름과 크기를 모두 기록하자.
+(참고: &lt;a href="http://scikit-learn.org/stable/modules/model_persistence.html"&gt;Model persistence&lt;/a&gt;)&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;지금까지 우리는 logistic regression, decision trees, k-NN 등의 분류 알고리즘에 대해 배웠거나 배울 것이다.
-이들의 특성은 어떻게 다른가?
-각각의 알고리즘은 어떤 데이터셋과 상황에 적합하다고 볼 수 있는가?
-&lt;a href="http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html"&gt;iris&lt;/a&gt; 데이터셋을 이용해 각 분류기의 성능을 비교해보자.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;참고: &lt;a href="http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html"&gt;Scikit-learn classifier comparison&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;우리가 LogisticRegression 클래스의 instance를 생성할 때 사용한 파라미터는 아래의 명령어로 찾을 수 있다. 어떤 값들이 출력되는가? 각 파라미터는 어떤 의미를 가지는지 설명해보자.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_params&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;그 외에 자주 사용되는 분류 알고리즘에는 무엇이 있는지 조사해보자.&lt;/p&gt;
+&lt;p&gt;Training set의 정확도와 test set의 정확도(accuracy)를 구해보자.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;score&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;score&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_test&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;/li&gt;
-&lt;/ol&gt;</summary><category term="assignments"></category></entry><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-dm/course-introduction.html" rel="alternate"></link><updated>2015-03-06T09:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-dm/course-introduction.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
+&lt;li&gt;
+&lt;p&gt;분류문제의 성능을 측정할 때는 앞의 정확도 뿐 아니라&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;아래의 코드로 logistic regression의 coefficient들을 그림으로 그려보자.
+어떤 모양을 가지는가? 이것이 뜻하는 바는 무엇일까?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;matshow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;coef_&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;colorbar&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;savefig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;lr_coef.png&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!--
+## Assignment 3: 분류기 비교
+
+- 마감일: 2015-04-02 23:59
+- 제출처: e-class
+
+지금까지 우리는 logistic regression, decision trees, k-NN, ANN, SVM 등의 분류 알고리즘에 대해 배웠거나 배울 것이다.
+이들의 특성은 어떻게 다른가?
+각각의 알고리즘은 어떤 데이터셋과 상황에 적합하다고 볼 수 있는가?
+[iris](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html) 데이터셋을 이용해 각 분류기의 성능을 비교해보자.
+    - 참고: [Scikit-learn classifier comparison](http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html)
+--&gt;</summary><category term="assignments"></category></entry><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-dm/course-introduction.html" rel="alternate"></link><updated>2015-03-06T09:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-dm/course-introduction.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
 &lt;p&gt;&lt;img src="http://lucypark.kr/courses/images/me.jpg" width="150px" class="pull-right"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Eunjeong (Lucy) Park&lt;/li&gt;
