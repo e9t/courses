@@ -109,7 +109,9 @@ Some jokes about package managing:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.ecogwiki.com/Hash-based_sampling"&gt;Data sampling&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;...&lt;a href="http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html"&gt;and more&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>터미널에서 프로그래밍하기</title><link href="http://lucypark.kr/courses/tips/terminal.html" rel="alternate"></link><updated>2015-03-18T15:55:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-18:courses/tips/terminal.html</id><summary type="html">&lt;p&gt;이제 프로그래밍에 조금은 익숙해졌죠?
+&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Scraping from the Web</title><link href="http://lucypark.kr/courses/2015-ba/crawling.html" rel="alternate"></link><updated>2015-03-20T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-ba/crawling.html</id><summary type="html">&lt;p&gt;&lt;img src="images/google-spreadsheet.png"&gt;
+&lt;img src="images/excel.png"&gt;
+&lt;img src="images/importio.png"&gt;&lt;/p&gt;</summary></entry><entry><title>터미널에서 프로그래밍하기</title><link href="http://lucypark.kr/courses/tips/terminal.html" rel="alternate"></link><updated>2015-03-18T15:55:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-18:courses/tips/terminal.html</id><summary type="html">&lt;p&gt;이제 프로그래밍에 조금은 익숙해졌죠?
 익숙해지지 않았다면? 지금이라도 열심히 복습하세요. 연습만이 살 길입니다.&lt;/p&gt;
 &lt;p&gt;다음은 터미널에서 프로그래밍할 때, 조금 더 생산성을 높이기 위한 몇 가지 꿀팁입니다.&lt;/p&gt;
 &lt;ol&gt;
@@ -131,10 +133,7 @@ Some jokes about package managing:
 &lt;script type="text/javascript" src="https://asciinema.org/a/17807.js" id="asciicast-17807" async&gt;&lt;/script&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</summary></entry><entry><title>Scraping from the Web</title><link href="http://lucypark.kr/courses/2015-ba/crawling.html" rel="alternate"></link><updated>2015-03-17T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-17:courses/2015-ba/crawling.html</id><summary type="html">&lt;p&gt;&lt;img src="images/google-spreadsheet.png"&gt;
-&lt;img src="images/excel.png"&gt;
-&lt;img src="images/importio.png"&gt;&lt;/p&gt;
-&lt;p&gt;import.io&lt;/p&gt;</summary></entry><entry><title>Dimensionality reduction</title><link href="http://lucypark.kr/courses/2015-dm/dimensionality-reduction.html" rel="alternate"></link><updated>2015-03-17T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-17:courses/2015-dm/dimensionality-reduction.html</id><summary type="html">&lt;h2&gt;Variable selection in regression&lt;/h2&gt;
+&lt;/ol&gt;</summary></entry><entry><title>Dimensionality reduction</title><link href="http://lucypark.kr/courses/2015-dm/dimensionality-reduction.html" rel="alternate"></link><updated>2015-03-17T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-17:courses/2015-dm/dimensionality-reduction.html</id><summary type="html">&lt;h2&gt;Variable selection in regression&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Why should we select a subset of variables?&lt;ul&gt;
 &lt;li&gt;May be expensive or not feasible to collect a full complement of predictors for future prediction.&lt;/li&gt;
