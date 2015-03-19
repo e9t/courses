@@ -26,7 +26,7 @@ def csv_loader(csv_elem, curpath,\
         doc = csv_elem.split("'''")[1]
     else:
         filename = csv_elem.split("'")[1]
-        filepath = os.path.join('output', curpath, filename)
+        filepath = os.path.join('content', curpath, filename)
         doc = read_txt(filepath)
 
     if classes:
