@@ -903,6 +903,9 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
 &lt;a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"&gt;공식 문서&lt;/a&gt;에도 나와있듯 multi-class, 즉 다범주 문제에 대해서 scikit-learn의 구현체가 multinomial logistic regression을 구현하지 않았기 때문이다.
 즉, 우리가 수업 시간에 다룬 &lt;a href="http://localhost:8000/2015-dm/logistic-regression.html#6-1범주-mnist-1-against-all"&gt;1-against-all&lt;/a&gt; 모델을 모든 범주, 그러니까 총 10개의 범주에 대해서 다 시행한 것이다.
 따라서 원래 모델 하나를 학습하는 시간보다 약 10배의 시간이 걸렸을 것이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Extra credit: 학습 속도를 높이면서 성능은 유지하거나, 학습 속도를 유지하면서 성능을 높일 수 있는가? 어떻게 하면 되는가? 이 때 어떤 파라미터를 썼는가?&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;!--
 &gt; 5: 분류문제의 성능을 측정할 때는 위의 정확도(accuracy) 뿐 아니라 precision, recall, f-measure 등도 사용된다. 1) 각각은 어떤 의미를 가지며 어떻게 계산하는가? 2) 실제로 값도 구해보고, 3) 도출된 네 가지 지표 accuracy, precision, recall, f-measure을 통해 우리 모델이 잘 학습되었는지 판단해보자.
 1. 아래의 코드로 logistic regression의 coefficient들을 그림으로 그려보자.
