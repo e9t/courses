@@ -41,7 +41,7 @@ Assignment 1은 수업 시간에 사용한 MNIST 데이터셋을 이용한 학�
 [수업 시간에 배운 logistic regression](logistic-regression.html) 알고리즘을 학습해보자.
 단, 이번에는 1) Binary가 아니라 전체 10개의 범주(class)에 대해 분류해보고, 2) 성능과 학습 시간을 모두 측정해보는 것이 목표이다.
 
-먼저 수업시간에 한 것과 같이 scikit-learn을 통해 MNIST dataset을 loading하고, partitioning하자.
+먼저 scikit-learn을 통해 MNIST dataset을 loading하고, partitioning해보자.
 
     :::python
     from sklearn import datasets, cross_validation
@@ -49,10 +49,15 @@ Assignment 1은 수업 시간에 사용한 MNIST 데이터셋을 이용한 학�
     X, y = d['data'], d['target']
     X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, y, test_size=0.4, random_state=1234)
 
+> **참고**: `d = datasets.fetch_mldata('MNIST original', data_home='.')`에서 `HTTP Error 500: Internal Server Error`를 내면서 죽는다면 mldata.org 사이트의 접속량 폭주 때문일 수 있다. 이 때 해결법은 두 가지가 있다.<br>
+> 1. 접속이 원활해질 때까지 기다렸다가 잠시 후에 다시 시도해보거나<br>
+> 2. [이 파이썬 파일](https://gist.github.com/e9t/736b5410c0937091166b)을 현재 디렉토리에서 실행해보자.<br>
+> 현재 디렉토리에 `mldata`라는 폴더가 생기고, 그 안에 `mnist-original.mat`이라는 이름으로 약 54MB 크기의 파일이 저장되었다면 성공이다.
+
 학습시간을 측정하기 위해 다음과 같이 [time](https://docs.python.org/3/library/time.html) 모듈을 사용해보자.
 다만, 코드가 무슨 말인지는 꼭 이해하고 가자!
 이해가 안 된다면 이 참에 구글링도 하고 scikit-learn 공식 문서도 뒤져보자.
-우리의 목표는 숙제가 아니라 실제로 데이터를 가지고 놀 수 있는 능력을 키우는 것이다.
+우리의 목표는 이 숙제를 완성하는 것이 아니라 실제로 데이터를 가지고 놀 수 있는 능력을 키우는 것이다.
 
 시간이 오래걸릴 것이니 밥을 먹고 와도 좋다.
 
@@ -77,9 +82,9 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
     joblib.dump(lr, 'lr_randomstate_1234.pkl')
 
 위 코드를 입력하면 내 컴퓨터에 한 개(혹은 그 이상)의 파일이 생성되는 것을 확인할 수 있다.
-(참고: [Model persistence](http://scikit-learn.org/stable/modules/model_persistence.html))
+(참고자료: [Model persistence](http://scikit-learn.org/stable/modules/model_persistence.html))
 
-이렇게 모델을 파일로 저장하고나면 다음부터는 다시 많은 시간을 투자해서 모델을 학습하지 않고 아래와 같이 모델을 로딩할 수 있다.
+이렇게 모델을 파일로 저장하고나면 다음부터는 컴퓨터를 재부팅하고도 다시 많은 시간을 투자해서 모델을 학습하지 않고 아래와 같이 모델을 파일로부터 로딩할 수 있다.
 
     :::python
     lr = joblib.load('lr_randomstate_1234.pkl')
@@ -92,12 +97,11 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
     :::python
     p = lr.get_params()
 
-> 3: 어떤 값들이 출력되는가? 각 파라미터는 어떤 의미를 가지는지 설명해보자.
+> 3: 어떤 값들이 출력되는가? 각 파라미터는 어떤 의미를 가지는지 설명해보자. 잘 모르겠다면 [이 문서](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)를 확인해보자.
 
-> 4: Training set의 정확도와 test set의 정확도(accuracy)는 얼마인가?
+> 4: 이 파라미터들을 사용했을 때 test set에 대한 정확도(accuracy), 정밀도(precision), 재현율(recall), F-score는 각각 얼마인지 계산해보자.
 
     :::python
-    print(lr.score(X_train, y_train))
     print(lr.score(X_test, y_test))
 
 > 5: 분류 알고리즘은 logistic regression 뿐 아니라 k-NN, Decision trees, SVM, Neural Networks 등 다양하게 있다. Logistic regression을 제외하고 다른 분류 알고리즘을 적어도 하나 택해서 Logistic regression으로 MNIST dataset에 대한 학습 시간과 정확도를 비교해보자.
