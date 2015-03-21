@@ -33,12 +33,13 @@
         <h1 itemprop="name headline">Scraping from the Web</h1>
 		<time datetime="2015-03-20T15:00:00+09:00" itemprop="datePublished">Fri 20 March 2015</time>
 	</div>
+    <div class="article-toc"><b>Contents</b><p></p></div>
     <div itemprop="articleBody" class="article-body">
         <p>Choose a target of your choice:</p>
 <ul>
-<li>Target 1: http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;tradeTypeCd=&amp;hscpTypeCd=&amp;cortarNo=1162010200&amp;mapLevel=10</li>
-<li>Target 2: http://www.imdb.com/title/tt2802144/fullcredits?ref_=tt_cl_sm#cast</li>
-<li>Target 3: http://www.ted.com/talks</li>
+<li>Target 1: <a href="http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;tradeTypeCd=&amp;hscpTypeCd=&amp;cortarNo=1162010200&amp;mapLevel=10">Naver 부동산</a></li>
+<li>Target 2: <a href="http://www.imdb.com/title/tt2802144/fullcredits?ref_=tt_cl_sm#cast">IMDB</a></li>
+<li>Target 3: <a href="http://www.ted.com/talks">TED.com</a></li>
 </ul>
 <h2>Method 1: ctrl + c / ctrl + v</h2>
 <p><img src="images/excel.png"></p>
@@ -47,8 +48,225 @@
 <h2>Method 3: import.io (or some other scraping service)</h2>
 <p><img src="images/importio.png"></p>
 <h2>Method 4: Being the programmer</h2>
+<p>Let's try programming a crawler ourselves.</p>
+<h3>1. Identify Web page URL</h3>
 <ul>
-<li><a href="https://gist.github.com/e9t/95df9b68ff829a557cfb">link</a></li>
+<li>First find a Web page where you can find item lists</li>
+<li>Let's understand the URL (cf. <a href="http://meyerweb.com/eric/tools/dencoder/">Online URL decoder/encoder</a>)</li>
+<li>It is best to find a page where the URL is has an iterable parameter (ex: page numbers, item IDs)<ul>
+<li>TED.com talks: http://www.ted.com/talks?page=1<ul>
+<li><code>page</code> is iterable from 1 to 54</li>
+</ul>
+</li>
+<li>Amazon.com TVs: <code>http://www.amazon.com/s/?rh=n:172282,n:!493964,n:1266092011,n:172659&amp;page=1</code><ul>
+<li><code>page</code> is iterable from 1 to 143</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Set the variables <code>npages</code>, <code>url_base</code>, and also a <code>file_base</code> to name download files. Normally, you want to set npages to a smaller number (ex: 3), rather than the actuall value (i.e., 54) to test the code before actually executing it.<div class="highlight"><pre><span class="n">npages</span> <span class="o">=</span> <span class="mi">54</span>
+<span class="n">url_base</span> <span class="o">=</span> <span class="s">&#39;http://www.ted.com/talks?page=</span><span class="si">%s</span><span class="s">&#39;</span>
+<span class="n">file_base</span> <span class="o">=</span> <span class="s">&#39;ted_talks_</span><span class="si">%s</span><span class="s">.html&#39;</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h3>2. Download Web pages</h3>
+<ul>
+<li>
+<p>First define a function named <code>save_text</code></p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">save_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Then using the list URL found on step 1, download list pages. We will use the package <code>requests</code> for this task</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+<span class="k">for</span> <span class="n">page_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">npages</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">page_num</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_base</span> <span class="o">%</span> <span class="n">page_num</span><span class="p">)</span>
+    <span class="n">save_text</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">file_base</span> <span class="o">%</span> <span class="n">page_num</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Check whether the pages have downloaded succesfully<br>
+    <img src="images/download_ted.png"></p>
+</li>
+</ul>
+<h3>3. Parse downloaded Web pages</h3>
+<ul>
+<li>
+<p>Before we go any further, let's recall how an html document looks like. Take a look at one of the downloaded html docs as well.</p>
+<div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- This is a comment --&gt;</span>
+    ... and this is where the visible contents go ...
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Now, let's set the <code>page_num</code> to 1 for detailed investigation, rather than creating a <code>for</code> loop for all pages</p>
+<div class="highlight"><pre><span class="n">page_num</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>For parsing, we'll be using <a href="http://lxml.de/lxmlhtml.html"><code>lxml.html</code></a>. Many people also use <a href="https://docs.python.org/3/library/re.html">regex</a>. There are various many other options (ex: bs4), so feel free to Google them up.</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">html</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">file_base</span> <span class="o">%</span> <span class="n">page_num</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>With <code>root</code>, we can easily parse a given text using <a href="http://lxml.de/xpathxslt.html#xpath">xpath</a>s, just by identifying the <em>tag</em>, <em>class</em>, or <em>id</em> of an html element. Why don't we try extracting all the text from the <code>&lt;body&gt;</code> tag? Try this:</p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;//body//text()&#39;</span><span class="p">))</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Cool, huh? Now, let's think of what we want to extract from our downloaded html, and picture what we want as a result. From our html page, we probably want to extract the title, speaker, view count, date, and url of all TED talks, resulting in a spreadsheet format as follows:
+    <div class="row">
+    <div class="col-md-3">
+    <img src="images/ted.png">
+    </div>
+    <div class="col-md-9">
+    <table class="table"><tr><th>    title</th><th>speaker</th><th>views</th><th>date</th><th>url</th></tr><tr><td>    The price of shame</td><td>Monica Lewinsky</td><td>83K</td><td>Mar 2015</td><td>http://...</td></tr><tr><td>    What if 3D printing was 100x faster?</td><td>Joseph DeSimone</td><td>212K</td><td>Mar 2015</td><td>http://...</td></tr><tr><td>    Can we create new senses for humans?</td><td>David Eagleman</td><td>215K</td><td>Mar 2015</td><td>http://...</td></tr><tr><td>    The good news about PMS</td><td>Robyn Stein DeLuca</td><td>248K</td><td>Mar 2015</td><td>http://...</td></tr><tr><td>    ...</td><td>...</td><td>...</td><td>...</td><td>... </td></tr></table>
+    </div>
+    </div></p>
+</li>
+<li>
+<p>So, in order to find what <em>tag</em>, <em>class</em>, or <em>id</em> we need to exact such elements, let's go back to <a href="http://www.ted.com/talks?page=1">www.ted.com/talks?page=1</a>, right click, and "Inspect Element"s.<br>
+    <img src="images/parse-1.png" width="400px">
+    <img src="images/parse-2.png" width="400px"></p>
+</li>
+<li>
+<p>By navigating with the DOM, we can see that the <code>div</code> tag with <code>id=browse-results</code> contains all the talk items in <code>div</code> tags with <code>class=col</code>, each containing a talk item. (When identifying and html element, using <em>id</em> is better than using a <em>class</em>, because normally <em>id</em>s are unique within a html page.)<br>
+    <img src="images/parse-3.png" width="400px"></p>
+</li>
+<li>
+<p>Now, let's use xpath to get the talk items.</p>
+<div class="highlight"><pre><span class="n">items</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;//div[@id=&quot;browse-results&quot;]//div[@class=&quot;col&quot;]&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>   <span class="c"># returns 36, the number of talk items in the page</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Dig into one of the <code>&lt;div class="col"&gt;</code>s, to further investigate the identifiers of talk information.<br>
+    <img src="images/parse-4.png" width="400px"></p>
+</li>
+<li>
+<p>Choose one item and extract relevant data.</p>
+<div class="highlight"><pre><span class="n">item</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h12 talk-link__speaker&quot;]/text()&#39;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/text()&#39;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/@href&#39;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//span[@class=&quot;meta__val&quot;]/text()&#39;</span><span class="p">))</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>All the items are contained in a list, and it would be better if we could strip the new lines(<code>\n</code>) from the strings. Additionally, rather than handling each info separately, let's put the extracted info into one dictionary, and make that a function named <code>parse_item()</code>.</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">parse_item</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s">&#39;speaker&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h12 talk-link__speaker&quot;]/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">),</span>
+        <span class="s">&#39;href&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/@href&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s">&#39;views&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//span[@class=&quot;meta__val&quot;]/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="s">&#39;date&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//span[@class=&quot;meta__val&quot;]/text()&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Perfect. Now let's iterate through the items on page 1.</p>
+<div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">parse_item</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>    <span class="c"># returns 36</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Great. Now we're ready to iterate through all 54 web pages.</p>
+<div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">page_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">npages</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">file_base</span> <span class="o">%</span> <span class="n">page_num</span><span class="p">)</span>
+<span class="n">items</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;//div[@id=&quot;browse-results&quot;]//div[@class=&quot;col&quot;]&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">parse_item</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>    <span class="c"># returns 1943 or a similar number</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h3>4. Save the parsed data to file</h3>
+<ul>
+<li>We currently have our data in a dictionary format.</li>
+<li>
+<p>Normally, it's enough to save this data directly into a json file.</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;data.json&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+
+
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en">JSONView</a> is a nice way to pretty print your json.</li>
+</ul>
+</li>
+<li>
+<p>However, sometimes it's better to convert this data into a spreadsheet. If so, try this:</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">csv</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;data.csv&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h3>5. What's next?</h3>
+<ul>
+<li>You can see a refactored, cleaner code of the crawler above <a href="https://gist.github.com/e9t/43f986a915c4059d75af">here</a>. Try to understand the syntax yourself.</li>
+<li>Furthermore, you can traverse into the individual talk urls you have just acquired from the list pages.</li>
+<li>Concurrent crawling may come of use. Consult <a href="http://www.slideshare.net/cornchz/pyconkr-2014-30">this presentation material</a>.</li>
+<li>Try crawling some other website of interest.</li>
+<li>If you already have enough data to crunch, go ahead and crunch 'em!</li>
+</ul>
+<h2>References</h2>
+<p>Below are some Web crawler examples. Most are for Python 2, so be careful.</p>
+<ul>
+<li><a href="https://gist.github.com/e9t/95df9b68ff829a557cfb">TED.com crawler</a></li>
+<li><a href="https://gist.github.com/e9t/9680106">Naver OnStage crawler</a></li>
+<li><a href="http://github.com/teampopong/crawlers">Team POPONG crawlers</a></li>
+<li><a href="https://gist.github.com/e9t/551f9647f58800273025">Korean National Assembly bill crawler</a></li>
 </ul>
 
     </div>
@@ -135,6 +353,47 @@ $(function(){
     }
   });
 });
+</script>
+<script>
+    function hyphenate(str) {
+        return str.toLowerCase().replace(/[?!:'"\[\]()%.,]/gi, '').replace(/\s/g, '-');
+    }
+
+    String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
+
+    // create toc
+    var t = '';
+    var concat = '';
+    var headers = $('.article-body :header');
+    headers.each(function() {
+        var hyphenated = hyphenate($(this).text());
+            $(this).attr('id', hyphenated);
+        }
+    );
+    for (var i=0; i<headers.length; i++) {
+        depth = parseInt(headers[i].tagName.substr(-1));
+        if (depth < 4) {
+            t = headers[i].textContent;
+            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- <a href="#' + hyphenate(t) + '">' + t + '</a><br>';
+        }
+    }
+    $(".article-toc p").append(concat);
+
+    // scroll animation
+    $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 300, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+    });
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {

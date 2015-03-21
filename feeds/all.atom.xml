@@ -109,11 +109,52 @@ Some jokes about package managing:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.ecogwiki.com/Hash-based_sampling"&gt;Data sampling&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;...&lt;a href="http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html"&gt;and more&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Scraping from the Web</title><link href="http://lucypark.kr/courses/2015-ba/crawling.html" rel="alternate"></link><updated>2015-03-20T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-ba/crawling.html</id><summary type="html">&lt;p&gt;Choose a target of your choice:&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Dimensionality reduction</title><link href="http://lucypark.kr/courses/2015-dm/dimensionality-reduction.html" rel="alternate"></link><updated>2015-03-21T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-21:courses/2015-dm/dimensionality-reduction.html</id><summary type="html">&lt;h2&gt;Variable selection in regression&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Target 1: http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;amp;tradeTypeCd=&amp;amp;hscpTypeCd=&amp;amp;cortarNo=1162010200&amp;amp;mapLevel=10&lt;/li&gt;
-&lt;li&gt;Target 2: http://www.imdb.com/title/tt2802144/fullcredits?ref_=tt_cl_sm#cast&lt;/li&gt;
-&lt;li&gt;Target 3: http://www.ted.com/talks&lt;/li&gt;
+&lt;li&gt;Why should we select a subset of variables?&lt;ul&gt;
+&lt;li&gt;May be expensive or not feasible to collect a full complement of predictors for future prediction.&lt;/li&gt;
+&lt;li&gt;May be able to measure fewer predictors more accurately (e.g. in surveys)&lt;/li&gt;
+&lt;li&gt;More predictors, more missing values&lt;/li&gt;
+&lt;li&gt;Parsimony (a.k.a. Occam’s Razor): the simpler, the better.&lt;/li&gt;
+&lt;li&gt;Multicollinearity: presence of two or more predictors sharing the same linear relationship with the outcome variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Goal: 일반화 성능 향상&lt;ul&gt;
+&lt;li&gt;More robust&lt;/li&gt;
+&lt;li&gt;Higher predictive accuracy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Methods&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Exhaustive search: 모든 변수 조합의 성능을 살펴봄&lt;ul&gt;
+&lt;li&gt;${x_1}, {x_2}, {x_3}, ..., {x_1, x_2}, {x_2, x_3}, ..., {x_1, x_2, x_3}, ...$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Partial search&lt;ul&gt;
+&lt;li&gt;Forward selection: 유의성이 큰 변수는 하나씩 더함&lt;ul&gt;
+&lt;li&gt;${x_4} \to {x_4, x_5} \to {x_1, x_4, x_5} \to {x_1, x_3, x_4, x_5} \to {x_1, x_2, x_3, x_4, x_5}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Backward elimination: 유의성이 작은 변수를 하나씩 제거&lt;ul&gt;
+&lt;li&gt;${x_1, x_2, x_3, x_4, x_5} \to {x_1, x_3, x_4, x_5} \to {x_1, x_4, x_5} \to {x_4, x_5} to{x_4}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Stepwise selection: 유의성이 큰 변수를 더하거나 작은 변수를 하나씩 제거&lt;ul&gt;
+&lt;li&gt;${x_4} \to {x_4, x_5} \to {x_1, x_4, x_5} \to {x_1, x_5} \to ...$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><title>Recommendation systems</title><link href="http://lucypark.kr/courses/2015-dm/recommendation-systems.html" rel="alternate"></link><updated>2015-03-21T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-21:courses/2015-dm/recommendation-systems.html</id><summary type="html">&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;http://www.slideshare.net/kyuhwanjung/cvprml-20140111&lt;/li&gt;
+&lt;li&gt;http://www.slideshare.net/xlos21/deview-recopick-aws?related=1&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><title>Scraping from the Web</title><link href="http://lucypark.kr/courses/2015-ba/crawling.html" rel="alternate"></link><updated>2015-03-20T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-ba/crawling.html</id><summary type="html">&lt;p&gt;Choose a target of your choice:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Target 1: &lt;a href="http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;amp;tradeTypeCd=&amp;amp;hscpTypeCd=&amp;amp;cortarNo=1162010200&amp;amp;mapLevel=10"&gt;Naver 부동산&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Target 2: &lt;a href="http://www.imdb.com/title/tt2802144/fullcredits?ref_=tt_cl_sm#cast"&gt;IMDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Target 3: &lt;a href="http://www.ted.com/talks"&gt;TED.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Method 1: ctrl + c / ctrl + v&lt;/h2&gt;
 &lt;p&gt;&lt;img src="images/excel.png"&gt;&lt;/p&gt;
@@ -122,8 +163,225 @@ Some jokes about package managing:
 &lt;h2&gt;Method 3: import.io (or some other scraping service)&lt;/h2&gt;
 &lt;p&gt;&lt;img src="images/importio.png"&gt;&lt;/p&gt;
 &lt;h2&gt;Method 4: Being the programmer&lt;/h2&gt;
+&lt;p&gt;Let's try programming a crawler ourselves.&lt;/p&gt;
+&lt;h3&gt;1. Identify Web page URL&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://gist.github.com/e9t/95df9b68ff829a557cfb"&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;First find a Web page where you can find item lists&lt;/li&gt;
+&lt;li&gt;Let's understand the URL (cf. &lt;a href="http://meyerweb.com/eric/tools/dencoder/"&gt;Online URL decoder/encoder&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;It is best to find a page where the URL is has an iterable parameter (ex: page numbers, item IDs)&lt;ul&gt;
+&lt;li&gt;TED.com talks: http://www.ted.com/talks?page=1&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;page&lt;/code&gt; is iterable from 1 to 54&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Amazon.com TVs: &lt;code&gt;http://www.amazon.com/s/?rh=n:172282,n:!493964,n:1266092011,n:172659&amp;amp;page=1&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;page&lt;/code&gt; is iterable from 1 to 143&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Set the variables &lt;code&gt;npages&lt;/code&gt;, &lt;code&gt;url_base&lt;/code&gt;, and also a &lt;code&gt;file_base&lt;/code&gt; to name download files. Normally, you want to set npages to a smaller number (ex: 3), rather than the actuall value (i.e., 54) to test the code before actually executing it.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;npages&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;54&lt;/span&gt;
+&lt;span class="n"&gt;url_base&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;http://www.ted.com/talks?page=&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;file_base&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;ted_talks_&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;.html&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Download Web pages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;First define a function named &lt;code&gt;save_text&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;save_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Then using the list URL found on step 1, download list pages. We will use the package &lt;code&gt;requests&lt;/code&gt; for this task&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;page_num&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;npages&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page_num&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url_base&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;page_num&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;save_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;file_base&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;page_num&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check whether the pages have downloaded succesfully&lt;br&gt;
+    &lt;img src="images/download_ted.png"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. Parse downloaded Web pages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Before we go any further, let's recall how an html document looks like. Take a look at one of the downloaded html docs as well.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;charset=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class="c"&gt;&amp;lt;!-- This is a comment --&amp;gt;&lt;/span&gt;
+    ... and this is where the visible contents go ...
+&lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now, let's set the &lt;code&gt;page_num&lt;/code&gt; to 1 for detailed investigation, rather than creating a &lt;code&gt;for&lt;/code&gt; loop for all pages&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;page_num&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For parsing, we'll be using &lt;a href="http://lxml.de/lxmlhtml.html"&gt;&lt;code&gt;lxml.html&lt;/code&gt;&lt;/a&gt;. Many people also use &lt;a href="https://docs.python.org/3/library/re.html"&gt;regex&lt;/a&gt;. There are various many other options (ex: bs4), so feel free to Google them up.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;lxml&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt;
+&lt;span class="n"&gt;root&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;file_base&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;page_num&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;With &lt;code&gt;root&lt;/code&gt;, we can easily parse a given text using &lt;a href="http://lxml.de/xpathxslt.html#xpath"&gt;xpath&lt;/a&gt;s, just by identifying the &lt;em&gt;tag&lt;/em&gt;, &lt;em&gt;class&lt;/em&gt;, or &lt;em&gt;id&lt;/em&gt; of an html element. Why don't we try extracting all the text from the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag? Try this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;//body//text()&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cool, huh? Now, let's think of what we want to extract from our downloaded html, and picture what we want as a result. From our html page, we probably want to extract the title, speaker, view count, date, and url of all TED talks, resulting in a spreadsheet format as follows:
+    &lt;div class="row"&gt;
+    &lt;div class="col-md-3"&gt;
+    &lt;img src="images/ted.png"&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-9"&gt;
+    &lt;table class="table"&gt;&lt;tr&gt;&lt;th&gt;    title&lt;/th&gt;&lt;th&gt;speaker&lt;/th&gt;&lt;th&gt;views&lt;/th&gt;&lt;th&gt;date&lt;/th&gt;&lt;th&gt;url&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;    The price of shame&lt;/td&gt;&lt;td&gt;Monica Lewinsky&lt;/td&gt;&lt;td&gt;83K&lt;/td&gt;&lt;td&gt;Mar 2015&lt;/td&gt;&lt;td&gt;http://...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;    What if 3D printing was 100x faster?&lt;/td&gt;&lt;td&gt;Joseph DeSimone&lt;/td&gt;&lt;td&gt;212K&lt;/td&gt;&lt;td&gt;Mar 2015&lt;/td&gt;&lt;td&gt;http://...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;    Can we create new senses for humans?&lt;/td&gt;&lt;td&gt;David Eagleman&lt;/td&gt;&lt;td&gt;215K&lt;/td&gt;&lt;td&gt;Mar 2015&lt;/td&gt;&lt;td&gt;http://...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;    The good news about PMS&lt;/td&gt;&lt;td&gt;Robyn Stein DeLuca&lt;/td&gt;&lt;td&gt;248K&lt;/td&gt;&lt;td&gt;Mar 2015&lt;/td&gt;&lt;td&gt;http://...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;    ...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;... &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;So, in order to find what &lt;em&gt;tag&lt;/em&gt;, &lt;em&gt;class&lt;/em&gt;, or &lt;em&gt;id&lt;/em&gt; we need to exact such elements, let's go back to &lt;a href="http://www.ted.com/talks?page=1"&gt;www.ted.com/talks?page=1&lt;/a&gt;, right click, and "Inspect Element"s.&lt;br&gt;
+    &lt;img src="images/parse-1.png" width="400px"&gt;
+    &lt;img src="images/parse-2.png" width="400px"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;By navigating with the DOM, we can see that the &lt;code&gt;div&lt;/code&gt; tag with &lt;code&gt;id=browse-results&lt;/code&gt; contains all the talk items in &lt;code&gt;div&lt;/code&gt; tags with &lt;code&gt;class=col&lt;/code&gt;, each containing a talk item. (When identifying and html element, using &lt;em&gt;id&lt;/em&gt; is better than using a &lt;em&gt;class&lt;/em&gt;, because normally &lt;em&gt;id&lt;/em&gt;s are unique within a html page.)&lt;br&gt;
+    &lt;img src="images/parse-3.png" width="400px"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now, let's use xpath to get the talk items.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;//div[@id=&amp;quot;browse-results&amp;quot;]//div[@class=&amp;quot;col&amp;quot;]&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;   &lt;span class="c"&gt;# returns 36, the number of talk items in the page&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dig into one of the &lt;code&gt;&amp;lt;div class="col"&amp;gt;&lt;/code&gt;s, to further investigate the identifiers of talk information.&lt;br&gt;
+    &lt;img src="images/parse-4.png" width="400px"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choose one item and extract relevant data.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.//h4[@class=&amp;quot;h12 talk-link__speaker&amp;quot;]/text()&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.//h4[@class=&amp;quot;h9 m5&amp;quot;]/a/text()&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.//h4[@class=&amp;quot;h9 m5&amp;quot;]/a/@href&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.//span[@class=&amp;quot;meta__val&amp;quot;]/text()&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;All the items are contained in a list, and it would be better if we could strip the new lines(&lt;code&gt;\n&lt;/code&gt;) from the strings. Additionally, rather than handling each info separately, let's put the extracted info into one dictionary, and make that a function named &lt;code&gt;parse_item()&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;parse_item&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;#39;speaker&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.//h4[@class=&amp;quot;h12 talk-link__speaker&amp;quot;]/text()&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.//h4[@class=&amp;quot;h9 m5&amp;quot;]/a/text()&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.//h4[@class=&amp;quot;h9 m5&amp;quot;]/a/@href&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;#39;views&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.//span[@class=&amp;quot;meta__val&amp;quot;]/text()&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;.//span[@class=&amp;quot;meta__val&amp;quot;]/text()&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Perfect. Now let's iterate through the items on page 1.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parse_item&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;    &lt;span class="c"&gt;# returns 36&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Great. Now we're ready to iterate through all 54 web pages.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;page_num&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;npages&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+&lt;span class="n"&gt;root&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;file_base&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;page_num&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xpath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;//div[@id=&amp;quot;browse-results&amp;quot;]//div[@class=&amp;quot;col&amp;quot;]&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parse_item&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;    &lt;span class="c"&gt;# returns 1943 or a similar number&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4. Save the parsed data to file&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;We currently have our data in a dictionary format.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Normally, it's enough to save this data directly into a json file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;data.json&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dump&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en"&gt;JSONView&lt;/a&gt; is a nice way to pretty print your json.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;However, sometimes it's better to convert this data into a spreadsheet. If so, try this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;csv&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;data.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;writer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DictWriter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fieldnames&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+    &lt;span class="n"&gt;writer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writeheader&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;writer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writerows&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;5. What's next?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;You can see a refactored, cleaner code of the crawler above &lt;a href="https://gist.github.com/e9t/43f986a915c4059d75af"&gt;here&lt;/a&gt;. Try to understand the syntax yourself.&lt;/li&gt;
+&lt;li&gt;Furthermore, you can traverse into the individual talk urls you have just acquired from the list pages.&lt;/li&gt;
+&lt;li&gt;Concurrent crawling may come of use. Consult &lt;a href="http://www.slideshare.net/cornchz/pyconkr-2014-30"&gt;this presentation material&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Try crawling some other website of interest.&lt;/li&gt;
+&lt;li&gt;If you already have enough data to crunch, go ahead and crunch 'em!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;Below are some Web crawler examples. Most are for Python 2, so be careful.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gist.github.com/e9t/95df9b68ff829a557cfb"&gt;TED.com crawler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gist.github.com/e9t/9680106"&gt;Naver OnStage crawler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://github.com/teampopong/crawlers"&gt;Team POPONG crawlers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gist.github.com/e9t/551f9647f58800273025"&gt;Korean National Assembly bill crawler&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary></entry><entry><title>Logistic regression</title><link href="http://lucypark.kr/courses/2015-dm/logistic-regression.html" rel="alternate"></link><updated>2015-03-20T09:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-dm/logistic-regression.html</id><summary type="html">&lt;h2&gt;오늘의 목표&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;MLR의 블랙박스 열어보기&lt;/li&gt;
@@ -545,48 +803,7 @@ Training 데이터와 test 데이터 모두의 정확도를 도출해보자.&lt;
 &lt;script type="text/javascript" src="https://asciinema.org/a/17807.js" id="asciicast-17807" async&gt;&lt;/script&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</summary></entry><entry><title>Dimensionality reduction</title><link href="http://lucypark.kr/courses/2015-dm/dimensionality-reduction.html" rel="alternate"></link><updated>2015-03-17T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-17:courses/2015-dm/dimensionality-reduction.html</id><summary type="html">&lt;h2&gt;Variable selection in regression&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Why should we select a subset of variables?&lt;ul&gt;
-&lt;li&gt;May be expensive or not feasible to collect a full complement of predictors for future prediction.&lt;/li&gt;
-&lt;li&gt;May be able to measure fewer predictors more accurately (e.g. in surveys)&lt;/li&gt;
-&lt;li&gt;More predictors, more missing values&lt;/li&gt;
-&lt;li&gt;Parsimony (a.k.a. Occam’s Razor): the simpler, the better.&lt;/li&gt;
-&lt;li&gt;Multicollinearity: presence of two or more predictors sharing the same linear relationship with the outcome variables&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Goal: 일반화 성능 향상&lt;ul&gt;
-&lt;li&gt;More robust&lt;/li&gt;
-&lt;li&gt;Higher predictive accuracy&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Methods&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Exhaustive search: 모든 변수 조합의 성능을 살펴봄&lt;ul&gt;
-&lt;li&gt;${x_1}, {x_2}, {x_3}, ..., {x_1, x_2}, {x_2, x_3}, ..., {x_1, x_2, x_3}, ...$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Partial search&lt;ul&gt;
-&lt;li&gt;Forward selection: 유의성이 큰 변수는 하나씩 더함&lt;ul&gt;
-&lt;li&gt;${x_4} \to {x_4, x_5} \to {x_1, x_4, x_5} \to {x_1, x_3, x_4, x_5} \to {x_1, x_2, x_3, x_4, x_5}$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Backward elimination: 유의성이 작은 변수를 하나씩 제거&lt;ul&gt;
-&lt;li&gt;${x_1, x_2, x_3, x_4, x_5} \to {x_1, x_3, x_4, x_5} \to {x_1, x_4, x_5} \to {x_4, x_5} to{x_4}$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Stepwise selection: 유의성이 큰 변수를 더하거나 작은 변수를 하나씩 제거&lt;ul&gt;
-&lt;li&gt;${x_4} \to {x_4, x_5} \to {x_1, x_4, x_5} \to {x_1, x_5} \to ...$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>Recommendation systems</title><link href="http://lucypark.kr/courses/2015-dm/recommendation-systems.html" rel="alternate"></link><updated>2015-03-16T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-16:courses/2015-dm/recommendation-systems.html</id><summary type="html">&lt;h2&gt;References&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;http://www.slideshare.net/kyuhwanjung/cvprml-20140111&lt;/li&gt;
-&lt;li&gt;http://www.slideshare.net/xlos21/deview-recopick-aws?related=1&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>Pragmatic tools</title><link href="http://lucypark.kr/courses/2015-ba/pragmatic.html" rel="alternate"></link><updated>2015-03-13T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-13:courses/2015-ba/pragmatic.html</id><summary type="html">&lt;h1&gt;Great tools&lt;/h1&gt;
+&lt;/ol&gt;</summary></entry><entry><title>Pragmatic tools</title><link href="http://lucypark.kr/courses/2015-ba/pragmatic.html" rel="alternate"></link><updated>2015-03-13T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-13:courses/2015-ba/pragmatic.html</id><summary type="html">&lt;h1&gt;Great tools&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Stackoverflow&lt;/li&gt;
 &lt;li&gt;Google Scholar&lt;/li&gt;
@@ -2282,8 +2499,8 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;tr&gt;&lt;th&gt;date&lt;/th&gt;&lt;th&gt;lecture&lt;/th&gt;&lt;th&gt;assignment&lt;/th&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;Course introduction&lt;ul&gt;&lt;li&gt;&lt;a href="course-logistics.html"&gt;Course logistics&lt;/a&gt;&lt;li&gt;GitHub&lt;li&gt;Having fun with Kaggle&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='http://goo.gl/forms/fE7ZIeL8VK'&gt;Homework 0&lt;/a&gt; (Due: 3/11)&lt;ul&gt;&lt;li&gt;CV + Self-intro&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;Tools for pragmatic data mining&lt;ul&gt;&lt;li&gt;&lt;a href="bash.html"&gt;Bash&lt;/a&gt;&lt;li&gt;&lt;a href="../tips/introduction-to-python.html"&gt;Python&lt;/a&gt;&lt;li&gt;Statistical Summaries and Exploratory Data Analysis&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;Scraping from the Web&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Project proposals (300 words+)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Python for NLP&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;&lt;a href="crawling.html"&gt;Scraping from the Web&lt;/a&gt;&lt;ul&gt;&lt;li&gt;Proposal presentations&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Project proposals (300 words+)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Natural language processing&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/10&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/17&lt;/td&gt;&lt;td&gt;Mid-term Quiz&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
@@ -2432,8 +2649,8 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;tr&gt;&lt;th&gt;date&lt;/th&gt;&lt;th&gt;lecture&lt;/th&gt;&lt;th&gt;assignment&lt;/th&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;Course introduction&lt;ul&gt;&lt;li&gt;&lt;a href="course-logistics.html"&gt;Course logistics&lt;/a&gt;&lt;li&gt;GitHub&lt;li&gt;Having fun with Kaggle&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='http://goo.gl/forms/fE7ZIeL8VK'&gt;Homework 0&lt;/a&gt; (Due: 3/11)&lt;ul&gt;&lt;li&gt;CV + Self-intro&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;Tools for pragmatic data mining&lt;ul&gt;&lt;li&gt;&lt;a href="bash.html"&gt;Bash&lt;/a&gt;&lt;li&gt;&lt;a href="../tips/introduction-to-python.html"&gt;Python&lt;/a&gt;&lt;li&gt;Statistical Summaries and Exploratory Data Analysis&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;Scraping from the Web&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Project proposals (300 words+)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Python for NLP&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;&lt;a href="crawling.html"&gt;Scraping from the Web&lt;/a&gt;&lt;ul&gt;&lt;li&gt;Proposal presentations&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Project proposals (300 words+)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Natural language processing&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/10&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/17&lt;/td&gt;&lt;td&gt;Mid-term Quiz&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
