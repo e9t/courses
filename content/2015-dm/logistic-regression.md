@@ -29,7 +29,7 @@ Math: True
 - ex: 33명 성인 여성의 나이와 수축혈압(SBP, systolic blood pressure)<br>
 <div class="row">
     <div class="col-md-8">
-    {% csv 'data-sbp.csv' %}
+    {% csv 'data/sbp.csv' %}
     </div>
     <div class="col-md-4">
     <img src="images/sbp.png" width="300px">
@@ -69,7 +69,7 @@ Math: True
     - `CD==0`: negative class (normally the majority class)<br>
     <div class="row">
         <div class="col-md-8">
-        {% csv 'data-cd.csv' %}
+        {% csv 'data/cd.csv' %}
         </div>
         <div class="col-md-4">
         <img src="images/cd.png" width="300px">
@@ -113,7 +113,7 @@ where $g(x, w) = \frac{1}{1+\exp{-wx}}$
 
 ## [Programming] Logistic regression with scikit-learn
 
-- [먼저 시작하기 전에 터미널 프로그래밍을 위한 몇 가지 tip](../tips/terminal.md)
+- [먼저 시작하기 전에 터미널 프로그래밍을 위한 몇 가지 tip](../tips/terminal.html)
 
 ### 1. Data acquisition
 
@@ -220,7 +220,7 @@ Data exploration은 현재 가지고 있는 데이터를 이리저리 굴려가�
 
 - 이번에는 데이터를 partitioning 해보자.
     - 다시 한 번 얘기하지만, data partitioning은 **overfitting 방지, 일반화 성능 향상**을 위해 하는 것이다.
-    - Data partitioning의 의미를 잊었다면 [이 곳](http://www.lucypark.kr/courses/2015-dm/multiple-linear-regression.html#data-partitioning)에 가서 복습하고 오자.
+    - Data partitioning의 의미를 잊었다면 [이 곳](multiple-linear-regression.html#data-partitioning)에 가서 복습하고 오자.
      데이터로 컴퓨터를 학습시킬 때 가장 중요한 개념 중 하나이니 반드시 익혀둬야 한다.
 - 당뇨병 데이터셋에서는 X, y를 단순한 list split을 통해 440개 record 중에서 400개를 training set, 40개를 test set으로 설정했다.
 이번에는 record가 70,000개인데, 어떻게 나누는 것이 좋을까?
@@ -282,8 +282,8 @@ MLR을 학습할 때와 마찬가지로 LogisticRegression 클래스를 import�
 먼저 데이터셋을 다운로드 받은 후, csv 파일을 열어 데이터 모양을 확인해보자.
 (csv 파일은 엑셀로 열 수 있는 spreadsheet 형태의 데이터이며 comma-separated-values의 약자이다.)
 
-- X: [lucypark.kr/courses/2015-dm/data-mnist-x-bin.csv](http://lucypark.kr/courses/2015-dm/data-mnist-x-bin.csv)
-- y: [lucypark.kr/courses/2015-dm/data-mnist-y-bin.csv](http://lucypark.kr/courses/2015-dm/data-mnist-y-bin.csv)
+- X: [lucypark.kr/courses/2015-dm/data/mnist-x-bin.csv](data/mnist-x-bin.csv)
+- y: [lucypark.kr/courses/2015-dm/data/mnist-y-bin.csv](data/mnist-y-bin.csv)
 
 다음으로 아래 코드를 이용해 csv 데이터를 로딩해보자.
 
@@ -292,8 +292,8 @@ MLR을 학습할 때와 마찬가지로 LogisticRegression 클래스를 import�
 
     :::python
     from numpy import genfromtxt
-    X_bin = genfromtxt('data-mnist-x-bin.csv', delimiter=',')
-    y_bin = genfromtxt('data-mnist-y-bin.csv', delimiter=',')
+    X_bin = genfromtxt('mnist-x-bin.csv', delimiter=',')
+    y_bin = genfromtxt('mnist-y-bin.csv', delimiter=',')
 
 > 참고: pandas 패키지의 `read_csv()`를 이용하면 더 간판하고 빠르게 csv 데이터를 읽을 수 있다.
 pandas는 파이썬에서 DataFrame 등을 이용하여 구조적 데이터를 편리하게 분석할 수 있게 해주는 인기있는 도구이다. 관심있다면 검색해보자.
