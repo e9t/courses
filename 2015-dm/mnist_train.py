@@ -18,8 +18,8 @@ y = d['target']
 
 # Option 2
 from numpy import genfromtxt
-X = genfromtxt('data-mnist-x-bin.csv', delimiter=',')
-y = genfromtxt('data-mnist-y-bin.csv', delimiter=',')
+X = genfromtxt('mnist-x-bin.csv', delimiter=',')
+y = genfromtxt('mnist-y-bin.csv', delimiter=',')
 
 print('2. data exploration')
 print("X[0]:", X[0])

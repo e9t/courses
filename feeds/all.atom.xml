@@ -109,7 +109,7 @@ Some jokes about package managing:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.ecogwiki.com/Hash-based_sampling"&gt;Data sampling&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;...&lt;a href="http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html"&gt;and more&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Dimensionality reduction</title><link href="http://lucypark.kr/courses/2015-dm/dimensionality-reduction.html" rel="alternate"></link><updated>2015-03-21T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-21:courses/2015-dm/dimensionality-reduction.html</id><summary type="html">&lt;h2&gt;Variable selection in regression&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Git</title><link href="http://lucypark.kr/courses/2015-ba/git.html" rel="alternate"></link><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-27:courses/2015-ba/git.html</id><summary type="html">&lt;p&gt;https://help.github.com/categories/advanced-git/&lt;/p&gt;</summary><category term="text"></category><category term="lectures"></category></entry><entry><title>Text mining</title><link href="http://lucypark.kr/courses/2015-ba/text-mining.html" rel="alternate"></link><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-27:courses/2015-ba/text-mining.html</id><summary type="html"></summary><category term="text"></category><category term="lectures"></category></entry><entry><title>Dimensionality reduction</title><link href="http://lucypark.kr/courses/2015-dm/dimensionality-reduction.html" rel="alternate"></link><updated>2015-03-21T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-21:courses/2015-dm/dimensionality-reduction.html</id><summary type="html">&lt;h2&gt;Variable selection in regression&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Why should we select a subset of variables?&lt;ul&gt;
 &lt;li&gt;May be expensive or not feasible to collect a full complement of predictors for future prediction.&lt;/li&gt;
@@ -153,7 +153,7 @@ Some jokes about package managing:
 &lt;/ul&gt;</summary></entry><entry><title>Scraping from the Web</title><link href="http://lucypark.kr/courses/2015-ba/crawling.html" rel="alternate"></link><updated>2015-03-20T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-ba/crawling.html</id><summary type="html">&lt;p&gt;Choose a target of your choice:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Target 1: &lt;a href="http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;amp;tradeTypeCd=&amp;amp;hscpTypeCd=&amp;amp;cortarNo=1162010200&amp;amp;mapLevel=10"&gt;Naver 부동산&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Target 2: &lt;a href="http://www.imdb.com/title/tt2802144/fullcredits?ref_=tt_cl_sm#cast"&gt;IMDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Target 2: &lt;a href="http://www.imdb.com/search/title?count=100&amp;amp;start=101"&gt;IMDB&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Target 3: &lt;a href="http://www.ted.com/talks"&gt;TED.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Method 1: ctrl + c / ctrl + v&lt;/h2&gt;
@@ -382,7 +382,7 @@ Some jokes about package managing:
 &lt;li&gt;&lt;a href="https://gist.github.com/e9t/9680106"&gt;Naver OnStage crawler&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://github.com/teampopong/crawlers"&gt;Team POPONG crawlers&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gist.github.com/e9t/551f9647f58800273025"&gt;Korean National Assembly bill crawler&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>Logistic regression</title><link href="http://lucypark.kr/courses/2015-dm/logistic-regression.html" rel="alternate"></link><updated>2015-03-20T09:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-dm/logistic-regression.html</id><summary type="html">&lt;h2&gt;오늘의 목표&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="lectures"></category><category term="crawling"></category></entry><entry><title>Logistic regression</title><link href="http://lucypark.kr/courses/2015-dm/logistic-regression.html" rel="alternate"></link><updated>2015-03-20T09:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-dm/logistic-regression.html</id><summary type="html">&lt;h2&gt;오늘의 목표&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;MLR의 블랙박스 열어보기&lt;/li&gt;
 &lt;li&gt;로지스틱 회귀모형 개념 익히고 실제로 구현하기&lt;/li&gt;
@@ -409,7 +409,7 @@ Some jokes about package managing:
 &lt;p&gt;ex: 33명 성인 여성의 나이와 수축혈압(SBP, systolic blood pressure)&lt;br&gt;
 &lt;div class="row"&gt;
     &lt;div class="col-md-8"&gt;
-    &lt;table class="table"&gt;&lt;tr&gt;&lt;th&gt;Age&lt;/th&gt;&lt;th&gt;SBP&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;131&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;23&lt;/td&gt;&lt;td&gt;128&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;116&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;27&lt;/td&gt;&lt;td&gt;106&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="2" class="data-link"&gt;&lt;a href="data-sbp.csv"&gt;data link&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+    &lt;table class="table"&gt;&lt;tr&gt;&lt;th&gt;Age&lt;/th&gt;&lt;th&gt;SBP&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;131&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;23&lt;/td&gt;&lt;td&gt;128&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;116&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;27&lt;/td&gt;&lt;td&gt;106&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="2" class="data-link"&gt;&lt;a href="data/sbp.csv"&gt;data link&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
     &lt;/div&gt;
     &lt;div class="col-md-4"&gt;
     &lt;img src="images/sbp.png" width="300px"&gt;
@@ -465,7 +465,7 @@ Some jokes about package managing:
 &lt;li&gt;&lt;code&gt;CD==0&lt;/code&gt;: negative class (normally the majority class)&lt;br&gt;
 &lt;div class="row"&gt;
     &lt;div class="col-md-8"&gt;
-    &lt;table class="table"&gt;&lt;tr&gt;&lt;th&gt;Age&lt;/th&gt;&lt;th&gt;CD&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;23&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;27&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="2" class="data-link"&gt;&lt;a href="data-cd.csv"&gt;data link&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+    &lt;table class="table"&gt;&lt;tr&gt;&lt;th&gt;Age&lt;/th&gt;&lt;th&gt;CD&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;23&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;27&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="2" class="data-link"&gt;&lt;a href="data/cd.csv"&gt;data link&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
     &lt;/div&gt;
     &lt;div class="col-md-4"&gt;
     &lt;img src="images/cd.png" width="300px"&gt;
@@ -520,7 +520,7 @@ Some jokes about package managing:
 &lt;/ul&gt;
 &lt;h2&gt;[Programming] Logistic regression with scikit-learn&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="../tips/terminal.md"&gt;먼저 시작하기 전에 터미널 프로그래밍을 위한 몇 가지 tip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../tips/terminal.html"&gt;먼저 시작하기 전에 터미널 프로그래밍을 위한 몇 가지 tip&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;1. Data acquisition&lt;/h3&gt;
 &lt;ul&gt;
@@ -657,7 +657,7 @@ Data exploration은 현재 가지고 있는 데이터를 이리저리 굴려가�
 &lt;ul&gt;
 &lt;li&gt;이번에는 데이터를 partitioning 해보자.&lt;ul&gt;
 &lt;li&gt;다시 한 번 얘기하지만, data partitioning은 &lt;strong&gt;overfitting 방지, 일반화 성능 향상&lt;/strong&gt;을 위해 하는 것이다.&lt;/li&gt;
-&lt;li&gt;Data partitioning의 의미를 잊었다면 &lt;a href="http://www.lucypark.kr/courses/2015-dm/multiple-linear-regression.html#data-partitioning"&gt;이 곳&lt;/a&gt;에 가서 복습하고 오자.
+&lt;li&gt;Data partitioning의 의미를 잊었다면 &lt;a href="multiple-linear-regression.html#data-partitioning"&gt;이 곳&lt;/a&gt;에 가서 복습하고 오자.
  데이터로 컴퓨터를 학습시킬 때 가장 중요한 개념 중 하나이니 반드시 익혀둬야 한다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -721,15 +721,15 @@ MLR을 학습할 때와 마찬가지로 LogisticRegression 클래스를 import�
 &lt;p&gt;먼저 데이터셋을 다운로드 받은 후, csv 파일을 열어 데이터 모양을 확인해보자.
 (csv 파일은 엑셀로 열 수 있는 spreadsheet 형태의 데이터이며 comma-separated-values의 약자이다.)&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;X: &lt;a href="http://lucypark.kr/courses/2015-dm/data-mnist-x-bin.csv"&gt;lucypark.kr/courses/2015-dm/data-mnist-x-bin.csv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;y: &lt;a href="http://lucypark.kr/courses/2015-dm/data-mnist-y-bin.csv"&gt;lucypark.kr/courses/2015-dm/data-mnist-y-bin.csv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;X: &lt;a href="data/mnist-x-bin.csv"&gt;lucypark.kr/courses/2015-dm/data/mnist-x-bin.csv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;y: &lt;a href="data/mnist-y-bin.csv"&gt;lucypark.kr/courses/2015-dm/data/mnist-y-bin.csv&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;다음으로 아래 코드를 이용해 csv 데이터를 로딩해보자.&lt;/p&gt;
 &lt;p&gt;여기서는 numpy의 &lt;a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.genfromtxt.html"&gt;&lt;code&gt;genfromtxt()&lt;/code&gt;&lt;/a&gt;를 써서 csv 파일을 로딩해보자.
 파일에서 데이터 로딩하는 것도 그리 어렵지 않다!&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;genfromtxt&lt;/span&gt;
-&lt;span class="n"&gt;X_bin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;genfromtxt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;data-mnist-x-bin.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;delimiter&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;y_bin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;genfromtxt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;data-mnist-y-bin.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;delimiter&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;X_bin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;genfromtxt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;mnist-x-bin.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;delimiter&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;y_bin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;genfromtxt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;mnist-y-bin.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;delimiter&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -2351,7 +2351,7 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>데이터마이닝을 소개합니다</title><link href="http://lucypark.kr/courses/2015-dm/data-mining.html" rel="alternate"></link><updated>2015-03-06T09:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-dm/data-mining.html</id><summary type="html">&lt;blockquote&gt;
+&lt;/ul&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>데이터마이닝을 소개합니다</title><link href="http://lucypark.kr/courses/data/mining.html" rel="alternate"></link><updated>2015-03-06T09:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/data/mining.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;이번 시간이 끝나고 나면:
 데이터마이닝에 대해 정의할 수 있게 됩니다. &lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2500,7 +2500,7 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;Course introduction&lt;ul&gt;&lt;li&gt;&lt;a href="course-logistics.html"&gt;Course logistics&lt;/a&gt;&lt;li&gt;GitHub&lt;li&gt;Having fun with Kaggle&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='http://goo.gl/forms/fE7ZIeL8VK'&gt;Homework 0&lt;/a&gt; (Due: 3/11)&lt;ul&gt;&lt;li&gt;CV + Self-intro&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;Tools for pragmatic data mining&lt;ul&gt;&lt;li&gt;&lt;a href="bash.html"&gt;Bash&lt;/a&gt;&lt;li&gt;&lt;a href="../tips/introduction-to-python.html"&gt;Python&lt;/a&gt;&lt;li&gt;Statistical Summaries and Exploratory Data Analysis&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;&lt;a href="crawling.html"&gt;Scraping from the Web&lt;/a&gt;&lt;ul&gt;&lt;li&gt;Proposal presentations&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Project proposals (300 words+)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Natural language processing&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Text mining&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/10&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/17&lt;/td&gt;&lt;td&gt;Mid-term Quiz&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
@@ -2650,7 +2650,7 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;Course introduction&lt;ul&gt;&lt;li&gt;&lt;a href="course-logistics.html"&gt;Course logistics&lt;/a&gt;&lt;li&gt;GitHub&lt;li&gt;Having fun with Kaggle&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='http://goo.gl/forms/fE7ZIeL8VK'&gt;Homework 0&lt;/a&gt; (Due: 3/11)&lt;ul&gt;&lt;li&gt;CV + Self-intro&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;Tools for pragmatic data mining&lt;ul&gt;&lt;li&gt;&lt;a href="bash.html"&gt;Bash&lt;/a&gt;&lt;li&gt;&lt;a href="../tips/introduction-to-python.html"&gt;Python&lt;/a&gt;&lt;li&gt;Statistical Summaries and Exploratory Data Analysis&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;&lt;a href="crawling.html"&gt;Scraping from the Web&lt;/a&gt;&lt;ul&gt;&lt;li&gt;Proposal presentations&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Project proposals (300 words+)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Natural language processing&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Text mining&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/10&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/17&lt;/td&gt;&lt;td&gt;Mid-term Quiz&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;

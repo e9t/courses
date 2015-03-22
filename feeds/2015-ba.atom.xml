@@ -85,10 +85,10 @@ Some jokes about package managing:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.ecogwiki.com/Hash-based_sampling"&gt;Data sampling&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;...&lt;a href="http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html"&gt;and more&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Scraping from the Web</title><link href="http://lucypark.kr/courses/2015-ba/crawling.html" rel="alternate"></link><updated>2015-03-20T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-ba/crawling.html</id><summary type="html">&lt;p&gt;Choose a target of your choice:&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Git</title><link href="http://lucypark.kr/courses/2015-ba/git.html" rel="alternate"></link><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-27:courses/2015-ba/git.html</id><summary type="html">&lt;p&gt;https://help.github.com/categories/advanced-git/&lt;/p&gt;</summary><category term="text"></category><category term="lectures"></category></entry><entry><title>Text mining</title><link href="http://lucypark.kr/courses/2015-ba/text-mining.html" rel="alternate"></link><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-27:courses/2015-ba/text-mining.html</id><summary type="html"></summary><category term="text"></category><category term="lectures"></category></entry><entry><title>Scraping from the Web</title><link href="http://lucypark.kr/courses/2015-ba/crawling.html" rel="alternate"></link><updated>2015-03-20T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-ba/crawling.html</id><summary type="html">&lt;p&gt;Choose a target of your choice:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Target 1: &lt;a href="http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;amp;tradeTypeCd=&amp;amp;hscpTypeCd=&amp;amp;cortarNo=1162010200&amp;amp;mapLevel=10"&gt;Naver 부동산&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Target 2: &lt;a href="http://www.imdb.com/title/tt2802144/fullcredits?ref_=tt_cl_sm#cast"&gt;IMDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Target 2: &lt;a href="http://www.imdb.com/search/title?count=100&amp;amp;start=101"&gt;IMDB&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Target 3: &lt;a href="http://www.ted.com/talks"&gt;TED.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Method 1: ctrl + c / ctrl + v&lt;/h2&gt;
@@ -317,7 +317,7 @@ Some jokes about package managing:
 &lt;li&gt;&lt;a href="https://gist.github.com/e9t/9680106"&gt;Naver OnStage crawler&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://github.com/teampopong/crawlers"&gt;Team POPONG crawlers&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gist.github.com/e9t/551f9647f58800273025"&gt;Korean National Assembly bill crawler&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>Pragmatic tools</title><link href="http://lucypark.kr/courses/2015-ba/pragmatic.html" rel="alternate"></link><updated>2015-03-13T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-13:courses/2015-ba/pragmatic.html</id><summary type="html">&lt;h1&gt;Great tools&lt;/h1&gt;
+&lt;/ul&gt;</summary><category term="lectures"></category><category term="crawling"></category></entry><entry><title>Pragmatic tools</title><link href="http://lucypark.kr/courses/2015-ba/pragmatic.html" rel="alternate"></link><updated>2015-03-13T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-13:courses/2015-ba/pragmatic.html</id><summary type="html">&lt;h1&gt;Great tools&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Stackoverflow&lt;/li&gt;
 &lt;li&gt;Google Scholar&lt;/li&gt;
@@ -544,7 +544,7 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;Course introduction&lt;ul&gt;&lt;li&gt;&lt;a href="course-logistics.html"&gt;Course logistics&lt;/a&gt;&lt;li&gt;GitHub&lt;li&gt;Having fun with Kaggle&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='http://goo.gl/forms/fE7ZIeL8VK'&gt;Homework 0&lt;/a&gt; (Due: 3/11)&lt;ul&gt;&lt;li&gt;CV + Self-intro&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;Tools for pragmatic data mining&lt;ul&gt;&lt;li&gt;&lt;a href="bash.html"&gt;Bash&lt;/a&gt;&lt;li&gt;&lt;a href="../tips/introduction-to-python.html"&gt;Python&lt;/a&gt;&lt;li&gt;Statistical Summaries and Exploratory Data Analysis&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;&lt;a href="crawling.html"&gt;Scraping from the Web&lt;/a&gt;&lt;ul&gt;&lt;li&gt;Proposal presentations&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Project proposals (300 words+)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Natural language processing&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;Text mining&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/10&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/17&lt;/td&gt;&lt;td&gt;Mid-term Quiz&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;

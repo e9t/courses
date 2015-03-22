@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>데이터마이닝을 소개합니다 — Courses</title>
-	<meta name="description" content="Title: 데이터마이닝을 소개합니다; Date: 2015-03-06; Author: Lucy Park; Courseid: 2015-dm; Metainfo: ">
+	<title>Text mining — Courses</title>
+	<meta name="description" content="Title: Text mining; Date: 2015-03-27; Author: Lucy Park; Courseid: 2015-ba; Metainfo: ">
 	<meta name="author" content="Lucy Park">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -30,96 +30,12 @@
 		<div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="article-header">
-        <h1 itemprop="name headline">데이터마이닝을 소개합니다</h1>
-		<time datetime="2015-03-06T09:00:00+09:00" itemprop="datePublished">Fri 06 March 2015</time>
+        <h1 itemprop="name headline">Text mining</h1>
+		<time datetime="2015-03-27T15:00:00+09:00" itemprop="datePublished">Fri 27 March 2015</time>
 	</div>
     <div class="article-toc"><b>Contents</b><p></p></div>
     <div itemprop="articleBody" class="article-body">
-        <blockquote>
-<p>이번 시간이 끝나고 나면:
-데이터마이닝에 대해 정의할 수 있게 됩니다. </p>
-</blockquote>
-<h2>한 마디로 "데이터마이닝"은?</h2>
-<p><strong>대용량의 데이터에 담긴 의미있는 규칙을 찾는 일</strong></p>
-<p>그런데 <a href="http://en.wikipedia.org/wiki/Data_mining">데이터마이닝(data mining)</a>은...</p>
-<ul>
-<li>많은 자료 속에 숨어있는 일정한 패턴(규칙)을 발견하는 일이기에 <a href="http://en.wikipedia.org/wiki/Pattern_recognition">패턴인식(pattern recognition)</a>의 영역과 맞닿아 있으며</li>
-<li>컴퓨터를 학습(훈련)시키는 <a href="http://en.wikipedia.org/wiki/Machine_learning">기계학습(machine learning)</a>과도 유사합니다</li>
-<li>좀더 발전적인 개념으로는 <a href="http://en.wikipedia.org/wiki/Artificial_intelligence">인공지능(artificial Intelligence)</a>도 있어요</li>
-</ul>
-<div class="center">
-<script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=data+mining,+pattern+recognition,+machine+learning,+artificial+intelligence&date=1/2014+12m&cmpt=q&tz&tz&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=680&h=330"></script>
-</div>
-
-<div class="caption">2014년 기준 데이터마이닝, 패턴인식, 기계학습, 인공지능에 대한 구글 트렌드. 음? 그렇다면 <a href="http://www.google.com/trends/explore#q=data%20mining%2C%20pattern%20recognition%2C%20machine%20learning%2C%20artificial%20intelligence%2C%20big%20data&cmpt=q&tz=">빅데이터(big data)</a>는? 데이터사이언스(data science)는?</div>
-
-<p>이 영역들은 각기 다른 탄생 배경을 가지고, 엄밀하게는 철학과 목적이 상당히 다르기도 하지만, 방법론의 측면에서는 상당히 유사해서 각 영역끼리 서로 배우는 점도 많지요.
-사실 공부도 같은 책으로 많이 해요.
-(심도있는 공부를 원하시는 분들은 아래 책들도 한 번 찾아보세요!)</p>
-<p><a href="http://ecx.images-amazon.com/images/I/612j5Uo43eL._AA160_.jpg"><img src="images/book1.jpg" height="200px"></a>
-<a href="http://ecx.images-amazon.com/images/I/41LeU3HcBdL._AA160_.jpg"><img src="images/book2.jpg" height="200px"></a>
-<a href="http://ecx.images-amazon.com/images/I/419Ml9MDMaL._AA160_.jpg"><img src="images/book3.jpg" height="200px"></a>
-<a href="http://ecx.images-amazon.com/images/I/51MucLjt9IL._AA160_.jpg"><img src="images/book4.jpg" height="200px"></a></p>
-<style>
-iframe {
-    width: 700px;
-    height: 330px;
-}
-</style>
-
-<h2>데이터가 우리 삶을 돕는 다섯 가지 방법</h2>
-<ol>
-<li>
-<p><a href="http://readme.skplanet.com/?p=8870">미래 교통정보 예측: SK Planet T map</a><br>
-    <a href="http://i1.daumcdn.net/thumb/R750x0/?fname=http%3A%2F%2Fcfile26.uf.tistory.com%2Fimage%2F2204B946524405E408A53F"><img src="images/tmap.png" width="500px"></a></p>
-</li>
-<li>
-<p><a href="http://watcha.net">영화 추천: Frograms Watcha</a><br>
-    <img src="images/watcha.png" width="500px"></p>
-</li>
-<li>
-<p><a href="http://google.com">문서 랭킹: Google</a><br>
-    <img src="images/google.png" width="500px"></p>
-</li>
-<li>
-<p><a href="http://labs.naver.com/tech.html#multimedia_recognition">음악 인식: Naver 앱 음악 및 와인라벨 인식</a><br>
-    <img src="images/naver.png" width="500px"></p>
-</li>
-<li>
-<p><a href="https://www.apple.com/ios/siri/">질의응답 (QA): Apple Siri</a><br>
-    <img src="images/siri0.jpg" width="30%">
-    <img src="images/siri1.jpg" width="30%">
-    <img src="images/siri2.jpg" width="30%"></p>
-<p>cf. IBM Watson</p>
-</li>
-</ol>
-<h2>데이터가 우리 삶을 바꿀 가지 방법</h2>
-<ol>
-<li>Jarvis and Samantha<br>
-    <img src="images/jarvis.png" width="40%">
-    <img src="images/samantha.png" width="40%">
-    <!--
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZwOxM0-byvc" frameborder="0" allowfullscreen></iframe>
-    --></li>
-<li>IOT<br>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/NjYTzvAVozo?list=PLl-15sUN2G4eEY2VOqxMEazASNrlMF5FP" frameborder="0" allowfullscreen></iframe></li>
-</ol>
-<h2>데이터마이너가 되면 좋은 점</h2>
-<ul>
-<li>세상의 다양한 면을, 다양한 관점에서 살펴볼 수 있습니다<ul>
-<li>마케팅부터 시작해서,</li>
-<li>주가의 흐름을 예측하거나(금융),</li>
-<li>DNA 분석이나 MRI 영상을 분석하기도 하며(의료),</li>
-<li>디지털 카메라에서 얼굴 인식(기계)을 하기도 합니다.</li>
-</ul>
-</li>
-<li>사실상 직업이 매일 바뀌는 것이나 다름없음</li>
-<li>물론 그 외에도 우리가 상상할 수 있는 대부분의 영역에 데이터마이닝이 적용된다는 사실!</li>
-</ul>
-<blockquote>
-<p>다음 시간 예고:
-데이터마이닝을 할 때 가장 중요한 것은? Asking the right question.</p>
-</blockquote>
+        
 
     </div>
     <div class="footnote">
@@ -133,7 +49,7 @@ iframe {
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/data-mining.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-ba/text-mining.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -149,13 +65,13 @@ iframe {
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
+                <a href="http://lucypark.kr/courses/category/2015-ba.html" rel="category">2015-ba</a>
             </span>
         </p>
         <p>
             Tags:
             <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/seoultech.html" rel="tag">seoultech</a>
+                <a href="http://lucypark.kr/courses/tag/text.html" rel="tag">text</a>
             </span>
             <span itemprop="keywords">
                 <a href="http://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
