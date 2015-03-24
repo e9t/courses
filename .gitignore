@@ -2,4 +2,5 @@
 .DS_Store
 cache/*
 output/*
+plugins/loadcsv
 theme/static/MathJax

@@ -36,8 +36,7 @@ Modified: 2015-03-16 18:37
 ### 학습데이터에 따른 분류: Supervised learning vs Unsupervised learning
 - **교사학습(Supervised learning)**
     - Goal: predict a single "target" or "outcome" variable $y$
-        - Finds relations between $X$ and $y$: $y = f(x_1, x_2, ..., x_n) + \epsilon$
-        - 입출력(input-output)의 쌍으로 구성된 training data로부터 입력을 출력을 사상하는 함수를 학습하는 과정
+        - 입출력(input $X$-output$y$)의 쌍으로 구성된 training data로부터 입력을 출력을 사상하는 함수를 학습하는 과정
     - Method: *Learn* on training data, *score* on test data
         - 즉, 입력벡터를 $X$, 그에 대응하는 출력벡터(i.e., label)를 $y$라고 할 때, training data는 $D={(x, y)}$로 주어지게 되며, 모델은 이 training data에 기반하여 관측하지 않은 새로운 데이터 $x'$가 들어왔을 때 그에 해당되는 label, $y'$을 추론하는 방법을 배우게 된다
     - ex: 분류(classification)와 회귀분석(regression)

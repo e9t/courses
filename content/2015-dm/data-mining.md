@@ -60,7 +60,7 @@ iframe {
 
     cf. IBM Watson
 
-## 데이터가 우리 삶을 바꿀 가지 방법
+## 데이터가 우리 삶을 바꿀 방법
 
 1. Jarvis and Samantha<br>
     <img src="images/jarvis.png" width="40%">

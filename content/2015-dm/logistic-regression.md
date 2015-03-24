@@ -41,16 +41,16 @@ Math: True
 
 - MLR의 파라미터 $b_j$들을 추정하기 위해서는 OLS를 사용한다
     - 정답과의 오차를 최소화한다는 의미
-- Formulation
-    - Hypothesis: $f(x) = b_0 + b_1x_1 + b_2x_2 + ... + b_mx_m$
-    - Parameters: $b_0, b_1, ..., b_m$
-    - Cost function: $J(b_0, b_1, ..., b_m) = \frac{1}{2n}\sum_{i=1}^{n}(f(x_1^{(i)}) - y^{(i)})^2$
+- Formulation (단순화하기 위해 $b_0, b_1$만 고려해보자)
+    - Hypothesis: $h(x) = b_0 + b_1x_1$
+    - Parameters: $b_0, b_1$
+    - Cost function: $J(b_0, b_1) = \frac{1}{2n}\sum_{i=1}^{n}(h(x_1^{(i)}) - y^{(i)})^2$
         - The equation above is called the MSE(mean squared error, 오차의 제곱의 평균)
         - MSE 말고도 평균 오차(mean error), MAE, MAPE, RMSE 등을 사용할 수도 있다
-            - Mean error: $\frac{1}{n}\sum_{i=1}^{n} (f(x_1^{(i)}) - y^{(i)})$
-            - Mean absolute error (MAE): $\frac{1}{n}\sum_{i=1}^{n} |f(x_1^{(i)}) - y^{(i)}|$
-            - Mean absolute percentage error (MAPE): $100 \times \frac{1}{n}\sum_{i=1}^{n} \frac{|f(x_1^{(i)}) - y^{(i)}|}{y^{(i)}}$
-            - Root mean squared error (RMSE): $\sqrt{\frac{1}{2n}\sum_{i=1}^{n}(f(x_1^{(i)}) - y^{(i)})^2}$
+            - Mean error: $\frac{1}{n}\sum_{i=1}^{n} (h(x_1^{(i)}) - y^{(i)})$
+            - Mean absolute error (MAE): $\frac{1}{n}\sum_{i=1}^{n} |h(x_1^{(i)}) - y^{(i)}|$
+            - Mean absolute percentage error (MAPE): $100 \times \frac{1}{n}\sum_{i=1}^{n} \frac{|h(x_1^{(i)}) - y^{(i)}|}{y^{(i)}}$
+            - Root mean squared error (RMSE): $\sqrt{\frac{1}{2n}\sum_{i=1}^{n}(h(x_1^{(i)}) - y^{(i)})^2}$
         - 이 값은 작을수록 좋음. 즉, 좋은 MSE가 되게 하는 모델이 좋은 모델
         - 바꿔말하면 좋은 모델을 만들기 위해서는 작은 MSE가 되게 하면 됨
     - Goal: $arg \min J(b_0, b_1, ..., b_m)$
@@ -75,17 +75,17 @@ Math: True
         <img src="images/cd.png" width="300px">
         </div>
     </div>
-    - 위와 같이 일반적인 linear regression 알고리즘을 fitting한 후 $f(x) = ax+b$에 대해 다음과 같은 모델을 추가할 수 있다
-        - if $f(x) \geq 0.5$, then $\hat{y}=1$
-        - if $f(x) \lt 0.5$, then $\hat{y}=0$
+    - 위와 같이 일반적인 linear regression 알고리즘을 fitting한 후 $h(x) = ax+b$에 대해 다음과 같은 모델을 추가할 수 있다
+        - if $h(x) \geq 0.5$, then $\hat{y}=1$
+        - if $h(x) \lt 0.5$, then $\hat{y}=0$
     - 하지만 이 방법은 두 가지 측면에서 적절하지 않다.
         1. [Outlier](http://en.wikipedia.org/wiki/Outlier)에 robust하지 못하다. 가령 나이가 1세이고 CD==0인 단 한 개의 점이 training set에 추가된다면 모델은 어떻게 바뀔까?
-        2. 실제로 $y$값은 0, 1의 두 가지 값밖에 가지지 못함에도 불구하고, $-\infty < f(x) < \infty$ 여서 $f(x)$가 0과 1 사이의 값 뿐 아니라 1보다 크거나 0보다 작은 값도 가질 수 있게 된다. (이 때, 분류 오차도 엄청 커질 수 있다)
+        2. 실제로 $y$값은 0, 1의 두 가지 값밖에 가지지 못함에도 불구하고, $-\infty < h(x) < \infty$ 여서 $h(x)$가 0과 1 사이의 값 뿐 아니라 1보다 크거나 0보다 작은 값도 가질 수 있게 된다. (이 때, 분류 오차도 엄청 커질 수 있다)
 - Logistic Regression? Fit a linear relationship between a *categorical* dependent variable $y$ and a set of independent variables $x_1,x_2,...,x_m$
     - 주의: 이름에 등장하는 "regression"이라는 표현과는 달리 logisitic regression은 분류 문제를 풀기 위한 알고리즘!
     - logistic regression = logit regression == maximum-entropy classification (MaxEnt) == log-linear classifier
-- 목표: $0 \leq f(x) \leq 1$가 되는 $f(x)$를 만들어보자.
-    - $f(x) = g(b_0 + b_1x_1 + ... + b_mx_m)$: Multiple linear regression에 함수 $g(x)$를 씌운 꼴
+- 목표: $0 \leq h(x) \leq 1$가 되는 $h(x)$를 만들어보자.
+    - $h(x) = g(b_0 + b_1x_1 + ... + b_mx_m)$: Multiple linear regression에 함수 $g(x)$를 씌운 꼴
     - where $g(z) = \frac{1}{1+e^{-z}}$ ("logistic function" or "[sigmoid function](http://en.wikipedia.org/wiki/Sigmoid_function)")
 
     <img src="images/logistic.png" width="300px">
@@ -168,6 +168,7 @@ where $g(x, w) = \frac{1}{1+\exp{-wx}}$
 1. $y$ 값으로 설정할만한 실수형 혹은 범주형 변수가 있는가?
 1. Missing data가 있는가?
 1. 변수의 종류는 무엇인가? 실수형? 범주형?
+    - 실수형은 정규화(normalization)해주는 것이 일반적
     - 범주형은 1-of-c 코딩 등의 방식으로 변환해주는 것이 일반적
 1. 데이터는 어떻게 분할할까?
     - Training:Test=60:40이 일반적이기는 하지만 다른 방법은 없을까?
