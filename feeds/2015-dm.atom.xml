@@ -1093,7 +1093,91 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
+&lt;/ul&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>데이터마이닝을 소개합니다</title><link href="http://lucypark.kr/courses/2015-dm/data-mining.html" rel="alternate"></link><updated>2015-03-06T09:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-dm/data-mining.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;이번 시간이 끝나고 나면:
+데이터마이닝에 대해 정의할 수 있게 됩니다. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;한 마디로 "데이터마이닝"은?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;대용량의 데이터에 담긴 의미있는 규칙을 찾는 일&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;그런데 &lt;a href="http://en.wikipedia.org/wiki/Data_mining"&gt;데이터마이닝(data mining)&lt;/a&gt;은...&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;많은 자료 속에 숨어있는 일정한 패턴(규칙)을 발견하는 일이기에 &lt;a href="http://en.wikipedia.org/wiki/Pattern_recognition"&gt;패턴인식(pattern recognition)&lt;/a&gt;의 영역과 맞닿아 있으며&lt;/li&gt;
+&lt;li&gt;컴퓨터를 학습(훈련)시키는 &lt;a href="http://en.wikipedia.org/wiki/Machine_learning"&gt;기계학습(machine learning)&lt;/a&gt;과도 유사합니다&lt;/li&gt;
+&lt;li&gt;좀더 발전적인 개념으로는 &lt;a href="http://en.wikipedia.org/wiki/Artificial_intelligence"&gt;인공지능(artificial Intelligence)&lt;/a&gt;도 있어요&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="center"&gt;
+&lt;script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&amp;q=data+mining,+pattern+recognition,+machine+learning,+artificial+intelligence&amp;date=1/2014+12m&amp;cmpt=q&amp;tz&amp;tz&amp;content=1&amp;cid=TIMESERIES_GRAPH_0&amp;export=5&amp;w=680&amp;h=330"&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;div class="caption"&gt;2014년 기준 데이터마이닝, 패턴인식, 기계학습, 인공지능에 대한 구글 트렌드. 음? 그렇다면 &lt;a href="http://www.google.com/trends/explore#q=data%20mining%2C%20pattern%20recognition%2C%20machine%20learning%2C%20artificial%20intelligence%2C%20big%20data&amp;cmpt=q&amp;tz="&gt;빅데이터(big data)&lt;/a&gt;는? 데이터사이언스(data science)는?&lt;/div&gt;
+
+&lt;p&gt;이 영역들은 각기 다른 탄생 배경을 가지고, 엄밀하게는 철학과 목적이 상당히 다르기도 하지만, 방법론의 측면에서는 상당히 유사해서 각 영역끼리 서로 배우는 점도 많지요.
+사실 공부도 같은 책으로 많이 해요.
+(심도있는 공부를 원하시는 분들은 아래 책들도 한 번 찾아보세요!)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://ecx.images-amazon.com/images/I/612j5Uo43eL._AA160_.jpg"&gt;&lt;img src="images/book1.jpg" height="200px"&gt;&lt;/a&gt;
+&lt;a href="http://ecx.images-amazon.com/images/I/41LeU3HcBdL._AA160_.jpg"&gt;&lt;img src="images/book2.jpg" height="200px"&gt;&lt;/a&gt;
+&lt;a href="http://ecx.images-amazon.com/images/I/419Ml9MDMaL._AA160_.jpg"&gt;&lt;img src="images/book3.jpg" height="200px"&gt;&lt;/a&gt;
+&lt;a href="http://ecx.images-amazon.com/images/I/51MucLjt9IL._AA160_.jpg"&gt;&lt;img src="images/book4.jpg" height="200px"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;style&gt;
+iframe {
+    width: 700px;
+    height: 330px;
+}
+&lt;/style&gt;
+
+&lt;h2&gt;데이터가 우리 삶을 돕는 다섯 가지 방법&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://readme.skplanet.com/?p=8870"&gt;미래 교통정보 예측: SK Planet T map&lt;/a&gt;&lt;br&gt;
+    &lt;a href="http://i1.daumcdn.net/thumb/R750x0/?fname=http%3A%2F%2Fcfile26.uf.tistory.com%2Fimage%2F2204B946524405E408A53F"&gt;&lt;img src="images/tmap.png" width="500px"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://watcha.net"&gt;영화 추천: Frograms Watcha&lt;/a&gt;&lt;br&gt;
+    &lt;img src="images/watcha.png" width="500px"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://google.com"&gt;문서 랭킹: Google&lt;/a&gt;&lt;br&gt;
+    &lt;img src="images/google.png" width="500px"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://labs.naver.com/tech.html#multimedia_recognition"&gt;음악 인식: Naver 앱 음악 및 와인라벨 인식&lt;/a&gt;&lt;br&gt;
+    &lt;img src="images/naver.png" width="500px"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.apple.com/ios/siri/"&gt;질의응답 (QA): Apple Siri&lt;/a&gt;&lt;br&gt;
+    &lt;img src="images/siri0.jpg" width="30%"&gt;
+    &lt;img src="images/siri1.jpg" width="30%"&gt;
+    &lt;img src="images/siri2.jpg" width="30%"&gt;&lt;/p&gt;
+&lt;p&gt;cf. IBM Watson&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;데이터가 우리 삶을 바꿀 가지 방법&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Jarvis and Samantha&lt;br&gt;
+    &lt;img src="images/jarvis.png" width="40%"&gt;
+    &lt;img src="images/samantha.png" width="40%"&gt;
+    &lt;!--
+    &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ZwOxM0-byvc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+    --&gt;&lt;/li&gt;
+&lt;li&gt;IOT&lt;br&gt;
+    &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/NjYTzvAVozo?list=PLl-15sUN2G4eEY2VOqxMEazASNrlMF5FP" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;데이터마이너가 되면 좋은 점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;세상의 다양한 면을, 다양한 관점에서 살펴볼 수 있습니다&lt;ul&gt;
+&lt;li&gt;마케팅부터 시작해서,&lt;/li&gt;
+&lt;li&gt;주가의 흐름을 예측하거나(금융),&lt;/li&gt;
+&lt;li&gt;DNA 분석이나 MRI 영상을 분석하기도 하며(의료),&lt;/li&gt;
+&lt;li&gt;디지털 카메라에서 얼굴 인식(기계)을 하기도 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;사실상 직업이 매일 바뀌는 것이나 다름없음&lt;/li&gt;
+&lt;li&gt;물론 그 외에도 우리가 상상할 수 있는 대부분의 영역에 데이터마이닝이 적용된다는 사실!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;다음 시간 예고:
+데이터마이닝을 할 때 가장 중요한 것은? Asking the right question.&lt;/p&gt;
+&lt;/blockquote&gt;</summary><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Data Mining (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-dm/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-dm/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Data Mining class of 2015!
 Here you'll find all course materials, guides and schedules.
 For discussions, please visit the class &lt;a href="http://eclass.seoultech.ac.kr/"&gt;e-class&lt;/a&gt;.&lt;/p&gt;

@@ -35,7 +35,60 @@
 	</div>
     <div class="article-toc"><b>Contents</b><p></p></div>
     <div itemprop="articleBody" class="article-body">
-        
+        <blockquote>
+<p>We use Python 3 in this tutorial</p>
+</blockquote>
+<h2>Terminologies</h2>
+<ul>
+<li>Document</li>
+<li>Corpus: A set of documents</li>
+<li>Token</li>
+<li>Morphemes</li>
+</ul>
+<h2>Python Packages for Text Mining and NLP</h2>
+<h3>NLTK</h3>
+<h3>Gensim</h3>
+<h3>KoNLPy</h3>
+<h3><a href="https://github.com/ryanmcgrath/twython">Twython</a></h3>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">twython</span> <span class="kn">import</span> <span class="n">Twython</span>
+<span class="kn">import</span> <span class="nn">settings</span> <span class="kn">as</span> <span class="nn">s</span>
+<span class="n">twitter</span> <span class="o">=</span> <span class="n">Twython</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">APP_KEY</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">APP_SECRET</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">OAUTH_TOKEN</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">OAUTH_TOKEN_SECRET</span><span class="p">)</span>
+<span class="n">tweets</span> <span class="o">=</span> <span class="n">twitter</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;삼성&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span><span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">][</span><span class="s">&#39;screen_name&#39;</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;text&#39;</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;created_at&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">[</span><span class="s">&#39;statuses&#39;</span><span class="p">]]</span>
+</pre></div>
+
+
+<ul>
+<li>Useful for Korean text analysis</li>
+<li>Supports five different morphological analyzers<ul>
+<li>Hannanum</li>
+<li>Kkma</li>
+<li>Mecab</li>
+<li>Komoran</li>
+<li>Twitter</li>
+</ul>
+</li>
+</ul>
+<h2>Text classification</h2>
+<h3>Sentiment analysis</h3>
+<ul>
+<li>https://github.com/nltk/nltk/wiki/Sentiment-Analysis</li>
+</ul>
+<h2>Text clustering</h2>
+<h3>Topic modeling</h3>
+<h2>Machine translation</h2>
+<ul>
+<li>http://www.statmt.org/</li>
+</ul>
+<h2>Information extraction</h2>
+<h3>Noun-phrase chunking</h3>
+<h2>Deep learning</h2>
+<ul>
+<li>https://github.com/nltk/nltk/wiki/Installing-Third-Party-Software#senna-for-various-nlp-tasks<ul>
+<li>http://ml.nec-labs.com/senna/</li>
+</ul>
+</li>
+</ul>
 
     </div>
     <div class="footnote">
