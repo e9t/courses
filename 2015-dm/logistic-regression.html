@@ -76,16 +76,16 @@
 <li>정답과의 오차를 최소화한다는 의미</li>
 </ul>
 </li>
-<li>Formulation<ul>
-<li>Hypothesis: $f(x) = b_0 + b_1x_1 + b_2x_2 + ... + b_mx_m$</li>
-<li>Parameters: $b_0, b_1, ..., b_m$</li>
-<li>Cost function: $J(b_0, b_1, ..., b_m) = \frac{1}{2n}\sum_{i=1}^{n}(f(x_1^{(i)}) - y^{(i)})^2$<ul>
+<li>Formulation (단순화하기 위해 $b_0, b_1$만 고려해보자)<ul>
+<li>Hypothesis: $h(x) = b_0 + b_1x_1$</li>
+<li>Parameters: $b_0, b_1$</li>
+<li>Cost function: $J(b_0, b_1) = \frac{1}{2n}\sum_{i=1}^{n}(h(x_1^{(i)}) - y^{(i)})^2$<ul>
 <li>The equation above is called the MSE(mean squared error, 오차의 제곱의 평균)</li>
 <li>MSE 말고도 평균 오차(mean error), MAE, MAPE, RMSE 등을 사용할 수도 있다<ul>
-<li>Mean error: $\frac{1}{n}\sum_{i=1}^{n} (f(x_1^{(i)}) - y^{(i)})$</li>
-<li>Mean absolute error (MAE): $\frac{1}{n}\sum_{i=1}^{n} |f(x_1^{(i)}) - y^{(i)}|$</li>
-<li>Mean absolute percentage error (MAPE): $100 \times \frac{1}{n}\sum_{i=1}^{n} \frac{|f(x_1^{(i)}) - y^{(i)}|}{y^{(i)}}$</li>
-<li>Root mean squared error (RMSE): $\sqrt{\frac{1}{2n}\sum_{i=1}^{n}(f(x_1^{(i)}) - y^{(i)})^2}$</li>
+<li>Mean error: $\frac{1}{n}\sum_{i=1}^{n} (h(x_1^{(i)}) - y^{(i)})$</li>
+<li>Mean absolute error (MAE): $\frac{1}{n}\sum_{i=1}^{n} |h(x_1^{(i)}) - y^{(i)}|$</li>
+<li>Mean absolute percentage error (MAPE): $100 \times \frac{1}{n}\sum_{i=1}^{n} \frac{|h(x_1^{(i)}) - y^{(i)}|}{y^{(i)}}$</li>
+<li>Root mean squared error (RMSE): $\sqrt{\frac{1}{2n}\sum_{i=1}^{n}(h(x_1^{(i)}) - y^{(i)})^2}$</li>
 </ul>
 </li>
 <li>이 값은 작을수록 좋음. 즉, 좋은 MSE가 되게 하는 모델이 좋은 모델</li>
@@ -124,14 +124,14 @@
     <img src="images/cd.png" width="300px">
     </div>
 </div></li>
-<li>위와 같이 일반적인 linear regression 알고리즘을 fitting한 후 $f(x) = ax+b$에 대해 다음과 같은 모델을 추가할 수 있다<ul>
-<li>if $f(x) \geq 0.5$, then $\hat{y}=1$</li>
-<li>if $f(x) \lt 0.5$, then $\hat{y}=0$</li>
+<li>위와 같이 일반적인 linear regression 알고리즘을 fitting한 후 $h(x) = ax+b$에 대해 다음과 같은 모델을 추가할 수 있다<ul>
+<li>if $h(x) \geq 0.5$, then $\hat{y}=1$</li>
+<li>if $h(x) \lt 0.5$, then $\hat{y}=0$</li>
 </ul>
 </li>
 <li>하지만 이 방법은 두 가지 측면에서 적절하지 않다.<ol>
 <li><a href="http://en.wikipedia.org/wiki/Outlier">Outlier</a>에 robust하지 못하다. 가령 나이가 1세이고 CD==0인 단 한 개의 점이 training set에 추가된다면 모델은 어떻게 바뀔까?</li>
-<li>실제로 $y$값은 0, 1의 두 가지 값밖에 가지지 못함에도 불구하고, $-\infty &lt; f(x) &lt; \infty$ 여서 $f(x)$가 0과 1 사이의 값 뿐 아니라 1보다 크거나 0보다 작은 값도 가질 수 있게 된다. (이 때, 분류 오차도 엄청 커질 수 있다)</li>
+<li>실제로 $y$값은 0, 1의 두 가지 값밖에 가지지 못함에도 불구하고, $-\infty &lt; h(x) &lt; \infty$ 여서 $h(x)$가 0과 1 사이의 값 뿐 아니라 1보다 크거나 0보다 작은 값도 가질 수 있게 된다. (이 때, 분류 오차도 엄청 커질 수 있다)</li>
 </ol>
 </li>
 </ul>
@@ -142,9 +142,9 @@
 </ul>
 </li>
 <li>
-<p>목표: $0 \leq f(x) \leq 1$가 되는 $f(x)$를 만들어보자.</p>
+<p>목표: $0 \leq h(x) \leq 1$가 되는 $h(x)$를 만들어보자.</p>
 <ul>
-<li>$f(x) = g(b_0 + b_1x_1 + ... + b_mx_m)$: Multiple linear regression에 함수 $g(x)$를 씌운 꼴</li>
+<li>$h(x) = g(b_0 + b_1x_1 + ... + b_mx_m)$: Multiple linear regression에 함수 $g(x)$를 씌운 꼴</li>
 <li>where $g(z) = \frac{1}{1+e^{-z}}$ ("logistic function" or "<a href="http://en.wikipedia.org/wiki/Sigmoid_function">sigmoid function</a>")</li>
 </ul>
 <p><img src="images/logistic.png" width="300px"></p>
@@ -239,6 +239,7 @@
 <li>$y$ 값으로 설정할만한 실수형 혹은 범주형 변수가 있는가?</li>
 <li>Missing data가 있는가?</li>
 <li>변수의 종류는 무엇인가? 실수형? 범주형?<ul>
+<li>실수형은 정규화(normalization)해주는 것이 일반적</li>
 <li>범주형은 1-of-c 코딩 등의 방식으로 변환해주는 것이 일반적</li>
 </ul>
 </li>
@@ -570,6 +571,18 @@ $(function(){
 </script>
 <script type="text/javascript"
     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', UA-4510606-3, 'aboutwilson.net');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+
 </script>
 </body>
 </html>
