@@ -81,6 +81,11 @@ pre.ipynb {
 	font-size: 13px;
 }
 
+pre.result {
+	background: white;
+    border: none;
+}
+
 /* remove the prompt div from text cells */
 .prompt {
 	display: none;
