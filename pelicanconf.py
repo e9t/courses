@@ -51,3 +51,6 @@ COURSES = ['2015-dm', '2015-ba']
 
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['loadcsv']
+
+GOOGLE_ANALYTICS = 'UA-4510606-3'
+#GITHUB_URL = 'http://github.com/e9t/courses'
