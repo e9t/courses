@@ -2,7 +2,6 @@ Title: Introduction to Python
 Date: 2015-03-08 18:00
 Toc: True
 
-
 ## 오늘의 목표
 
 - 나도 할 수 있다, 프로그래밍!
@@ -12,6 +11,8 @@ Toc: True
     - <s>간지도 좀 남</s>
 
 ![programmer](https://s-media-cache-ak0.pinimg.com/236x/7b/b7/06/7bb706cc6f2ac6e62c58b299acf3f362.jpg)
+
+> 이 튜토리얼은 프로그래밍 초보자를 대상으로 하는 것이기는 하지만, for문, if문, 변수 등 프로그래밍의 기본적인 개념은 숙지하고 있다고 가정하고 진행됩니다. 만일 이게 무슨 말인지 모르겠다면 [이 링크](http://doc.pyschools.com/html/index.html)에서 간단히 공부해보세요 :)
 
 ## 들어가기 전에
 
@@ -143,7 +144,7 @@ Toc: True
             1. 파이썬 3 is [the way to go](http://pythonkr.github.io/pyconkr-2014/pdf/pyconkr-2014-25_geofront.pdf)
     <!-- - 그리고 자꾸 패키지, 패키지하는데 패키지가 뭔가요? -->
 2. Install Anaconda
-    - 고맙게도 파이썬 환경변수 설정은 따로 할 필요없이 아나콘다가 알아서 해줌<br>
+    - 고맙게도 파이썬 경로에 대한 환경변수 설정은 따로 할 필요없이 아나콘다가 알아서 해줌<br>
     <img src="images/anaconda2.png" width="400px">
 3. Run Python!
     - 다음과 같이 터미널을 열자:
@@ -594,7 +595,27 @@ list 분할은 데이터 분석에서 데이터를 두 개 이상의 set으로 p
 ### 윈도우 프로그래머를 위한 팁
 
 1. 윈도우에서 자주 속썩이는 것들
-    1. 인코딩이 골치. UTF8 쓰는게 OS간 호환성에 가장 좋지만, 윈도우는 EUC-KR이 기본. 한글 사용자라면 [유니코드가 뭔지 알아보자](http://www.joelonsoftware.com/articles/Unicode.html).
+    1. 인코딩이 골치. UTF8 쓰는게 OS간 호환성에 가장 좋지만, 윈도우는 cp949이 기본. 한글 사용자라면 [유니코드가 뭔지 알아보자](http://www.joelonsoftware.com/articles/Unicode.html).
+        - 한편, 파이썬 스크립트를 실행했을 때 아래의 에러가 생길 수 있다.
+
+                :::bash
+                UnicodeEncodeError: 'cp949' codec can't encode character '\u20a9' in position 90: illegal multibyte sequence`
+
+        - 이는 윈도우에서 기본 인코딩을 cp949를 사용하고 있지만, 우리가 utf8을 사용해서 발생하는 문제다. 한번 확인해볼까?
+
+                :::python
+                import locale; locale.getpreferredencoding()     # 아마 cp949, 바꿔주지 않아도 되나 매번 인코딩 명시해야
+                import sys; sys.stdout.encoding                  # 아마 cp949, 이건 PYTHONIOENCODING 환경변수를 utf8로 설정하면 바뀜
+                import sys; sys.getdefaultencoding()             # 아마 utf8, 굿
+
+        - 이 때 애를 먹지 않기 위해서는 두 가지 대응 방법이 있는데
+            - 1) 일괄적으로 utf-8을 사용하지 않고 cp949를 쓰거나
+            - 2) 다소 번거롭더라도 utf-8을 사용하도록 설정을 변경하는 것이다
+        - 위에서 2)를 따를 경우, 지금 당장 할 수 있는 것은 딱 한 가지이다. 윈도우의 환경변수 설정에 들어가서 `PYTHONIOENCODING`의 값을 `utf-8`로 설정하는 것. 그 후에 쉘을 다시 닫았다가 연 후 아래를 입력해보자. 아마 값이 달라졌을 것이다.
+
+                :::python
+                import sys; sys.stdout.encoding                  # 아마 utf-8
+
     1. [Newlines가 골치](http://blog.codinghorror.com/the-great-newline-schism/).
     1. 역슬래시가 골치
         - 왜 내 키보드에는 역슬래시가 없을까? (폰트 문제)
