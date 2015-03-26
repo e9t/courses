@@ -113,7 +113,7 @@ Some jokes about package managing:
 &lt;li&gt;예전에 내가 연구실 프로젝트 위키에 적었던 글: https://sites.google.com/a/dm.snu.ac.kr/bigdata/documentations/gongdong-gaebalhwangyeong-guchug/beojyeon-gwanli-siseutem-e-gwanhayeo&lt;/li&gt;
 &lt;li&gt;스타트업이 많이 사용하는 도구 (우측 하단에 버젼관리 도구들 있음) 좀 오래됐지만.... 더 최근자료가 있을지 모르겠다: http://www.pinterest.com/pin/13933080068114315/&lt;/li&gt;
 &lt;li&gt;이제 이 정도는 시시해? https://help.github.com/categories/advanced-git/&lt;/li&gt;
-&lt;/ol&gt;</summary><category term="text"></category><category term="lectures"></category></entry><entry><title>Text mining</title><link href="http://lucypark.kr/courses/2015-ba/text-mining.html" rel="alternate"></link><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-27:courses/2015-ba/text-mining.html</id><summary type="html">&lt;blockquote&gt;
+&lt;/ol&gt;</summary><category term="text"></category><category term="lectures"></category></entry><entry><title>Mining English and Korean text with Python</title><link href="http://lucypark.kr/courses/2015-ba/text-mining.html" rel="alternate"></link><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-27:courses/2015-ba/text-mining.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;We use Python 3 in this tutorial, but provide minimal guidelines for Python 2.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;Terminologies&lt;/h2&gt;
