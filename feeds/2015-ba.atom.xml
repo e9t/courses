@@ -892,10 +892,21 @@ lets use one short sentence for each language.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3&gt;word2vec in the real world&lt;/h3&gt;
+&lt;p&gt;Not enough? Let's see a real life example.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data source: Naver News &amp;amp; Naver blog&lt;br&gt;
+    &lt;img src="images/experiment.png" width="500px"&gt;&lt;/li&gt;
+&lt;li&gt;Questions&lt;br&gt;
+    &lt;img src="images/questions.png" width="500px"&gt;&lt;/li&gt;
+&lt;li&gt;Matching pairs: 그/Noun:남자/Noun = 그녀/Noun:?&lt;br&gt;
+    &lt;img src="images/pairs.png" width="500px"&gt;&lt;/li&gt;
+&lt;li&gt;Visualization&lt;br&gt;
+    &lt;img src="images/tsne1.png" width="600px"&gt;&lt;br&gt;
+    &lt;img src="images/tsne2.png" width="600px"&gt;&lt;br&gt;
+    &lt;img src="images/tsne3.png" width="600px"&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!--
-### word2vec on Korean text
-
-Not enough? Let's see a real life example.
 
 ## Text classification
 ### Sentiment analysis
