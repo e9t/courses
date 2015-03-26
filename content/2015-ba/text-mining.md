@@ -1,4 +1,4 @@
-Title: Text mining
+Title: Mining English and Korean text with Python
 Date: 2015-03-27 15:00
 Tags: text, lectures
 Courseid: 2015-ba
