@@ -121,19 +121,42 @@ Some jokes about package managing:
 &lt;h2&gt;Text analysis process&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Load text&lt;/li&gt;
-&lt;li&gt;Tokenize text&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
+&lt;li&gt;Tokenize text (ex: stemming, morph analyzing)&lt;/li&gt;
+&lt;li&gt;Tag tokens (ex: POS, NER)&lt;/li&gt;
+&lt;li&gt;Token(Feature) selection and/or filter/rank tokens (ex: stopword removal, TF-IDF)&lt;/li&gt;
+&lt;li&gt;...and so on (ex: calculate word/document similarities, cluster documents)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Python Packages for Text Mining and NLP&lt;/h2&gt;
 &lt;p&gt;...that we use in this tutorial.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href="http://nltk.org"&gt;NLTK&lt;/a&gt;: Provides modules for text analysis (mostly language independent)&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.nltk.org/book/ch02.html"&gt;Text corpora&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.nltk.org/api/nltk.tag.html"&gt;Word POS, NER classification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://nltk.org"&gt;NLTK&lt;/a&gt;: Provides modules for text analysis (mostly language independent)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install nltk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.nltk.org/book/ch02.html"&gt;Text corpora&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;download&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;gutenberg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;download&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;maxent_treebank_pos_tagger&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.nltk.org/api/nltk.tag.html"&gt;Word POS, NER classification&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.nltk.org/book/ch06.html"&gt;Document classification&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="http://konlpy.org"&gt;KoNLPy&lt;/a&gt;: Provides modules for Korean text analysis&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://konlpy.org"&gt;KoNLPy&lt;/a&gt;: Provides modules for Korean text analysis&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install konlpy
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://konlpy.org/en/latest/data/#corpora"&gt;Text corpora&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://konlpy.org/en/latest/api/konlpy.tag/"&gt;Word POS classification&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;Hannanum&lt;/li&gt;
@@ -145,7 +168,13 @@ Some jokes about package managing:
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="http//radimrehurek.com/gensim/"&gt;Gensim&lt;/a&gt;: Provides modules for topic modeling and calculating similarities among documents&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http//radimrehurek.com/gensim/"&gt;Gensim&lt;/a&gt;: Provides modules for topic modeling and calculating similarities among documents&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install -U gensim
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
 &lt;li&gt;Topic modeling&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://radimrehurek.com/gensim/models/ldamodel.html"&gt;Latent Dirichlet allocation (LDA)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://radimrehurek.com/gensim/models/lsimodel.html"&gt;Latent semantic indexing (LSI)&lt;/a&gt;&lt;/li&gt;
@@ -158,14 +187,23 @@ Some jokes about package managing:
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/ryanmcgrath/twython"&gt;Twython&lt;/a&gt;: Provides easy access to Twitter API&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;twython&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Twython&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;settings&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;s&lt;/span&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/ryanmcgrath/twython"&gt;Twython&lt;/a&gt;: Provides easy access to Twitter API&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install twython
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Example: Getting "Samsung (삼성)" related tweets&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;twython&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Twython&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;settings&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;s&lt;/span&gt;    &lt;span class="c"&gt;# Create a file named settings.py, and put oauth KEY values inside&lt;/span&gt;
 &lt;span class="n"&gt;twitter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Twython&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;APP_KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;APP_SECRET&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;OAUTH_TOKEN&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;OAUTH_TOKEN_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;tweets&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;twitter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;삼성&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;user&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;screen_name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;text&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;created_at&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tweets&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;statuses&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Text exploration&lt;/h2&gt;
@@ -245,9 +283,9 @@ If you are using Python 2, use u'유니코드' for input of all following Korean
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;English&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tokens&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;      &lt;span class="c"&gt;# returns number of tokens (document length)&lt;/span&gt;
-&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tokens&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c"&gt;# returns number of unique tokens&lt;/span&gt;
-&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vocab&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;          &lt;span class="c"&gt;# returns frequency distribution&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tokens&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;       &lt;span class="c"&gt;# returns number of tokens (document length)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tokens&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;  &lt;span class="c"&gt;# returns number of unique tokens&lt;/span&gt;
+&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vocab&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;                  &lt;span class="c"&gt;# returns frequency distribution&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -259,9 +297,9 @@ FreqDist({',': 12018, '.': 8853, 'to': 5127, 'the': 4844, 'and': 4653, 'of': 427
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Korean&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ko&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tokens&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;      &lt;span class="c"&gt;# returns number of tokens (document length)&lt;/span&gt;
-&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ko&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tokens&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c"&gt;# returns number of unique tokens&lt;/span&gt;
-&lt;span class="n"&gt;ko&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vocab&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;          &lt;span class="c"&gt;# returns frequency distribution&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ko&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tokens&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;       &lt;span class="c"&gt;# returns number of tokens (document length)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ko&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tokens&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;  &lt;span class="c"&gt;# returns number of unique tokens&lt;/span&gt;
+&lt;span class="n"&gt;ko&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vocab&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;                  &lt;span class="c"&gt;# returns frequency distribution&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -298,14 +336,18 @@ FreqDist({'.': 61, '의': 46, '육아휴직': 38, '을': 34, '(': 27, ',': 26, '
 &lt;pre&gt;
 from matplotlib import pylab
 pylab.show = lambda: pylab.savefig('some_filename.png')
-&lt;/pre&gt;
-&lt;strong&gt;Troubleshooting&lt;/strong&gt;: For those who see rectangles instead of letters in the saved plot file, include the following configurations before drawing the plot:
+&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Troubleshooting&lt;/strong&gt;: For those who see rectangles instead of letters in the saved plot file, include the following configurations before drawing the plot:
 &lt;pre&gt;
 from matplotlib import font_manager, rc
-font_fname = '/Library/Fonts/AppleGothic.ttf'     # A font of your choice
+font_fname = 'c:/windows/fonts/gulim.ttc'     # A font of your choice
 font_name = font_manager.FontProperties(fname=font_fname).get_name()
 rc('font', family=font_name)
 &lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;Some example fonts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac OS: &lt;code&gt;/Library/Fonts/AppleGothic.ttf&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -447,33 +489,29 @@ Colonel Campbell; Box Hill; said Emma; Harriet Smith; William Larkins
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Common contexts&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;English&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;common_contexts&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Emma&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Frank&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;pre class="result"&gt;
-that_could that_s for_i and_and and_was between_and on_s of_s to_it in_s
-&lt;/pre&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Korean&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ko&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;common_contexts&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;육아휴직&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;pre class="result"&gt;
-따라서_이 에서_급 p_대상자 받는_자 경우_급여 으로_기간 n_급 위하여_을 인_자 대비하여_자 와_자 따라_신청 표_급여
-에게_자 에는_자 근로자_가능 평균_급여 이며_에 에_자 가_을
-&lt;/pre&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;/ol&gt;
+&lt;!--
+1. Common contexts
+    - English
+
+            :::python
+            en.common_contexts(['Emma', 'Frank'])
+
+        &lt;pre class="result"&gt;
+        that_could that_s for_i and_and and_was between_and on_s of_s to_it in_s
+        &lt;/pre&gt;
+
+    - Korean
+
+            :::python
+            ko.common_contexts(['육아휴직'])
+
+        &lt;pre class="result"&gt;
+        따라서_이 에서_급 p_대상자 받는_자 경우_급여 으로_기간 n_급 위하여_을 인_자 대비하여_자 와_자 따라_신청 표_급여
+        에게_자 에는_자 근로자_가능 평균_급여 이며_에 에_자 가_을
+        &lt;/pre&gt;
+--&gt;
+
 &lt;p&gt;For more information on &lt;code&gt;nltk.Text()&lt;/code&gt;, see the &lt;a href="http://www.nltk.org/_modules/nltk/text.html#Text"&gt;source code&lt;/a&gt; or &lt;a href="http://www.nltk.org/api/nltk.html#nltk.text.Text"&gt;API&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Tagging and chunking&lt;/h2&gt;
 &lt;p&gt;Until now, we used delimited text, namely &lt;em&gt;tokens&lt;/em&gt;, to explore our sample document.
@@ -552,6 +590,19 @@ lets use one short sentence for each language.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;For more information on chunking, refer to &lt;a href="http://www.nltk.org/book/ch07.html"&gt;Extracting Information from Text&lt;/a&gt; for English, and &lt;a href="http://konlpy.org/en/v0.4.3/examples/chunking/"&gt;Chunking&lt;/a&gt; for Korean.&lt;/p&gt;
 &lt;h2&gt;Topic modeling&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Topic modeling in a nutshell&lt;br&gt;
+    &lt;img src="images/topic-modeling.png" width="600px"&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;History&lt;br&gt;
+    &lt;img src="images/tm-history.png" width="600px"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LSI: Learns latent topics by performing a matrix decomposition (SVD) on the term-document matrix&lt;/li&gt;
+&lt;li&gt;LDA: A generative probabilistic model, that assumes a Dirichelt prior over the latent topics&lt;/li&gt;
+&lt;li&gt;HDP: A natural nonparametric generalization of LDA, where the number of topics can be unbounded ant learnt from data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;1. Preprocessing&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -632,17 +683,18 @@ lets use one short sentence for each language.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Korean&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;lda&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ldamodel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LdaModel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tfidf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;id2word&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num_topics&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ntopics&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c"&gt;# optional&lt;/span&gt;
+&lt;span class="n"&gt;lda&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ldamodel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LdaModel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tfidf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;id2word&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num_topics&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ntopics&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lda&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;print_topics&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num_topics&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ntopics&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num_words&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;nwords&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;pre class="result"&gt;
-['0.002*손해/Noun + 0.002*원사/Noun + 0.001*업자/Noun + 0.001*36/Number + 0.001*인정/Noun',
- '0.002*예고/Noun + 0.002*육아휴직/Noun + 0.002*UAE/Alpha + 0.002*부대/Noun + 0.002*파견/Noun',
- '0.003*육아휴직/Noun + 0.002*결혼/Noun + 0.002*학위/Noun + 0.002*만/Noun + 0.002*간호/Noun',
- '0.002*육아휴직/Noun + 0.001*×/Foreign + 0.001*대체/Noun + 0.001*만/Noun + 0.001*자녀/Noun',
- '0.001*육아휴직/Noun + 0.001*第/Foreign + 0.001*만/Noun + 0.001*×/Foreign + 0.001*대체/Noun']
+['0.002*결혼/Noun + 0.002*육아휴직/Noun + 0.002*파견/Noun + 0.002*중개업/Noun + 0.002*소말리아/Noun',
+ '0.001*육아휴직/Noun + 0.001*고용/Noun + 0.001*만/Noun + 0.001*대체/Noun + 0.001*세/Noun',
+ '0.003*육아휴직/Noun + 0.002*만/Noun + 0.002*×/Foreign + 0.001*대체/Noun + 0.001*第/Foreign',
+ '0.003*육아휴직/Noun + 0.002*손해/Noun + 0.002*학위/Noun + 0.002*간호/Noun + 0.002*원사/Noun',
+ '0.003*예고/Noun + 0.002*UAE/Alpha + 0.002*부대/Noun + 0.002*파견/Noun + 0.002*입법/Noun']
 &lt;/pre&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -652,17 +704,18 @@ lets use one short sentence for each language.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Korean&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;hdp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hdpmodel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HdpModel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tfidf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;id2word&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c"&gt;# optional&lt;/span&gt;
+&lt;span class="n"&gt;hdp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hdpmodel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HdpModel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tfidf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;id2word&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hdp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;print_topics&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;topics&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ntopics&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;topn&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;nwords&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;pre class="result"&gt;
-['topic 0: 0.005*재결/Noun + 0.004*발전/Noun + 0.004*정도/Noun + 0.004*재원/Noun + 0.004*이성남/Noun',
- 'topic 1: 0.006*4/Number + 0.005*\&amp;lt;/Punctuation + 0.004*태/Noun + 0.004*권리/Noun + 0.004*적/Suffix',
- 'topic 2: 0.005*문의/Noun + 0.005*중개/Noun + 0.004*위/Noun + 0.004*"/Punctuation + 0.004*사정/Noun',
- 'topic 3: 0.004*신상/Noun + 0.004*중재/Noun + 0.004*백만원/Noun + 0.004*①/Foreign + 0.004*號/Foreign',
- 'topic 4: 0.005*여/Josa + 0.004*입법/Noun + 0.004*백만원/Noun + 0.003*단서/Noun + 0.003*본문/Noun']
+['topic 0: 0.004*소집/Noun + 0.004*도/Josa + 0.004*’/Foreign + 0.004*｢/Foreign + 0.004*9892/Number',
+ 'topic 1: 0.004*이애주/Noun + 0.004*年/Foreign + 0.004*意思/Foreign + 0.004*마찰/Noun + 0.004*고려/Noun',
+ 'topic 2: 0.005*명시/Noun + 0.004*영업정지/Noun + 0.004*세로/Noun + 0.004*중개업/Noun + 0.004*다양하다/Adjective',
+ 'topic 3: 0.004*지다/Verb + 0.004*호에/Exclamation + 0.004*아부다비/Noun + 0.004*1851/Number + 0.003*국위/Noun',
+ 'topic 4: 0.005*분/Noun + 0.005*인정/Noun + 0.004*단위/Noun + 0.004*외교/Noun + 0.004*상태/Noun']
 &lt;/pre&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -672,8 +725,7 @@ lets use one short sentence for each language.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Korean&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;texts&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;bow&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tfidf_model&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;doc2bow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;bow&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tfidf_model&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;doc2bow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;texts&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
 &lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lsi&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;bow&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lda&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;bow&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hdp&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;bow&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -681,24 +733,103 @@ lets use one short sentence for each language.&lt;/p&gt;
 
 
 &lt;p&gt;&lt;pre class="result"&gt;
-[(0, 0.98422712641627996),
- (2, 0.019774699130462692),
- (3, 0.00083929542652108808),
- (4, -0.0020691868950712569),
- (1, -0.016937300192172655)]&lt;/p&gt;
-&lt;p&gt;[(2, 0.93049017707323523),
- (1, 0.017477621739905132),
- (3, 0.017386432255963535),
- (4, 0.017351763618286855),
- (0, 0.017294005312609145)]&lt;/p&gt;
-&lt;p&gt;[(7, 0.9168171899886105),
- (0, 0.021524078423284479),
- (1, 0.01564662852601344),
- (2, 0.011792484027921114)]
+[(0, 0.97829017893328907),
+ (3, 0.000835863239709228),
+ (4, -0.0017374397950225228),
+ (1, -0.016909513239921941),
+ (2, -0.020121561014424794)] &lt;/p&gt;
+&lt;p&gt;[(3, 0.9310052562798824),
+ (2, 0.017425082394479496),
+ (0, 0.017378015173812589),
+ (1, 0.017104887218062227),
+ (4, 0.017086758933763269&lt;/p&gt;
+&lt;p&gt;[(0, 0.94848723192042672),
+ (1, 0.014364056233061516),
+ (2, 0.010285449586192942)]
+&lt;/pre&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;bow&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tfidf_model&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;doc2bow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;texts&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;])]&lt;/span&gt;
+&lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lsi&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;bow&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lda&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;bow&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hdp&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;bow&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;pre class="result"&gt;
+[(1, 0.86944662880694601),
+ (0, 0.028513131927812137),
+ (4, 0.022819377684756378),
+ (3, 9.8368109092188263e-05),
+ (2, -0.073085445604715568)]&lt;/p&gt;
+&lt;p&gt;[(0, 0.92779202787548953),
+ (4, 0.018203028198907352),
+ (1, 0.018011915903463821),
+ (2, 0.017996693337477582),
+ (3, 0.017996334684661889)]&lt;/p&gt;
+&lt;p&gt;[(4, 0.84196426404194868),
+ (0, 0.1107088922238752),
+ (1, 0.01517818403850886),
+ (2, 0.010833216176185687)]
 &lt;/pre&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Word embedding&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Objective: Learn feature vectors from documents&lt;ul&gt;
+&lt;li&gt;Text is normally represented with one-hot encoding + hand crafted features&lt;/li&gt;
+&lt;li&gt;Ex: [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 ]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Word embedding&lt;/strong&gt;: A set of feature unsupervised learning techniques where words are mapped to n-dimensional vectors of real numbers (the continuous space)&lt;ul&gt;
+&lt;li&gt;Use local context to get a more syntactic or semantic representation&lt;/li&gt;
+&lt;li&gt;Ex: v("cat") = [0.2, -0.4, ..., 0.7], v("mat") = [-0.0, -0.2, ..., -0.1]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Approaches&lt;ul&gt;
+&lt;li&gt;Neural networks (Bengio et al., 2001, Mikolov et al., 2013)&lt;/li&gt;
+&lt;li&gt;Dimensionality reduction (Lebret et al., 2013)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;word2vec (Mikolov et al., 2013)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A neural network based embedding method for learning distributed vector representations of words&lt;ul&gt;
+&lt;li&gt;No hidden layers!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;"an optimized single-machine  can train 100B+ words in one day"&lt;/li&gt;
+&lt;li&gt;CBOW &amp;amp; Skip-gram: Two ways of creating the "task" for the neural network&lt;br&gt;
+    &lt;img src="images/cbow-skip.png" width="600px"&gt;&lt;/li&gt;
+&lt;li&gt;Characteristics&lt;ul&gt;
+&lt;li&gt;Places similar words next to each other in a vector space&lt;/li&gt;
+&lt;li&gt;Places similar relations in parallel (preserve linguistic regularities)&lt;ul&gt;
+&lt;li&gt;ex: France: Paris = Germany: Berlin != Italy: Madrid&lt;br&gt;
+    &lt;img src="images/countries.png" width="400px"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Linguistic regularities&lt;ul&gt;
+&lt;li&gt;v(KING) – v(MAN) + v(WOMAN) = v(QUEEN)&lt;/li&gt;
+&lt;li&gt;v(KINGS) – v(KING) + v(QUEEN) = v(QUEENS)&lt;/li&gt;
+&lt;li&gt;v(MADRID) – v(SPAIN) + v(FRANCE) = v(PARIS)&lt;/li&gt;
+&lt;li&gt;&lt;img src="images/regularities.png" width="400px"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Applications&lt;ul&gt;
+&lt;li&gt;Machine translation (Socher et al., 2013)&lt;br&gt;
+    &lt;img src="images/embedding-mt.png" width="400px"&gt;&lt;/li&gt;
+&lt;li&gt;Jointly embedding images and text (Frome et al., 2013, &lt;a href="http://googleresearch.blogspot.co.uk/2014/11/a-picture-is-worth-thousand-coherent.html"&gt;link&lt;/a&gt;)&lt;br&gt;
+    &lt;img src="images/google-text.png" width="600px"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Some good references to begin with in case you are interested:&lt;ul&gt;
+&lt;li&gt;http://radimrehurek.com/2014/02/word2vec-tutorial/&lt;/li&gt;
+&lt;li&gt;http://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-1-for-beginners-bag-of-words&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let's go for it.&lt;/p&gt;
+&lt;h3&gt;word2vec toy problem&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Load documents&lt;/p&gt;
@@ -739,21 +870,33 @@ lets use one short sentence for each language.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;Test&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Korean&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;wv_model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;most_similar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;초등학교&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;li&gt;
+&lt;p&gt;Korean&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;wv_model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;most_similar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;초등학교&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;&lt;pre class="result"&gt;
+[('국가/Noun', 0.96285080909729),
+ ('김정훈/Noun', 0.9593605995178223),
+ ('바탕/Noun', 0.9352315664291382),
+ ('에/Eomi', 0.9122501611709595),
+ ('연령/Noun', 0.8923488259315491),
+ ('세/Noun', 0.892114520072937),
+ ('여자/Noun', 0.8854814171791077),
+ ('상향/Noun', 0.8816936016082764),
+ ('만/Noun', 0.8690725564956665),
+ ('취학/Noun', 0.8688436150550842)]
+&lt;/pre&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Visualize&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Use t-SNE&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;!--
+### word2vec on Korean text
+
+Not enough? Let's see a real life example.
+
 ## Text classification
 ### Sentiment analysis
 - https://github.com/nltk/nltk/wiki/Sentiment-Analysis

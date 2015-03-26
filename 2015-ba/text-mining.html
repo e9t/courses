@@ -8,22 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<script src="/theme/html5.js"></script>
 		<![endif]-->
-	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="/theme/css/ipython.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+	<link href="/theme/css/local.css" rel="stylesheet">
+	<link href="/theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+		<h1 class="margin-bottom-30"><a href="/">Courses</a></h1>
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+            <li role="presentation"><a href="/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="/2015-ba">2015-ba</a></li>
         </ul>
 	</div>
 	<div class="row">
@@ -43,19 +43,42 @@
 <h2>Text analysis process</h2>
 <ol>
 <li>Load text</li>
-<li>Tokenize text</li>
-<li>...</li>
+<li>Tokenize text (ex: stemming, morph analyzing)</li>
+<li>Tag tokens (ex: POS, NER)</li>
+<li>Token(Feature) selection and/or filter/rank tokens (ex: stopword removal, TF-IDF)</li>
+<li>...and so on (ex: calculate word/document similarities, cluster documents)</li>
 </ol>
 <h2>Python Packages for Text Mining and NLP</h2>
 <p>...that we use in this tutorial.</p>
 <ol>
-<li><a href="http://nltk.org">NLTK</a>: Provides modules for text analysis (mostly language independent)<ul>
-<li><a href="http://www.nltk.org/book/ch02.html">Text corpora</a></li>
-<li><a href="http://www.nltk.org/api/nltk.tag.html">Word POS, NER classification</a></li>
+<li>
+<p><a href="http://nltk.org">NLTK</a>: Provides modules for text analysis (mostly language independent)</p>
+<div class="highlight"><pre>pip install nltk
+</pre></div>
+
+
+<ul>
+<li>
+<p><a href="http://www.nltk.org/book/ch02.html">Text corpora</a></p>
+<div class="highlight"><pre><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s">&#39;gutenberg&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s">&#39;maxent_treebank_pos_tagger&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><a href="http://www.nltk.org/api/nltk.tag.html">Word POS, NER classification</a></p>
+</li>
 <li><a href="http://www.nltk.org/book/ch06.html">Document classification</a></li>
 </ul>
 </li>
-<li><a href="http://konlpy.org">KoNLPy</a>: Provides modules for Korean text analysis<ul>
+<li>
+<p><a href="http://konlpy.org">KoNLPy</a>: Provides modules for Korean text analysis</p>
+<div class="highlight"><pre>pip install konlpy
+</pre></div>
+
+
+<ul>
 <li><a href="http://konlpy.org/en/latest/data/#corpora">Text corpora</a></li>
 <li><a href="http://konlpy.org/en/latest/api/konlpy.tag/">Word POS classification</a><ul>
 <li>Hannanum</li>
@@ -67,7 +90,13 @@
 </li>
 </ul>
 </li>
-<li><a href="http//radimrehurek.com/gensim/">Gensim</a>: Provides modules for topic modeling and calculating similarities among documents<ul>
+<li>
+<p><a href="http//radimrehurek.com/gensim/">Gensim</a>: Provides modules for topic modeling and calculating similarities among documents</p>
+<div class="highlight"><pre>pip install -U gensim
+</pre></div>
+
+
+<ul>
 <li>Topic modeling<ul>
 <li><a href="http://radimrehurek.com/gensim/models/ldamodel.html">Latent Dirichlet allocation (LDA)</a></li>
 <li><a href="http://radimrehurek.com/gensim/models/lsimodel.html">Latent semantic indexing (LSI)</a></li>
@@ -80,14 +109,23 @@
 </li>
 </ul>
 </li>
-<li><a href="https://github.com/ryanmcgrath/twython">Twython</a>: Provides easy access to Twitter API<div class="highlight"><pre><span class="kn">from</span> <span class="nn">twython</span> <span class="kn">import</span> <span class="n">Twython</span>
-<span class="kn">import</span> <span class="nn">settings</span> <span class="kn">as</span> <span class="nn">s</span>
+<li>
+<p><a href="https://github.com/ryanmcgrath/twython">Twython</a>: Provides easy access to Twitter API</p>
+<div class="highlight"><pre>pip install twython
+</pre></div>
+
+
+<ul>
+<li>Example: Getting "Samsung (삼성)" related tweets<div class="highlight"><pre><span class="kn">from</span> <span class="nn">twython</span> <span class="kn">import</span> <span class="n">Twython</span>
+<span class="kn">import</span> <span class="nn">settings</span> <span class="kn">as</span> <span class="nn">s</span>    <span class="c"># Create a file named settings.py, and put oauth KEY values inside</span>
 <span class="n">twitter</span> <span class="o">=</span> <span class="n">Twython</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">APP_KEY</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">APP_SECRET</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">OAUTH_TOKEN</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">OAUTH_TOKEN_SECRET</span><span class="p">)</span>
 <span class="n">tweets</span> <span class="o">=</span> <span class="n">twitter</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;삼성&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span><span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">][</span><span class="s">&#39;screen_name&#39;</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;text&#39;</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;created_at&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">[</span><span class="s">&#39;statuses&#39;</span><span class="p">]]</span>
 </pre></div>
 
 
+</li>
+</ul>
 </li>
 </ol>
 <h2>Text exploration</h2>
@@ -167,9 +205,9 @@ If you are using Python 2, use u'유니코드' for input of all following Korean
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="nb">len</span><span class="p">(</span><span class="n">en</span><span class="o">.</span><span class="n">tokens</span><span class="p">)</span>      <span class="c"># returns number of tokens (document length)</span>
-<span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">en</span><span class="o">.</span><span class="n">tokens</span><span class="p">))</span> <span class="c"># returns number of unique tokens</span>
-<span class="n">en</span><span class="o">.</span><span class="n">vocab</span><span class="p">()</span>          <span class="c"># returns frequency distribution</span>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">en</span><span class="o">.</span><span class="n">tokens</span><span class="p">))</span>       <span class="c"># returns number of tokens (document length)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">en</span><span class="o">.</span><span class="n">tokens</span><span class="p">)))</span>  <span class="c"># returns number of unique tokens</span>
+<span class="n">en</span><span class="o">.</span><span class="n">vocab</span><span class="p">()</span>                  <span class="c"># returns frequency distribution</span>
 </pre></div>
 
 
@@ -181,9 +219,9 @@ FreqDist({',': 12018, '.': 8853, 'to': 5127, 'the': 4844, 'and': 4653, 'of': 427
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="nb">len</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">tokens</span><span class="p">)</span>      <span class="c"># returns number of tokens (document length)</span>
-<span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">tokens</span><span class="p">))</span> <span class="c"># returns number of unique tokens</span>
-<span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">()</span>          <span class="c"># returns frequency distribution</span>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">tokens</span><span class="p">))</span>       <span class="c"># returns number of tokens (document length)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">tokens</span><span class="p">)))</span>  <span class="c"># returns number of unique tokens</span>
+<span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">()</span>                  <span class="c"># returns frequency distribution</span>
 </pre></div>
 
 
@@ -220,14 +258,18 @@ FreqDist({'.': 61, '의': 46, '육아휴직': 38, '을': 34, '(': 27, ',': 26, '
 <pre>
 from matplotlib import pylab
 pylab.show = lambda: pylab.savefig('some_filename.png')
-</pre>
-<strong>Troubleshooting</strong>: For those who see rectangles instead of letters in the saved plot file, include the following configurations before drawing the plot:
+</pre></p>
+<p><strong>Troubleshooting</strong>: For those who see rectangles instead of letters in the saved plot file, include the following configurations before drawing the plot:
 <pre>
 from matplotlib import font_manager, rc
-font_fname = '/Library/Fonts/AppleGothic.ttf'     # A font of your choice
+font_fname = 'c:/windows/fonts/gulim.ttc'     # A font of your choice
 font_name = font_manager.FontProperties(fname=font_fname).get_name()
 rc('font', family=font_name)
 </pre></p>
+<p>Some example fonts:</p>
+<ul>
+<li>Mac OS: <code>/Library/Fonts/AppleGothic.ttf</code></li>
+</ul>
 </blockquote>
 </li>
 <li>
@@ -369,33 +411,29 @@ Colonel Campbell; Box Hill; said Emma; Harriet Smith; William Larkins
 </li>
 </ul>
 </li>
-<li>
-<p>Common contexts</p>
-<ul>
-<li>
-<p>English</p>
-<div class="highlight"><pre><span class="n">en</span><span class="o">.</span><span class="n">common_contexts</span><span class="p">([</span><span class="s">&#39;Emma&#39;</span><span class="p">,</span> <span class="s">&#39;Frank&#39;</span><span class="p">])</span>
-</pre></div>
-
-
-<p><pre class="result">
-that_could that_s for_i and_and and_was between_and on_s of_s to_it in_s
-</pre></p>
-</li>
-<li>
-<p>Korean</p>
-<div class="highlight"><pre><span class="n">ko</span><span class="o">.</span><span class="n">common_contexts</span><span class="p">([</span><span class="s">&#39;육아휴직&#39;</span><span class="p">])</span>
-</pre></div>
-
-
-<p><pre class="result">
-따라서_이 에서_급 p_대상자 받는_자 경우_급여 으로_기간 n_급 위하여_을 인_자 대비하여_자 와_자 따라_신청 표_급여
-에게_자 에는_자 근로자_가능 평균_급여 이며_에 에_자 가_을
-</pre></p>
-</li>
-</ul>
-</li>
 </ol>
+<!--
+1. Common contexts
+    - English
+
+            :::python
+            en.common_contexts(['Emma', 'Frank'])
+
+        <pre class="result">
+        that_could that_s for_i and_and and_was between_and on_s of_s to_it in_s
+        </pre>
+
+    - Korean
+
+            :::python
+            ko.common_contexts(['육아휴직'])
+
+        <pre class="result">
+        따라서_이 에서_급 p_대상자 받는_자 경우_급여 으로_기간 n_급 위하여_을 인_자 대비하여_자 와_자 따라_신청 표_급여
+        에게_자 에는_자 근로자_가능 평균_급여 이며_에 에_자 가_을
+        </pre>
+-->
+
 <p>For more information on <code>nltk.Text()</code>, see the <a href="http://www.nltk.org/_modules/nltk/text.html#Text">source code</a> or <a href="http://www.nltk.org/api/nltk.html#nltk.text.Text">API</a>.</p>
 <h2>Tagging and chunking</h2>
 <p>Until now, we used delimited text, namely <em>tokens</em>, to explore our sample document.
@@ -474,6 +512,19 @@ lets use one short sentence for each language.</p>
 </ul>
 <p>For more information on chunking, refer to <a href="http://www.nltk.org/book/ch07.html">Extracting Information from Text</a> for English, and <a href="http://konlpy.org/en/v0.4.3/examples/chunking/">Chunking</a> for Korean.</p>
 <h2>Topic modeling</h2>
+<ul>
+<li>Topic modeling in a nutshell<br>
+    <img src="images/topic-modeling.png" width="600px"></li>
+<li>
+<p>History<br>
+    <img src="images/tm-history.png" width="600px"></p>
+<ul>
+<li>LSI: Learns latent topics by performing a matrix decomposition (SVD) on the term-document matrix</li>
+<li>LDA: A generative probabilistic model, that assumes a Dirichelt prior over the latent topics</li>
+<li>HDP: A natural nonparametric generalization of LDA, where the number of topics can be unbounded ant learnt from data</li>
+</ul>
+</li>
+</ul>
 <h3>1. Preprocessing</h3>
 <ol>
 <li>
@@ -554,17 +605,18 @@ lets use one short sentence for each language.</p>
 <ul>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="n">lda</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ldamodel</span><span class="o">.</span><span class="n">LdaModel</span><span class="p">(</span><span class="n">tfidf</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">)</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span><span class="p">;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c"># optional</span>
+<span class="n">lda</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ldamodel</span><span class="o">.</span><span class="n">LdaModel</span><span class="p">(</span><span class="n">tfidf</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">lda</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">num_words</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
 </pre></div>
 
 
 <p><pre class="result">
-['0.002*손해/Noun + 0.002*원사/Noun + 0.001*업자/Noun + 0.001*36/Number + 0.001*인정/Noun',
- '0.002*예고/Noun + 0.002*육아휴직/Noun + 0.002*UAE/Alpha + 0.002*부대/Noun + 0.002*파견/Noun',
- '0.003*육아휴직/Noun + 0.002*결혼/Noun + 0.002*학위/Noun + 0.002*만/Noun + 0.002*간호/Noun',
- '0.002*육아휴직/Noun + 0.001*×/Foreign + 0.001*대체/Noun + 0.001*만/Noun + 0.001*자녀/Noun',
- '0.001*육아휴직/Noun + 0.001*第/Foreign + 0.001*만/Noun + 0.001*×/Foreign + 0.001*대체/Noun']
+['0.002*결혼/Noun + 0.002*육아휴직/Noun + 0.002*파견/Noun + 0.002*중개업/Noun + 0.002*소말리아/Noun',
+ '0.001*육아휴직/Noun + 0.001*고용/Noun + 0.001*만/Noun + 0.001*대체/Noun + 0.001*세/Noun',
+ '0.003*육아휴직/Noun + 0.002*만/Noun + 0.002*×/Foreign + 0.001*대체/Noun + 0.001*第/Foreign',
+ '0.003*육아휴직/Noun + 0.002*손해/Noun + 0.002*학위/Noun + 0.002*간호/Noun + 0.002*원사/Noun',
+ '0.003*예고/Noun + 0.002*UAE/Alpha + 0.002*부대/Noun + 0.002*파견/Noun + 0.002*입법/Noun']
 </pre></p>
 </li>
 </ul>
@@ -574,17 +626,18 @@ lets use one short sentence for each language.</p>
 <ul>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="n">hdp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">hdpmodel</span><span class="o">.</span><span class="n">HdpModel</span><span class="p">(</span><span class="n">tfidf</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">)</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span><span class="p">;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c"># optional</span>
+<span class="n">hdp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">hdpmodel</span><span class="o">.</span><span class="n">HdpModel</span><span class="p">(</span><span class="n">tfidf</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">hdp</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">topn</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
 </pre></div>
 
 
 <p><pre class="result">
-['topic 0: 0.005*재결/Noun + 0.004*발전/Noun + 0.004*정도/Noun + 0.004*재원/Noun + 0.004*이성남/Noun',
- 'topic 1: 0.006*4/Number + 0.005*\&lt;/Punctuation + 0.004*태/Noun + 0.004*권리/Noun + 0.004*적/Suffix',
- 'topic 2: 0.005*문의/Noun + 0.005*중개/Noun + 0.004*위/Noun + 0.004*"/Punctuation + 0.004*사정/Noun',
- 'topic 3: 0.004*신상/Noun + 0.004*중재/Noun + 0.004*백만원/Noun + 0.004*①/Foreign + 0.004*號/Foreign',
- 'topic 4: 0.005*여/Josa + 0.004*입법/Noun + 0.004*백만원/Noun + 0.003*단서/Noun + 0.003*본문/Noun']
+['topic 0: 0.004*소집/Noun + 0.004*도/Josa + 0.004*’/Foreign + 0.004*｢/Foreign + 0.004*9892/Number',
+ 'topic 1: 0.004*이애주/Noun + 0.004*年/Foreign + 0.004*意思/Foreign + 0.004*마찰/Noun + 0.004*고려/Noun',
+ 'topic 2: 0.005*명시/Noun + 0.004*영업정지/Noun + 0.004*세로/Noun + 0.004*중개업/Noun + 0.004*다양하다/Adjective',
+ 'topic 3: 0.004*지다/Verb + 0.004*호에/Exclamation + 0.004*아부다비/Noun + 0.004*1851/Number + 0.003*국위/Noun',
+ 'topic 4: 0.005*분/Noun + 0.005*인정/Noun + 0.004*단위/Noun + 0.004*외교/Noun + 0.004*상태/Noun']
 </pre></p>
 </li>
 </ul>
@@ -594,8 +647,7 @@ lets use one short sentence for each language.</p>
 <ul>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="n">text</span> <span class="o">=</span> <span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">bow</span> <span class="o">=</span> <span class="n">tfidf_model</span><span class="p">[</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">text</span><span class="p">)]</span>
+<div class="highlight"><pre><span class="n">bow</span> <span class="o">=</span> <span class="n">tfidf_model</span><span class="p">[</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">lsi</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">lda</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">hdp</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -603,24 +655,103 @@ lets use one short sentence for each language.</p>
 
 
 <p><pre class="result">
-[(0, 0.98422712641627996),
- (2, 0.019774699130462692),
- (3, 0.00083929542652108808),
- (4, -0.0020691868950712569),
- (1, -0.016937300192172655)]</p>
-<p>[(2, 0.93049017707323523),
- (1, 0.017477621739905132),
- (3, 0.017386432255963535),
- (4, 0.017351763618286855),
- (0, 0.017294005312609145)]</p>
-<p>[(7, 0.9168171899886105),
- (0, 0.021524078423284479),
- (1, 0.01564662852601344),
- (2, 0.011792484027921114)]
+[(0, 0.97829017893328907),
+ (3, 0.000835863239709228),
+ (4, -0.0017374397950225228),
+ (1, -0.016909513239921941),
+ (2, -0.020121561014424794)] </p>
+<p>[(3, 0.9310052562798824),
+ (2, 0.017425082394479496),
+ (0, 0.017378015173812589),
+ (1, 0.017104887218062227),
+ (4, 0.017086758933763269</p>
+<p>[(0, 0.94848723192042672),
+ (1, 0.014364056233061516),
+ (2, 0.010285449586192942)]
+</pre></p>
+<div class="highlight"><pre><span class="n">bow</span> <span class="o">=</span> <span class="n">tfidf_model</span><span class="p">[</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">texts</span><span class="p">[</span><span class="mi">8</span><span class="p">])]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lsi</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lda</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">hdp</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p><pre class="result">
+[(1, 0.86944662880694601),
+ (0, 0.028513131927812137),
+ (4, 0.022819377684756378),
+ (3, 9.8368109092188263e-05),
+ (2, -0.073085445604715568)]</p>
+<p>[(0, 0.92779202787548953),
+ (4, 0.018203028198907352),
+ (1, 0.018011915903463821),
+ (2, 0.017996693337477582),
+ (3, 0.017996334684661889)]</p>
+<p>[(4, 0.84196426404194868),
+ (0, 0.1107088922238752),
+ (1, 0.01517818403850886),
+ (2, 0.010833216176185687)]
 </pre></p>
 </li>
 </ul>
 <h2>Word embedding</h2>
+<ul>
+<li>Objective: Learn feature vectors from documents<ul>
+<li>Text is normally represented with one-hot encoding + hand crafted features</li>
+<li>Ex: [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 ]</li>
+</ul>
+</li>
+<li><strong>Word embedding</strong>: A set of feature unsupervised learning techniques where words are mapped to n-dimensional vectors of real numbers (the continuous space)<ul>
+<li>Use local context to get a more syntactic or semantic representation</li>
+<li>Ex: v("cat") = [0.2, -0.4, ..., 0.7], v("mat") = [-0.0, -0.2, ..., -0.1]</li>
+</ul>
+</li>
+<li>Approaches<ul>
+<li>Neural networks (Bengio et al., 2001, Mikolov et al., 2013)</li>
+<li>Dimensionality reduction (Lebret et al., 2013)</li>
+</ul>
+</li>
+</ul>
+<h3>word2vec (Mikolov et al., 2013)</h3>
+<ul>
+<li>A neural network based embedding method for learning distributed vector representations of words<ul>
+<li>No hidden layers!</li>
+</ul>
+</li>
+<li>"an optimized single-machine  can train 100B+ words in one day"</li>
+<li>CBOW &amp; Skip-gram: Two ways of creating the "task" for the neural network<br>
+    <img src="images/cbow-skip.png" width="600px"></li>
+<li>Characteristics<ul>
+<li>Places similar words next to each other in a vector space</li>
+<li>Places similar relations in parallel (preserve linguistic regularities)<ul>
+<li>ex: France: Paris = Germany: Berlin != Italy: Madrid<br>
+    <img src="images/countries.png" width="400px"></li>
+</ul>
+</li>
+<li>Linguistic regularities<ul>
+<li>v(KING) – v(MAN) + v(WOMAN) = v(QUEEN)</li>
+<li>v(KINGS) – v(KING) + v(QUEEN) = v(QUEENS)</li>
+<li>v(MADRID) – v(SPAIN) + v(FRANCE) = v(PARIS)</li>
+<li><img src="images/regularities.png" width="400px"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Applications<ul>
+<li>Machine translation (Socher et al., 2013)<br>
+    <img src="images/embedding-mt.png" width="400px"></li>
+<li>Jointly embedding images and text (Frome et al., 2013, <a href="http://googleresearch.blogspot.co.uk/2014/11/a-picture-is-worth-thousand-coherent.html">link</a>)<br>
+    <img src="images/google-text.png" width="600px"></li>
+</ul>
+</li>
+<li>Some good references to begin with in case you are interested:<ul>
+<li>http://radimrehurek.com/2014/02/word2vec-tutorial/</li>
+<li>http://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-1-for-beginners-bag-of-words</li>
+</ul>
+</li>
+</ul>
+<p>Let's go for it.</p>
+<h3>word2vec toy problem</h3>
 <ol>
 <li>
 <p>Load documents</p>
@@ -661,21 +792,33 @@ lets use one short sentence for each language.</p>
 <li>
 <p>Test</p>
 <ul>
-<li>Korean<div class="highlight"><pre><span class="n">wv_model</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="n">pos</span><span class="p">(</span><span class="s">&#39;초등학교&#39;</span><span class="p">))</span>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="n">wv_model</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="n">pos</span><span class="p">(</span><span class="s">&#39;초등학교&#39;</span><span class="p">))</span>
 </pre></div>
 
 
+<p><pre class="result">
+[('국가/Noun', 0.96285080909729),
+ ('김정훈/Noun', 0.9593605995178223),
+ ('바탕/Noun', 0.9352315664291382),
+ ('에/Eomi', 0.9122501611709595),
+ ('연령/Noun', 0.8923488259315491),
+ ('세/Noun', 0.892114520072937),
+ ('여자/Noun', 0.8854814171791077),
+ ('상향/Noun', 0.8816936016082764),
+ ('만/Noun', 0.8690725564956665),
+ ('취학/Noun', 0.8688436150550842)]
+</pre></p>
 </li>
-</ul>
-</li>
-<li>
-<p>Visualize</p>
-<ul>
-<li>Use t-SNE</li>
 </ul>
 </li>
 </ol>
 <!--
+### word2vec on Korean text
+
+Not enough? Let's see a real life example.
+
 ## Text classification
 ### Sentiment analysis
 - https://github.com/nltk/nltk/wiki/Sentiment-Analysis
@@ -700,7 +843,7 @@ lets use one short sentence for each language.</p>
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-ba/text-mining.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="/2015-ba/text-mining.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -716,16 +859,16 @@ lets use one short sentence for each language.</p>
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-ba.html" rel="category">2015-ba</a>
+                <a href="/category/2015-ba.html" rel="category">2015-ba</a>
             </span>
         </p>
         <p>
             Tags:
             <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/text.html" rel="tag">text</a>
+                <a href="/tag/text.html" rel="tag">text</a>
             </span>
             <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
+                <a href="/tag/lectures.html" rel="tag">lectures</a>
             </span>
         </p>
     </div>
@@ -740,7 +883,6 @@ lets use one short sentence for each language.</p>
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
  The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
             </span>
 		</div>
 	</div>
