@@ -44,21 +44,6 @@
 <blockquote>
 <p>내가 설치한 Sublime Text의 버젼을 잘 확인하자! 2인가 3인가?</p>
 </blockquote>
-<h2>Troubleshooting</h2>
-<h3>파이썬 build 시 한글 출력문에 <code>[Decode error - output not utf-8]</code>가 출력되는 문제</h3>
-<ol>
-<li>콘솔에서 <code>chcp</code>를 입력하여 윈도우 코드 페이지(codepage) 확인 (아마도 949일 것)</li>
-<li><code>C:\Users\lucypark\AppData\Roaming\Sublime Text 2\Packages\Python\Python.sublime-build</code> 파일을 열어 아래의 마지막 줄 추가 입력 (바로 직전의 <code>,</code>도 빼먹지 말 것!)<div class="highlight"><pre><span class="err">{</span><span class="x"></span>
-<span class="x">    &quot;cmd&quot;: [&quot;python&quot;, &quot;-u&quot;, &quot;</span><span class="p">$</span><span class="nv">file</span><span class="x">&quot;],</span>
-<span class="x">    &quot;file_regex&quot;: &quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;,</span>
-<span class="x">    &quot;selector&quot;: &quot;source.python&quot;,</span>
-<span class="x">    &quot;encoding&quot;: &quot;cp949&quot;</span>
-<span class="x">}</span>
-</pre></div>
-
-
-</li>
-</ol>
 <h2>Suggested packages</h2>
 <h3>IMESupport: 한글 입력이 한 박자 늦게 되는 문제 해결</h3>
 <ul>

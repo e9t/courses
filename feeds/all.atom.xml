@@ -2023,21 +2023,6 @@ algorihtm = &amp;#39;auto&amp;#39;      # ball_tree, kd_tree, brute 중 택일
 &lt;blockquote&gt;
 &lt;p&gt;내가 설치한 Sublime Text의 버젼을 잘 확인하자! 2인가 3인가?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;Troubleshooting&lt;/h2&gt;
-&lt;h3&gt;파이썬 build 시 한글 출력문에 &lt;code&gt;[Decode error - output not utf-8]&lt;/code&gt;가 출력되는 문제&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;콘솔에서 &lt;code&gt;chcp&lt;/code&gt;를 입력하여 윈도우 코드 페이지(codepage) 확인 (아마도 949일 것)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;C:\Users\lucypark\AppData\Roaming\Sublime Text 2\Packages\Python\Python.sublime-build&lt;/code&gt; 파일을 열어 아래의 마지막 줄 추가 입력 (바로 직전의 &lt;code&gt;,&lt;/code&gt;도 빼먹지 말 것!)&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;span class="x"&gt;    &amp;quot;cmd&amp;quot;: [&amp;quot;python&amp;quot;, &amp;quot;-u&amp;quot;, &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;],&lt;/span&gt;
-&lt;span class="x"&gt;    &amp;quot;file_regex&amp;quot;: &amp;quot;^[ ]*File \&amp;quot;(...*?)\&amp;quot;, line ([0-9]*)&amp;quot;,&lt;/span&gt;
-&lt;span class="x"&gt;    &amp;quot;selector&amp;quot;: &amp;quot;source.python&amp;quot;,&lt;/span&gt;
-&lt;span class="x"&gt;    &amp;quot;encoding&amp;quot;: &amp;quot;cp949&amp;quot;&lt;/span&gt;
-&lt;span class="x"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h2&gt;Suggested packages&lt;/h2&gt;
 &lt;h3&gt;IMESupport: 한글 입력이 한 박자 늦게 되는 문제 해결&lt;/h3&gt;
 &lt;ul&gt;
@@ -2061,6 +2046,9 @@ algorihtm = &amp;#39;auto&amp;#39;      # ball_tree, kd_tree, brute 중 택일
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img alt="programmer" src="https://s-media-cache-ak0.pinimg.com/236x/7b/b7/06/7bb706cc6f2ac6e62c58b299acf3f362.jpg" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;이 튜토리얼은 프로그래밍 초보자를 대상으로 하는 것이기는 하지만, for문, if문, 변수 등 프로그래밍의 기본적인 개념은 숙지하고 있다고 가정하고 진행됩니다. 만일 이게 무슨 말인지 모르겠다면 &lt;a href="http://doc.pyschools.com/html/index.html"&gt;이 링크&lt;/a&gt;에서 간단히 공부해보세요 :)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2&gt;들어가기 전에&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;운영체제(OS)란?&lt;ul&gt;
@@ -2205,7 +2193,7 @@ algorihtm = &amp;#39;auto&amp;#39;      # ball_tree, kd_tree, brute 중 택일
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Install Anaconda&lt;ul&gt;
-&lt;li&gt;고맙게도 파이썬 환경변수 설정은 따로 할 필요없이 아나콘다가 알아서 해줌&lt;br&gt;
+&lt;li&gt;고맙게도 파이썬 경로에 대한 환경변수 설정은 따로 할 필요없이 아나콘다가 알아서 해줌&lt;br&gt;
 &lt;img src="images/anaconda2.png" width="400px"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -2715,8 +2703,42 @@ list 분할은 데이터 분석에서 데이터를 두 개 이상의 set으로 p
 &lt;li&gt;
 &lt;p&gt;윈도우에서 자주 속썩이는 것들&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;인코딩이 골치. UTF8 쓰는게 OS간 호환성에 가장 좋지만, 윈도우는 EUC-KR이 기본. 한글 사용자라면 &lt;a href="http://www.joelonsoftware.com/articles/Unicode.html"&gt;유니코드가 뭔지 알아보자&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://blog.codinghorror.com/the-great-newline-schism/"&gt;Newlines가 골치&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;인코딩이 골치. UTF8 쓰는게 OS간 호환성에 가장 좋지만, 윈도우는 cp949이 기본. 한글 사용자라면 &lt;a href="http://www.joelonsoftware.com/articles/Unicode.html"&gt;유니코드가 뭔지 알아보자&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;한편, 파이썬 스크립트를 실행했을 때 아래의 에러가 생길 수 있다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;UnicodeEncodeError: &lt;span class="s1"&gt;&amp;#39;cp949&amp;#39;&lt;/span&gt; codec can&lt;span class="s1"&gt;&amp;#39;t encode character &amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\u&lt;/span&gt;20a9&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; in position 90: illegal multibyte sequence&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이는 윈도우에서 기본 인코딩을 cp949를 사용하고 있지만, 우리가 utf8을 사용해서 발생하는 문제다. 한번 확인해볼까?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;locale&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;locale&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getpreferredencoding&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;     &lt;span class="c"&gt;# 아마 cp949, 바꿔주지 않아도 되나 매번 인코딩 명시해야&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;encoding&lt;/span&gt;                  &lt;span class="c"&gt;# 아마 cp949, 이건 PYTHONIOENCODING 환경변수를 utf8로 설정하면 바뀜&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getdefaultencoding&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;             &lt;span class="c"&gt;# 아마 utf8, 굿&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이 때 애를 먹지 않기 위해서는 두 가지 대응 방법이 있는데&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1) 일괄적으로 utf-8을 사용하지 않고 cp949를 쓰거나&lt;/li&gt;
+&lt;li&gt;2) 다소 번거롭더라도 utf-8을 사용하도록 설정을 변경하는 것이다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;위에서 2)를 따를 경우, 지금 당장 할 수 있는 것은 딱 한 가지이다. 윈도우의 환경변수 설정에 들어가서 &lt;code&gt;PYTHONIOENCODING&lt;/code&gt;의 값을 &lt;code&gt;utf-8&lt;/code&gt;로 설정하는 것. 그 후에 쉘을 다시 닫았다가 연 후 아래를 입력해보자. 아마 값이 달라졌을 것이다.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;encoding&lt;/span&gt;                  &lt;span class="c"&gt;# 아마 utf-8&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://blog.codinghorror.com/the-great-newline-schism/"&gt;Newlines가 골치&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;역슬래시가 골치&lt;ul&gt;
 &lt;li&gt;왜 내 키보드에는 역슬래시가 없을까? (폰트 문제)&lt;/li&gt;
 &lt;li&gt;폴더 구분자를 쓸 때 왜 역슬래시를 두 번 표기해야할까?&lt;/li&gt;
