@@ -17,7 +17,7 @@ Token,토큰,Meaningful elements in a text such as words or phrases or symbols
 Morphemes,형태소,Smallest meaningful unit in a language
 POS,품사,Part-of-speech (ex: Nouns)
 Classification,분류,A supervised learning task where $X$ and $y$ are given and $y$ is a set of discrete classes
-Clustering,군집화,A unsupervised learning task where $X$ is given
+Clustering,군집화,An unsupervised learning task where $X$ is given
 ''' %}
 
 ## Text analysis process
@@ -242,7 +242,7 @@ If you are using Python 2, use u'유니코드' for input of all following Korean
 
         <img src="images/disp_ko.png" width="500px">
 
-1. moncordance
+1. Concordance
     - English
 
             :::python
