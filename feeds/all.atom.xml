@@ -2176,7 +2176,7 @@ algorihtm = &amp;#39;auto&amp;#39;      # ball_tree, kd_tree, brute 중 택일
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;윈도우 32비트? 64비트?&lt;ul&gt;
-&lt;li&gt;아나콘다가 알아서 인식해서 잡아주겠지만, 궁금한 사람은 &lt;a href="images/bit.png"&gt;내 컴퓨터의 속성 메뉴에서 나의 시스템 종류를 확인하자&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;아나콘다가 알아서 인식해서 잡아주지 않을 수도 있으니, 확실하지 않다면 &lt;a href="images/bit.png"&gt;내 컴퓨터의 속성 메뉴에서 나의 시스템 종류를 확인하자&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wiki.python.org/moin/Python2orPython3"&gt;Python 2.x? 3.x?&lt;/a&gt;&lt;ul&gt;
