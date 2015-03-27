@@ -135,7 +135,7 @@ Toc: True
         - 우리는 패키지 설치의 번거로움에서 벗어나기 위해 사전에 [195개의 패키지](http://docs.continuum.io/anaconda/pkg-docs.html)가 한꺼번에 깔리는 배포판을 선택
     <img src="images/anaconda.png" width="600px">
     - 윈도우 32비트? 64비트?
-        - 아나콘다가 알아서 인식해서 잡아주겠지만, 궁금한 사람은 [내 컴퓨터의 속성 메뉴에서 나의 시스템 종류를 확인하자](images/bit.png).
+        - 아나콘다가 알아서 인식해서 잡아주지 않을 수도 있으니, 확실하지 않다면 [내 컴퓨터의 속성 메뉴에서 나의 시스템 종류를 확인하자](images/bit.png).
     - [Python 2.x? 3.x?](https://wiki.python.org/moin/Python2orPython3)
         - 아직까지 학계에서는 Python 2도 많이 사용
         - 하지만 우리는 더 최신 버젼인 Python 3 선택
