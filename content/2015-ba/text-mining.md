@@ -433,109 +433,241 @@ For more information on chunking, refer to [Extracting Information from Text](ht
 ### 1. Preprocessing
 
 1. Load documents
+    - English
+
+            :::python
+            from nltk.corpus import reuters
+            docs_en = [reuters.words(i) for i in reuters.fileids()]
+
     - Korean
 
             :::python
             from konlpy.corpus import kobill
-            docs = [kobill.open(i).read() for i in kobill.fileids()]
+            docs_ko = [kobill.open(i).read() for i in kobill.fileids()]
 
 1. Tokenize
+    - English
+
+            :::python
+            texts_en = docs_en # because we loaded tokenized documents in step 1
+            print(texts_en[0])
+
+        <pre class="result">
+        ['ASIAN', 'EXPORTERS', 'FEAR', 'DAMAGE', 'FROM', 'U', ...]
+        </pre>
+
     - Korean
 
             :::python
             from konlpy.tag import Twitter; t = Twitter()
             pos = lambda d: ['/'.join(p) for p in t.pos(d, stem=True, norm=True)]
-            texts = [pos(doc) for doc in docs]
+            texts_ko = [pos(doc) for doc in docs_ko]
+            print(texts_ko[0])
 
-1. Encode
+        <pre class="result">
+        ['지방공무원법/Noun', '일부/Noun', '개정/Noun', '법률/Noun', '안/Noun', '(/Punctuation', '정의화/Noun', '의원/Noun', ...]
+        </pre>
+
+1. Encode tokens to integers
+    - English
+
+            :::python
+            from gensim import corpora
+            dictionary_en = corpora.Dictionary(texts_en)
+            dictionary_en.save('en.dict')  # save dictionary to file for future use
+
     - Korean
 
             :::python
             from gensim import corpora
-            dictionary = corpora.Dictionary(texts)
-            dictionary.save('ko.dict')  # save dictionary to file for future use
+            dictionary_ko = corpora.Dictionary(texts_ko)
+            dictionary_ko.save('ko.dict')  # save dictionary to file for future use
             
 1. Calculate TF-IDF
+    - English
+
+            :::python
+            from gensim import models
+            tf_en = [dictionary_en.doc2bow(text) for text in texts_en]
+            tfidf_model_en = models.TfidfModel(tf_en)
+            tfidf_en = tfidf_model_en[tf_en]
+            corpora.MmCorpus.serialize('en.mm', tfidf_en) # save corpus to file for future use
+
+            # print first 10 elements of first document's tf-idf vector
+            print(tfidf_en.corpus[0][:10])
+            # print top 10 elements of first document's tf-idf vector
+            print(sorted(tfidf_en.corpus[0], key=lambda x: x[1], reverse=True)[:10])
+            # print token of most frequent element
+            print(dictionary_en.get(9))
+
+
+        <pre class="result">
+        [(0, 7), (1, 3), (2, 13), (3, 2), (4, 1), (5, 1), (6, 20), (7, 6), (8, 10), (9, 62)]
+        [(9, 62), (363, 32), (276, 30), (371, 26), (6, 20), (96, 19), (112, 19), (326, 16), (118, 14), (2, 13)]
+        '.'
+        </pre>
+
     - Korean
 
             :::python
             from gensim import models
-            tf = [dictionary.doc2bow(text) for text in texts]
-            tfidf_model = models.TfidfModel(tf)
-            tfidf = tfidf_model[tf]
-            corpora.MmCorpus.serialize('ko.mm', tfidf) # save corpus to file for future use
+            tf_ko = [dictionary_ko.doc2bow(text) for text in texts_ko]
+            tfidf_model_ko = models.TfidfModel(tf_ko)
+            tfidf_ko = tfidf_model_ko[tf_ko]
+            corpora.MmCorpus.serialize('ko.mm', tfidf_ko) # save corpus to file for future use
+
+            # print first 10 elements of first document's tf-idf vector
+            print(tfidf_ko.corpus[0][:10])
+            # print top 10 elements of first document's tf-idf vector
+            print(sorted(tfidf_ko.corpus[0], key=lambda x: x[1], reverse=True)[:10])
+            # print token of most frequent element
+            print(dictionary_ko.get(414))
+
+        <pre class="result">
+        [(0, 10), (1, 27), (2, 1), (3, 26), (4, 3), (5, 26), (6, 4), (7, 2), (8, 1), (9, 1)]
+        [(414, 71), (14, 61), (309, 38), (314, 38), (313, 28), (1, 27), (3, 26), (5, 26), (353, 22), (13, 21)]
+        '하다/Verb'
+        </pre>
 
 ### 2. Train topic models
 1. LSI
+    - English
+
+            :::python
+            ntopics, nwords = 3, 5
+            lsi_en = models.lsimodel.LsiModel(tfidf_en, id2word=dictionary_en, num_topics=ntopics)
+            print(lsi_en.print_topics(num_topics=ntopics, num_words=nwords))
+
+        <pre class="result">
+        ['0.509\*"vs" + 0.272\*"000" + 0.258\*"cts" + 0.243\*"loss" + 0.238\*"mln"',
+        '-0.294\*"the" + 0.237\*"vs" + -0.176\*"to" + -0.148\*"in" + -0.137\*"pct"',
+        '0.331\*"Record" + 0.316\*"div" + 0.312\*"Pay" + 0.303\*"Qtly" + 0.268\*"prior"']
+        </pre>
+
     - Korean
 
             :::python
-            ntopics, nwords = 5, 5
-            lsi = models.lsimodel.LsiModel(tfidf, id2word=dictionary, num_topics=ntopics)
-            print(lsi.print_topics(num_topics=ntopics, num_words=nwords))
+            ntopics, nwords = 3, 5
+            lsi_ko = models.lsimodel.LsiModel(tfidf_ko, id2word=dictionary_ko, num_topics=ntopics)
+            print(lsi_ko.print_topics(num_topics=ntopics, num_words=nwords))
 
         <pre class="result">
         ['0.518\*"육아휴직/Noun" + 0.257\*"만/Noun" + 0.227\*"×/Foreign" + 0.214\*"대체/Noun" + 0.201\*"고용/Noun"',
          '0.449\*"파견/Noun" + 0.412\*"부대/Noun" + 0.267\*"UAE/Alpha" + 0.243\*"○/Foreign" + 0.192\*"국군/Noun"',
-         '-0.326\*"결혼/Noun" + -0.315\*"예고/Noun" + -0.285\*"손해/Noun" + -0.205\*"ㆍ/Foreign" + -0.197\*"원사/Noun"',
-         '0.490\*"학위/Noun" + 0.401\*"간호/Noun" + 0.312\*"연한/Noun" + 0.312\*"수업/Noun" + 0.223\*"학사/Noun"',
-         '-0.520\*"예고/Noun" + 0.349\*"결혼/Noun" + -0.297\*"입법/Noun" + -0.208\*"「/Foreign" + -0.208\*"」/Foreign"']
+         '0.326\*"결혼/Noun" + 0.315\*"예고/Noun" + 0.285\*"손해/Noun" + 0.205\*"ㆍ/Foreign" + 0.197\*"원사/Noun"']
         </pre>
 
 1. LDA
+    - English
+
+            :::python
+            import numpy as np; np.random.seed(42)  # optional
+            lda_en = models.ldamodel.LdaModel(tfidf_en, id2word=dictionary_en, num_topics=ntopics)
+            print(lda_en.print_topics(num_topics=ntopics, num_words=nwords))
+
+        <pre class="result">
+        ['0.005\*the + 0.003\*to + 0.003\*pct + 0.002\*of + 0.002\*said',
+         '0.005\*cts + 0.005\*Record + 0.005\*div + 0.004\*Pay + 0.004\*Qtly',
+         '0.010\*vs + 0.006\*mln + 0.006\*000 + 0.005\*loss + 0.004\*cts']
+        </pre>
+
     - Korean
 
             :::python
             import numpy as np; np.random.seed(42)  # optional
-            lda = models.ldamodel.LdaModel(tfidf, id2word=dictionary, num_topics=ntopics)
-            print(lda.print_topics(num_topics=ntopics, num_words=nwords))
+            lda_ko = models.ldamodel.LdaModel(tfidf_ko, id2word=dictionary_ko, num_topics=ntopics)
+            print(lda_ko.print_topics(num_topics=ntopics, num_words=nwords))
 
         <pre class="result">
-        ['0.002\*결혼/Noun + 0.002\*육아휴직/Noun + 0.002\*파견/Noun + 0.002\*중개업/Noun + 0.002\*소말리아/Noun',
-         '0.001\*육아휴직/Noun + 0.001\*고용/Noun + 0.001\*만/Noun + 0.001\*대체/Noun + 0.001\*세/Noun',
-         '0.003\*육아휴직/Noun + 0.002\*만/Noun + 0.002\*×/Foreign + 0.001\*대체/Noun + 0.001\*第/Foreign',
-         '0.003\*육아휴직/Noun + 0.002\*손해/Noun + 0.002\*학위/Noun + 0.002\*간호/Noun + 0.002\*원사/Noun',
-         '0.003\*예고/Noun + 0.002\*UAE/Alpha + 0.002\*부대/Noun + 0.002\*파견/Noun + 0.002\*입법/Noun']
+        ['0.001\*학위/Noun + 0.001\*파견/Noun + 0.001\*손해/Noun + 0.001\*간호/Noun + 0.001\*소말리아/Noun',
+         '0.002\*파견/Noun + 0.002\*부대/Noun + 0.001\*UAE/Alpha + 0.001\*손해/Noun + 0.001\*○/Foreign',
+         '0.003\*육아휴직/Noun + 0.002\*만/Noun + 0.002\*×/Foreign + 0.002\*대체/Noun + 0.002\*고용/Noun']
         </pre>
 
 1. HDP
+    - English
+
+            :::python
+            import numpy as np; np.random.seed(42)  # optional
+            hdp_en = models.hdpmodel.HdpModel(tfidf_en, id2word=dictionary_en)
+            print(hdp_en.print_topics(topics=ntopics, topn=nwords))
+
+        <pre class="result">
+        ['topic 0: 0.005\*the + 0.003\*to + 0.002\*in + 0.002\*a + 0.002\*of',
+         'topic 1: 0.008\*vs + 0.005\*000 + 0.004\*loss + 0.004\*mln + 0.004\*cts',
+         'topic 2: 0.001\*the + 0.001\*vs + 0.001\*in + 0.001\*to + 0.001\*mln']
+        </pre>
+
     - Korean
 
             :::python
             import numpy as np; np.random.seed(42)  # optional
-            hdp = models.hdpmodel.HdpModel(tfidf, id2word=dictionary)
-            print(hdp.print_topics(topics=ntopics, topn=nwords))
+            hdp_ko = models.hdpmodel.HdpModel(tfidf_ko, id2word=dictionary_ko)
+            print(hdp_ko.print_topics(topics=ntopics, topn=nwords))
 
         <pre class="result">
         ['topic 0: 0.004\*소집/Noun + 0.004\*도/Josa + 0.004\*’/Foreign + 0.004\*｢/Foreign + 0.004\*9892/Number',
-         'topic 1: 0.004\*이애주/Noun + 0.004\*年/Foreign + 0.004\*意思/Foreign + 0.004\*마찰/Noun + 0.004\*고려/Noun',
-         'topic 2: 0.005\*명시/Noun + 0.004\*영업정지/Noun + 0.004\*세로/Noun + 0.004\*중개업/Noun + 0.004\*다양하다/Adjective',
-         'topic 3: 0.004\*지다/Verb + 0.004\*호에/Exclamation + 0.004\*아부다비/Noun + 0.004\*1851/Number + 0.003\*국위/Noun',
-         'topic 4: 0.005\*분/Noun + 0.005\*인정/Noun + 0.004\*단위/Noun + 0.004\*외교/Noun + 0.004\*상태/Noun']
+         'topic 1: 0.004\*이애주/Noun + 0.004\*年/Foreign + 0.004\*意思/Foreign + 0.004\*마찰/Noun + 0.004\*고 려/Noun',
+         'topic 2: 0.005\*명시/Noun + 0.004\*영업정지/Noun + 0.004\*세로/Noun + 0.004\*중개업/Noun + 0.004\*다양하다/Adjective']
         </pre>
 
 ### 3. Scoring documents
 
+- English
+
+        :::python
+        bow = tfidf_model_en[dictionary_en.doc2bow(texts_en[0])]
+        sorted(lsi_en[bow], key=lambda x: x[1], reverse=True)
+        sorted(lda_en[bow], key=lambda x: x[1], reverse=True)
+        sorted(hdp_en[bow], key=lambda x: x[1], reverse=True)
+
+    <pre class="result">
+    [(0, 0.1336800876240628),
+     (2, -0.030832981664564624),
+     (1, -0.39895210562646022)]
+
+    [(2, 0.84087091284115845),
+     (0, 0.13882114432084294),
+     (1, 0.020307942837998694)]
+
+    [(0, 0.95369717052959579)]
+    </pre>
+
+        :::python
+        bow = tfidf_model_en[dictionary_en.doc2bow(texts_en[1])]
+        sorted(lsi_en[bow], key=lambda x: x[1], reverse=True)
+        sorted(lda_en[bow], key=lambda x: x[1], reverse=True)
+        sorted(hdp_en[bow], key=lambda x: x[1], reverse=True)
+
+    <pre class="result">
+    [(0, 0.072924758682943097),
+     (2, -0.0029545572070390153),
+     (1, -0.13195370933374836)]
+
+    [(0, 0.62957273636869904),
+     (2, 0.3270007771486681),
+     (1, 0.043426486482632851)]
+
+    [(0, 0.90574410236561731),
+     (1, 0.010409702375525492)]
+    </pre>
+
 - Korean
 
         :::python
-        bow = tfidf_model[dictionary.doc2bow(texts[0])]
-        sorted(lsi[bow], key=lambda x: x[1], reverse=True)
-        sorted(lda[bow], key=lambda x: x[1], reverse=True)
-        sorted(hdp[bow], key=lambda x: x[1], reverse=True)
+        bow = tfidf_model_ko[dictionary_ko.doc2bow(texts_ko[0])]
+        sorted(lsi_ko[bow], key=lambda x: x[1], reverse=True)
+        sorted(lda_ko[bow], key=lambda x: x[1], reverse=True)
+        sorted(hdp_ko[bow], key=lambda x: x[1], reverse=True)
 
     <pre class="result">
-    [(0, 0.97829017893328907),
-     (3, 0.000835863239709228),
-     (4, -0.0017374397950225228),
-     (1, -0.016909513239921941),
-     (2, -0.020121561014424794)] 
+    [(0, 0.97829017893328929),
+     (1, -0.016909513239922121),
+     (2, -0.020121561014425089)]
 
-    [(3, 0.9310052562798824),
-     (2, 0.017425082394479496),
-     (0, 0.017378015173812589),
-     (1, 0.017104887218062227),
-     (4, 0.017086758933763269
+    [(2, 0.93880436704581616),
+     (0, 0.030626827732744354),
+     (1, 0.030568805221439507)]
 
     [(0, 0.94848723192042672),
      (1, 0.014364056233061516),
@@ -543,28 +675,23 @@ For more information on chunking, refer to [Extracting Information from Text](ht
     </pre>
 
         :::python
-        bow = tfidf_model[dictionary.doc2bow(texts[8])]
-        sorted(lsi[bow], key=lambda x: x[1], reverse=True)
-        sorted(lda[bow], key=lambda x: x[1], reverse=True)
-        sorted(hdp[bow], key=lambda x: x[1], reverse=True)
+        bow = tfidf_model_ko[dictionary_ko.doc2bow(texts_ko[1])]
+        sorted(lsi_ko[bow], key=lambda x: x[1], reverse=True)
+        sorted(lda_ko[bow], key=lambda x: x[1], reverse=True)
+        sorted(hdp_ko[bow], key=lambda x: x[1], reverse=True)
 
     <pre class="result">
-    [(1, 0.86944662880694601),
-     (0, 0.028513131927812137),
-     (4, 0.022819377684756378),
-     (3, 9.8368109092188263e-05),
-     (2, -0.073085445604715568)]
+    [(0, 0.97829017893328929),
+     (1, -0.016909513239922121),
+     (2, -0.020121561014425089)]
 
-    [(0, 0.92779202787548953),
-     (4, 0.018203028198907352),
-     (1, 0.018011915903463821),
-     (2, 0.017996693337477582),
-     (3, 0.017996334684661889)]
+    [(2, 0.93881674048370278),
+     (0, 0.0306176131467021),
+     (1, 0.030565646369595065)]
 
-    [(4, 0.84196426404194868),
-     (0, 0.1107088922238752),
-     (1, 0.01517818403850886),
-     (2, 0.010833216176185687)]
+    [(0, 0.94848723192042672),
+     (1, 0.014364056233061516),
+     (2, 0.010285449586192942)]
     </pre>
 
 ## Word embedding
@@ -609,46 +736,119 @@ Let's go for it.
 ### word2vec toy problem
 
 1. Load documents
+    - English
+
+            :::python
+            from nltk.corpus import reuters
+            docs_en = [reuters.words(i) for i in reuters.fileids()]
+
     - Korean
 
             :::python
             from konlpy.corpus import kobill
-            docs = [kobill.open(i).read() for i in kobill.fileids()]
+            docs_ko = [kobill.open(i).read() for i in kobill.fileids()]
 
 1. Tokenize
+    - English
+
+            :::python
+            texts_en = docs_en # because we loaded tokenized documents in step 1
+
     - Korean
 
             :::python
             from konlpy.tag import Twitter; t = Twitter()
             pos = lambda d: ['/'.join(p) for p in t.pos(d)]
-            texts = [pos(doc) for doc in docs]
+            texts_ko = [pos(doc) for doc in docs_ko]
 
 1. Train
+    - English
+
+            :::python
+            from gensim.models import word2vec
+            wv_model_en = word2vec.Word2Vec(texts_en)
+            wv_model_en.init_sims(replace=True)
+            wv_model_en.save('en_word2vec.model')
+
     - Korean
 
             :::python
             from gensim.models import word2vec
-            wv_model = word2vec.Word2Vec(texts)
-            wv_model.init_sims(replace=True)
-            wv_model.save('ko_word2vec.model')
+            wv_model_ko = word2vec.Word2Vec(texts_ko)
+            wv_model_ko.init_sims(replace=True)
+            wv_model_ko.save('ko_word2vec.model')
 
 1. Test
+    - English
+
+            :::python
+            wv_model_en.most_similar('president')
+            wv_model_en.most_similar('secretary')
+            wv_model_en.most_similar('country')
+
+        <pre class="result">
+        [('chairman', 0.8655247688293457),
+         ('vice', 0.8160154819488525),
+         ('executive', 0.8094440698623657),
+         ('officer', 0.7894954085350037),
+         ('Kjell', 0.7766541838645935),
+         ('former', 0.7680522203445435),
+         ('chief', 0.7660256028175354),
+         ('Robert', 0.7623487114906311),
+         ('director', 0.7434573173522949),
+         ('Roger', 0.7231118679046631)]
+        
+        [('assistant', 0.8573123812675476),
+         ('Carlos', 0.796258807182312),
+         ('Daniel', 0.7900130748748779),
+         ('undersecretary', 0.7888025045394897),
+         ('representative', 0.7878221273422241),
+         ('Deputy', 0.7847912311553955),
+         ('NAWG', 0.7829214930534363),
+         ('Republican', 0.7773356437683105),
+         ('Greek', 0.7752739191055298),
+         ('Papandreou', 0.7684933543205261)]
+        
+        [('kingdom', 0.8003361225128174),
+         ('biggest', 0.765742301940918),
+         ('island', 0.7639101147651672),
+         ('founding', 0.7143765687942505),
+         ('nation', 0.7080289125442505),
+         ('fortunes', 0.7054018974304199),
+         ('strength', 0.6875098943710327),
+         ('challenging', 0.6863174438476562),
+         ('actions', 0.6835225820541382),
+         ('departure', 0.6834459900856018)]
+        </pre>
+
     - Korean
 
             :::python
-            wv_model.most_similar(pos('초등학교'))
+            wv_model_ko.most_similar(pos('정부'))
+            wv_model_ko.most_similar(pos('초등학교'))
 
         <pre class="result">
-        [('국가/Noun', 0.96285080909729),
-         ('김정훈/Noun', 0.9593605995178223),
-         ('바탕/Noun', 0.9352315664291382),
-         ('에/Eomi', 0.9122501611709595),
-         ('연령/Noun', 0.8923488259315491),
-         ('세/Noun', 0.892114520072937),
-         ('여자/Noun', 0.8854814171791077),
-         ('상향/Noun', 0.8816936016082764),
-         ('만/Noun', 0.8690725564956665),
-         ('취학/Noun', 0.8688436150550842)]
+        [('경비/Noun', 0.9357226490974426),
+         ('선박/Noun', 0.9204540252685547),
+         ('연장/Noun', 0.9183653593063354),
+         ('임무/Noun', 0.9179578423500061),
+         ('우리/Noun', 0.9015840291976929),
+         ('목적/Noun', 0.8871368169784546),
+         ('기타/Noun', 0.875058650970459),
+         ('화/Suffix', 0.8669425249099731),
+         ('해역/Noun', 0.8575668334960938),
+         ('한국/Noun', 0.8549510836601257)]
+        
+        [('취학/Noun', 0.9686248898506165),
+         ('중인/Noun', 0.9336546659469604),
+         ('하더/Verb', 0.8985729217529297),
+         ('정의화/Noun', 0.8843945860862732),
+         ('김정훈/Noun', 0.8682949542999268),
+         ('지방/Noun', 0.8677719831466675),
+         ('조정함/Verb', 0.8617256879806519),
+         ('44/Number', 0.8445801734924316),
+         ('세/Noun', 0.8318654298782349),
+         ('第/Foreign', 0.8222816586494446)]
         </pre>
 
 ### word2vec in the real world
