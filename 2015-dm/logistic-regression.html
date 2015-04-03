@@ -84,7 +84,7 @@
 <li>MSE 말고도 평균 오차(mean error), MAE, MAPE, RMSE 등을 사용할 수도 있다<ul>
 <li>Mean error: $\frac{1}{n}\sum_{i=1}^{n} (h(x_1^{(i)}) - y^{(i)})$</li>
 <li>Mean absolute error (MAE): $\frac{1}{n}\sum_{i=1}^{n} |h(x_1^{(i)}) - y^{(i)}|$</li>
-<li>Mean absolute percentage error (MAPE): $100 \times \frac{1}{n}\sum_{i=1}^{n} \frac{|h(x_1^{(i)}) - y^{(i)}|}{y^{(i)}}$</li>
+<li>Mean absolute percentage error (MAPE): $100 \times \frac{1}{n}\sum_{i=1}^{n} |\frac{h(x_1^{(i)}) - y^{(i)}}{y^{(i)}}|$</li>
 <li>Root mean squared error (RMSE): $\sqrt{\frac{1}{2n}\sum_{i=1}^{n}(h(x_1^{(i)}) - y^{(i)})^2}$</li>
 </ul>
 </li>
@@ -111,6 +111,8 @@
 </ul>
 </li>
 </ul>
+<!-- Add bias-variance decomposition with MSE -->
+
 <h2>Logistic regression</h2>
 <ul>
 <li>ex: 33명 성인 여성의 나이와 심장동맥병(CD, coronary heart disease) 발병 여부<ul>

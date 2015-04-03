@@ -530,8 +530,18 @@ lets use one short sentence for each language.</p>
 <li>
 <p>Load documents</p>
 <ul>
-<li>Korean<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.corpus</span> <span class="kn">import</span> <span class="n">kobill</span>
-<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">kobill</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">kobill</span><span class="o">.</span><span class="n">fileids</span><span class="p">()]</span>
+<li>
+<p>English</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">reuters</span>
+<span class="n">docs_en</span> <span class="o">=</span> <span class="p">[</span><span class="n">reuters</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">reuters</span><span class="o">.</span><span class="n">fileids</span><span class="p">()]</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.corpus</span> <span class="kn">import</span> <span class="n">kobill</span>
+<span class="n">docs_ko</span> <span class="o">=</span> <span class="p">[</span><span class="n">kobill</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">kobill</span><span class="o">.</span><span class="n">fileids</span><span class="p">()]</span>
 </pre></div>
 
 
@@ -541,21 +551,49 @@ lets use one short sentence for each language.</p>
 <li>
 <p>Tokenize</p>
 <ul>
-<li>Korean<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Twitter</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Twitter</span><span class="p">()</span>
-<span class="n">pos</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">stem</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="bp">True</span><span class="p">)]</span>
-<span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">pos</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+<li>
+<p>English</p>
+<div class="highlight"><pre><span class="n">texts_en</span> <span class="o">=</span> <span class="n">docs_en</span> <span class="c"># because we loaded tokenized documents in step 1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">texts_en</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 
 
+<p><pre class="result">
+['ASIAN', 'EXPORTERS', 'FEAR', 'DAMAGE', 'FROM', 'U', ...]
+</pre></p>
+</li>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Twitter</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Twitter</span><span class="p">()</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">stem</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="bp">True</span><span class="p">)]</span>
+<span class="n">texts_ko</span> <span class="o">=</span> <span class="p">[</span><span class="n">pos</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs_ko</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">texts_ko</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+
+<p><pre class="result">
+['지방공무원법/Noun', '일부/Noun', '개정/Noun', '법률/Noun', '안/Noun', '(/Punctuation', '정의화/Noun', '의원/Noun', ...]
+</pre></p>
 </li>
 </ul>
 </li>
 <li>
-<p>Encode</p>
+<p>Encode tokens to integers</p>
 <ul>
-<li>Korean<div class="highlight"><pre><span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">corpora</span>
-<span class="n">dictionary</span> <span class="o">=</span> <span class="n">corpora</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">texts</span><span class="p">)</span>
-<span class="n">dictionary</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;ko.dict&#39;</span><span class="p">)</span>  <span class="c"># save dictionary to file for future use</span>
+<li>
+<p>English</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">corpora</span>
+<span class="n">dictionary_en</span> <span class="o">=</span> <span class="n">corpora</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">texts_en</span><span class="p">)</span>
+<span class="n">dictionary_en</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;en.dict&#39;</span><span class="p">)</span>  <span class="c"># save dictionary to file for future use</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">corpora</span>
+<span class="n">dictionary_ko</span> <span class="o">=</span> <span class="n">corpora</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">texts_ko</span><span class="p">)</span>
+<span class="n">dictionary_ko</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;ko.dict&#39;</span><span class="p">)</span>  <span class="c"># save dictionary to file for future use</span>
 </pre></div>
 
 
@@ -565,14 +603,51 @@ lets use one short sentence for each language.</p>
 <li>
 <p>Calculate TF-IDF</p>
 <ul>
-<li>Korean<div class="highlight"><pre><span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">models</span>
-<span class="n">tf</span> <span class="o">=</span> <span class="p">[</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">]</span>
-<span class="n">tfidf_model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TfidfModel</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
-<span class="n">tfidf</span> <span class="o">=</span> <span class="n">tfidf_model</span><span class="p">[</span><span class="n">tf</span><span class="p">]</span>
-<span class="n">corpora</span><span class="o">.</span><span class="n">MmCorpus</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="s">&#39;ko.mm&#39;</span><span class="p">,</span> <span class="n">tfidf</span><span class="p">)</span> <span class="c"># save corpus to file for future use</span>
+<li>
+<p>English</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="n">tf_en</span> <span class="o">=</span> <span class="p">[</span><span class="n">dictionary_en</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts_en</span><span class="p">]</span>
+<span class="n">tfidf_model_en</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TfidfModel</span><span class="p">(</span><span class="n">tf_en</span><span class="p">)</span>
+<span class="n">tfidf_en</span> <span class="o">=</span> <span class="n">tfidf_model_en</span><span class="p">[</span><span class="n">tf_en</span><span class="p">]</span>
+<span class="n">corpora</span><span class="o">.</span><span class="n">MmCorpus</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="s">&#39;en.mm&#39;</span><span class="p">,</span> <span class="n">tfidf_en</span><span class="p">)</span> <span class="c"># save corpus to file for future use</span>
+
+<span class="c"># print first 10 elements of first document&#39;s tf-idf vector</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tfidf_en</span><span class="o">.</span><span class="n">corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
+<span class="c"># print top 10 elements of first document&#39;s tf-idf vector</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">tfidf_en</span><span class="o">.</span><span class="n">corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="c"># print token of most frequent element</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dictionary_en</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
 </pre></div>
 
 
+<p><pre class="result">
+[(0, 7), (1, 3), (2, 13), (3, 2), (4, 1), (5, 1), (6, 20), (7, 6), (8, 10), (9, 62)]
+[(9, 62), (363, 32), (276, 30), (371, 26), (6, 20), (96, 19), (112, 19), (326, 16), (118, 14), (2, 13)]
+'.'
+</pre></p>
+</li>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="n">tf_ko</span> <span class="o">=</span> <span class="p">[</span><span class="n">dictionary_ko</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts_ko</span><span class="p">]</span>
+<span class="n">tfidf_model_ko</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TfidfModel</span><span class="p">(</span><span class="n">tf_ko</span><span class="p">)</span>
+<span class="n">tfidf_ko</span> <span class="o">=</span> <span class="n">tfidf_model_ko</span><span class="p">[</span><span class="n">tf_ko</span><span class="p">]</span>
+<span class="n">corpora</span><span class="o">.</span><span class="n">MmCorpus</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="s">&#39;ko.mm&#39;</span><span class="p">,</span> <span class="n">tfidf_ko</span><span class="p">)</span> <span class="c"># save corpus to file for future use</span>
+
+<span class="c"># print first 10 elements of first document&#39;s tf-idf vector</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tfidf_ko</span><span class="o">.</span><span class="n">corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
+<span class="c"># print top 10 elements of first document&#39;s tf-idf vector</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">tfidf_ko</span><span class="o">.</span><span class="n">corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="c"># print token of most frequent element</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dictionary_ko</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">414</span><span class="p">))</span>
+</pre></div>
+
+
+<p><pre class="result">
+[(0, 10), (1, 27), (2, 1), (3, 26), (4, 3), (5, 26), (6, 4), (7, 2), (8, 1), (9, 1)]
+[(414, 71), (14, 61), (309, 38), (314, 38), (313, 28), (1, 27), (3, 26), (5, 26), (353, 22), (13, 21)]
+'하다/Verb'
+</pre></p>
 </li>
 </ul>
 </li>
@@ -583,19 +658,31 @@ lets use one short sentence for each language.</p>
 <p>LSI</p>
 <ul>
 <li>
+<p>English</p>
+<div class="highlight"><pre><span class="n">ntopics</span><span class="p">,</span> <span class="n">nwords</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
+<span class="n">lsi_en</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">lsimodel</span><span class="o">.</span><span class="n">LsiModel</span><span class="p">(</span><span class="n">tfidf_en</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary_en</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">lsi_en</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">num_words</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
+</pre></div>
+
+
+<p><pre class="result">
+['0.509*"vs" + 0.272*"000" + 0.258*"cts" + 0.243*"loss" + 0.238*"mln"',
+'-0.294*"the" + 0.237*"vs" + -0.176*"to" + -0.148*"in" + -0.137*"pct"',
+'0.331*"Record" + 0.316*"div" + 0.312*"Pay" + 0.303*"Qtly" + 0.268*"prior"']
+</pre></p>
+</li>
+<li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="n">ntopics</span><span class="p">,</span> <span class="n">nwords</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span>
-<span class="n">lsi</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">lsimodel</span><span class="o">.</span><span class="n">LsiModel</span><span class="p">(</span><span class="n">tfidf</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">lsi</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">num_words</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
+<div class="highlight"><pre><span class="n">ntopics</span><span class="p">,</span> <span class="n">nwords</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
+<span class="n">lsi_ko</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">lsimodel</span><span class="o">.</span><span class="n">LsiModel</span><span class="p">(</span><span class="n">tfidf_ko</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary_ko</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">lsi_ko</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">num_words</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
 </pre></div>
 
 
 <p><pre class="result">
 ['0.518*"육아휴직/Noun" + 0.257*"만/Noun" + 0.227*"×/Foreign" + 0.214*"대체/Noun" + 0.201*"고용/Noun"',
  '0.449*"파견/Noun" + 0.412*"부대/Noun" + 0.267*"UAE/Alpha" + 0.243*"○/Foreign" + 0.192*"국군/Noun"',
- '-0.326*"결혼/Noun" + -0.315*"예고/Noun" + -0.285*"손해/Noun" + -0.205*"ㆍ/Foreign" + -0.197*"원사/Noun"',
- '0.490*"학위/Noun" + 0.401*"간호/Noun" + 0.312*"연한/Noun" + 0.312*"수업/Noun" + 0.223*"학사/Noun"',
- '-0.520*"예고/Noun" + 0.349*"결혼/Noun" + -0.297*"입법/Noun" + -0.208*"「/Foreign" + -0.208*"」/Foreign"']
+ '0.326*"결혼/Noun" + 0.315*"예고/Noun" + 0.285*"손해/Noun" + 0.205*"ㆍ/Foreign" + 0.197*"원사/Noun"']
 </pre></p>
 </li>
 </ul>
@@ -604,19 +691,31 @@ lets use one short sentence for each language.</p>
 <p>LDA</p>
 <ul>
 <li>
-<p>Korean</p>
+<p>English</p>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span><span class="p">;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c"># optional</span>
-<span class="n">lda</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ldamodel</span><span class="o">.</span><span class="n">LdaModel</span><span class="p">(</span><span class="n">tfidf</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">lda</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">num_words</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
+<span class="n">lda_en</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ldamodel</span><span class="o">.</span><span class="n">LdaModel</span><span class="p">(</span><span class="n">tfidf_en</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary_en</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">lda_en</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">num_words</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
 </pre></div>
 
 
 <p><pre class="result">
-['0.002*결혼/Noun + 0.002*육아휴직/Noun + 0.002*파견/Noun + 0.002*중개업/Noun + 0.002*소말리아/Noun',
- '0.001*육아휴직/Noun + 0.001*고용/Noun + 0.001*만/Noun + 0.001*대체/Noun + 0.001*세/Noun',
- '0.003*육아휴직/Noun + 0.002*만/Noun + 0.002*×/Foreign + 0.001*대체/Noun + 0.001*第/Foreign',
- '0.003*육아휴직/Noun + 0.002*손해/Noun + 0.002*학위/Noun + 0.002*간호/Noun + 0.002*원사/Noun',
- '0.003*예고/Noun + 0.002*UAE/Alpha + 0.002*부대/Noun + 0.002*파견/Noun + 0.002*입법/Noun']
+['0.005*the + 0.003*to + 0.003*pct + 0.002*of + 0.002*said',
+ '0.005*cts + 0.005*Record + 0.005*div + 0.004*Pay + 0.004*Qtly',
+ '0.010*vs + 0.006*mln + 0.006*000 + 0.005*loss + 0.004*cts']
+</pre></p>
+</li>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span><span class="p">;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c"># optional</span>
+<span class="n">lda_ko</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ldamodel</span><span class="o">.</span><span class="n">LdaModel</span><span class="p">(</span><span class="n">tfidf_ko</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary_ko</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">lda_ko</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">num_topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">num_words</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
+</pre></div>
+
+
+<p><pre class="result">
+['0.001*학위/Noun + 0.001*파견/Noun + 0.001*손해/Noun + 0.001*간호/Noun + 0.001*소말리아/Noun',
+ '0.002*파견/Noun + 0.002*부대/Noun + 0.001*UAE/Alpha + 0.001*손해/Noun + 0.001*○/Foreign',
+ '0.003*육아휴직/Noun + 0.002*만/Noun + 0.002*×/Foreign + 0.002*대체/Noun + 0.002*고용/Noun']
 </pre></p>
 </li>
 </ul>
@@ -625,19 +724,31 @@ lets use one short sentence for each language.</p>
 <p>HDP</p>
 <ul>
 <li>
+<p>English</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span><span class="p">;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c"># optional</span>
+<span class="n">hdp_en</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">hdpmodel</span><span class="o">.</span><span class="n">HdpModel</span><span class="p">(</span><span class="n">tfidf_en</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary_en</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">hdp_en</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">topn</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
+</pre></div>
+
+
+<p><pre class="result">
+['topic 0: 0.005*the + 0.003*to + 0.002*in + 0.002*a + 0.002*of',
+ 'topic 1: 0.008*vs + 0.005*000 + 0.004*loss + 0.004*mln + 0.004*cts',
+ 'topic 2: 0.001*the + 0.001*vs + 0.001*in + 0.001*to + 0.001*mln']
+</pre></p>
+</li>
+<li>
 <p>Korean</p>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span><span class="p">;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c"># optional</span>
-<span class="n">hdp</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">hdpmodel</span><span class="o">.</span><span class="n">HdpModel</span><span class="p">(</span><span class="n">tfidf</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">hdp</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">topn</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
+<span class="n">hdp_ko</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">hdpmodel</span><span class="o">.</span><span class="n">HdpModel</span><span class="p">(</span><span class="n">tfidf_ko</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary_ko</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">hdp_ko</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">topics</span><span class="o">=</span><span class="n">ntopics</span><span class="p">,</span> <span class="n">topn</span><span class="o">=</span><span class="n">nwords</span><span class="p">))</span>
 </pre></div>
 
 
 <p><pre class="result">
 ['topic 0: 0.004*소집/Noun + 0.004*도/Josa + 0.004*’/Foreign + 0.004*｢/Foreign + 0.004*9892/Number',
- 'topic 1: 0.004*이애주/Noun + 0.004*年/Foreign + 0.004*意思/Foreign + 0.004*마찰/Noun + 0.004*고려/Noun',
- 'topic 2: 0.005*명시/Noun + 0.004*영업정지/Noun + 0.004*세로/Noun + 0.004*중개업/Noun + 0.004*다양하다/Adjective',
- 'topic 3: 0.004*지다/Verb + 0.004*호에/Exclamation + 0.004*아부다비/Noun + 0.004*1851/Number + 0.003*국위/Noun',
- 'topic 4: 0.005*분/Noun + 0.005*인정/Noun + 0.004*단위/Noun + 0.004*외교/Noun + 0.004*상태/Noun']
+ 'topic 1: 0.004*이애주/Noun + 0.004*年/Foreign + 0.004*意思/Foreign + 0.004*마찰/Noun + 0.004*고 려/Noun',
+ 'topic 2: 0.005*명시/Noun + 0.004*영업정지/Noun + 0.004*세로/Noun + 0.004*중개업/Noun + 0.004*다양하다/Adjective']
 </pre></p>
 </li>
 </ul>
@@ -646,51 +757,78 @@ lets use one short sentence for each language.</p>
 <h3>3. Scoring documents</h3>
 <ul>
 <li>
-<p>Korean</p>
-<div class="highlight"><pre><span class="n">bow</span> <span class="o">=</span> <span class="n">tfidf_model</span><span class="p">[</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">lsi</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">lda</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">hdp</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<p>English</p>
+<div class="highlight"><pre><span class="n">bow</span> <span class="o">=</span> <span class="n">tfidf_model_en</span><span class="p">[</span><span class="n">dictionary_en</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">texts_en</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lsi_en</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lda_en</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">hdp_en</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 
 <p><pre class="result">
-[(0, 0.97829017893328907),
- (3, 0.000835863239709228),
- (4, -0.0017374397950225228),
- (1, -0.016909513239921941),
- (2, -0.020121561014424794)] </p>
-<p>[(3, 0.9310052562798824),
- (2, 0.017425082394479496),
- (0, 0.017378015173812589),
- (1, 0.017104887218062227),
- (4, 0.017086758933763269</p>
+[(0, 0.1336800876240628),
+ (2, -0.030832981664564624),
+ (1, -0.39895210562646022)]</p>
+<p>[(2, 0.84087091284115845),
+ (0, 0.13882114432084294),
+ (1, 0.020307942837998694)]</p>
+<p>[(0, 0.95369717052959579)]
+</pre></p>
+<div class="highlight"><pre><span class="n">bow</span> <span class="o">=</span> <span class="n">tfidf_model_en</span><span class="p">[</span><span class="n">dictionary_en</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">texts_en</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lsi_en</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lda_en</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">hdp_en</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p><pre class="result">
+[(0, 0.072924758682943097),
+ (2, -0.0029545572070390153),
+ (1, -0.13195370933374836)]</p>
+<p>[(0, 0.62957273636869904),
+ (2, 0.3270007771486681),
+ (1, 0.043426486482632851)]</p>
+<p>[(0, 0.90574410236561731),
+ (1, 0.010409702375525492)]
+</pre></p>
+</li>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="n">bow</span> <span class="o">=</span> <span class="n">tfidf_model_ko</span><span class="p">[</span><span class="n">dictionary_ko</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">texts_ko</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lsi_ko</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lda_ko</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">hdp_ko</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p><pre class="result">
+[(0, 0.97829017893328929),
+ (1, -0.016909513239922121),
+ (2, -0.020121561014425089)]</p>
+<p>[(2, 0.93880436704581616),
+ (0, 0.030626827732744354),
+ (1, 0.030568805221439507)]</p>
 <p>[(0, 0.94848723192042672),
  (1, 0.014364056233061516),
  (2, 0.010285449586192942)]
 </pre></p>
-<div class="highlight"><pre><span class="n">bow</span> <span class="o">=</span> <span class="n">tfidf_model</span><span class="p">[</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">texts</span><span class="p">[</span><span class="mi">8</span><span class="p">])]</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">lsi</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">lda</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">hdp</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">bow</span> <span class="o">=</span> <span class="n">tfidf_model_ko</span><span class="p">[</span><span class="n">dictionary_ko</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">texts_ko</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lsi_ko</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lda_ko</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">hdp_ko</span><span class="p">[</span><span class="n">bow</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 
 <p><pre class="result">
-[(1, 0.86944662880694601),
- (0, 0.028513131927812137),
- (4, 0.022819377684756378),
- (3, 9.8368109092188263e-05),
- (2, -0.073085445604715568)]</p>
-<p>[(0, 0.92779202787548953),
- (4, 0.018203028198907352),
- (1, 0.018011915903463821),
- (2, 0.017996693337477582),
- (3, 0.017996334684661889)]</p>
-<p>[(4, 0.84196426404194868),
- (0, 0.1107088922238752),
- (1, 0.01517818403850886),
- (2, 0.010833216176185687)]
+[(0, 0.97829017893328929),
+ (1, -0.016909513239922121),
+ (2, -0.020121561014425089)]</p>
+<p>[(2, 0.93881674048370278),
+ (0, 0.0306176131467021),
+ (1, 0.030565646369595065)]</p>
+<p>[(0, 0.94848723192042672),
+ (1, 0.014364056233061516),
+ (2, 0.010285449586192942)]
 </pre></p>
 </li>
 </ul>
@@ -756,8 +894,18 @@ lets use one short sentence for each language.</p>
 <li>
 <p>Load documents</p>
 <ul>
-<li>Korean<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.corpus</span> <span class="kn">import</span> <span class="n">kobill</span>
-<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">kobill</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">kobill</span><span class="o">.</span><span class="n">fileids</span><span class="p">()]</span>
+<li>
+<p>English</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">reuters</span>
+<span class="n">docs_en</span> <span class="o">=</span> <span class="p">[</span><span class="n">reuters</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">reuters</span><span class="o">.</span><span class="n">fileids</span><span class="p">()]</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.corpus</span> <span class="kn">import</span> <span class="n">kobill</span>
+<span class="n">docs_ko</span> <span class="o">=</span> <span class="p">[</span><span class="n">kobill</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">kobill</span><span class="o">.</span><span class="n">fileids</span><span class="p">()]</span>
 </pre></div>
 
 
@@ -767,9 +915,18 @@ lets use one short sentence for each language.</p>
 <li>
 <p>Tokenize</p>
 <ul>
-<li>Korean<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Twitter</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Twitter</span><span class="p">()</span>
+<li>
+<p>English</p>
+<div class="highlight"><pre><span class="n">texts_en</span> <span class="o">=</span> <span class="n">docs_en</span> <span class="c"># because we loaded tokenized documents in step 1</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Twitter</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Twitter</span><span class="p">()</span>
 <span class="n">pos</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="n">d</span><span class="p">)]</span>
-<span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">pos</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+<span class="n">texts_ko</span> <span class="o">=</span> <span class="p">[</span><span class="n">pos</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs_ko</span><span class="p">]</span>
 </pre></div>
 
 
@@ -779,10 +936,22 @@ lets use one short sentence for each language.</p>
 <li>
 <p>Train</p>
 <ul>
-<li>Korean<div class="highlight"><pre><span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">word2vec</span>
-<span class="n">wv_model</span> <span class="o">=</span> <span class="n">word2vec</span><span class="o">.</span><span class="n">Word2Vec</span><span class="p">(</span><span class="n">texts</span><span class="p">)</span>
-<span class="n">wv_model</span><span class="o">.</span><span class="n">init_sims</span><span class="p">(</span><span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">wv_model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;ko_word2vec.model&#39;</span><span class="p">)</span>
+<li>
+<p>English</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">word2vec</span>
+<span class="n">wv_model_en</span> <span class="o">=</span> <span class="n">word2vec</span><span class="o">.</span><span class="n">Word2Vec</span><span class="p">(</span><span class="n">texts_en</span><span class="p">)</span>
+<span class="n">wv_model_en</span><span class="o">.</span><span class="n">init_sims</span><span class="p">(</span><span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">wv_model_en</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;en_word2vec.model&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">word2vec</span>
+<span class="n">wv_model_ko</span> <span class="o">=</span> <span class="n">word2vec</span><span class="o">.</span><span class="n">Word2Vec</span><span class="p">(</span><span class="n">texts_ko</span><span class="p">)</span>
+<span class="n">wv_model_ko</span><span class="o">.</span><span class="n">init_sims</span><span class="p">(</span><span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">wv_model_ko</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;ko_word2vec.model&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -793,22 +962,74 @@ lets use one short sentence for each language.</p>
 <p>Test</p>
 <ul>
 <li>
-<p>Korean</p>
-<div class="highlight"><pre><span class="n">wv_model</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="n">pos</span><span class="p">(</span><span class="s">&#39;초등학교&#39;</span><span class="p">))</span>
+<p>English</p>
+<div class="highlight"><pre><span class="n">wv_model_en</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s">&#39;president&#39;</span><span class="p">)</span>
+<span class="n">wv_model_en</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s">&#39;secretary&#39;</span><span class="p">)</span>
+<span class="n">wv_model_en</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s">&#39;country&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p><pre class="result">
-[('국가/Noun', 0.96285080909729),
- ('김정훈/Noun', 0.9593605995178223),
- ('바탕/Noun', 0.9352315664291382),
- ('에/Eomi', 0.9122501611709595),
- ('연령/Noun', 0.8923488259315491),
- ('세/Noun', 0.892114520072937),
- ('여자/Noun', 0.8854814171791077),
- ('상향/Noun', 0.8816936016082764),
- ('만/Noun', 0.8690725564956665),
- ('취학/Noun', 0.8688436150550842)]
+[('chairman', 0.8655247688293457),
+ ('vice', 0.8160154819488525),
+ ('executive', 0.8094440698623657),
+ ('officer', 0.7894954085350037),
+ ('Kjell', 0.7766541838645935),
+ ('former', 0.7680522203445435),
+ ('chief', 0.7660256028175354),
+ ('Robert', 0.7623487114906311),
+ ('director', 0.7434573173522949),
+ ('Roger', 0.7231118679046631)]</p>
+<p>[('assistant', 0.8573123812675476),
+ ('Carlos', 0.796258807182312),
+ ('Daniel', 0.7900130748748779),
+ ('undersecretary', 0.7888025045394897),
+ ('representative', 0.7878221273422241),
+ ('Deputy', 0.7847912311553955),
+ ('NAWG', 0.7829214930534363),
+ ('Republican', 0.7773356437683105),
+ ('Greek', 0.7752739191055298),
+ ('Papandreou', 0.7684933543205261)]</p>
+<p>[('kingdom', 0.8003361225128174),
+ ('biggest', 0.765742301940918),
+ ('island', 0.7639101147651672),
+ ('founding', 0.7143765687942505),
+ ('nation', 0.7080289125442505),
+ ('fortunes', 0.7054018974304199),
+ ('strength', 0.6875098943710327),
+ ('challenging', 0.6863174438476562),
+ ('actions', 0.6835225820541382),
+ ('departure', 0.6834459900856018)]
+</pre></p>
+</li>
+<li>
+<p>Korean</p>
+<div class="highlight"><pre><span class="n">wv_model_ko</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="n">pos</span><span class="p">(</span><span class="s">&#39;정부&#39;</span><span class="p">))</span>
+<span class="n">wv_model_ko</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="n">pos</span><span class="p">(</span><span class="s">&#39;초등학교&#39;</span><span class="p">))</span>
+</pre></div>
+
+
+<p><pre class="result">
+[('경비/Noun', 0.9357226490974426),
+ ('선박/Noun', 0.9204540252685547),
+ ('연장/Noun', 0.9183653593063354),
+ ('임무/Noun', 0.9179578423500061),
+ ('우리/Noun', 0.9015840291976929),
+ ('목적/Noun', 0.8871368169784546),
+ ('기타/Noun', 0.875058650970459),
+ ('화/Suffix', 0.8669425249099731),
+ ('해역/Noun', 0.8575668334960938),
+ ('한국/Noun', 0.8549510836601257)]</p>
+<p>[('취학/Noun', 0.9686248898506165),
+ ('중인/Noun', 0.9336546659469604),
+ ('하더/Verb', 0.8985729217529297),
+ ('정의화/Noun', 0.8843945860862732),
+ ('김정훈/Noun', 0.8682949542999268),
+ ('지방/Noun', 0.8677719831466675),
+ ('조정함/Verb', 0.8617256879806519),
+ ('44/Number', 0.8445801734924316),
+ ('세/Noun', 0.8318654298782349),
+ ('第/Foreign', 0.8222816586494446)]
 </pre></p>
 </li>
 </ul>
