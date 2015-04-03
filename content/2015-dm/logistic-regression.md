@@ -49,7 +49,7 @@ Math: True
         - MSE 말고도 평균 오차(mean error), MAE, MAPE, RMSE 등을 사용할 수도 있다
             - Mean error: $\frac{1}{n}\sum_{i=1}^{n} (h(x_1^{(i)}) - y^{(i)})$
             - Mean absolute error (MAE): $\frac{1}{n}\sum_{i=1}^{n} |h(x_1^{(i)}) - y^{(i)}|$
-            - Mean absolute percentage error (MAPE): $100 \times \frac{1}{n}\sum_{i=1}^{n} \frac{|h(x_1^{(i)}) - y^{(i)}|}{y^{(i)}}$
+            - Mean absolute percentage error (MAPE): $100 \times \frac{1}{n}\sum_{i=1}^{n} |\frac{h(x_1^{(i)}) - y^{(i)}}{y^{(i)}}|$
             - Root mean squared error (RMSE): $\sqrt{\frac{1}{2n}\sum_{i=1}^{n}(h(x_1^{(i)}) - y^{(i)})^2}$
         - 이 값은 작을수록 좋음. 즉, 좋은 MSE가 되게 하는 모델이 좋은 모델
         - 바꿔말하면 좋은 모델을 만들기 위해서는 작은 MSE가 되게 하면 됨
@@ -61,6 +61,8 @@ Math: True
     - Analytical solution: Normal equation
         - Let $y = X\beta$, then
             $$\beta = (X^TX)^{-1}X^Ty$$
+
+<!-- Add bias-variance decomposition with MSE -->
 
 ## Logistic regression
 
