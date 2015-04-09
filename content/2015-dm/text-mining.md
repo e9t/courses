@@ -467,8 +467,10 @@ For more information on chunking, refer to [Extracting Information from Text](ht
             writer = csv.writer(f)
             writer.writerows(data)
 
-1. 다음으로 [이 링크](https://gist.github.com/e9t/e462f7462e9d83b03464#file-index-html)에서 `index.html`의 내용을 복사하여 `words.csv`가 있는 폴더 내에 다시 `index.html`이라는 이름으로 저장하자.
-1. `index.html`과 `words.csv`가 저장된 폴더에서 아래를 실행하자.
+1. 다음으로 아래의 코드를 복사하여 `words.csv`가 있는 폴더 내에 `index.html`라는 이름으로 저장하자.<br>
+    <script src="https://gist.github.com/e9t/e462f7462e9d83b03464.js?file=index.html" type="text/javascript"></script>
+
+1. 위와 같은 폴더에서 아래를 실행하자.
 
         :::python
         python -m http.server 8888      # for Python2, `python -m SimpleHTTPServer`
