@@ -569,10 +569,11 @@ dict_items([('명', 5), ('예상된', 3), ('하나', 1), ('11', 2), ('팀', 2), 
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;다음으로 &lt;a href="https://gist.github.com/e9t/e462f7462e9d83b03464#file-index-html"&gt;이 링크&lt;/a&gt;에서 &lt;code&gt;index.html&lt;/code&gt;의 내용을 복사하여 &lt;code&gt;words.csv&lt;/code&gt;가 있는 폴더 내에 다시 &lt;code&gt;index.html&lt;/code&gt;이라는 이름으로 저장하자.&lt;/p&gt;
+&lt;p&gt;다음으로 아래의 코드를 복사하여 &lt;code&gt;words.csv&lt;/code&gt;가 있는 폴더 내에 &lt;code&gt;index.html&lt;/code&gt;라는 이름으로 저장하자.&lt;br&gt;
+    &lt;script src="https://gist.github.com/e9t/e462f7462e9d83b03464.js?file=index.html" type="text/javascript"&gt;&lt;/script&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;index.html&lt;/code&gt;과 &lt;code&gt;words.csv&lt;/code&gt;가 저장된 폴더에서 아래를 실행하자.&lt;/p&gt;
+&lt;p&gt;위와 같은 폴더에서 아래를 실행하자.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="mi"&gt;8888&lt;/span&gt;      &lt;span class="c"&gt;# for Python2, `python -m SimpleHTTPServer`&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1144,10 +1145,11 @@ dict_items([('명', 5), ('예상된', 3), ('하나', 1), ('11', 2), ('팀', 2), 
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;다음으로 &lt;a href="https://gist.github.com/e9t/e462f7462e9d83b03464#file-index-html"&gt;이 링크&lt;/a&gt;에서 &lt;code&gt;index.html&lt;/code&gt;의 내용을 복사하여 &lt;code&gt;words.csv&lt;/code&gt;가 있는 폴더 내에 다시 &lt;code&gt;index.html&lt;/code&gt;이라는 이름으로 저장하자.&lt;/p&gt;
+&lt;p&gt;다음으로 아래의 코드를 복사하여 &lt;code&gt;words.csv&lt;/code&gt;가 있는 폴더 내에 &lt;code&gt;index.html&lt;/code&gt;라는 이름으로 저장하자.&lt;br&gt;
+    &lt;script src="https://gist.github.com/e9t/e462f7462e9d83b03464.js?file=index.html" type="text/javascript"&gt;&lt;/script&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;index.html&lt;/code&gt;과 &lt;code&gt;words.csv&lt;/code&gt;가 저장된 폴더에서 아래를 실행하자.&lt;/p&gt;
+&lt;p&gt;위와 같은 폴더에서 아래를 실행하자.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="mi"&gt;8888&lt;/span&gt;      &lt;span class="c"&gt;# for Python2, `python -m SimpleHTTPServer`&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
