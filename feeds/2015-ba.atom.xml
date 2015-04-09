@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-ba.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-04-02T00:00:00+09:00</updated><entry><title>Bash</title><link href="http://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><updated>2015-04-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;What is an OS?&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-ba.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-04-10T00:00:00+09:00</updated><entry><title>Recommender systems</title><link href="http://lucypark.kr/courses/2015-ba/recommender.html" rel="alternate"></link><updated>2015-04-10T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-10:courses/2015-ba/recommender.html</id><summary type="html">&lt;h2&gt;What are recommendations?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Who does recommendations?&lt;br&gt;
+    &lt;img src="images/recommenders.png"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Content based recommendation&lt;/h2&gt;
+&lt;h2&gt;Collaborative filtering&lt;/h2&gt;
+&lt;h2&gt;Evaluation&lt;/h2&gt;
+&lt;p&gt;다음 시간&lt;/p&gt;
+&lt;h2&gt;SVD&lt;/h2&gt;</summary><category term="lectures"></category></entry><entry><title>Bash</title><link href="http://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><updated>2015-04-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;What is an OS?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;DOS, Windows, Linux, Mac OS, iOS, Android, ...&lt;/li&gt;
 &lt;/ul&gt;
@@ -910,6 +919,11 @@ lets use one short sentence for each language.&lt;/p&gt;
 &lt;/pre&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;!-- Add document/query similarities http://radimrehurek.com/gensim/tut3.html#similarity-interface --&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Confident with topic modeling? Try a bigger dataset: &lt;a href="http://radimrehurek.com/gensim/wiki.html"&gt;Experiments on the English Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2&gt;Word embedding&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Objective: Learn feature vectors from documents&lt;ul&gt;
@@ -1598,16 +1612,20 @@ This course is the latter part of the sequence, and will be more advanced and pr
 &lt;tr&gt;&lt;td&gt;3/06&lt;/td&gt;&lt;td&gt;Course introduction&lt;ul&gt;&lt;li&gt;&lt;a href="course-logistics.html"&gt;Course logistics&lt;/a&gt;&lt;li&gt;GitHub&lt;li&gt;Having fun with Kaggle&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='http://goo.gl/forms/fE7ZIeL8VK'&gt;Homework 0&lt;/a&gt; (Due: 3/11)&lt;ul&gt;&lt;li&gt;CV + Self-intro&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/13&lt;/td&gt;&lt;td&gt;Tools for pragmatic data mining&lt;ul&gt;&lt;li&gt;&lt;a href="bash.html"&gt;Bash&lt;/a&gt;&lt;li&gt;&lt;a href="../tips/introduction-to-python.html"&gt;Python&lt;/a&gt;&lt;li&gt;Statistical Summaries and Exploratory Data Analysis&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;3/20&lt;/td&gt;&lt;td&gt;&lt;a href="crawling.html"&gt;Scraping from the Web&lt;/a&gt;&lt;ul&gt;&lt;li&gt;Proposal presentations&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Project proposals (300 words+)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;&lt;a href="text-mining.html"&gt;Text mining&lt;/a&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;Text mining&lt;ul&gt;&lt;li&gt;Reproducibility and version control&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4/10&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3/27&lt;/td&gt;&lt;td&gt;&lt;a href="text-mining.html"&gt;Text mining 1: Text exploration&lt;/a&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;&lt;a href="text-mining.html#topic-modeling"&gt;Text mining 2: Topic modeling&lt;/a&gt;&lt;ul&gt;&lt;li&gt;Share reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4/10&lt;/td&gt;&lt;td&gt;Regression and Predictive modeling&lt;ul&gt;&lt;li&gt;Recommender systems&lt;li&gt;Share project progress&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/17&lt;/td&gt;&lt;td&gt;Mid-term Quiz&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4/24&lt;/td&gt;&lt;td&gt;Clustering and Dimensionality Reduction&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5/01&lt;/td&gt;&lt;td&gt;Visualization and storytelling&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5/08&lt;/td&gt;&lt;td&gt;Support vector machine and the kernel trick&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Progress report (1K+ words)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5/15&lt;/td&gt;&lt;td&gt;Going deep: Deep learning&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5/22&lt;/td&gt;&lt;td&gt;Going big 1: Map/reduce&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5/29&lt;/td&gt;&lt;td&gt;Going big 2: Spark&lt;ul&gt;&lt;li&gt;Share Reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4/24&lt;/td&gt;&lt;td&gt;Clustering and Dimensionality Reduction&lt;ul&gt;&lt;li&gt;Singular value decomposition (SVD)&lt;li&gt;Share reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/01&lt;/td&gt;&lt;td&gt;Visualization and storytelling 1&lt;ul&gt;&lt;li&gt;Share reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/08&lt;/td&gt;&lt;td&gt;Visualization and storytelling 2&lt;ul&gt;&lt;li&gt;Share reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;Progress report (1K+ words)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/15&lt;/td&gt;&lt;td&gt;Going deep: Deep learning&lt;ul&gt;&lt;li&gt;Share reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/22&lt;/td&gt;&lt;td&gt;Going big 1: Map/reduce&lt;ul&gt;&lt;li&gt;Share reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5/29&lt;/td&gt;&lt;td&gt;Going big 2: Spark&lt;ul&gt;&lt;li&gt;Share reading assignment&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;6/05&lt;/td&gt;&lt;td&gt;Final presentation&lt;/td&gt;&lt;td&gt;Project final report (3K+ words)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;6/12&lt;/td&gt;&lt;td&gt;Final exam&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;&lt;/p&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>
+&lt;/table&gt;&lt;/p&gt;
+&lt;!--
+Memos for next time:
+- DM을 배우고 왔어도, 개념을 remind 해주는 class가 초반에 두 번 정도 있으면 좋을듯. 즉, 4/10, 4/24 2회를 강의 초반에 배치
+--&gt;</summary><category term="data"></category><category term="seoultech"></category><category term="lecturer"></category><category term="syllabus"></category></entry></feed>
