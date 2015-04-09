@@ -1,13 +1,12 @@
-Title: Mining English and Korean text with Python
-Date: 2015-03-27 15:00
+Title: 파이썬으로 영어와 한국어 텍스트 다루기
+Date: 2015-04-10 09:00
 Tags: text, lectures
-Courseid: 2015-ba
+Courseid: 2015-dm
 Toc: True
-Math: True
 
 > We use Python 3 in this tutorial, but provide minimal guidelines for Python 2.
 
-## Review
+## 지난 시간 복습
 
 ### Terminologies
 
@@ -18,8 +17,6 @@ Corpus,말뭉치,A set of documents
 Token,토큰,Meaningful elements in a text such as words or phrases or symbols
 Morphemes,형태소,Smallest meaningful unit in a language
 POS,품사,Part-of-speech (ex: Nouns)
-Classification,분류,A supervised learning task where $X$ and $y$ are given and $y$ is a set of discrete classes
-Clustering,군집화,An unsupervised learning task where $X$ is given
 ''' %}
 
 ### Text analysis process
