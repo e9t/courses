@@ -694,6 +694,10 @@ For more information on chunking, refer to [Extracting Information from Text](ht
      (2, 0.010285449586192942)]
     </pre>
 
+<!-- Add document/query similarities http://radimrehurek.com/gensim/tut3.html#similarity-interface -->
+
+> Confident with topic modeling? Try a bigger dataset: [Experiments on the English Wikipedia](http://radimrehurek.com/gensim/wiki.html)
+
 ## Word embedding
 
 - Objective: Learn feature vectors from documents
