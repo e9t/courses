@@ -1487,6 +1487,27 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
 &lt;blockquote&gt;
 &lt;p&gt;Extra credit: 학습 속도를 높이면서 성능은 유지하거나, 학습 속도를 유지하면서 성능을 높일 수 있는가? 어떻게 하면 되는가? 이 때 어떤 파라미터를 썼는가?&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h2&gt;Assignment 2: Dimensionality reduction&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;마감일: 2015-05-07 23:59&lt;/li&gt;
+&lt;li&gt;제출처: e-class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Assignment 2은 Assignment 1에서 다룬 MNIST 데이터셋을 이용하여 PCA를 하는 것입니다.
+아래의 세 가지 문항에 대한 답을 문서로 작성하고 PDF로 변환한 후 올려주시기 바랍니다.&lt;/p&gt;
+&lt;p&gt;이번에는 Assignment 1에서처럼 &lt;code&gt;sklearn.datasets.fetch_mldata()&lt;/code&gt;를 사용하지 말고,
+&lt;code&gt;sklearn.datasets.load_digits()&lt;/code&gt;를 사용해서 데이터를 loading해보자.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load_digits&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;      &lt;span class="c"&gt;# sklearn의 datasets에 완비된 mnist 데이터 로딩&lt;/span&gt;
+&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;target&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c"&gt;# X, y 변수를 생성하여 각각 독립변수와 종속변수를 넣음&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;1: 변수 &lt;code&gt;X&lt;/code&gt;는 몇 개의 record(row)와 몇 개의 attribute(column)로 구성되어 있는가? 또, 첫 다섯 개의 record는 각각 어떤 값을 가지는가?&lt;/p&gt;
+&lt;p&gt;2: 파이썬의 scikit-learn 패키지에서 PCA를 할 수 있는 함수를 찾아 &lt;code&gt;X&lt;/code&gt;를 2개의 차원으로 전사하여 &lt;code&gt;Z&lt;/code&gt;라는 변수에 저장하자. &lt;code&gt;Z&lt;/code&gt;는 몇 개의 record(row)와 몇 개의 attribute(column)로 구성되어 있는가? 또, 첫 다섯개의 record는 각각 어떤 값을 가지게 되었는가?&lt;/p&gt;
+&lt;p&gt;3: 1, 2번을 수행한 코드를 붙여넣고, 첫째줄부터 마지막줄까지, 작성한 코드의 각 줄이 어떤 동작을 하는지 설명해보자.&lt;/p&gt;
+&lt;p&gt;Extra credit: PCA를 이용하여 MNIST 데이터를 두 개의 차원으로 전사한 결과값 &lt;code&gt;Z&lt;/code&gt;를 2차원 평면의 그래프로 그려보자. 파이썬을 계속 이용해도 좋고, 전사한 데이터를 파일로 저장하여 다른 언어를 이용해 시각화해도 좋다.
+참고로, PCA를 이용하여 &lt;a href="http://en.wikipedia.org/wiki/Iris_flower_data_set"&gt;iris 데이터셋&lt;/a&gt;을 3차원으로 전사시킨 예시는 &lt;a href="http://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_iris.html"&gt;이 링크&lt;/a&gt;에서 볼 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;!--
 &gt; 5: 분류문제의 성능을 측정할 때는 위의 정확도(accuracy) 뿐 아니라 precision, recall, f-measure 등도 사용된다. 1) 각각은 어떤 의미를 가지며 어떻게 계산하는가? 2) 실제로 값도 구해보고, 3) 도출된 네 가지 지표 accuracy, precision, recall, f-measure을 통해 우리 모델이 잘 학습되었는지 판단해보자.
 1. 아래의 코드로 logistic regression의 coefficient들을 그림으로 그려보자.
@@ -1795,7 +1816,7 @@ For discussions, please visit the class &lt;a href="http://eclass.seoultech.ac.k
 &lt;tr class="due-date"&gt;&lt;td&gt;4/02&lt;/td&gt;&lt;td&gt;Due date: Assignment 1&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/03&lt;/td&gt;&lt;td&gt;&lt;a href="http://eclass.seoultech.ac.kr/ilos/co/efile_download.acl?FILE_SEQ=88162&amp;CONTENT_SEQ=93265"&gt;텍스트 마이닝 1: 이론&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/10&lt;/td&gt;&lt;td&gt;&lt;a href="text-mining.html"&gt;텍스트 마이닝 2: 실습&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4/17&lt;/td&gt;&lt;td&gt;변수 선택과 차원 축소&lt;ul&gt;&lt;li&gt;Assignment 2 (Due: 5/07)&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4/17&lt;/td&gt;&lt;td&gt;변수 선택과 차원 축소&lt;ul&gt;&lt;li&gt;&lt;a href="assignments.html#assignment-2-dimensionality-reduction"&gt;AAssignment 2 (Due: 5/07)&lt;/a&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;4/24&lt;/td&gt;&lt;td&gt;비지도학습 1: k-means + hierarchical clustering&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;5/01&lt;/td&gt;&lt;td&gt;비지도학습 2: Market basket analysis&lt;/td&gt;&lt;/tr&gt;
 &lt;tr class="due-date"&gt;&lt;td&gt;5/07&lt;/td&gt;&lt;td&gt;Due date: Assignment 2&lt;/td&gt;&lt;/tr&gt;
