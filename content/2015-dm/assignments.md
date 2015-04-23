@@ -114,6 +114,30 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
 
 > Extra credit: 학습 속도를 높이면서 성능은 유지하거나, 학습 속도를 유지하면서 성능을 높일 수 있는가? 어떻게 하면 되는가? 이 때 어떤 파라미터를 썼는가?
 
+## Assignment 2: Dimensionality reduction
+
+- 마감일: 2015-05-07 23:59
+- 제출처: e-class
+
+Assignment 2은 Assignment 1에서 다룬 MNIST 데이터셋을 이용하여 PCA를 이용한 차원축소를 하는 것입니다.
+아래의 세 가지 문항에 대한 답을 문서로 작성하고 PDF로 변환한 후 올려주시기 바랍니다.
+
+이번에는 Assignment 1에서처럼 `sklearn.datasets.fetch_mldata()`를 사용하지 말고,
+`sklearn.datasets.load_digits()`를 사용해서 약식의 MNIST 데이터를 loading해보자.
+
+    :::python
+    d = datasets.load_digits()      # sklearn의 datasets에 완비된 mnist 데이터 로딩
+    X, y = d['data'], d['target']   # X, y 변수를 생성하여 각각 독립변수와 종속변수를 넣음
+
+> 1: 변수 X는 몇 개의 record(row)와 몇 개의 attribute(column)로 구성되어 있는가? 첫 다섯 개의 record가 각각 어떤 X값을 가지는지 기록해보자.
+
+> 2: 파이썬의 scikit-learn 패키지에서 PCA를 할 수 있는 함수를 찾아 X를 2개의 차원으로 전사하여 Z라는 변수에 저장하자. Z는 몇 개의 record(row)와 몇 개의 attribute(column)로 구성되어 있는가? 또, 첫 다섯 개의 record는 각각 어떤 X값을 가지게 되었는가?
+
+> 3: 1, 2번을 수행한 코드를 붙여넣고, 첫째줄부터 마지막줄까지, 작성한 코드의 각 줄이 어떤 동작을 하는지 설명해보자.
+
+> Extra credit: PCA를 이용하여 MNIST 데이터를 두 개의 차원으로 전사한 결과값 Z를 2차원 평면의 그래프로 그려보자. 파이썬을 이용해도 좋고, 전사한 데이터를 파일로 저장하여 다른 언어를 이용해 시각화해도 좋다.
+참고로, PCA를 이용하여 [iris 데이터셋](http://en.wikipedia.org/wiki/Iris_flower_data_set)을 3차원으로 전사시켜 시각화한 예시는 [이 링크](http://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_iris.html)에서 볼 수 있다.
+
 <!--
 > 5: 분류문제의 성능을 측정할 때는 위의 정확도(accuracy) 뿐 아니라 precision, recall, f-measure 등도 사용된다. 1) 각각은 어떤 의미를 가지며 어떻게 계산하는가? 2) 실제로 값도 구해보고, 3) 도출된 네 가지 지표 accuracy, precision, recall, f-measure을 통해 우리 모델이 잘 학습되었는지 판단해보자.
 1. 아래의 코드로 logistic regression의 coefficient들을 그림으로 그려보자.
