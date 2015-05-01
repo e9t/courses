@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Visualization — Courses</title>
+	<meta name="description" content="Title: Visualization; Date: 2015-05-01; Author: Lucy Park; Courseid: 2015-ba; Metainfo: ">
+	<meta name="author" content="Lucy Park">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<![endif]-->
+	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
+	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+        </ul>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="article-header">
+        <h1 itemprop="name headline">Visualization</h1>
+		<time datetime="2015-05-01T00:00:00+09:00" itemprop="datePublished">Fri 01 May 2015</time>
+	</div>
+    <div class="article-toc"><b>Contents</b><p></p></div>
+    <div itemprop="articleBody" class="article-body">
+        <h2>What is data visualization?</h2>
+<ul>
+<li>The visual representation of information</li>
+<li>Goals of data visualization<ul>
+<li>Effective, clear communication of information</li>
+<li>Stimulate viewer engagement</li>
+<li>Exploratory data analysis</li>
+</ul>
+</li>
+</ul>
+<h2>Advantages of visualization</h2>
+<ul>
+<li>With many numbers and large datasets, need an efficient way to understand a vast amount of data</li>
+<li>The human visual system is the highest-bandwidth channel to the human brain<blockquote>
+<p><strong>Example</strong>: Given the income, college degree percentage of each state, try answering the following questions with either a table and a graphic representation. Which method is better in answering the questions?<br>
+- Which state has highest income?<br>
+- Relationship between income and education?<br>
+- Outliers?<br>
+<img src="images/table.png" width="250px">
+<img src="images/graph.png" width="400px"><br>
+(Example by <a href="http://en.wikipedia.org/wiki/Marti_Hearst">Marti Hearst</a>)</p>
+</blockquote>
+</li>
+<li>Graphs reveal data that statistics may not<blockquote>
+<p><strong>Example</strong>: <a href="http://en.wikipedia.org/wiki/Anscombe's_quartet">Anscombe's quartet</a><br>
+<div class="row">
+<div class="col-md-6">
+<table class="table"><tr><th>I</th><th></th><th>II</th><th></th><th>III</th><th></th><th>IV</th></tr><tr><td>x</td><td>y</td><td>x</td><td>y</td><td>x</td><td>y</td><td>x</td><td>y</td></tr><tr><td>10.0</td><td>8.04</td><td>10.0</td><td>9.14</td><td>10.0</td><td>7.46</td><td>8.0</td><td>6.58</td></tr><tr><td>8.0</td><td>6.95</td><td>8.0</td><td>8.14</td><td>8.0</td><td>6.77</td><td>8.0</td><td>5.76</td></tr><tr><td>13.0</td><td>7.58</td><td>13.0</td><td>8.74</td><td>13.0</td><td>12.74</td><td>8.0</td><td>7.71</td></tr><tr><td>9.0</td><td>8.81</td><td>9.0</td><td>8.77</td><td>9.0</td><td>7.11</td><td>8.0</td><td>8.84</td></tr><tr><td>11.0</td><td>8.33</td><td>11.0</td><td>9.26</td><td>11.0</td><td>7.81</td><td>8.0</td><td>8.47</td></tr><tr><td>14.0</td><td>9.96</td><td>14.0</td><td>8.10</td><td>14.0</td><td>8.84</td><td>8.0</td><td>7.04</td></tr><tr><td>6.0</td><td>7.24</td><td>6.0</td><td>6.13</td><td>6.0</td><td>6.08</td><td>8.0</td><td>5.25</td></tr><tr><td>4.0</td><td>4.26</td><td>4.0</td><td>3.10</td><td>4.0</td><td>5.39</td><td>19.0</td><td>12.50</td></tr><tr><td>12.0</td><td>10.84</td><td>12.0</td><td>9.13</td><td>12.0</td><td>8.15</td><td>8.0</td><td>5.56</td></tr><tr><td>7.0</td><td>4.82</td><td>7.0</td><td>7.26</td><td>7.0</td><td>6.42</td><td>8.0</td><td>7.91</td></tr><tr><td>5.0</td><td>5.68</td><td>5.0</td><td>4.74</td><td>5.0</td><td>5.73</td><td>8.0</td><td>6.89</td></tr></table>
+</div>
+<div class="col-md-6">
+Simple summary statistics are all identical for four datasets
+<img src="images/stats.png">
+However, the four datasets vary considerably when graphed
+<img src="images/anscombe.png">
+</div>
+</div></p>
+</blockquote>
+</li>
+</ul>
+<h2>Data visualization process</h2>
+<ol>
+<li>Classify datatypes<ul>
+<li>Nominal (ex: fruits - apples, oranges, ...)<ul>
+<li>Operations: ==, !=</li>
+</ul>
+</li>
+<li>Ordinal (ex: quality of meat - grade A, AA, AAA, ...)<ul>
+<li>Operations: ==, !=, &lt;=, &gt;=</li>
+</ul>
+</li>
+<li>Quantitative<ul>
+<li>Interval (ex: dates - May 1st, 2015, location - LAT 38.9 LON 127)<ul>
+<li>Only differences may compared</li>
+<li>Operations: ==, !=, &lt;=, &gt;=, -</li>
+</ul>
+</li>
+<li>Ratio (ex: length - 160cm)<ul>
+<li>Origin is meaningful</li>
+<li>Operations: ==, !=, &lt;=, &gt;=, -, /</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Map datasets to visual attributes that represent data types most effectively (also known as <em>data encoding</em>)<ul>
+<li>Bertin's visual variables (Bertin, <em>Semiology of Graphics</em>, 1967|1983)
+    <div class="row">
+    <div class="col-md-8"><ul>
+<li>Position</li>
+<li>Size</li>
+<li>Value</li>
+<li>Texture</li>
+<li>Color</li>
+<li>Orientation</li>
+<li>Shape
+</div>
+<div class="col-md-4">
+<img src="images/bertin.png">
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1>Data encoding</h1>
+<ul>
+<li>Objective<ul>
+<li>Assume 7 visual encodings and n data attributes</li>
+<li>Pick the best encoding from the exponential number of possibilities</li>
+</ul>
+</li>
+<li>Principle of Consistency<ul>
+<li>The properties of the image (visual variables) should match the properties of the data</li>
+</ul>
+</li>
+<li>Principle of Importance Ordering<ul>
+<li>Encode the most important information in the most effective way</li>
+</ul>
+</li>
+<li>Mackinlay’s expressiveness criteria<ul>
+<li>A set of facts is expressible in a visual language if the sentences (i.e. the visualizations) in the language express all the facts in the set of data, and only the facts in the data. </li>
+</ul>
+</li>
+<li>Mackinlay’s effectiveness criteria<ul>
+<li>A visualization is more effective than another visualization if the information conveyed by one visualization is more readily perceived than the information in the other visualization.<br>
+<img src="http://www.softviscollection.org/intro/a-thousand-words/images/ali-mackinlay.png" width="500px">
+<img src="images/viz-accuracy.png" width="400px"></li>
+</ul>
+</li>
+<li>Bertin's visual variables and their syntactics. Figure derived from Bertin (1967|1983), MacEachren (1995), and MacEachren et al. (2012)<br>
+<img src="images/va.png" width="500px"></li>
+</ul>
+<h2>Data combinations and dimensions</h2>
+<h3>Univariate data (1D)</h3>
+<ol>
+<li>Line plot<br><img src="http://matplotlib.org/_images/spectrum_demo.png"></li>
+<li>Bar plot<br><img src="http://matplotlib.org/_images/xcorr_demo.png"></li>
+<li>Box-and-whisker plot<br><img src="images/baw.gif" alt="http://www.statgraphics.com/eda.htm"></li>
+</ol>
+<h3>Bivariate data (2D)</h3>
+<ol>
+<li>2D scatter plot<br><img src="http://upload.wikimedia.org/wikipedia/commons/0/0f/Oldfaithful3.png"></li>
+</ol>
+<h3>Trivariate data (3D)</h3>
+<ol>
+<li>Use 3D scatter plot<br><img src="http://scikit-learn.org/stable/_images/plot_pca_iris_001.png"></li>
+<li>Map two variables [x, y] in 2D space + Map third variable [z] with another visual attribute (ex: color, shape, size)<br><img src="images/trivariate.png" width="200px"></li>
+</ol>
+<h3>Multivariate data (&gt;3D)</h3>
+<ul>
+<li>How many variables can be depicted in a image?</li>
+</ul>
+<blockquote>
+<p>"With up to three rows, a data table can be constructed directly as a single image. However, an image has only three dimensions. And this barrier is impassible." -- Bertin</p>
+</blockquote>
+<h2>Examples</h2>
+<h3><a href="http://en.wikipedia.org/wiki/Iris_flower_data_set">Iris dataset</a></h3>
+<p><img src="images/irisdata.png" width="400px">
+<img src="http://www.nature.com/nmeth/journal/v9/n10/images/nmeth.2186-F1.jpg" width="400px"></p>
+<h3><a href="http://data.heapanalytics.com/how-to-lie-with-data-visualization/">How to lie with visualization</a></h3>
+<ol>
+<li>Truncated Y-Axis<br><img src="images/lie1.png" width="400px"></li>
+<li>Cumulative graphs<br><img src="images/lie2-1.png" width="300px"><img src="images/lie2-2.png" width="300px"></li>
+<li>Ignoring conventions<br><img src="https://s3.amazonaws.com/heapdatablog/misleading3_pie.png" width="400px"><img src="https://s3.amazonaws.com/heapdatablog/misleading3_deaths.jpg" width="400px"></li>
+</ol>
+<h3>Awesome visualization examples</h3>
+<ol>
+<li>Words<br><img src="http://i2.wp.com/flowingdata.com/wp-content/uploads/2008/12/wordle.png?zoom=2&resize=545%2C333" width="400px"></li>
+<li>Web pages<ul>
+<li><a href="http://internet-map.net/">http://internet-map.net/</a></li>
+</ul>
+</li>
+<li>World refugees<ul>
+<li><a href="http://www.therefugeeproject.org/">http://www.therefugeeproject.org/</a></li>
+</ul>
+</li>
+<li>Movie revenues<ul>
+<li><a href="http://www.nytimes.com/interactive/2008/02/23/movies/20080223_REVENUE_GRAPHIC.html">http://www.nytimes.com/interactive/2008/02/23/movies/20080223_REVENUE_GRAPHIC.html</a></li>
+</ul>
+</li>
+<li>Others<ul>
+<li><a href="http://infosthetics.com/">http://infosthetics.com/</a></li>
+<li><a href="http://www.visualcomplexity.com/">http://www.visualcomplexity.com/</a></li>
+<li><a href="http://datavisualization.ch/showcases/">http://datavisualization.ch/showcases/</a></li>
+</ul>
+</li>
+</ol>
+<h2>In-class Practice: Worldwide Disasters (1900-2008)</h2>
+<ul>
+<li>Visualize with the data below<br><img src="images/assign.png"></li>
+<li>Evaluation<ul>
+<li>Expressiveness<ul>
+<li>Do the mappings show the facts and only the facts?</li>
+<li>Are visual mappings consistent? (e.g., respect color mappings)</li>
+</ul>
+</li>
+<li>Effectiveness<ul>
+<li>Are perceptually effective encodings used?</li>
+<li>Are the most important data mapped to the most effective visual variables?</li>
+</ul>
+</li>
+<li>Cognitive Load (Efficiency)<ul>
+<li>Are there extraneous (unmapped) visual elements?</li>
+</ul>
+</li>
+<li>Data Transformation<ul>
+<li>Are transformations (filter, sort, derive, aggregate) appropriate?</li>
+</ul>
+</li>
+<li>Guides (Non-Data Elements)<ul>
+<li>Descriptive, consistent: Title, Label, Caption, Source, Annotations</li>
+<li>Meaningful references: Gridlines, Legend </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>References</h2>
+<ul>
+<li>http://selection.datavisualization.ch/</li>
+<li><a href="http://www.computerworld.com/article/2506820/business-intelligence-chart-and-image-gallery-30-free-tools-for-data-visualization-and-analysis.html">Chart and image gallery: 30+ free tools for data visualization and analysis</a></li>
+<li><a href="http://www.nytimes.com/interactive/2012/12/30/multimedia/2012-the-year-in-graphics.html">NYT the year in graphics: 2012</a></li>
+<li><a href="http://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html">NYT the year in graphics: 2014</a></li>
+<li>Many contents in courtesy of <a href="https://faculty.washington.edu/aragon/">Cecilia Aragon</a></li>
+</ul>
+
+    </div>
+    <div class="footnote">
+        <div class="social-links pull-right">
+            <div id="facebook-like">
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-ba/visualization.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+            </div>
+            <div id="twitter-tweet">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.    insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </div>
+        <p>
+            Author:
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a href="http://dm.snu.ac.kr/~epark"><span itemprop="name">Lucy Park</span></a>
+            </span>
+        </p>
+        <p>
+            Category:
+            <span itemprop="articleSection">
+                <a href="http://lucypark.kr/courses/category/2015-ba.html" rel="category">2015-ba</a>
+            </span>
+        </p>
+        <p>
+            Tags:
+            <span itemprop="keywords">
+                <a href="http://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
+            </span>
+        </p>
+    </div>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="center-block aw-bottom">
+            Built by <a href="http://dm.snu.ac.kr/~epark">Lucy Park</a>.<br>
+            Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
+ The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
+            </span>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+
+// add 'active' class to current menu
+$(function(){
+  if (document.location.hostname == "localhost") {
+    var idx = 1;
+    var activePage = location.pathname.split("/")[idx];
+  } else {
+    var idx = 4;
+    var activePage = location.href.split("/")[idx];
+  }
+  $('.nav li a').each(function() {
+    var currentPage = $(this).attr('href').split("/")[idx];
+    if (activePage == currentPage) {
+      $(this).parent().addClass('active');
+    }
+  });
+});
+</script>
+<script>
+    function hyphenate(str) {
+        return str.toLowerCase().replace(/[?!:'"\[\]()%.,]/gi, '').replace(/\s/g, '-');
+    }
+
+    String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
+
+    // create toc
+    var t = '';
+    var concat = '';
+    var headers = $('.article-body :header');
+    headers.each(function() {
+        var hyphenated = hyphenate($(this).text());
+            $(this).attr('id', hyphenated);
+        }
+    );
+    for (var i=0; i<headers.length; i++) {
+        depth = parseInt(headers[i].tagName.substr(-1));
+        if (depth < 4) {
+            t = headers[i].textContent;
+            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- <a href="#' + hyphenate(t) + '">' + t + '</a><br>';
+        }
+    }
+    $(".article-toc p").append(concat);
+
+    // scroll animation
+    $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 300, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+    }});
+</script>
+<script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', UA-4510606-3, 'aboutwilson.net');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+
+</script>
+</body>
+</html>
