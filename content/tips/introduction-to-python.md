@@ -1,4 +1,4 @@
-Title: Introduction to Python
+Title: Introduction to Python (on Windows)
 Date: 2015-03-08 18:00
 Toc: True
 
