@@ -49,7 +49,7 @@ This course is the latter part of the sequence, and will be more advanced and pr
 <tr><td>4/10</td><td>Regression and Predictive modeling<ul><li>Recommender systems<li>Share project progress</ul></td><td>-</td></tr>
 <tr><td>4/17</td><td>Mid-term Quiz</td><td>-</td></tr>
 <tr><td>4/24</td><td>Clustering and Dimensionality Reduction<ul><li>Singular value decomposition (SVD)<li>Share reading assignment</ul></td><td>-</td></tr>
-<tr><td>5/01</td><td>Visualization and storytelling 1<ul><li>Share reading assignment</ul></td><td>-</td></tr>
+<tr><td>5/01</td><td><a href="visualization.html">Visualization and storytelling 1</a><ul><li>Share reading assignment</ul></td><td>-</td></tr>
 <tr><td>5/08</td><td>Visualization and storytelling 2<ul><li>Share reading assignment</ul></td><td>Progress report (1K+ words)</td></tr>
 <tr><td>5/15</td><td>Going deep: Deep learning<ul><li>Share reading assignment</ul></td><td>-</td></tr>
 <tr><td>5/22</td><td>Going big 1: Map/reduce<ul><li>Share reading assignment</ul></td><td>-</td></tr>

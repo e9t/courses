@@ -170,4 +170,4 @@ However, the four datasets vary considerably when graphed
 - [Chart and image gallery: 30+ free tools for data visualization and analysis](http://www.computerworld.com/article/2506820/business-intelligence-chart-and-image-gallery-30-free-tools-for-data-visualization-and-analysis.html)
 - [NYT the year in graphics: 2012](http://www.nytimes.com/interactive/2012/12/30/multimedia/2012-the-year-in-graphics.html)
 - [NYT the year in graphics: 2014](http://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html)
-- Many contents in courtesy of [Cecilia Aragon](https://faculty.washington.edu/aragon/)
+- Many contents in courtesy of [Cecilia Aragon](https://faculty.washington.edu/aragon/) and [Maneesh Agrawala](http://vis.berkeley.edu/~maneesh/)
