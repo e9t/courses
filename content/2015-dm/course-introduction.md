@@ -65,23 +65,25 @@ Toc: True
     - You can also choose topics among [Kaggle](http://kaggle.com)
 
 #### Progress presentation (15/40)
-- Submit presentation slides (Due: 2015-04-30 23:59)
+- Submit presentation slides (Due: 2015-05-07 23:59)
     - It is recommended that you have done approx. 70-80% of your whole project by this date
     - Submit presentation slides to the e-class
     - No page limits
     - Delay penalty: 50% off (next day) 100% off (after presentation)
 - Suggested contents: Your proposal + the following
+    1. (Optional) If you have changed the subject, what was the reason?
     1. Data Exploration
     1. What approach you chose to alleviate such questions
     1. What results you achieved
     1. What questions you further got and what you plan to do next
     1. Tricks and tips you want to share with the class
-- Presentation day (2015-05-01)
+- Presentation day (2015-05-08)
     - You will present your project progress in front of the class (Max. 10 min)
     - Peer assessment
         - You will also be grading your peers' work on presentation day
         - You will be given three votes
         - You can give one vote to three teams, or give all votes to one team
+        - You will also be reviewing contributions of your own teammates
     - Be brief yet clear
     - Record the feedback
         - One can make the slides
