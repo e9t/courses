@@ -132,6 +132,7 @@ However, the four datasets vary considerably when graphed
 1. Truncated Y-Axis<br><img src="images/lie1.png" width="400px">
 1. Cumulative graphs<br><img src="images/lie2-1.png" width="300px"><img src="images/lie2-2.png" width="300px">
 1. Ignoring conventions<br><img src="https://s3.amazonaws.com/heapdatablog/misleading3_pie.png" width="400px"><img src="https://s3.amazonaws.com/heapdatablog/misleading3_deaths.jpg" width="400px">
+1. For more, see [WTF visualizations](http://viz.wtf/)
 
 ### Awesome visualization examples
 
