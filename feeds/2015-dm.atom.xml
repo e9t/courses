@@ -71,7 +71,7 @@
 &lt;li&gt;Goal: Find real valued vector $w$&lt;br&gt;
 &lt;img src="images/goal.png" width="400px"&gt;&lt;/li&gt;
 &lt;li&gt;Each feature has a weight $w_i$&lt;ul&gt;
-&lt;li&gt;Prediction is based on the weighted sum: $f(x) = \sum w_i x_i = w \dot x$&lt;/li&gt;
+&lt;li&gt;Prediction is based on the weighted sum: $f(x) = \sum w_i x_i = w \cdot x$&lt;/li&gt;
 &lt;li&gt;If the f(x) is&lt;ul&gt;
 &lt;li&gt;Positive: Predict +1 (i.e., is sheep, is spam)&lt;/li&gt;
 &lt;li&gt;Negative: Predict -1 (i.e., is not sheep, is ham)&lt;br&gt;
