@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-ba.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-05-08T00:00:00+09:00</updated><entry><title>Visualization</title><link href="http://lucypark.kr/courses/2015-ba/visualization2.html" rel="alternate"></link><updated>2015-05-08T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-05-08:courses/2015-ba/visualization2.html</id><summary type="html">&lt;p&gt;&lt;img src="images/scientist.png" width="500px"&gt; (&lt;a href="http://www.marketingdistillery.com/2014/08/30/data-science-skill-set-explained/"&gt;source&lt;/a&gt;)&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="http://lucypark.kr/courses/" rel="alternate"></link><link href="http://lucypark.kr/courses/feeds/2015-ba.atom.xml" rel="self"></link><id>http://lucypark.kr/courses/</id><updated>2015-05-22T15:00:00+09:00</updated><entry><title>Map/reduce</title><link href="http://lucypark.kr/courses/2015-ba/map-reduce.html" rel="alternate"></link><updated>2015-05-22T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-05-22:courses/2015-ba/map-reduce.html</id><summary type="html">&lt;p&gt;&lt;img src="images/mapreduce.jpg" width="300px"&gt;
+&lt;img alt="source" src="https://twitter.com/tgrall/status/520810627867348992/photo/1" /&gt;&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;https://class.coursera.org/datasci-001/lecture&lt;/p&gt;</summary></entry><entry><title>Visualization</title><link href="http://lucypark.kr/courses/2015-ba/visualization2.html" rel="alternate"></link><updated>2015-05-08T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-05-08:courses/2015-ba/visualization2.html</id><summary type="html">&lt;p&gt;&lt;img src="images/scientist.png" width="500px"&gt; (&lt;a href="http://www.marketingdistillery.com/2014/08/30/data-science-skill-set-explained/"&gt;source&lt;/a&gt;)&lt;/p&gt;
 &lt;h2&gt;[Review] Data visualization&lt;/h2&gt;
 &lt;h3&gt;Data types&lt;/h3&gt;
 &lt;ul&gt;
@@ -269,16 +272,7 @@ However, the four datasets vary considerably when graphed
 &lt;li&gt;&lt;a href="http://www.nytimes.com/interactive/2012/12/30/multimedia/2012-the-year-in-graphics.html"&gt;NYT the year in graphics: 2012&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html"&gt;NYT the year in graphics: 2014&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Many contents in courtesy of &lt;a href="https://faculty.washington.edu/aragon/"&gt;Cecilia Aragon&lt;/a&gt; and &lt;a href="http://vis.berkeley.edu/~maneesh/"&gt;Maneesh Agrawala&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="lectures"></category></entry><entry><title>Recommender systems</title><link href="http://lucypark.kr/courses/2015-ba/recommender.html" rel="alternate"></link><updated>2015-04-10T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-10:courses/2015-ba/recommender.html</id><summary type="html">&lt;h2&gt;What are recommendations?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Who does recommendations?&lt;br&gt;
-    &lt;img src="images/recommenders.png"&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Content based recommendation&lt;/h2&gt;
-&lt;h2&gt;Collaborative filtering&lt;/h2&gt;
-&lt;h2&gt;Evaluation&lt;/h2&gt;
-&lt;p&gt;다음 시간&lt;/p&gt;
-&lt;h2&gt;SVD&lt;/h2&gt;</summary><category term="lectures"></category></entry><entry><title>Bash</title><link href="http://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><updated>2015-04-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;What is an OS?&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="lectures"></category></entry><entry><title>Bash</title><link href="http://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><updated>2015-04-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;What is an OS?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;DOS, Windows, Linux, Mac OS, iOS, Android, ...&lt;/li&gt;
 &lt;/ul&gt;
@@ -364,35 +358,7 @@ Some jokes about package managing:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.ecogwiki.com/Hash-based_sampling"&gt;Data sampling&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;...&lt;a href="http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html"&gt;and more&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Git</title><link href="http://lucypark.kr/courses/2015-ba/git.html" rel="alternate"></link><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-27:courses/2015-ba/git.html</id><summary type="html">&lt;ol&gt;
-&lt;li&gt;버젼관리란? 버젼관리가 왜 필요한지?&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/echojuliett/status/506707667314683905"&gt;&lt;img src="images/manual-vc.png" width="200px"&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Git이란?&lt;ul&gt;
-&lt;li&gt;Built by Linus Torvalds, also the creator the Linux OS kernel&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;GitHub이란?&lt;/li&gt;
-&lt;li&gt;커밋 메세지 제대로 쓰기 (이거 정말정말정말정말정말정말정말 중요한 내용)&lt;ul&gt;
-&lt;li&gt;포맷팅 별로지만 이거 필독 권고 (tpope는 오픈소스계에서 꽤 유명한 사람): http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html &lt;/li&gt;
-&lt;li&gt;심지어 이런 경우도 있음 (위 블로그 포스트 쓴 tpope의 오픈소스 패키지): https://github.com/tpope/vim-pathogen#contributing&lt;/li&gt;
-&lt;li&gt;비슷한 예로 리누스 토발즈(리눅스 만든 사람)도 이런 글을 썼음: https://github.com/torvalds/linux/pull/17#issuecomment-5659933&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;References&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;윈도우에서 사용할 수 있는 깃용 도구는 여러가지가 있지만, GUI용은 내가 안 써봐서 잘 모르겠다...ㅠ 커맨드라인(CLI)용은 일단 이거 추천: https://msysgit.github.io/&lt;/li&gt;
-&lt;li&gt;깃 처음 시작하는 사람들이 가장 많이 보는 자료 중 하나: http://rogerdudler.github.io/git-guide/index.ko.html&lt;/li&gt;
-&lt;li&gt;친구한테 보여주려고 썼던 내 블로그 포스트. 까먹을 때마다 간단한 reference 용으로 좋음: http://www.lucypark.kr/blog/2013/05/19/essential-git/&lt;/li&gt;
-&lt;li&gt;SVN (Git과 다른 버젼관리 도구)를 사용하던 사람들이 볼만한 소개자료. 잘돼있지만 조금 어려울 수 있음. 기초 자료를 보고 나서 보면 어떤 점이 장점들인지 알기 좋을듯! http://www.slideshare.net/einsub/svn-git-17386752&lt;/li&gt;
-&lt;li&gt;처음보는 자료인데 (3일전에 올라왔네) 아주 쉽게 정리 잘 돼 있다! 이걸로 시작해도 좋을듯 http://www.slideshare.net/ssusere86926/ss-42887925&lt;/li&gt;
-&lt;li&gt;깃헙!=깃. 깃을 지원하는 호스팅 서비스는 양대산맥이 있는데, private repo와 enterprise들을 다수 지원하는 bitbucket과 오픈소스의 github. http://blog.takipi.com/bitbucket-vs-github-its-more-than-just-features/&lt;/li&gt;
-&lt;li&gt;예전에 내가 연구실 프로젝트 위키에 적었던 글: https://sites.google.com/a/dm.snu.ac.kr/bigdata/documentations/gongdong-gaebalhwangyeong-guchug/beojyeon-gwanli-siseutem-e-gwanhayeo&lt;/li&gt;
-&lt;li&gt;스타트업이 많이 사용하는 도구 (우측 하단에 버젼관리 도구들 있음) 좀 오래됐지만.... 더 최근자료가 있을지 모르겠다: http://www.pinterest.com/pin/13933080068114315/&lt;/li&gt;
-&lt;li&gt;이제 이 정도는 시시해? https://help.github.com/categories/advanced-git/&lt;/li&gt;
-&lt;/ol&gt;</summary><category term="text"></category><category term="lectures"></category></entry><entry><title>Mining English and Korean text with Python</title><link href="http://lucypark.kr/courses/2015-ba/text-mining.html" rel="alternate"></link><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-27:courses/2015-ba/text-mining.html</id><summary type="html">&lt;blockquote&gt;
+&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Mining English and Korean text with Python</title><link href="http://lucypark.kr/courses/2015-ba/text-mining.html" rel="alternate"></link><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-27:courses/2015-ba/text-mining.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;We use Python 3 in this tutorial, but provide minimal guidelines for Python 2.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;Terminologies&lt;/h2&gt;
@@ -1655,47 +1621,7 @@ lets use one short sentence for each language.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://gist.github.com/e9t/9680106"&gt;Naver OnStage crawler&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://github.com/teampopong/crawlers"&gt;Team POPONG crawlers&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gist.github.com/e9t/551f9647f58800273025"&gt;Korean National Assembly bill crawler&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="lectures"></category><category term="crawling"></category></entry><entry><title>Pragmatic tools</title><link href="http://lucypark.kr/courses/2015-ba/pragmatic.html" rel="alternate"></link><updated>2015-03-13T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-13:courses/2015-ba/pragmatic.html</id><summary type="html">&lt;h1&gt;Great tools&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Stackoverflow&lt;/li&gt;
-&lt;li&gt;Google Scholar&lt;/li&gt;
-&lt;li&gt;Markdown, pandoc&lt;/li&gt;
-&lt;li&gt;Coursera, Quora, Kaggle&lt;/li&gt;
-&lt;li&gt;Facebook Groups&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Data analysis&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;https://twitter.com/echojuliett/status/491256372726480896&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Traditional battles in CS&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;https://twitter.com/echojuliett/status/491564823096737794&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Traditional battles in DM&lt;/h1&gt;
-&lt;h1&gt;The key to research is search&lt;/h1&gt;
-&lt;h1&gt;How to find good resources&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;What is "good"?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If it's a book, author &amp;amp; publisher&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;If it's an academic paper, author &amp;amp; publisher &amp;amp; year of publish&lt;/li&gt;
-&lt;li&gt;If it's a Web document, author &amp;amp; date of publish, popularity among your friends&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Academic integrity&lt;/h1&gt;
-&lt;h1&gt;Plagarism&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;It is &lt;em&gt;critically important&lt;/em&gt; that you give proper credit to people/sources when you use their words or ideas.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Some sources on plagarism
-- &lt;a href="http://www.jhsph.edu/academics/degree-programs/master-of-public-health/current-students/JHSPH-ReferencingHandbook.pdf"&gt;Student Handbook on Referencing&lt;/a&gt;, Johns Hopkins U, 2010.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1&gt;Honor code for BA 2015&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;My answers to homework, quizzes and exams will be my own work (except for assignments that explicitly permit collaboration). I will not make solutions to homework, quizzes or exams available to anyone else. This includes both solutions written by me, as well as any official solutions provided by the course staff. I will not engage in any other activities that will dishonestly improve my results or dishonestly improve/hurt the results of others.&lt;/em&gt;&lt;/p&gt;
-&lt;h1&gt;The benefits of pair programming&lt;/h1&gt;</summary></entry><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-ba/course-logistics.html" rel="alternate"></link><updated>2015-03-06T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-ba/course-logistics.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="lectures"></category><category term="crawling"></category></entry><entry><title>Course Introduction</title><link href="http://lucypark.kr/courses/2015-ba/course-logistics.html" rel="alternate"></link><updated>2015-03-06T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-ba/course-logistics.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
 &lt;p&gt;&lt;img src="http://lucypark.kr/courses/images/me.jpg" width="150px" class="pull-right"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Eunjeong (Lucy) Park&lt;/li&gt;
@@ -1835,7 +1761,18 @@ we encourage you to approach your work with honesty and integrity.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;!--
-### Tips
+### Plagarism
+
+- It is *critically important* that you give proper credit to people/sources when you use their words or ideas.
+
+&gt; Some sources on plagarism
+&gt; - [Student Handbook on Referencing](http://www.jhsph.edu/academics/degree-programs/master-of-public-health/current-students/JHSPH-ReferencingHandbook.pdf), Johns Hopkins U, 2010.
+
+### Honor code for BA 2015
+
+*My answers to homework, quizzes and exams will be my own work (except for assignments that explicitly permit collaboration). I will not make solutions to homework, quizzes or exams available to anyone else. This includes both solutions written by me, as well as any official solutions provided by the course staff. I will not engage in any other activities that will dishonestly improve my results or dishonestly improve/hurt the results of others.*
+
+## Tips
 
 1. Writing a good CV
     - http://tex.stackexchange.com/questions/80/latex-template-for-resume-curriculum-vitae
@@ -1844,6 +1781,19 @@ we encourage you to approach your work with honesty and integrity.&lt;/p&gt;
     - Divide an conquer!
         - Step 1. Focus only on the contents! (Using a basic text editor or plain paper might be a good idea)
         - Step 2. Do the formatting. Formatting matters. (ex: fonts, layouts, tenses, etc.)
+1. Performing data analysis
+    - https://twitter.com/echojuliett/status/491256372726480896
+    m Traditional battles in CS and DM https://twitter.com/echojuliett/status/491564823096737794
+1. How to find good resources (cf. What is "good"?)
+    - If it's a book, author &amp; publisher
+    - If it's an academic paper, author &amp; publisher &amp; year of publish
+    - If it's a Web document, author &amp; date of publish, popularity among your friends
+1. Using great tools: The key to research is search, using great tools.
+    - Stackoverflow
+    - Google Scholar
+    - Markdown, pandoc
+    - Coursera, Quora, Kaggle
+    - Facebook Groups
 --&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>Business Analytics (Spring 2015)</title><link href="http://lucypark.kr/courses/2015-ba/index.html" rel="alternate"></link><updated>2015-03-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-ba/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Business Analytics class of 2015!
 Here you'll find all course materials, guides and schedules.

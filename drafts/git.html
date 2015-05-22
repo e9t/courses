@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Dimensionality reduction — Courses</title>
-	<meta name="description" content="Title: Dimensionality reduction; Date: 2015-03-21; Author: Lucy Park; Courseid: ; Metainfo: ">
+	<title>Git — Courses</title>
+	<meta name="description" content="Title: Git; Date: 2015-03-27; Author: Lucy Park; Courseid: 2015-ba; Metainfo: ">
 	<meta name="author" content="Lucy Park">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -30,48 +30,40 @@
 		<div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="article-header">
-        <h1 itemprop="name headline">Dimensionality reduction</h1>
-		<time datetime="2015-03-21T00:00:00+09:00" itemprop="datePublished">Sat 21 March 2015</time>
+        <h1 itemprop="name headline">Git</h1>
+		<time datetime="2015-03-27T15:00:00+09:00" itemprop="datePublished">Fri 27 March 2015</time>
 	</div>
+    <div class="article-toc"><b>Contents</b><p></p></div>
     <div itemprop="articleBody" class="article-body">
-        <h2>Variable selection in regression</h2>
-<ul>
-<li>Why should we select a subset of variables?<ul>
-<li>May be expensive or not feasible to collect a full complement of predictors for future prediction.</li>
-<li>May be able to measure fewer predictors more accurately (e.g. in surveys)</li>
-<li>More predictors, more missing values</li>
-<li>Parsimony (a.k.a. Occam’s Razor): the simpler, the better.</li>
-<li>Multicollinearity: presence of two or more predictors sharing the same linear relationship with the outcome variables</li>
+        <ol>
+<li>버젼관리란? 버젼관리가 왜 필요한지?<ul>
+<li><a href="https://twitter.com/echojuliett/status/506707667314683905"><img src="images/manual-vc.png" width="200px"></a></li>
 </ul>
 </li>
-<li>Goal: 일반화 성능 향상<ul>
-<li>More robust</li>
-<li>Higher predictive accuracy</li>
+<li>Git이란?<ul>
+<li>Built by Linus Torvalds, also the creator the Linux OS kernel</li>
 </ul>
 </li>
-</ul>
-<h3>Methods</h3>
-<ul>
-<li>Exhaustive search: 모든 변수 조합의 성능을 살펴봄<ul>
-<li>${x_1}, {x_2}, {x_3}, ..., {x_1, x_2}, {x_2, x_3}, ..., {x_1, x_2, x_3}, ...$</li>
-</ul>
-</li>
-<li>Partial search<ul>
-<li>Forward selection: 유의성이 큰 변수는 하나씩 더함<ul>
-<li>${x_4} \to {x_4, x_5} \to {x_1, x_4, x_5} \to {x_1, x_3, x_4, x_5} \to {x_1, x_2, x_3, x_4, x_5}$</li>
+<li>GitHub이란?</li>
+<li>커밋 메세지 제대로 쓰기 (이거 정말정말정말정말정말정말정말 중요한 내용)<ul>
+<li>포맷팅 별로지만 이거 필독 권고 (tpope는 오픈소스계에서 꽤 유명한 사람): http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html </li>
+<li>심지어 이런 경우도 있음 (위 블로그 포스트 쓴 tpope의 오픈소스 패키지): https://github.com/tpope/vim-pathogen#contributing</li>
+<li>비슷한 예로 리누스 토발즈(리눅스 만든 사람)도 이런 글을 썼음: https://github.com/torvalds/linux/pull/17#issuecomment-5659933</li>
 </ul>
 </li>
-<li>Backward elimination: 유의성이 작은 변수를 하나씩 제거<ul>
-<li>${x_1, x_2, x_3, x_4, x_5} \to {x_1, x_3, x_4, x_5} \to {x_1, x_4, x_5} \to {x_4, x_5} to{x_4}$</li>
-</ul>
-</li>
-<li>Stepwise selection: 유의성이 큰 변수를 더하거나 작은 변수를 하나씩 제거<ul>
-<li>${x_4} \to {x_4, x_5} \to {x_1, x_4, x_5} \to {x_1, x_5} \to ...$</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+</ol>
+<h2>References</h2>
+<ol>
+<li>윈도우에서 사용할 수 있는 깃용 도구는 여러가지가 있지만, GUI용은 내가 안 써봐서 잘 모르겠다...ㅠ 커맨드라인(CLI)용은 일단 이거 추천: https://msysgit.github.io/</li>
+<li>깃 처음 시작하는 사람들이 가장 많이 보는 자료 중 하나: http://rogerdudler.github.io/git-guide/index.ko.html</li>
+<li>친구한테 보여주려고 썼던 내 블로그 포스트. 까먹을 때마다 간단한 reference 용으로 좋음: http://www.lucypark.kr/blog/2013/05/19/essential-git/</li>
+<li>SVN (Git과 다른 버젼관리 도구)를 사용하던 사람들이 볼만한 소개자료. 잘돼있지만 조금 어려울 수 있음. 기초 자료를 보고 나서 보면 어떤 점이 장점들인지 알기 좋을듯! http://www.slideshare.net/einsub/svn-git-17386752</li>
+<li>처음보는 자료인데 (3일전에 올라왔네) 아주 쉽게 정리 잘 돼 있다! 이걸로 시작해도 좋을듯 http://www.slideshare.net/ssusere86926/ss-42887925</li>
+<li>깃헙!=깃. 깃을 지원하는 호스팅 서비스는 양대산맥이 있는데, private repo와 enterprise들을 다수 지원하는 bitbucket과 오픈소스의 github. http://blog.takipi.com/bitbucket-vs-github-its-more-than-just-features/</li>
+<li>예전에 내가 연구실 프로젝트 위키에 적었던 글: https://sites.google.com/a/dm.snu.ac.kr/bigdata/documentations/gongdong-gaebalhwangyeong-guchug/beojyeon-gwanli-siseutem-e-gwanhayeo</li>
+<li>스타트업이 많이 사용하는 도구 (우측 하단에 버젼관리 도구들 있음) 좀 오래됐지만.... 더 최근자료가 있을지 모르겠다: http://www.pinterest.com/pin/13933080068114315/</li>
+<li>이제 이 정도는 시시해? https://help.github.com/categories/advanced-git/</li>
+</ol>
 
     </div>
     <div class="footnote">
@@ -85,7 +77,7 @@
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/dimensionality-reduction.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="http://lucypark.kr/courses/drafts/git.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -101,7 +93,16 @@
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
+                <a href="http://lucypark.kr/courses/category/_drafts.html" rel="category">_drafts</a>
+            </span>
+        </p>
+        <p>
+            Tags:
+            <span itemprop="keywords">
+                <a href="http://lucypark.kr/courses/tag/text.html" rel="tag">text</a>
+            </span>
+            <span itemprop="keywords">
+                <a href="http://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
             </span>
         </p>
     </div>
@@ -157,6 +158,47 @@ $(function(){
     }
   });
 });
+</script>
+<script>
+    function hyphenate(str) {
+        return str.toLowerCase().replace(/[?!:'"\[\]()%.,]/gi, '').replace(/\s/g, '-');
+    }
+
+    String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
+
+    // create toc
+    var t = '';
+    var concat = '';
+    var headers = $('.article-body :header');
+    headers.each(function() {
+        var hyphenated = hyphenate($(this).text());
+            $(this).attr('id', hyphenated);
+        }
+    );
+    for (var i=0; i<headers.length; i++) {
+        depth = parseInt(headers[i].tagName.substr(-1));
+        if (depth < 4) {
+            t = headers[i].textContent;
+            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- <a href="#' + hyphenate(t) + '">' + t + '</a><br>';
+        }
+    }
+    $(".article-toc p").append(concat);
+
+    // scroll animation
+    $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 300, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+    });
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {

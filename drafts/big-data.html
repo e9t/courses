@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Recommender systems — Courses</title>
-	<meta name="description" content="Title: Recommender systems; Date: 2015-04-10; Author: Lucy Park; Courseid: 2015-ba; Metainfo: ">
+	<title>Big data technologies — Courses</title>
+	<meta name="description" content="Title: Big data technologies; Date: 2015-05-22; Author: Lucy Park; Courseid: ; Metainfo: ">
 	<meta name="author" content="Lucy Park">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -30,21 +30,11 @@
 		<div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="article-header">
-        <h1 itemprop="name headline">Recommender systems</h1>
-		<time datetime="2015-04-10T00:00:00+09:00" itemprop="datePublished">Fri 10 April 2015</time>
+        <h1 itemprop="name headline">Big data technologies</h1>
+		<time datetime="2015-05-22T09:00:00+09:00" itemprop="datePublished">Fri 22 May 2015</time>
 	</div>
-    <div class="article-toc"><b>Contents</b><p></p></div>
     <div itemprop="articleBody" class="article-body">
-        <h2>What are recommendations?</h2>
-<ul>
-<li>Who does recommendations?<br>
-    <img src="images/recommenders.png"></li>
-</ul>
-<h2>Content based recommendation</h2>
-<h2>Collaborative filtering</h2>
-<h2>Evaluation</h2>
-<p>다음 시간</p>
-<h2>SVD</h2>
+        <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=neural+networks,+svm,+deep+learning,+machine+learning,+big+data&cmpt=q&tz&tz&content=1&cid=TIMESERIES_GRAPH_AVERAGES_CHART&export=5&w=500&h=330"></script>
 
     </div>
     <div class="footnote">
@@ -58,7 +48,7 @@
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-ba/recommender.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="http://lucypark.kr/courses/drafts/big-data.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -74,13 +64,7 @@
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-ba.html" rel="category">2015-ba</a>
-            </span>
-        </p>
-        <p>
-            Tags:
-            <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
+                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
             </span>
         </p>
     </div>
@@ -136,47 +120,6 @@ $(function(){
     }
   });
 });
-</script>
-<script>
-    function hyphenate(str) {
-        return str.toLowerCase().replace(/[?!:'"\[\]()%.,]/gi, '').replace(/\s/g, '-');
-    }
-
-    String.prototype.repeat = function(num) { return new Array(num + 1).join(this); }
-
-    // create toc
-    var t = '';
-    var concat = '';
-    var headers = $('.article-body :header');
-    headers.each(function() {
-        var hyphenated = hyphenate($(this).text());
-            $(this).attr('id', hyphenated);
-        }
-    );
-    for (var i=0; i<headers.length; i++) {
-        depth = parseInt(headers[i].tagName.substr(-1));
-        if (depth < 4) {
-            t = headers[i].textContent;
-            concat += '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(parseInt(depth)-2) + '- <a href="#' + hyphenate(t) + '">' + t + '</a><br>';
-        }
-    }
-    $(".article-toc p").append(concat);
-
-    // scroll animation
-    $(document).ready(function(){
-        $('a[href^="#"]').on('click',function (e) {
-            e.preventDefault();
-
-            var target = this.hash;
-            var $target = $(target);
-
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
-            }, 300, 'swing', function () {
-                window.location.hash = target;
-            });
-        });
-    });
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {
