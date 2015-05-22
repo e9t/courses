@@ -67,7 +67,7 @@ viagra,learning,the,dating,nigeria,is_spam
 - Goal: Find real valued vector $w$<br>
 <img src="images/goal.png" width="400px">
 - Each feature has a weight $w_i$
-    - Prediction is based on the weighted sum: $f(x) = \sum w_i x_i = w \dot x$
+    - Prediction is based on the weighted sum: $f(x) = \sum w_i x_i = w \cdot x$
     - If the f(x) is
         - Positive: Predict +1 (i.e., is sheep, is spam)
         - Negative: Predict -1 (i.e., is not sheep, is ham)<br>
