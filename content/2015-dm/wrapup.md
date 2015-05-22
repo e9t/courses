@@ -1,5 +1,11 @@
 Title: Wrap-up
+Date: 2015-06-05 15:00
 Status: draft
+
+https://twitter.com/echojuliett/status/491451029859213312
+
+## Everything is a function
+- What we're trying to do, is to find appropriate weight values
 
 ## So, is there a one-size-fits-all algorithm?
 No!

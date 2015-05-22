@@ -1,4 +1,5 @@
 Title: Dimensionality reduction
+Date:
 Status: draft
 
 ## Variable selection in regression
