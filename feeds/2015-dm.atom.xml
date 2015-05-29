@@ -70,6 +70,10 @@ However, the four datasets vary considerably when graphed
 &lt;img src="../2015-ba/images/cues.png" width="400px"&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
+&lt;p&gt;Encode data to visual variables
+&lt;img src="images/visual_encoding.png" width="400px"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;Comparisons
 &lt;img src="../2015-ba/images/comparison-1.png" width="100%"&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -103,6 +107,11 @@ However, the four datasets vary considerably when graphed
 &lt;blockquote&gt;
 &lt;p&gt;"With up to three rows, a data table can be constructed directly as a single image. However, an image has only three dimensions. And this barrier is impassible." -- Bertin&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Example: The wealth and health of nations by year (4 variables)&lt;/li&gt;
+&lt;li&gt;See Hans Rosling's &lt;a href="https://www.youtube.com/watch?v=jbkSRLYSojo"&gt;"The joy of stats"&lt;/a&gt;, which visualized the data with animations. (동적 시각화)&lt;/li&gt;
+&lt;li&gt;Also see Mike Bostock's &lt;a href="http://bost.ocks.org/mike/nations/"&gt;interactive version&lt;/a&gt; (인터랙티브 시각화)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;In-class Practice: Worldwide Disasters (1900-2008)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Visualize with the data below&lt;br&gt;&lt;img src="../2015-ba/images/assign.png"&gt;&lt;/li&gt;
