@@ -70,8 +70,12 @@ However, the four datasets vary considerably when graphed
 1. Map datasets to visual attributes that represent data types most effectively (also known as *data encoding*)
 <img src="../2015-ba/images/cues.png" width="400px">
 
-- Comparisons
+1. Encode data to visual variables
+<img src="images/visual_encoding.png" width="400px">
+
+1. Comparisons
 <img src="../2015-ba/images/comparison-1.png" width="100%">
+
 
 (Source: Nathan Yau, [Data points](http://flowingdata.com/data-points/DataPoints-Ch3.pdf))
 
@@ -105,6 +109,10 @@ However, the four datasets vary considerably when graphed
 - How many variables can be depicted in a image?
 
 > "With up to three rows, a data table can be constructed directly as a single image. However, an image has only three dimensions. And this barrier is impassible." -- Bertin
+
+- Example: The wealth and health of nations by year (4 variables)
+- See Hans Rosling's ["The joy of stats"](https://www.youtube.com/watch?v=jbkSRLYSojo), which visualized the data with animations. (동적 시각화)
+- Also see Mike Bostock's [interactive version](http://bost.ocks.org/mike/nations/) (인터랙티브 시각화)
 
 ## In-class Practice: Worldwide Disasters (1900-2008)
 
