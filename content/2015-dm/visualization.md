@@ -131,3 +131,4 @@ However, the four datasets vary considerably when graphed
 - [NYT the year in graphics: 2014](http://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html)
 - Many contents in courtesy of [Cecilia Aragon](https://faculty.washington.edu/aragon/) and [Maneesh Agrawala](http://vis.berkeley.edu/~maneesh/)
 - [빅데이터 분석 시각화 분석 : 1장 시각화정의 2장 프로세스](http://www.slideshare.net/neofuture/sds-n2)
+- [빅데이터 분석 시각화 분석 : 3장 시각화 방법](http://www.slideshare.net/neofuture/sds-2)
