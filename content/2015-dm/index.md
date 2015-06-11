@@ -43,16 +43,16 @@ For assignment guidelines, visit the class <a href="http://eclass.seoultech.ac.k
 <tr><td>4/03</td><td><a href="http://eclass.seoultech.ac.kr/ilos/co/efile_download.acl?FILE_SEQ=88162&CONTENT_SEQ=93265">텍스트 마이닝 1: 이론</a></td></tr>
 <tr><td>4/10</td><td><a href="text-mining.html">텍스트 마이닝 2: 실습</a></td></tr>
 <tr><td>4/17</td><td>변수 선택과 차원 축소<ul><li><a href="assignments.html#assignment-2-dimensionality-reduction">Assignment 2 (Due: 5/07)</a></ul></td></tr>
-<tr><td>4/24</td><td>비지도학습 1: k-means + hierarchical clustering</td></tr>
+<tr><td>4/24</td><td><a href="http://eclass.seoultech.ac.kr/ilos/co/efile_download.acl?FILE_SEQ=100380&CONTENT_SEQ=105042">비지도학습 1: k-means + hierarchical clustering</a></td></tr>
 <tr><td>5/01</td><td>비지도학습 2: Market basket analysis</td></tr>
 <tr class="due-date"><td>5/07</td><td>Due date: Assignment 2</td></tr>
 <tr class="due-date"><td>5/07</td><td>Due date: Team project presentation slides</td></tr>
 <tr><td>5/08</td><td>Team project presentations</td></tr>
-<tr><td>5/15</td><td>지도학습 5: Artificial neural networks<ul><li>Assignment 3 (Due: 6/4)</ul></td></tr>
+<tr><td>5/15</td><td><a href="http://eclass.seoultech.ac.kr/ilos/co/efile_download.acl?FILE_SEQ=105988&CONTENT_SEQ=111159">지도학습 5: Artificial neural networks</a><ul><li>Assignment 3 (Due: 6/4)</ul></td></tr>
 <tr><td>5/22</td><td><a href="svm.html">지도학습 6: Support vector machines</a></td></tr>
 <tr><td>5/29</td><td><a href="visualization.html">데이터 시각화</a></td></tr>
 <tr class="due-date"><td>6/04</td><td>Due date: Assignment 3</td></tr>
-<tr><td>6/05</td><td>대용량 데이터마이닝</td></tr>
+<tr><td>6/05</td><td><a href="http://eclass.seoultech.ac.kr/ilos/co/efile_download.acl?FILE_SEQ=114558&CONTENT_SEQ=119811">대용량 데이터마이닝</a></td></tr>
 <tr><td>6/12</td><td>Final Exam</td></tr>
 <tr class="due-date"><td>6/14</td><td>Due date: Team project final report</td></tr>
 </table>
