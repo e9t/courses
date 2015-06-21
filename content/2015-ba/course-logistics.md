@@ -21,7 +21,7 @@ Toc: True
     - Class meets every Friday 15:00-18:00
     - Most classes will be consisted of two parts
         1. Lectures and/or tutorials
-        1. Short presentations by each project team/individual
+        1. Short presentations by students
 - Course website: [http://lucypark.kr/courses/2015-ba](http://lucypark.kr/courses/2015-ba)
     - Lecture notes
     - Schedule/Announcements
