@@ -476,7 +476,7 @@ For more information on chunking, refer to [Extracting Information from Text](ht
         python -m http.server 8888      # for Python2, `python -m SimpleHTTPServer`
 
 1. 마지막으로, 모던 브라우저(ex: 크롬)의 주소창에 `http://localhost:8888`를 입력하면 우리의 워드클라우드가 떠있을 것이다!<br>
-    <iframe src="http://bl.ocks.org/e9t/raw/e462f7462e9d83b03464/" width="600px" height="600px" frameborder=0></iframe>
+    <iframe src="http://bl.ocks.org/e9t/raw/e462f7462e9d83b03464/" width="100%" height="500px" frameborder=0></iframe>
 
 1. 더 실험해보고 싶은 경우:
     1. 위의 워드클라우드는 각종 특수문자, 조사 등도 포함되어 정보 전달력이 떨어진다. 워드클라우드에 명사만 표현되게 할 수 있을까?
