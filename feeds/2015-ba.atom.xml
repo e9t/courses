@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="https://lucypark.kr/courses/" rel="alternate"></link><link href="https://lucypark.kr/courses/feeds/2015-ba.atom.xml" rel="self"></link><id>https://lucypark.kr/courses/</id><updated>2015-05-08T00:00:00+09:00</updated><entry><title>Visualization</title><link href="https://lucypark.kr/courses/2015-ba/visualization2.html" rel="alternate"></link><published>2015-05-08T00:00:00+09:00</published><updated>2015-05-08T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-05-08:courses/2015-ba/visualization2.html</id><summary type="html">&lt;p&gt;&lt;img src="images/scientist.png" width="500px"&gt; (&lt;a href="http://www.marketingdistillery.com/2014/08/30/data-science-skill-set-explained/"&gt;source&lt;/a&gt;)&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Courses</title><link href="//www.lucypark.kr/courses/" rel="alternate"></link><link href="//www.lucypark.kr/courses/feeds/2015-ba.atom.xml" rel="self"></link><id>//www.lucypark.kr/courses/</id><updated>2015-05-08T00:00:00+09:00</updated><entry><title>Visualization</title><link href="//www.lucypark.kr/courses/2015-ba/visualization2.html" rel="alternate"></link><published>2015-05-08T00:00:00+09:00</published><updated>2015-05-08T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:www.lucypark.kr,2015-05-08:courses/2015-ba/visualization2.html</id><summary type="html">&lt;p&gt;&lt;img src="images/scientist.png" width="500px"&gt; (&lt;a href="http://www.marketingdistillery.com/2014/08/30/data-science-skill-set-explained/"&gt;source&lt;/a&gt;)&lt;/p&gt;
 &lt;h2&gt;[Review] Data visualization&lt;/h2&gt;
 &lt;h3&gt;Data types&lt;/h3&gt;
 &lt;ul&gt;
@@ -62,7 +62,7 @@
 &lt;ul&gt;
 &lt;li&gt;Go to &lt;a href="https://www.mapbox.com"&gt;MapBox&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="images/mapbox.png" width="500px"&gt;&lt;/p&gt;</summary><category term="lectures"></category></entry><entry><title>Visualization</title><link href="https://lucypark.kr/courses/2015-ba/visualization1.html" rel="alternate"></link><published>2015-05-01T00:00:00+09:00</published><updated>2015-05-01T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-05-01:courses/2015-ba/visualization1.html</id><summary type="html">&lt;h2&gt;What is data visualization?&lt;/h2&gt;
+&lt;p&gt;&lt;img src="images/mapbox.png" width="500px"&gt;&lt;/p&gt;</summary><category term="lectures"></category></entry><entry><title>Visualization</title><link href="//www.lucypark.kr/courses/2015-ba/visualization1.html" rel="alternate"></link><published>2015-05-01T00:00:00+09:00</published><updated>2015-05-01T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:www.lucypark.kr,2015-05-01:courses/2015-ba/visualization1.html</id><summary type="html">&lt;h2&gt;What is data visualization?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;The visual representation of information&lt;/li&gt;
 &lt;li&gt;Goals of data visualization&lt;ul&gt;
@@ -269,7 +269,7 @@ However, the four datasets vary considerably when graphed
 &lt;li&gt;&lt;a href="http://www.nytimes.com/interactive/2012/12/30/multimedia/2012-the-year-in-graphics.html"&gt;NYT the year in graphics: 2012&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html"&gt;NYT the year in graphics: 2014&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Many contents in courtesy of &lt;a href="https://faculty.washington.edu/aragon/"&gt;Cecilia Aragon&lt;/a&gt; and &lt;a href="http://vis.berkeley.edu/~maneesh/"&gt;Maneesh Agrawala&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="lectures"></category></entry><entry><title>Bash</title><link href="https://lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><published>2015-04-02T00:00:00+09:00</published><updated>2015-04-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;What is an OS?&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="lectures"></category></entry><entry><title>Bash</title><link href="//www.lucypark.kr/courses/2015-ba/bash.html" rel="alternate"></link><published>2015-04-02T00:00:00+09:00</published><updated>2015-04-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:www.lucypark.kr,2015-04-02:courses/2015-ba/bash.html</id><summary type="html">&lt;h2&gt;What is an OS?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;DOS, Windows, Linux, Mac OS, iOS, Android, ...&lt;/li&gt;
 &lt;/ul&gt;
@@ -355,7 +355,7 @@ Some jokes about package managing:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.ecogwiki.com/Hash-based_sampling"&gt;Data sampling&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;...&lt;a href="http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html"&gt;and more&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Mining English and Korean text with Python</title><link href="https://lucypark.kr/courses/2015-ba/text-mining.html" rel="alternate"></link><published>2015-03-27T15:00:00+09:00</published><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-27:courses/2015-ba/text-mining.html</id><summary type="html">&lt;blockquote&gt;
+&lt;/ul&gt;</summary><category term="programming"></category><category term="seoultech"></category><category term="lectures"></category></entry><entry><title>Mining English and Korean text with Python</title><link href="//www.lucypark.kr/courses/2015-ba/text-mining.html" rel="alternate"></link><published>2015-03-27T15:00:00+09:00</published><updated>2015-03-27T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:www.lucypark.kr,2015-03-27:courses/2015-ba/text-mining.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;We use Python 3 in this tutorial, but provide minimal guidelines for Python 2.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;Terminologies&lt;/h2&gt;
@@ -1386,7 +1386,7 @@ lets use one short sentence for each language.&lt;/p&gt;
 ## Deep learning
 - https://github.com/nltk/nltk/wiki/Installing-Third-Party-Software#senna-for-various-nlp-tasks
     - http://ml.nec-labs.com/senna/
---&gt;</summary><category term="text"></category><category term="lectures"></category></entry><entry><title>Scraping from the Web</title><link href="https://lucypark.kr/courses/2015-ba/crawling.html" rel="alternate"></link><published>2015-03-20T15:00:00+09:00</published><updated>2015-03-20T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-20:courses/2015-ba/crawling.html</id><summary type="html">&lt;p&gt;Choose a target of your choice:&lt;/p&gt;
+--&gt;</summary><category term="text"></category><category term="lectures"></category></entry><entry><title>Scraping from the Web</title><link href="//www.lucypark.kr/courses/2015-ba/crawling.html" rel="alternate"></link><published>2015-03-20T15:00:00+09:00</published><updated>2015-03-20T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:www.lucypark.kr,2015-03-20:courses/2015-ba/crawling.html</id><summary type="html">&lt;p&gt;Choose a target of your choice:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Target 1: &lt;a href="http://land.naver.com/article/articleList.nhn?rletTypeCd=A01&amp;amp;tradeTypeCd=&amp;amp;hscpTypeCd=&amp;amp;cortarNo=1162010200&amp;amp;mapLevel=10"&gt;Naver 부동산&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Target 2: &lt;a href="http://www.imdb.com/search/title?count=100&amp;amp;start=101"&gt;IMDB&lt;/a&gt;&lt;/li&gt;
@@ -1618,8 +1618,8 @@ lets use one short sentence for each language.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://gist.github.com/e9t/9680106"&gt;Naver OnStage crawler&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://github.com/teampopong/crawlers"&gt;Team POPONG crawlers&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gist.github.com/e9t/551f9647f58800273025"&gt;Korean National Assembly bill crawler&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="lectures"></category><category term="crawling"></category></entry><entry><title>Course Introduction</title><link href="https://lucypark.kr/courses/2015-ba/course-logistics.html" rel="alternate"></link><published>2015-03-06T15:00:00+09:00</published><updated>2015-03-06T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-06:courses/2015-ba/course-logistics.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://lucypark.kr/courses/images/me.jpg" width="150px" class="pull-right"&gt;&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="lectures"></category><category term="crawling"></category></entry><entry><title>Course Introduction</title><link href="//www.lucypark.kr/courses/2015-ba/course-logistics.html" rel="alternate"></link><published>2015-03-06T15:00:00+09:00</published><updated>2015-03-06T15:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:www.lucypark.kr,2015-03-06:courses/2015-ba/course-logistics.html</id><summary type="html">&lt;h2&gt;About the instructor&lt;/h2&gt;
+&lt;p&gt;&lt;img src="//www.lucypark.kr/courses/images/me.jpg" width="150px" class="pull-right"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Eunjeong (Lucy) Park&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dm.snu.ac.kr/~epark"&gt;PhDc for data mining&lt;/a&gt; at Seoul National University&lt;/li&gt;
@@ -1791,7 +1791,7 @@ we encourage you to approach your work with honesty and integrity.&lt;/p&gt;
     - Markdown, pandoc
     - Coursera, Quora, Kaggle
     - Facebook Groups
---&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>Business Analytics (Spring 2015)</title><link href="https://lucypark.kr/courses/2015-ba/index.html" rel="alternate"></link><published>2015-03-02T00:00:00+09:00</published><updated>2015-03-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:lucypark.kr,2015-03-02:courses/2015-ba/index.html</id><summary type="html">&lt;blockquote&gt;
+--&gt;</summary><category term="lectures"></category><category term="intro"></category></entry><entry><title>Business Analytics (Spring 2015)</title><link href="//www.lucypark.kr/courses/2015-ba/index.html" rel="alternate"></link><published>2015-03-02T00:00:00+09:00</published><updated>2015-03-02T00:00:00+09:00</updated><author><name>Lucy Park</name></author><id>tag:www.lucypark.kr,2015-03-02:courses/2015-ba/index.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Welcome to Business Analytics class of 2015!
 Here you'll find all course materials, guides and schedules.
 In case you have questions, feel free to send an email to &lt;a href="mailto:2015-ba@googlegroups.com"&gt;2015-ba@googlegroups.com&lt;/a&gt; (or directly write a new topic at the forum below).&lt;/p&gt;
@@ -1803,7 +1803,7 @@ Topics include statistical and quantitative analysis, explanatory and predictive
 Students are required to present progress on their work during the semester, and are assessed by a set of assignments, quizzes and exams.&lt;/p&gt;
 &lt;p&gt;Note that this course is the second part of a two part sequence.
 We assume you have already taken
-Data Mining (ex: &lt;a href="https://lucypark.kr/courses/2015-dm/index.html"&gt;IISE113503&lt;/a&gt;),
+Data Mining (ex: &lt;a href="//www.lucypark.kr/courses/2015-dm/index.html"&gt;IISE113503&lt;/a&gt;),
 the first part of the sequence, where methods and algorithms for mining data were discussed.
 This course is the latter part of the sequence, and will be more advanced and project-focused.&lt;/p&gt;
 &lt;h3&gt;Prerequisites&lt;/h3&gt;
