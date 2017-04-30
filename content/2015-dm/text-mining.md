@@ -260,7 +260,7 @@ POS,품사,Part-of-speech (ex: Nouns)
         <pre class="result">
         Displaying 5 of 865 matches:
                                              Emma by Jane Austen 1816 ] VOLUME I CHAPT
-                                             Emma Woodhouse , handsome , clever , and 
+                                             Emma Woodhouse , handsome , clever , and
         both daughters , but particularly of Emma . Between _them_ it was more the int
          friend very mutually attached , and Emma doing just what she liked ; highly e
         r own . The real evils , indeed , of Emma ' s situation were the power of havi
@@ -274,9 +274,9 @@ POS,품사,Part-of-speech (ex: Nouns)
         <pre class="result">
         Displaying 6 of 6 matches:
          ․ 김정훈 김학송 의원 ( 10 인 ) 제안 이유 및 주요 내용 초등학교 저학년 의 경우 에도 부모 의 따뜻한 사랑 과 보살핌 이 필요 한
-         을 할 수 있는 자녀 의 나이 는 만 6 세 이하 로 되어 있어 초등학교 저학년 인 자녀 를 돌보기 위해서 는 해당 부모님 은 일자리 를 
-         다 . 제 63 조제 2 항제 4 호 중 “ 만 6 세 이하 의 초등학교 취학 전 자녀 를 ” 을 “ 만 8 세 이하 ( 취학 중인 경우 
-         전 자녀 를 ” 을 “ 만 8 세 이하 ( 취학 중인 경우 에는 초등학교 2 학년 이하 를 말한 다 ) 의 자녀 를 ” 로 한 다 . 부 
+         을 할 수 있는 자녀 의 나이 는 만 6 세 이하 로 되어 있어 초등학교 저학년 인 자녀 를 돌보기 위해서 는 해당 부모님 은 일자리 를
+         다 . 제 63 조제 2 항제 4 호 중 “ 만 6 세 이하 의 초등학교 취학 전 자녀 를 ” 을 “ 만 8 세 이하 ( 취학 중인 경우
+         전 자녀 를 ” 을 “ 만 8 세 이하 ( 취학 중인 경우 에는 초등학교 2 학년 이하 를 말한 다 ) 의 자녀 를 ” 로 한 다 . 부
          . ∼ 3 . ( 현행 과 같 음 ) 4 . 만 6 세 이하 의 초등학교 취 4 . 만 8 세 이하 ( 취학 중인 경우 학 전 자녀 를 양
         세 이하 ( 취학 중인 경우 학 전 자녀 를 양육 하기 위하 에는 초등학교 2 학년 이하 를 여 필요하거 나 여자 공무원 이 말한 다 ) 의
         </pre>
@@ -475,8 +475,9 @@ For more information on chunking, refer to [Extracting Information from Text](ht
         :::python
         python -m http.server 8888      # for Python2, `python -m SimpleHTTPServer`
 
-1. 마지막으로, 모던 브라우저(ex: 크롬)의 주소창에 `http://localhost:8888`를 입력하면 우리의 워드클라우드가 떠있을 것이다!<br>
-    <iframe src="http://bl.ocks.org/e9t/raw/e462f7462e9d83b03464/" width="100%" height="500px" frameborder=0></iframe>
+1. 마지막으로, 모던 브라우저(ex: 크롬)의 주소창에 `http://localhost:8888`를 입력하면 우리의 워드클라우드가 떠있을 것이다! (이미지를 클릭하면 interative 페이지로 이동합니다.)
+
+    <a href="http://bl.ocks.org/e9t/raw/e462f7462e9d83b03464/"><img src="images/wordcloud.png" width="400px"></a>
 
 1. 더 실험해보고 싶은 경우:
     1. 위의 워드클라우드는 각종 특수문자, 조사 등도 포함되어 정보 전달력이 떨어진다. 워드클라우드에 명사만 표현되게 할 수 있을까?
