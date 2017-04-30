@@ -32,6 +32,8 @@
 
 ## Run
 
+    # local
     make regenerate; make serve
-    make publish
-    make github
+
+    # remote
+    make publish; make github
