@@ -11,7 +11,7 @@
  *
  *  ---------------------------------------------------------------------
  *  
- *  Copyright (c) 2009-2015 The MathJax Consortium
+ *  Copyright (c) 2009-2017 The MathJax Consortium
  * 
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@
     return MathJax.Localization._.apply(MathJax.Localization,
       [["TeX", id]].concat([].slice.call(arguments,1)));
   };
+  
+  var isArray = MathJax.Object.isArray;
 
   var STACK = MathJax.Object.Subclass({
     Init: function (env,inner) {
@@ -53,8 +55,10 @@
         else if (top) {
           this.data.push(item);
           if (item.env) {
-            for (var id in this.env)
-              {if (this.env.hasOwnProperty(id)) {item.env[id] = this.env[id]}}
+            if (item.copyEnv !== false) {
+              for (var id in this.env)
+                {if (this.env.hasOwnProperty(id)) {item.env[id] = this.env[id]}}
+            }
             this.env = item.env;
           } else {item.env = this.env}
         }
@@ -256,9 +260,9 @@
   });
   
   STACKITEM.array = STACKITEM.Subclass({
-    type: "array", isOpen: true, arraydef: {},
+    type: "array", isOpen: true, copyEnv: false, arraydef: {},
     Init: function () {
-      this.table = []; this.row = []; this.env = {}; this.frame = []; this.hfill = [];
+      this.table = []; this.row = []; this.frame = []; this.hfill = [];
       this.SUPER(arguments).Init.apply(this,arguments);
     },
     checkItem: function (item) {
@@ -266,6 +270,7 @@
         if (item.isEntry) {this.EndEntry(); this.clearEnv(); return false}
         if (item.isCR)    {this.EndEntry(); this.EndRow(); this.clearEnv(); return false}
         this.EndTable(); this.clearEnv();
+        var scriptlevel = this.arraydef.scriptlevel; delete this.arraydef.scriptlevel;
         var mml = MML.mtable.apply(MML,this.table).With(this.arraydef);
         if (this.frame.length === 4) {
           mml.frame = (this.frame.dashed ? "dashed" : "solid");
@@ -276,6 +281,7 @@
           if ((this.arraydef.columnlines||"none") != "none" ||
               (this.arraydef.rowlines||"none") != "none") {mml.padding = 0} // HTML-CSS jax implements this
         }
+        if (scriptlevel) {mml = MML.mstyle(mml).With({scriptlevel: scriptlevel})}
         if (this.open || this.close) {mml = TEX.fenced(this.open,mml,this.close)}
         mml = STACKITEM.mml(mml);
         if (this.requireClose) {
@@ -341,10 +347,13 @@
     type: "fn",
     checkItem: function (item) {
       if (this.data[0]) {
-        if (item.type !== "mml" || !item.data[0]) {return [this.data[0],item]}
-        if (item.data[0].isa(MML.mspace)) {return [this.data[0],item]}
-        var mml = item.data[0]; if (mml.isEmbellished()) {mml = mml.CoreMO()}
-        if ([0,0,1,1,0,1,1,0,0,0][mml.Get("texClass")]) {return [this.data[0],item]}
+        if (item.isOpen) {return true}
+        if (item.type !== "fn") {
+          if (item.type !== "mml" || !item.data[0]) {return [this.data[0],item]}
+          if (item.data[0].isa(MML.mspace)) {return [this.data[0],item]}
+          var mml = item.data[0]; if (mml.isEmbellished()) {mml = mml.CoreMO()}
+          if ([0,0,1,1,0,1,1,0,0,0][mml.Get("texClass")]) {return [this.data[0],item]}
+        }
         return [this.data[0],MML.mo(MML.entity("#x2061")).With({texClass:MML.TEXCLASS.NONE}),item];
       }
       return this.SUPER(arguments).checkItem.apply(this,arguments);
@@ -407,7 +416,7 @@
     Add: function (src,dst,nouser) {
       if (!dst) {dst = this}
       for (var id in src) {if (src.hasOwnProperty(id)) {
-        if (typeof src[id] === 'object' && !(src[id] instanceof Array) &&
+        if (typeof src[id] === 'object' && !isArray(src[id]) &&
            (typeof dst[id] === 'object' || typeof dst[id] === 'function')) 
              {this.Add(src[id],dst[id],src[id],nouser)}
           else if (!dst[id] || !dst[id].isUser || !nouser) {dst[id] = src[id]}
@@ -707,8 +716,8 @@
         '\\arrowvert':      '23D0',
         '\\Arrowvert':      '2016',
         '\\bracevert':      '23AA',  // non-standard
-        '\\Vert':           ['2225',{texClass:MML.TEXCLASS.ORD}],
-        '\\|':              ['2225',{texClass:MML.TEXCLASS.ORD}],
+        '\\Vert':           ['2016',{texClass:MML.TEXCLASS.ORD}],
+        '\\|':              ['2016',{texClass:MML.TEXCLASS.ORD}],
         '\\vert':           ['|',{texClass:MML.TEXCLASS.ORD}],
         '\\uparrow':        '2191',
         '\\downarrow':      '2193',
@@ -798,10 +807,12 @@
         limits:            ['Limits',1],
         nolimits:          ['Limits',0],
 
-        overline:            ['UnderOver','00AF'],
+        overline:            ['UnderOver','00AF',null,1],
         underline:           ['UnderOver','005F'],
         overbrace:           ['UnderOver','23DE',1],
         underbrace:          ['UnderOver','23DF',1],
+        overparen:           ['UnderOver','23DC'],
+        underparen:          ['UnderOver','23DD'],
         overrightarrow:      ['UnderOver','2192'],
         underrightarrow:     ['UnderOver','2192'],
         overleftarrow:       ['UnderOver','2190'],
@@ -1094,7 +1105,7 @@
     ControlSequence: function (c) {
       var name = this.GetCS(), macro = this.csFindMacro(name);
       if (macro) {
-        if (!(macro instanceof Array)) {macro = [macro]}
+        if (!isArray(macro)) {macro = [macro]}
         var fn = macro[0]; if (!(fn instanceof Function)) {fn = this[fn]}
         fn.apply(this,[c+name].concat(macro.slice(1)));
       } else if (TEXDEF.mathchar0mi[name])            {this.csMathchar0mi(name,TEXDEF.mathchar0mi[name])}
@@ -1113,7 +1124,7 @@
     //
     csMathchar0mi: function (name,mchar) {
       var def = {mathvariant: MML.VARIANT.ITALIC};
-      if (mchar instanceof Array) {def = mchar[1]; mchar = mchar[0]}
+      if (isArray(mchar)) {def = mchar[1]; mchar = mchar[0]}
       this.Push(this.mmlToken(MML.mi(MML.entity("#x"+mchar)).With(def)));
     },
     //
@@ -1121,7 +1132,7 @@
     //
     csMathchar0mo: function (name,mchar) {
       var def = {stretchy: false};
-      if (mchar instanceof Array) {def = mchar[1]; def.stretchy = false; mchar = mchar[0]}
+      if (isArray(mchar)) {def = mchar[1]; def.stretchy = false; mchar = mchar[0]}
       this.Push(this.mmlToken(MML.mo(MML.entity("#x"+mchar)).With(def)));
     },
     //
@@ -1129,7 +1140,7 @@
     //
     csMathchar7: function (name,mchar) {
       var def = {mathvariant: MML.VARIANT.NORMAL};
-      if (mchar instanceof Array) {def = mchar[1]; mchar = mchar[0]}
+      if (isArray(mchar)) {def = mchar[1]; mchar = mchar[0]}
       if (this.stack.env.font) {def.mathvariant = this.stack.env.font}
       this.Push(this.mmlToken(MML.mi(MML.entity("#x"+mchar)).With(def)));
     },
@@ -1138,7 +1149,7 @@
     //
     csDelimiter: function (name,delim) {
       var def = {};
-      if (delim instanceof Array) {def = delim[1]; delim = delim[0]}
+      if (isArray(delim)) {def = delim[1]; delim = delim[0]}
       if (delim.length === 4) {delim = MML.entity('#x'+delim)} else {delim = MML.chars(delim)}
       this.Push(this.mmlToken(MML.mo(delim).With({fence: false, stretchy: false}).With(def)));
     },
@@ -1257,6 +1268,8 @@
         {if (mo.defaults.hasOwnProperty(id) && mi[id] != null) {mo[id] = mi[id]}}
       for (id in MML.copyAttributes)
         {if (MML.copyAttributes.hasOwnProperty(id) && mi[id] != null) {mo[id] = mi[id]}}
+      mo.lspace = mo.rspace = "0";  // prevent mo from having space in NativeMML
+      mo.useMMLspacing &= ~(mo.SPACE_ATTR.lspace | mo.SPACE_ATTR.rspace);  // don't count these explicit settings
       return mo;
     },
     
@@ -1283,7 +1296,7 @@
       if (this.stack.env.font) {def = {mathvariant: this.stack.env.font}}
       if (TEXDEF.remap[c]) {
         c = TEXDEF.remap[c];
-        if (c instanceof Array) {def = c[1]; c = c[0]}
+        if (isArray(c)) {def = c[1]; c = c[0]}
         mo = MML.mo(MML.entity('#x'+c)).With(def);
       } else {
         mo = MML.mo(c).With(def);
@@ -1326,9 +1339,11 @@
     
     Middle: function (name) {
       var delim = this.GetDelimiter(name);
+      this.Push(MML.TeXAtom().With({texClass:MML.TEXCLASS.CLOSE}));
       if (this.stack.Top().type !== "left")
         {TEX.Error(["MisplacedMiddle","%1 must be within \\left and \\right",name])}
       this.Push(MML.mo(delim).With({stretchy:true}));
+      this.Push(MML.TeXAtom().With({texClass:MML.TEXCLASS.OPEN}));
     },
     
     NamedFn: function (name,id) {
@@ -1360,6 +1375,7 @@
       }
       op.movesupsub = (limits ? true : false);
       op.Core().movablelimits = false;
+      if (op.movablelimits) op.movablelimits = false;
     },
     
     Over: function (name,open,close) {
@@ -1423,10 +1439,12 @@
       var def = {accent: true}; if (this.stack.env.font) {def.mathvariant = this.stack.env.font}
       var mml = this.mmlToken(MML.mo(MML.entity("#x"+accent)).With(def));
       mml.stretchy = (stretchy ? true : false);
+      var mo = (c.isEmbellished() ? c.CoreMO() : c);
+      if (mo.isa(MML.mo)) mo.movablelimits = false;
       this.Push(MML.TeXAtom(MML.munderover(c,null,mml).With({accent: true})));
     },
     
-    UnderOver: function (name,c,stack) {
+    UnderOver: function (name,c,stack,noaccent) {
       var pos = {o: "over", u: "under"}[name.charAt(1)];
       var base = this.ParseArg(name);
       if (base.Get("movablelimits")) {base.movablelimits = false}
@@ -1437,7 +1455,7 @@
       var mml = MML.munderover(base,null,null);
       mml.SetData(
         mml[pos], 
-        this.mmlToken(MML.mo(MML.entity("#x"+c)).With({stretchy:true, accent:(pos==="under")}))
+        this.mmlToken(MML.mo(MML.entity("#x"+c)).With({stretchy:true, accent:!noaccent}))
       );
       if (stack) {mml = MML.TeXAtom(mml).With({texClass:MML.TEXCLASS.OP, movesupsub:true})}
       this.Push(mml.With({subsupOK:true}));
@@ -1445,10 +1463,12 @@
     
     Overset: function (name) {
       var top = this.ParseArg(name), base = this.ParseArg(name);
+      if (base.movablelimits) base.movablelimits = false;
       this.Push(MML.mover(base,top));
     },
     Underset: function (name) {
       var bot = this.ParseArg(name), base = this.ParseArg(name);
+      if (base.movablelimits) base.movablelimits = false;
       this.Push(MML.munder(base,bot));
     },
     
@@ -1679,7 +1699,7 @@
         }
         var text = string.substr(this.i,i-this.i);
         if (!text.match(/^\s*\\text[^a-zA-Z]/)) {
-          this.Push.apply(this,this.InternalMath(text));
+          this.Push.apply(this,this.InternalMath(text,0));
           this.i = i;
         }
       }
@@ -1771,11 +1791,11 @@
       if (env.match(/\\/i)) {TEX.Error(["InvalidEnv","Invalid environment name '%1'",env])}
       var cmd = this.envFindName(env);
       if (!cmd) {TEX.Error(["UnknownEnv","Unknown environment '%1'",env])}
-      if (!(cmd instanceof Array)) {cmd = [cmd]}
-      var end = (cmd[1] instanceof Array ? cmd[1][0] : cmd[1]);
+      if (!isArray(cmd)) {cmd = [cmd]}
+      var end = (isArray(cmd[1]) ? cmd[1][0] : cmd[1]);
       var mml = STACKITEM.begin().With({name: env, end: end, parse:this});
       if (name === "\\end") {
-        if (!isEnd && cmd[1] instanceof Array && this[cmd[1][1]]) {
+        if (!isEnd && isArray(cmd[1]) && this[cmd[1][1]]) {
           mml = this[cmd[1][1]].apply(this,[mml].concat(cmd.slice(2)));
         } else {
           mml = STACKITEM.end().With({name: env});
@@ -1849,7 +1869,7 @@
     convertDelimiter: function (c) {
       if (c) {c = TEXDEF.delimiter[c]}
       if (c == null) {return null}
-      if (c instanceof Array) {c = c[0]}
+      if (isArray(c)) {c = c[0]}
       if (c.length === 4) {c = String.fromCharCode(parseInt(c,16))}
       return c;
     },
@@ -1859,7 +1879,9 @@
      */
     trimSpaces: function (text) {
       if (typeof(text) != 'string') {return text}
-      return text.replace(/^\s+|\s+$/g,'');
+      var TEXT = text.replace(/^\s+|\s+$/g,'');
+      if (TEXT.match(/\\$/) && text.match(/ $/)) TEXT += " ";
+      return TEXT;
     },
 
     /*
@@ -2014,49 +2036,57 @@
     
     /*
      *  Break up a string into text and math blocks
-     *  @@@ FIXME:  skip over braced groups?  @@@
-     *  @@@ FIXME:  pass environment to TEX.Parse? @@@
      */
     InternalMath: function (text,level) {
-      var def = {displaystyle: false}; if (level != null) {def.scriptlevel = level}
-      if (this.stack.env.font) {def.mathvariant = this.stack.env.font}
-      if (!text.match(/\\?[${}\\]|\\\(|\\(eq)?ref\s*\{/)) {return [this.InternalText(text,def)]}
-      var i = 0, k = 0, c, match = '';
-      var mml = [];
-      while (i < text.length) {
-        c = text.charAt(i++);
-        if (c === '$') {
-          if (match === '$') {
-            mml.push(MML.TeXAtom(TEX.Parse(text.slice(k,i-1),{}).mml().With(def)));
-            match = ''; k = i;
-          } else if (match === '') {
-            if (k < i-1) {mml.push(this.InternalText(text.slice(k,i-1),def))}
-            match = '$'; k = i;
-          }
-        } else if (c === '}' && match === '}') {
-          mml.push(MML.TeXAtom(TEX.Parse(text.slice(k,i),{}).mml().With(def)));
-          match = ''; k = i;
-        } else if (c === '\\') {
-          if (match === '' && text.substr(i).match(/^(eq)?ref\s*\{/)) {
-            if (k < i-1) {mml.push(this.InternalText(text.slice(k,i-1),def))}
-            match = '}'; k = i-1;
-          } else {
-            c = text.charAt(i++);
-            if (c === '(' && match === '') {
-              if (k < i-2) {mml.push(this.InternalText(text.slice(k,i-2),def))}
-              match = ')'; k = i;
-            } else if (c === ')' && match === ')') {
-              mml.push(MML.TeXAtom(TEX.Parse(text.slice(k,i-2),{}).mml().With(def)));
+      var def = (this.stack.env.font ? {mathvariant: this.stack.env.font} : {});
+      var mml = [], i = 0, k = 0, c, match = '', braces = 0;
+      if (text.match(/\\?[${}\\]|\\\(|\\(eq)?ref\s*\{/)) {
+        while (i < text.length) {
+          c = text.charAt(i++);
+          if (c === '$') {
+            if (match === '$' && braces === 0) {
+              mml.push(MML.TeXAtom(TEX.Parse(text.slice(k,i-1),{}).mml()));
               match = ''; k = i;
-            } else if (c.match(/[${}\\]/) && match === '')  {
-              i--; text = text.substr(0,i-1) + text.substr(i); // remove \ from \$, \{, \}, or \\
+            } else if (match === '') {
+              if (k < i-1) mml.push(this.InternalText(text.slice(k,i-1),def));
+              match = '$'; k = i;
+            }
+          } else if (c === '{' && match !== '') {
+            braces++;
+          } else if (c === '}') {
+            if (match === '}' && braces === 0) {
+              mml.push(MML.TeXAtom(TEX.Parse(text.slice(k,i),{}).mml().With(def)));
+              match = ''; k = i;
+            } else if (match !== '') {
+              if (braces) braces--;
+            }
+          } else if (c === '\\') {
+            if (match === '' && text.substr(i).match(/^(eq)?ref\s*\{/)) {
+              var len = RegExp["$&"].length;
+              if (k < i-1) mml.push(this.InternalText(text.slice(k,i-1),def));
+              match = '}'; k = i-1; i += len;
+            } else {
+              c = text.charAt(i++);
+              if (c === '(' && match === '') {
+                if (k < i-2) mml.push(this.InternalText(text.slice(k,i-2),def));
+                match = ')'; k = i;
+              } else if (c === ')' && match === ')' && braces === 0) {
+                mml.push(MML.TeXAtom(TEX.Parse(text.slice(k,i-2),{}).mml()));
+                match = ''; k = i;
+              } else if (c.match(/[${}\\]/) && match === '')  {
+                i--; text = text.substr(0,i-1) + text.substr(i); // remove \ from \$, \{, \}, or \\
+              }
             }
           }
         }
+        if (match !== '') TEX.Error(["MathNotTerminated","Math not terminated in text box"]);
       }
-      if (match !== '')
-        {TEX.Error(["MathNotTerminated","Math not terminated in text box"])}
-      if (k < text.length) {mml.push(this.InternalText(text.slice(k),def))}
+      if (k < text.length) mml.push(this.InternalText(text.slice(k),def));
+      if (level != null) {
+        mml = [MML.mstyle.apply(MML,mml).With({displaystyle:false,scriptlevel:level})];
+      } else if (mml.length > 1) {
+        mml = [MML.mrow.apply(MML,mml)];
+      }
       return mml;
     },
     InternalText: function (text,def) {
@@ -2173,7 +2203,7 @@
       //
       //  Translate message if it is ["id","message",args]
       //
-      if (message instanceof Array) {message = _.apply(_,message)}
+      if (isArray(message)) {message = _.apply(_,message)}
       throw HUB.Insert(Error(message),{texError: true});
     },
     
@@ -2190,9 +2220,11 @@
      */
     fenced: function (open,mml,close) {
       var mrow = MML.mrow().With({open:open, close:close, texClass:MML.TEXCLASS.INNER});
-      mrow.Append(MML.mo(open).With({fence:true, stretchy:true, texClass:MML.TEXCLASS.OPEN}));
-      if (mml.type === "mrow") {mrow.Append.apply(mrow,mml.data)} else {mrow.Append(mml)}
-      mrow.Append(MML.mo(close).With({fence:true, stretchy:true, texClass:MML.TEXCLASS.CLOSE}));
+      mrow.Append(
+        MML.mo(open).With({fence:true, stretchy:true, symmetric:true, texClass:MML.TEXCLASS.OPEN}),
+        mml,
+        MML.mo(close).With({fence:true, stretchy:true, symmetric:true, texClass:MML.TEXCLASS.CLOSE})
+      );
       return mrow;
     },
     /*
@@ -2208,7 +2240,7 @@
     mathPalette: function (fence,side) {
       if (fence === '{' || fence === '}') {fence = "\\"+fence}
       var D = '{\\bigg'+side+' '+fence+'}', T = '{\\big'+side+' '+fence+'}';
-      return TEX.Parse('\\mathchoice'+D+T+T+T).mml();
+      return TEX.Parse('\\mathchoice'+D+T+T+T,{}).mml();
     },
     
     //

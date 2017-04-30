@@ -8,22 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<script src="https://lucypark.kr/courses/theme/html5.js"></script>
 		<![endif]-->
-	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+		<h1 class="margin-bottom-30"><a href="https://lucypark.kr/courses/">Courses</a></h1>
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+            <li role="presentation"><a href="https://lucypark.kr/courses/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="https://lucypark.kr/courses/2015-ba">2015-ba</a></li>
         </ul>
 	</div>
 	<div class="row">
@@ -68,9 +68,9 @@
 <p><a href="logistic-regression.html">수업 시간에 배운 logistic regression</a> 알고리즘을 학습해보자.
 단, 이번에는 1) Binary가 아니라 전체 10개의 범주(class)에 대해 분류해보고, 2) 성능과 학습 시간을 모두 측정해보는 것이 목표이다.</p>
 <p>먼저 scikit-learn을 통해 MNIST dataset을 loading하고, partitioning해보자.</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">cross_validation</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_mldata</span><span class="p">(</span><span class="s">&#39;MNIST original&#39;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;target&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">cross_validation</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_mldata</span><span class="p">(</span><span class="s1">&#39;MNIST original&#39;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>
 </pre></div>
 
@@ -86,7 +86,7 @@
 이해가 안 된다면 이 참에 구글링도 하고 scikit-learn 공식 문서도 뒤져보자.
 우리의 목표는 이 숙제를 완성하는 것이 아니라 실제로 데이터를 가지고 놀 수 있는 능력을 키우는 것이다.</p>
 <p>시간이 오래걸릴 것이니 밥을 먹고 와도 좋다.</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">time</span><span class="p">();</span> <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">);</span> <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">s</span>
@@ -103,15 +103,15 @@
 (여기서는 random_state라는 파라미터를 입력했으니 그것을 변수명에 넣어보겠다.)
 여기서 파일 확장자로 사용한 <code>pkl</code>은 <a href="https://docs.python.org/3/library/pickle.html">pickle</a> 파일이라는 것을 나타낸다.
 pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 중 하나이다.</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.externals</span> <span class="kn">import</span> <span class="n">joblib</span>
-<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">lr</span><span class="p">,</span> <span class="s">&#39;lr_randomstate_1234.pkl&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.externals</span> <span class="kn">import</span> <span class="n">joblib</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">lr</span><span class="p">,</span> <span class="s1">&#39;lr_randomstate_1234.pkl&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>위 코드를 입력하면 내 컴퓨터에 한 개(혹은 그 이상)의 파일이 생성되는 것을 확인할 수 있다.
 (참고자료: <a href="http://scikit-learn.org/stable/modules/model_persistence.html">Model persistence</a>)</p>
 <p>이렇게 모델을 파일로 저장하고나면 다음부터는 컴퓨터를 재부팅하고도 다시 많은 시간을 투자해서 모델을 학습하지 않고 아래와 같이 모델을 파일로부터 로딩할 수 있다.</p>
-<div class="highlight"><pre><span class="n">lr</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#39;lr_randomstate_1234.pkl&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">lr</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;lr_randomstate_1234.pkl&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -120,7 +120,7 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
 파일이 여러 개 생성되었다면 각 파일의 이름과 크기를 모두 기록하자.</p>
 </blockquote>
 <p>우리가 LogisticRegression 클래스의 instance를 생성할 때 사용한 파라미터는 아래의 명령어로 찾을 수 있다.</p>
-<div class="highlight"><pre><span class="n">p</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
 </pre></div>
 
 
@@ -128,7 +128,7 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
 <p>3: 어떤 값들이 출력되는가? 각 파라미터는 어떤 의미를 가지는지 설명해보자. 잘 모르겠다면 <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">이 문서</a>를 확인해보자.</p>
 <p>4: 이 파라미터들을 사용했을 때 test set에 대한 정확도(accuracy), 정밀도(precision), 재현율(recall), F-score는 각각 얼마인지 계산해보자.</p>
 </blockquote>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
 </pre></div>
 
 
@@ -152,8 +152,8 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
 아래의 세 가지 문항에 대한 답을 문서로 작성하고 PDF로 변환한 후 올려주시기 바랍니다.</p>
 <p>이번에는 Assignment 1에서처럼 <code>sklearn.datasets.fetch_mldata()</code>를 사용하지 말고,
 <code>sklearn.datasets.load_digits()</code>를 사용해서 약식의 MNIST 데이터를 loading해보자.</p>
-<div class="highlight"><pre><span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>      <span class="c"># sklearn의 datasets에 완비된 mnist 데이터 로딩</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;target&#39;</span><span class="p">]</span>   <span class="c"># X, y 변수를 생성하여 각각 독립변수와 종속변수를 넣음</span>
+<div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>      <span class="c1"># sklearn의 datasets에 완비된 mnist 데이터 로딩</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>   <span class="c1"># X, y 변수를 생성하여 각각 독립변수와 종속변수를 넣음</span>
 </pre></div>
 
 
@@ -198,7 +198,7 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/assignments.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="https://lucypark.kr/courses/2015-dm/assignments.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -214,13 +214,13 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
+                <a href="https://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
             </span>
         </p>
         <p>
             Tags:
             <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/assignments.html" rel="tag">assignments</a>
+                <a href="https://lucypark.kr/courses/tag/assignments.html" rel="tag">assignments</a>
             </span>
         </p>
     </div>
@@ -235,7 +235,7 @@ pickle은 파이썬에서 오브젝트(object)를 binary로 저장하는 방식 
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
  The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
+                <a href="https://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
             </span>
 		</div>
 	</div>
@@ -325,7 +325,7 @@ $(function(){
     }});
 </script>
 <script type="text/javascript"
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

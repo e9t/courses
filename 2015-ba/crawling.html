@@ -8,22 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<script src="https://lucypark.kr/courses/theme/html5.js"></script>
 		<![endif]-->
-	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+		<h1 class="margin-bottom-30"><a href="https://lucypark.kr/courses/">Courses</a></h1>
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+            <li role="presentation"><a href="https://lucypark.kr/courses/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="https://lucypark.kr/courses/2015-ba">2015-ba</a></li>
         </ul>
 	</div>
 	<div class="row">
@@ -64,9 +64,9 @@
 </li>
 </ul>
 </li>
-<li>Set the variables <code>npages</code>, <code>url_base</code>, and also a <code>file_base</code> to name download files. Normally, you want to set npages to a smaller number (ex: 3), rather than the actuall value (i.e., 54) to test the code before actually executing it.<div class="highlight"><pre><span class="n">npages</span> <span class="o">=</span> <span class="mi">54</span>
-<span class="n">url_base</span> <span class="o">=</span> <span class="s">&#39;http://www.ted.com/talks?page=</span><span class="si">%s</span><span class="s">&#39;</span>
-<span class="n">file_base</span> <span class="o">=</span> <span class="s">&#39;ted_talks_</span><span class="si">%s</span><span class="s">.html&#39;</span>
+<li>Set the variables <code>npages</code>, <code>url_base</code>, and also a <code>file_base</code> to name download files. Normally, you want to set npages to a smaller number (ex: 3), rather than the actuall value (i.e., 54) to test the code before actually executing it.<div class="highlight"><pre><span></span><span class="n">npages</span> <span class="o">=</span> <span class="mi">54</span>
+<span class="n">url_base</span> <span class="o">=</span> <span class="s1">&#39;http://www.ted.com/talks?page=</span><span class="si">%s</span><span class="s1">&#39;</span>
+<span class="n">file_base</span> <span class="o">=</span> <span class="s1">&#39;ted_talks_</span><span class="si">%s</span><span class="s1">.html&#39;</span>
 </pre></div>
 
 
@@ -76,8 +76,8 @@
 <ul>
 <li>
 <p>First define a function named <code>save_text</code></p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">save_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">save_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 
@@ -85,7 +85,7 @@
 </li>
 <li>
 <p>Then using the list URL found on step 1, download list pages. We will use the package <code>requests</code> for this task</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 <span class="k">for</span> <span class="n">page_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">npages</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">page_num</span><span class="p">)</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_base</span> <span class="o">%</span> <span class="n">page_num</span><span class="p">)</span>
@@ -103,32 +103,32 @@
 <ul>
 <li>
 <p>Before we go any further, let's recall how an html document looks like. Take a look at one of the downloaded html docs as well.</p>
-<div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="c">&lt;!-- This is a comment --&gt;</span>
     ... and this is where the visible contents go ...
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 
 
 </li>
 <li>
 <p>Now, let's set the <code>page_num</code> to 1 for detailed investigation, rather than creating a <code>for</code> loop for all pages</p>
-<div class="highlight"><pre><span class="n">page_num</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight"><pre><span></span><span class="n">page_num</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 
 
 </li>
 <li>
 <p>For parsing, we'll be using <a href="http://lxml.de/lxmlhtml.html"><code>lxml.html</code></a>. Many people also use <a href="https://docs.python.org/3/library/re.html">regex</a>. There are various many other options (ex: bs4), so feel free to Google them up.</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">html</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">html</span>
 <span class="n">root</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">file_base</span> <span class="o">%</span> <span class="n">page_num</span><span class="p">)</span>
 </pre></div>
 
@@ -136,7 +136,7 @@
 </li>
 <li>
 <p>With <code>root</code>, we can easily parse a given text using <a href="http://lxml.de/xpathxslt.html#xpath">xpath</a>s, just by identifying the <em>tag</em>, <em>class</em>, or <em>id</em> of an html element. Why don't we try extracting all the text from the <code>&lt;body&gt;</code> tag? Try this:</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;//body//text()&#39;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//body//text()&#39;</span><span class="p">))</span>
 </pre></div>
 
 
@@ -163,8 +163,8 @@
 </li>
 <li>
 <p>Now, let's use xpath to get the talk items.</p>
-<div class="highlight"><pre><span class="n">items</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;//div[@id=&quot;browse-results&quot;]//div[@class=&quot;col&quot;]&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>   <span class="c"># returns 36, the number of talk items in the page</span>
+<div class="highlight"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//div[@id=&quot;browse-results&quot;]//div[@class=&quot;col&quot;]&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>   <span class="c1"># returns 36, the number of talk items in the page</span>
 </pre></div>
 
 
@@ -175,24 +175,24 @@
 </li>
 <li>
 <p>Choose one item and extract relevant data.</p>
-<div class="highlight"><pre><span class="n">item</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h12 talk-link__speaker&quot;]/text()&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/text()&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/@href&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//span[@class=&quot;meta__val&quot;]/text()&#39;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//h4[@class=&quot;h12 talk-link__speaker&quot;]/text()&#39;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/text()&#39;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/@href&#39;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//span[@class=&quot;meta__val&quot;]/text()&#39;</span><span class="p">))</span>
 </pre></div>
 
 
 </li>
 <li>
 <p>All the items are contained in a list, and it would be better if we could strip the new lines(<code>\n</code>) from the strings. Additionally, rather than handling each info separately, let's put the extracted info into one dictionary, and make that a function named <code>parse_item()</code>.</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">parse_item</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_item</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s">&#39;speaker&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h12 talk-link__speaker&quot;]/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
-        <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">),</span>
-        <span class="s">&#39;href&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/@href&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
-        <span class="s">&#39;views&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//span[@class=&quot;meta__val&quot;]/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span>
-        <span class="s">&#39;date&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;.//span[@class=&quot;meta__val&quot;]/text()&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+        <span class="s1">&#39;speaker&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//h4[@class=&quot;h12 talk-link__speaker&quot;]/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;href&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//h4[@class=&quot;h9 m5&quot;]/a/@href&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s1">&#39;views&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//span[@class=&quot;meta__val&quot;]/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;.//span[@class=&quot;meta__val&quot;]/text()&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="p">}</span>
 </pre></div>
 
@@ -200,26 +200,26 @@
 </li>
 <li>
 <p>Perfect. Now let's iterate through the items on page 1.</p>
-<div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">parse_item</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
     <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>    <span class="c"># returns 36</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>    <span class="c1"># returns 36</span>
 </pre></div>
 
 
 </li>
 <li>
 <p>Great. Now we're ready to iterate through all 54 web pages.</p>
-<div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">page_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">npages</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
 
 <span class="n">root</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">file_base</span> <span class="o">%</span> <span class="n">page_num</span><span class="p">)</span>
-<span class="n">items</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;//div[@id=&quot;browse-results&quot;]//div[@class=&quot;col&quot;]&#39;</span><span class="p">)</span>
+<span class="n">items</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//div[@id=&quot;browse-results&quot;]//div[@class=&quot;col&quot;]&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">parse_item</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
     <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>    <span class="c"># returns 1943 or a similar number</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>    <span class="c1"># returns 1943 or a similar number</span>
 </pre></div>
 
 
@@ -230,8 +230,8 @@
 <li>We currently have our data in a dictionary format.</li>
 <li>
 <p>Normally, it's enough to save this data directly into a json file.</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">json</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;data.json&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 
@@ -242,8 +242,8 @@
 </li>
 <li>
 <p>However, sometimes it's better to convert this data into a spreadsheet. If so, try this:</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">csv</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;data.csv&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -281,7 +281,7 @@
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-ba/crawling.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="https://lucypark.kr/courses/2015-ba/crawling.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -297,16 +297,16 @@
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-ba.html" rel="category">2015-ba</a>
+                <a href="https://lucypark.kr/courses/category/2015-ba.html" rel="category">2015-ba</a>
             </span>
         </p>
         <p>
             Tags:
             <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
+                <a href="https://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
             </span>
             <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/crawling.html" rel="tag">crawling</a>
+                <a href="https://lucypark.kr/courses/tag/crawling.html" rel="tag">crawling</a>
             </span>
         </p>
     </div>
@@ -321,7 +321,7 @@
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
  The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
+                <a href="https://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
             </span>
 		</div>
 	</div>
@@ -411,7 +411,7 @@ $(function(){
     }});
 </script>
 <script type="text/javascript"
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

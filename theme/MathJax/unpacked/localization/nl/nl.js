@@ -1,11 +1,8 @@
-/* -*- Mode: Javascript; indent-tabs-mode:nil; js-indent-level: 2 -*- */
-/* vim: set ts=2 et sw=2 tw=80: */
-
 /*************************************************************
  *
  *  MathJax/localization/nl/nl.js
  *
- *  Copyright (c) 2009-2015 The MathJax Consortium
+ *  Copyright (c) 2009-2017 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,25 +17,24 @@
  *  limitations under the License.
  *
  */
-
 MathJax.Localization.addTranslation("nl",null,{
   menuTitle: "Nederlands",
-  version: "2.5.0",
+  version: "2.7.1",
   isLoaded: true,
   domains: {
     "_": {
-        version: "2.5.0",
+        version: "2.7.1",
         isLoaded: true,
         strings: {
           CookieConfig: "MathJax heeft een gebruikersconfiguratie cookie aangetroffen dat code bevat die uitgevoerd moet worden. Wilt u deze uitvoeren?\n\\n\n(U zou op annuleren moeten drukken tenzij u het cookie zelf ingesteld heeft.)",
-          MathProcessingError: "Wiskunde verwerkingsfout",
-          MathError: "Wiskunde fout",
+          MathProcessingError: "Mathverwerkingsfout",
+          MathError: "Mathfout",
           LoadFile: "Bezig met laden van %1",
           Loading: "Bezig met laden",
-          LoadFailed: "Bestand kan niet geladen worden: %1",
-          ProcessMath: "Berekening verwerken: %1",
+          LoadFailed: "Het bestand kon niet geladen worden: %1",
+          ProcessMath: "Berekening aan het verwerken: %1%%",
           Processing: "Bezig met verwerken",
-          TypesetMath: "Berekening opmaken: %1",
+          TypesetMath: "Berekening aan het opmaken: %1%%",
           Typesetting: "Opmaken",
           MathJaxNotSupported: "Uw browser ondersteunt MathJax niet"
         }

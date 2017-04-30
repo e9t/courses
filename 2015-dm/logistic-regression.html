@@ -8,22 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<script src="https://lucypark.kr/courses/theme/html5.js"></script>
 		<![endif]-->
-	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+		<h1 class="margin-bottom-30"><a href="https://lucypark.kr/courses/">Courses</a></h1>
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+            <li role="presentation"><a href="https://lucypark.kr/courses/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="https://lucypark.kr/courses/2015-ba">2015-ba</a></li>
         </ul>
 	</div>
 	<div class="row">
@@ -195,8 +195,8 @@
 <p>이제 데이터를 다운로드 받아보자. <a href="http://scikit-learn.org/stable/datasets/#downloading-datasets-from-the-mldata-org-repository"><code>datasets.fetch_mldata()</code></a> 메소드에
 우리가 받고 싶은 데이터의 이름 'MNIST original'를 명시한 후,
 데이터를 저장할 곳 <code>data_home</code>을 현재 디렉토리(<code>.</code>)로 정해주면 데이터가 다운로드 된 후 바로 변수 <code>d</code>로 로드(load)된다.</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_mldata</span><span class="p">(</span><span class="s">&#39;MNIST original&#39;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_mldata</span><span class="p">(</span><span class="s1">&#39;MNIST original&#39;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -209,17 +209,17 @@
 </li>
 <li>
 <p>여기서는 곧바로 당뇨병 데이터와 마찬가지로 'data' key의 value를 <code>X</code>에, 'target' key의 value를 <code>y</code>라는 변수에 저장하고,</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>     <span class="c"># python shell에서 실행하는 경우 `print()`는 필요없음</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;target&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>     <span class="c1"># python shell에서 실행하는 경우 `print()`는 필요없음</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
 </pre></div>
 
 
 </li>
 <li>
 <p><code>X</code>, <code>y</code>의 차원(dimension)을 확인해보자.</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c"># check data type of variable X, y</span>
-<span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c"># returns (70000, 784) (70000,)</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c1"># check data type of variable X, y</span>
+<span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># returns (70000, 784) (70000,)</span>
 </pre></div>
 
 
@@ -256,7 +256,7 @@ Data exploration은 현재 가지고 있는 데이터를 이리저리 굴려가�
 <ul>
 <li>
 <p>X, y는 각각 어떤 값들로 이루어졌는지 확인해보기 위해 X, y 각각의 첫번째 값을 출력해보자. (배열의 첫번째 index는 1이 아니라 0이라는 사실이 기억나는가?)</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 
@@ -264,19 +264,19 @@ Data exploration은 현재 가지고 있는 데이터를 이리저리 굴려가�
 </li>
 <li>
 <p>X는 특히 0과 256 미만의 숫자들로 구성이 되어 있는데 이것은 어떤 의미를 가질까? (256이라는 숫자가 힌트!)</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </pre></div>
 
 
 </li>
 <li>
 <p>쉽게 이해하기 위해 <code>matplotlib</code> 패키지를 이용해 첫 번째 record를 한 번 그려보자. (원래 matplotlib은 3rd party 패키지여서 따로 설치해야하지만, 다행히도 anaconda가 matplotlib을 미리 설치해줬다.)</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="n">X0</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>           <span class="c"># reshape 1*784 array to 28*28 array</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;binary&#39;</span><span class="p">)</span>      <span class="c"># set runtime configurations (rc) for color maps</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">X0</span><span class="p">)</span>                     <span class="c"># plot matrix</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&#39;X0.png&#39;</span><span class="p">)</span>               <span class="c"># save plot to image file</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                          <span class="c"># show plot on screen</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">X0</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>           <span class="c1"># reshape 1*784 array to 28*28 array</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>      <span class="c1"># set runtime configurations (rc) for color maps</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">X0</span><span class="p">)</span>                     <span class="c1"># plot matrix</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;X0.png&#39;</span><span class="p">)</span>               <span class="c1"># save plot to image file</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                          <span class="c1"># show plot on screen</span>
 </pre></div>
 
 
@@ -288,7 +288,7 @@ Data exploration은 현재 가지고 있는 데이터를 이리저리 굴려가�
 </li>
 <li>
 <p>이번에는 y가 어떤 값들을 가질 수 있는지 확인해보기 위해 다음을 입력해보자.</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>   <span class="c"># returns {0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0}</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>   <span class="c1"># returns {0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0}</span>
 </pre></div>
 
 
@@ -320,7 +320,7 @@ Data exploration은 현재 가지고 있는 데이터를 이리저리 굴려가�
 <li>
 <p>당뇨병 데이터셋에서는 X, y를 단순한 list split을 통해 440개 record 중에서 400개를 training set, 40개를 test set으로 설정했다.
 이번에는 record가 70,000개인데, 어떻게 나누는 것이 좋을까?</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>
 </pre></div>
 
@@ -344,9 +344,9 @@ Data exploration은 현재 가지고 있는 데이터를 이리저리 굴려가�
 고맙고 신기하게도 scikit-learn 패키지를 이용하면 모델 학습은 단 세 줄만에 끝난다.
 (물론 내부에는 누군가가 이미 고생해서 짜놓은 어마어마한 "black box"가 존재한다는 것을 잊지 말자.)
 MLR을 학습할 때와 마찬가지로 LogisticRegression 클래스를 import한 후, instance를 생성하고, training set으로 모델을 학습하면 된다</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>      <span class="c"># LR instance 생성</span>
-<span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>                        <span class="c"># LR 학습</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>      <span class="c1"># LR instance 생성</span>
+<span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>                        <span class="c1"># LR 학습</span>
 </pre></div>
 
 
@@ -383,9 +383,9 @@ MLR을 학습할 때와 마찬가지로 LogisticRegression 클래스를 import�
 <p>다음으로 아래 코드를 이용해 csv 데이터를 로딩해보자.</p>
 <p>여기서는 numpy의 <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.genfromtxt.html"><code>genfromtxt()</code></a>를 써서 csv 파일을 로딩해보자.
 파일에서 데이터 로딩하는 것도 그리 어렵지 않다!</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">genfromtxt</span>
-<span class="n">X_bin</span> <span class="o">=</span> <span class="n">genfromtxt</span><span class="p">(</span><span class="s">&#39;mnist-x-bin.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">)</span>
-<span class="n">y_bin</span> <span class="o">=</span> <span class="n">genfromtxt</span><span class="p">(</span><span class="s">&#39;mnist-y-bin.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">genfromtxt</span>
+<span class="n">X_bin</span> <span class="o">=</span> <span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;mnist-x-bin.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">y_bin</span> <span class="o">=</span> <span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;mnist-y-bin.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -398,7 +398,7 @@ pandas는 파이썬에서 DataFrame 등을 이용하여 구조적 데이터를 �
 <p>모델을 학습한 다음에는 무엇을 해야할까?
 성능을 측정하기 위해 시험을 봐야지! (Testing phase)
 Training 데이터와 test 데이터 모두의 정확도를 도출해보자.</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">lr2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_bin_train</span><span class="p">,</span> <span class="n">y_bin_train</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">lr2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_bin_train</span><span class="p">,</span> <span class="n">y_bin_train</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">lr2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_bin_test</span><span class="p">,</span> <span class="n">y_bin_test</span><span class="p">))</span>
 </pre></div>
 
@@ -408,9 +408,9 @@ Training 데이터와 test 데이터 모두의 정확도를 도출해보자.</p>
 <p><img src="images/cmt.png" width="400px">
 <img src="images/cm.png"></p>
 <p>이 값들은 <a href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_recall_fscore_support.html">precision_recall_fscore_support()</a>을 이용해서 구할 수 있다.</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_recall_fscore_support</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_recall_fscore_support</span>
 <span class="n">y_bin_pred</span> <span class="o">=</span> <span class="n">lr2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_bin_test</span><span class="p">)</span>
-<span class="n">precision_recall_fscore_support</span><span class="p">(</span><span class="n">y_bin_test</span><span class="p">,</span> <span class="n">y_bin_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s">&#39;macro&#39;</span><span class="p">)</span>
+<span class="n">precision_recall_fscore_support</span><span class="p">(</span><span class="n">y_bin_test</span><span class="p">,</span> <span class="n">y_bin_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;macro&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -424,7 +424,7 @@ Training 데이터와 test 데이터 모두의 정확도를 도출해보자.</p>
 문제를 좀 단순화시켜서, 이미지에 등장한 숫자가 1인지 아닌지만 판단하는 모델 <code>lr1</code>을 만들어보자.
 즉, 이 모델은 0, 2, 3, 4, ..., 9는 0(또는 False)을 반환하고, 1만 1(또는 True)을 반환하면 된다.
 이렇게.</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="n">lr1</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>
 <span class="n">lr1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -451,7 +451,7 @@ Training 데이터와 test 데이터 모두의 정확도를 도출해보자.</p>
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/logistic-regression.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="https://lucypark.kr/courses/2015-dm/logistic-regression.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -467,7 +467,7 @@ Training 데이터와 test 데이터 모두의 정확도를 도출해보자.</p>
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
+                <a href="https://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
             </span>
         </p>
     </div>
@@ -482,7 +482,7 @@ Training 데이터와 test 데이터 모두의 정확도를 도출해보자.</p>
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
  The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
+                <a href="https://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
             </span>
 		</div>
 	</div>
@@ -572,7 +572,7 @@ $(function(){
     }});
 </script>
 <script type="text/javascript"
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

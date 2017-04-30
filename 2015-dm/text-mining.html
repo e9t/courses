@@ -8,22 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="http://lucypark.kr/courses/theme/html5.js"></script>
+		<script src="https://lucypark.kr/courses/theme/html5.js"></script>
 		<![endif]-->
-	<link href="http://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/ipython.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
-	<link href="http://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/local.css" rel="stylesheet">
+	<link href="https://lucypark.kr/courses/theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1 class="margin-bottom-30"><a href="http://lucypark.kr/courses/">Courses</a></h1>
+		<h1 class="margin-bottom-30"><a href="https://lucypark.kr/courses/">Courses</a></h1>
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-dm">2015-dm</a></li>
-            <li role="presentation"><a href="http://lucypark.kr/courses/2015-ba">2015-ba</a></li>
+            <li role="presentation"><a href="https://lucypark.kr/courses/2015-dm">2015-dm</a></li>
+            <li role="presentation"><a href="https://lucypark.kr/courses/2015-ba">2015-ba</a></li>
         </ul>
 	</div>
 	<div class="row">
@@ -58,7 +58,7 @@
 <ul>
 <li>
 <p>설치하기</p>
-<div class="highlight"><pre>pip install nltk
+<div class="highlight"><pre><span></span>pip install nltk
 </pre></div>
 
 
@@ -68,8 +68,8 @@
 <ol>
 <li>
 <p><a href="http://www.nltk.org/book/ch02.html">Text corpora</a>: 특히, 이 튜토리얼에서는 아래의 두 가지 데이터가 필요하니 미리 다운 받아두자.</p>
-<div class="highlight"><pre><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s">&#39;gutenberg&#39;</span><span class="p">)</span>
-<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s">&#39;maxent_treebank_pos_tagger&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;gutenberg&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;maxent_treebank_pos_tagger&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -87,7 +87,7 @@
 <ul>
 <li>
 <p>설치하기</p>
-<div class="highlight"><pre>pip install konlpy
+<div class="highlight"><pre><span></span>pip install konlpy
 </pre></div>
 
 
@@ -113,7 +113,7 @@
 <ul>
 <li>
 <p>설치하기</p>
-<div class="highlight"><pre>pip install -U gensim
+<div class="highlight"><pre><span></span>pip install -U gensim
 </pre></div>
 
 
@@ -140,18 +140,18 @@
 <ul>
 <li>
 <p>설치하기</p>
-<div class="highlight"><pre>pip install twython
+<div class="highlight"><pre><span></span>pip install twython
 </pre></div>
 
 
 </li>
 <li>
 <p>사용예시: "Samsung (삼성)" 관련 트윗 받기</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">twython</span> <span class="kn">import</span> <span class="n">Twython</span>
-<span class="kn">import</span> <span class="nn">settings</span> <span class="kn">as</span> <span class="nn">s</span>    <span class="c"># Create a file named settings.py, and put oauth KEY values inside</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">twython</span> <span class="kn">import</span> <span class="n">Twython</span>
+<span class="kn">import</span> <span class="nn">settings</span> <span class="kn">as</span> <span class="nn">s</span>    <span class="c1"># Create a file named settings.py, and put oauth KEY values inside</span>
 <span class="n">twitter</span> <span class="o">=</span> <span class="n">Twython</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">APP_KEY</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">APP_SECRET</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">OAUTH_TOKEN</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">OAUTH_TOKEN_SECRET</span><span class="p">)</span>
-<span class="n">tweets</span> <span class="o">=</span> <span class="n">twitter</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;삼성&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span><span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">][</span><span class="s">&#39;screen_name&#39;</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;text&#39;</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="s">&#39;created_at&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">[</span><span class="s">&#39;statuses&#39;</span><span class="p">]]</span>
+<span class="n">tweets</span> <span class="o">=</span> <span class="n">twitter</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;삼성&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">][</span><span class="s1">&#39;screen_name&#39;</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="s1">&#39;created_at&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">[</span><span class="s1">&#39;statuses&#39;</span><span class="p">]]</span>
 </pre></div>
 
 
@@ -170,18 +170,18 @@
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">gutenberg</span>   <span class="c"># Docs from project gutenberg.org</span>
-<span class="n">files_en</span> <span class="o">=</span> <span class="n">gutenberg</span><span class="o">.</span><span class="n">fileids</span><span class="p">()</span>      <span class="c"># Get file ids</span>
-<span class="n">doc_en</span> <span class="o">=</span> <span class="n">gutenberg</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;austen-emma.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">gutenberg</span>   <span class="c1"># Docs from project gutenberg.org</span>
+<span class="n">files_en</span> <span class="o">=</span> <span class="n">gutenberg</span><span class="o">.</span><span class="n">fileids</span><span class="p">()</span>      <span class="c1"># Get file ids</span>
+<span class="n">doc_en</span> <span class="o">=</span> <span class="n">gutenberg</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;austen-emma.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 
 
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.corpus</span> <span class="kn">import</span> <span class="n">kobill</span>    <span class="c"># Docs from pokr.kr/bill</span>
-<span class="n">files_ko</span> <span class="o">=</span> <span class="n">kobill</span><span class="o">.</span><span class="n">fileids</span><span class="p">()</span>         <span class="c"># Get file ids</span>
-<span class="n">doc_ko</span> <span class="o">=</span> <span class="n">kobill</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;1809890.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">konlpy.corpus</span> <span class="kn">import</span> <span class="n">kobill</span>    <span class="c1"># Docs from pokr.kr/bill</span>
+<span class="n">files_ko</span> <span class="o">=</span> <span class="n">kobill</span><span class="o">.</span><span class="n">fileids</span><span class="p">()</span>         <span class="c1"># Get file ids</span>
+<span class="n">doc_ko</span> <span class="o">=</span> <span class="n">kobill</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;1809890.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 
 
@@ -193,8 +193,8 @@
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">regexp_tokenize</span>
-<span class="n">pattern</span> <span class="o">=</span> <span class="s">r&#39;&#39;&#39;(?x) ([A-Z]\.)+ | \w+(-\w+)* | \$?\d+(\.\d+)?%? | \.\.\. | [][.,;&quot;&#39;?():-_`]&#39;&#39;&#39;</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">regexp_tokenize</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;(?x) ([A-Z]\.)+ | \w+(-\w+)* | \$?\d+(\.\d+)?%? | \.\.\. | [][.,;&quot;&#39;?():-_`]&#39;&#39;&#39;</span>
 <span class="n">tokens_en</span> <span class="o">=</span> <span class="n">regexp_tokenize</span><span class="p">(</span><span class="n">doc_en</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
 </pre></div>
 
@@ -202,7 +202,7 @@
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Twitter</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Twitter</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Twitter</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Twitter</span><span class="p">()</span>
 <span class="n">tokens_ko</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">morphs</span><span class="p">(</span><span class="n">doc_ko</span><span class="p">)</span>
 </pre></div>
 
@@ -214,7 +214,7 @@
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">nltk</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
 <span class="n">en</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">tokens_en</span><span class="p">)</span>
 </pre></div>
 
@@ -222,8 +222,8 @@
 </li>
 <li>
 <p>Korean (For Python 2, <code>name</code> has to be input as u'유니코드'. If you are using Python 2, use u'유니코드' for input of all following Korean text.)</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">nltk</span>
-<span class="n">ko</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">tokens_ko</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;대한민국 국회 의안 제 1809890호&#39;</span><span class="p">)</span>   <span class="c"># For Python 2, input `name` as u&#39;유니코드&#39;</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">ko</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">tokens_ko</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;대한민국 국회 의안 제 1809890호&#39;</span><span class="p">)</span>   <span class="c1"># For Python 2, input `name` as u&#39;유니코드&#39;</span>
 </pre></div>
 
 
@@ -237,9 +237,9 @@
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">en</span><span class="o">.</span><span class="n">tokens</span><span class="p">))</span>       <span class="c"># returns number of tokens (document length)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">en</span><span class="o">.</span><span class="n">tokens</span><span class="p">)))</span>  <span class="c"># returns number of unique tokens</span>
-<span class="n">en</span><span class="o">.</span><span class="n">vocab</span><span class="p">()</span>                  <span class="c"># returns frequency distribution</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">en</span><span class="o">.</span><span class="n">tokens</span><span class="p">))</span>       <span class="c1"># returns number of tokens (document length)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">en</span><span class="o">.</span><span class="n">tokens</span><span class="p">)))</span>  <span class="c1"># returns number of unique tokens</span>
+<span class="n">en</span><span class="o">.</span><span class="n">vocab</span><span class="p">()</span>                  <span class="c1"># returns frequency distribution</span>
 </pre></div>
 
 
@@ -251,9 +251,9 @@ FreqDist({',': 12018, '.': 8853, 'to': 5127, 'the': 4844, 'and': 4653, 'of': 427
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">tokens</span><span class="p">))</span>       <span class="c"># returns number of tokens (document length)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">tokens</span><span class="p">)))</span>  <span class="c"># returns number of unique tokens</span>
-<span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">()</span>                  <span class="c"># returns frequency distribution</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">tokens</span><span class="p">))</span>       <span class="c1"># returns number of tokens (document length)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">tokens</span><span class="p">)))</span>  <span class="c1"># returns number of unique tokens</span>
+<span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">()</span>                  <span class="c1"># returns frequency distribution</span>
 </pre></div>
 
 
@@ -270,7 +270,7 @@ FreqDist({'.': 61, '의': 46, '육아휴직': 38, '을': 34, '(': 27, ',': 26, '
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="n">en</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>     <span class="c"># Plot sorted frequency of top 50 tokens</span>
+<div class="highlight"><pre><span></span><span class="n">en</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>     <span class="c1"># Plot sorted frequency of top 50 tokens</span>
 </pre></div>
 
 
@@ -278,7 +278,7 @@ FreqDist({'.': 61, '의': 46, '육아휴직': 38, '을': 34, '(': 27, ',': 26, '
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="n">ko</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>     <span class="c"># Plot sorted frequency of top 50 tokens</span>
+<div class="highlight"><pre><span></span><span class="n">ko</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>     <span class="c1"># Plot sorted frequency of top 50 tokens</span>
 </pre></div>
 
 
@@ -309,7 +309,7 @@ rc('font', family=font_name)
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="n">en</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;Emma&#39;</span><span class="p">)</span>        <span class="c"># Counts occurrences</span>
+<div class="highlight"><pre><span></span><span class="n">en</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;Emma&#39;</span><span class="p">)</span>        <span class="c1"># Counts occurrences</span>
 </pre></div>
 
 
@@ -319,7 +319,7 @@ rc('font', family=font_name)
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="n">ko</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;초등학교&#39;</span><span class="p">)</span>   <span class="c"># Counts occurrences</span>
+<div class="highlight"><pre><span></span><span class="n">ko</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;초등학교&#39;</span><span class="p">)</span>   <span class="c1"># Counts occurrences</span>
 </pre></div>
 
 
@@ -334,7 +334,7 @@ rc('font', family=font_name)
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="n">en</span><span class="o">.</span><span class="n">dispersion_plot</span><span class="p">([</span><span class="s">&#39;Emma&#39;</span><span class="p">,</span> <span class="s">&#39;Frank&#39;</span><span class="p">,</span> <span class="s">&#39;Jane&#39;</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">en</span><span class="o">.</span><span class="n">dispersion_plot</span><span class="p">([</span><span class="s1">&#39;Emma&#39;</span><span class="p">,</span> <span class="s1">&#39;Frank&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">])</span>
 </pre></div>
 
 
@@ -342,7 +342,7 @@ rc('font', family=font_name)
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="n">ko</span><span class="o">.</span><span class="n">dispersion_plot</span><span class="p">([</span><span class="s">&#39;육아휴직&#39;</span><span class="p">,</span> <span class="s">&#39;초등학교&#39;</span><span class="p">,</span> <span class="s">&#39;공무원&#39;</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">ko</span><span class="o">.</span><span class="n">dispersion_plot</span><span class="p">([</span><span class="s1">&#39;육아휴직&#39;</span><span class="p">,</span> <span class="s1">&#39;초등학교&#39;</span><span class="p">,</span> <span class="s1">&#39;공무원&#39;</span><span class="p">])</span>
 </pre></div>
 
 
@@ -355,14 +355,14 @@ rc('font', family=font_name)
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="n">en</span><span class="o">.</span><span class="n">concordance</span><span class="p">(</span><span class="s">&#39;Emma&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">en</span><span class="o">.</span><span class="n">concordance</span><span class="p">(</span><span class="s1">&#39;Emma&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
 
 <p><pre class="result">
 Displaying 5 of 865 matches:
                                      Emma by Jane Austen 1816 ] VOLUME I CHAPT
-                                     Emma Woodhouse , handsome , clever , and 
+                                     Emma Woodhouse , handsome , clever , and
 both daughters , but particularly of Emma . Between <em>them</em> it was more the int
  friend very mutually attached , and Emma doing just what she liked ; highly e
 r own . The real evils , indeed , of Emma ' s situation were the power of havi
@@ -370,16 +370,16 @@ r own . The real evils , indeed , of Emma ' s situation were the power of havi
 </li>
 <li>
 <p>Korean (or, use <a href="http://konlpy.org/en/v0.4.3/api/konlpy/#konlpy.utils.concordance">konlpy.utils.concordance</a>)</p>
-<div class="highlight"><pre><span class="n">ko</span><span class="o">.</span><span class="n">concordance</span><span class="p">(</span><span class="s">&#39;초등학교&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">ko</span><span class="o">.</span><span class="n">concordance</span><span class="p">(</span><span class="s1">&#39;초등학교&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p><pre class="result">
 Displaying 6 of 6 matches:
  ․ 김정훈 김학송 의원 ( 10 인 ) 제안 이유 및 주요 내용 초등학교 저학년 의 경우 에도 부모 의 따뜻한 사랑 과 보살핌 이 필요 한
- 을 할 수 있는 자녀 의 나이 는 만 6 세 이하 로 되어 있어 초등학교 저학년 인 자녀 를 돌보기 위해서 는 해당 부모님 은 일자리 를 
- 다 . 제 63 조제 2 항제 4 호 중 “ 만 6 세 이하 의 초등학교 취학 전 자녀 를 ” 을 “ 만 8 세 이하 ( 취학 중인 경우 
- 전 자녀 를 ” 을 “ 만 8 세 이하 ( 취학 중인 경우 에는 초등학교 2 학년 이하 를 말한 다 ) 의 자녀 를 ” 로 한 다 . 부 
+ 을 할 수 있는 자녀 의 나이 는 만 6 세 이하 로 되어 있어 초등학교 저학년 인 자녀 를 돌보기 위해서 는 해당 부모님 은 일자리 를
+ 다 . 제 63 조제 2 항제 4 호 중 “ 만 6 세 이하 의 초등학교 취학 전 자녀 를 ” 을 “ 만 8 세 이하 ( 취학 중인 경우
+ 전 자녀 를 ” 을 “ 만 8 세 이하 ( 취학 중인 경우 에는 초등학교 2 학년 이하 를 말한 다 ) 의 자녀 를 ” 로 한 다 . 부
  . ∼ 3 . ( 현행 과 같 음 ) 4 . 만 6 세 이하 의 초등학교 취 4 . 만 8 세 이하 ( 취학 중인 경우 학 전 자녀 를 양
 세 이하 ( 취학 중인 경우 학 전 자녀 를 양육 하기 위하 에는 초등학교 2 학년 이하 를 여 필요하거 나 여자 공무원 이 말한 다 ) 의
 </pre></p>
@@ -391,8 +391,8 @@ Displaying 6 of 6 matches:
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="n">en</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="s">&#39;Emma&#39;</span><span class="p">)</span>
-<span class="n">en</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="s">&#39;Frank&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">en</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="s1">&#39;Emma&#39;</span><span class="p">)</span>
+<span class="n">en</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="s1">&#39;Frank&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -403,8 +403,8 @@ mr mrs emma harriet you it her she he him hartfield them jane that isabella all 
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="n">ko</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="s">&#39;자녀&#39;</span><span class="p">)</span>
-<span class="n">ko</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="s">&#39;육아휴직&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">ko</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="s1">&#39;자녀&#39;</span><span class="p">)</span>
+<span class="n">ko</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="s1">&#39;육아휴직&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -420,7 +420,7 @@ None
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="n">en</span><span class="o">.</span><span class="n">collocations</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="n">en</span><span class="o">.</span><span class="n">collocations</span><span class="p">()</span>
 </pre></div>
 
 
@@ -433,7 +433,7 @@ Colonel Campbell; Box Hill; said Emma; Harriet Smith; William Larkins
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="n">en</span><span class="o">.</span><span class="n">collocations</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="n">en</span><span class="o">.</span><span class="n">collocations</span><span class="p">()</span>
 </pre></div>
 
 
@@ -456,7 +456,7 @@ lets use one short sentence for each language.</p>
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="n">tokens</span> <span class="o">=</span> <span class="s">&quot;The little yellow dog barked at the Persian cat&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="n">tokens</span> <span class="o">=</span> <span class="s2">&quot;The little yellow dog barked at the Persian cat&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">tags_en</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">pos_tag</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
 </pre></div>
 
@@ -478,8 +478,8 @@ lets use one short sentence for each language.</p>
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Twitter</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Twitter</span><span class="p">()</span>
-<span class="n">tags_ko</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="s">&quot;작고 노란 강아지가 페르시안 고양이에게 짖었다&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Twitter</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Twitter</span><span class="p">()</span>
+<span class="n">tags_ko</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="s2">&quot;작고 노란 강아지가 페르시안 고양이에게 짖었다&quot;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -501,7 +501,7 @@ lets use one short sentence for each language.</p>
 <ul>
 <li>
 <p>English</p>
-<div class="highlight"><pre><span class="n">parser_en</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">RegexpParser</span><span class="p">(</span><span class="s">&quot;NP: {&lt;DT&gt;?&lt;JJ&gt;?&lt;NN.*&gt;*}&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">parser_en</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">RegexpParser</span><span class="p">(</span><span class="s2">&quot;NP: {&lt;DT&gt;?&lt;JJ&gt;?&lt;NN.*&gt;*}&quot;</span><span class="p">)</span>
 <span class="n">chunks_en</span> <span class="o">=</span> <span class="n">parser_en</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">tags_en</span><span class="p">)</span>
 <span class="n">chunks_en</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 </pre></div>
@@ -511,7 +511,7 @@ lets use one short sentence for each language.</p>
 </li>
 <li>
 <p>Korean</p>
-<div class="highlight"><pre><span class="n">parser_ko</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">RegexpParser</span><span class="p">(</span><span class="s">&quot;NP: {&lt;Adjective&gt;*&lt;Noun&gt;*}&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">parser_ko</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">RegexpParser</span><span class="p">(</span><span class="s2">&quot;NP: {&lt;Adjective&gt;*&lt;Noun&gt;*}&quot;</span><span class="p">)</span>
 <span class="n">chunks_ko</span> <span class="o">=</span> <span class="n">parser_ko</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">tags_ko</span><span class="p">)</span>
 <span class="n">chunks_ko</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 </pre></div>
@@ -525,7 +525,7 @@ lets use one short sentence for each language.</p>
 <ol>
 <li>
 <p>제 1809890호 의안의 빈도분포(frequency distribution)를 다시 살펴보자.</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">())</span>
 </pre></div>
 
 
@@ -535,14 +535,14 @@ FreqDist({'.': 61, '의': 46, '육아휴직': 38, '을': 34, '(': 27, ',': 26, '
 </li>
 <li>
 <p>이 빈도분포의 data type과 attribute 목록을 확인해보자.</p>
-<div class="highlight"><pre><span class="nb">type</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">())</span>
 </pre></div>
 
 
 <p><pre class="result">
 nltk.probability.FreqDist
 </pre></p>
-<div class="highlight"><pre><span class="nb">dir</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">())</span>
 </pre></div>
 
 
@@ -566,7 +566,7 @@ nltk.probability.FreqDist
 </li>
 <li>
 <p><code>items()</code>를 사용하면 빈도분포의 item 전체를 set의 형태로 볼 수 있다. 이를 <code>data</code>라는 이름의 변수에 저장한 후, data type을 관찰하자.</p>
-<div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">ko</span><span class="o">.</span><span class="n">vocab</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
@@ -579,9 +579,9 @@ dict_items([('명', 5), ('예상된', 3), ('하나', 1), ('11', 2), ('팀', 2), 
 </li>
 <li>
 <p>이 set을 이제 <code>words.csv</code>라는 파일에 저장해보자. 데이터 header는 word,freq로 하면 된다.</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">csv</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;words.csv&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;word,freq</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;words.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;word,freq</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
@@ -594,14 +594,14 @@ dict_items([('명', 5), ('예상된', 3), ('하나', 1), ('11', 2), ('팀', 2), 
 </li>
 <li>
 <p>위와 같은 폴더에서 아래를 실행하자.</p>
-<div class="highlight"><pre><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span> <span class="mi">8888</span>      <span class="c"># for Python2, `python -m SimpleHTTPServer`</span>
+<div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span> <span class="mi">8888</span>      <span class="c1"># for Python2, `python -m SimpleHTTPServer`</span>
 </pre></div>
 
 
 </li>
 <li>
-<p>마지막으로, 모던 브라우저(ex: 크롬)의 주소창에 <code>http://localhost:8888</code>를 입력하면 우리의 워드클라우드가 떠있을 것이다!<br>
-    <iframe src="http://bl.ocks.org/e9t/raw/e462f7462e9d83b03464/" width="100%" height="500px" frameborder=0></iframe></p>
+<p>마지막으로, 모던 브라우저(ex: 크롬)의 주소창에 <code>http://localhost:8888</code>를 입력하면 우리의 워드클라우드가 떠있을 것이다! (이미지를 클릭하면 interative 페이지로 이동합니다.)</p>
+<p><a href="http://bl.ocks.org/e9t/raw/e462f7462e9d83b03464/"><img src="images/wordcloud.png" width="400px"></a></p>
 </li>
 <li>
 <p>더 실험해보고 싶은 경우:</p>
@@ -625,7 +625,7 @@ dict_items([('명', 5), ('예상된', 3), ('하나', 1), ('11', 2), ('팀', 2), 
                   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357567114353849";
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-like" data-href="http://lucypark.kr/courses/2015-dm/text-mining.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="https://lucypark.kr/courses/2015-dm/text-mining.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
             </div>
             <div id="twitter-tweet">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en"></a>
@@ -641,16 +641,16 @@ dict_items([('명', 5), ('예상된', 3), ('하나', 1), ('11', 2), ('팀', 2), 
         <p>
             Category:
             <span itemprop="articleSection">
-                <a href="http://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
+                <a href="https://lucypark.kr/courses/category/2015-dm.html" rel="category">2015-dm</a>
             </span>
         </p>
         <p>
             Tags:
             <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/text.html" rel="tag">text</a>
+                <a href="https://lucypark.kr/courses/tag/text.html" rel="tag">text</a>
             </span>
             <span itemprop="keywords">
-                <a href="http://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
+                <a href="https://lucypark.kr/courses/tag/lectures.html" rel="tag">lectures</a>
             </span>
         </p>
     </div>
@@ -665,7 +665,7 @@ dict_items([('명', 5), ('예상된', 3), ('하나', 1), ('11', 2), ('팀', 2), 
             Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>, document under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.<br>
  The code for this site is located at <a href="http://github.com/e9t/courses">GitHub</a>.             <span class="pull-right margin-top-30">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-                <a href="http://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
+                <a href="https://lucypark.kr/courses/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a>
             </span>
 		</div>
 	</div>
@@ -755,7 +755,7 @@ $(function(){
     }});
 </script>
 <script type="text/javascript"
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

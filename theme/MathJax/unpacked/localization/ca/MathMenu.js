@@ -1,11 +1,8 @@
-/* -*- Mode: Javascript; indent-tabs-mode:nil; js-indent-level: 2 -*- */
-/* vim: set ts=2 et sw=2 tw=80: */
-
 /*************************************************************
  *
  *  MathJax/localization/ca/MathMenu.js
  *
- *  Copyright (c) 2009-2015 The MathJax Consortium
+ *  Copyright (c) 2009-2017 The MathJax Consortium
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,9 +17,8 @@
  *  limitations under the License.
  *
  */
-
 MathJax.Localization.addTranslation("ca","MathMenu",{
-        version: "2.5.0",
+        version: "2.7.1",
         isLoaded: true,
         strings: {
           Show: "Mostra f\u00F3rmules com a",
@@ -75,7 +71,7 @@ MathJax.Localization.addTranslation("ca","MathMenu",{
           Scale: "Escalar totes les f\u00F3mules...",
           Discoverable: "Iluminar quan el ratol\u00ED passi per sobre",
           Locale: "Idioma",
-          LoadLocale: "Carregar de la URL...",
+          LoadLocale: "Carrega des de l'URL...",
           About: "Sobre MathJax",
           Help: "Ajuda de MathJax",
           localTeXfonts: "usar fonts TeX locals",
