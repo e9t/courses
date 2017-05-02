@@ -4,12 +4,11 @@ Tags: data, seoultech, lecturer, syllabus
 Metainfo: ITM146084, Frontier 108, Fri 15:00-18:00
 Summary: Senior level Business Analytics course at Seoul National University of Science & Technology.
 Courseid: 2015-ba
-Forum: True
 Logo: seoultech.png
 
 > Welcome to Business Analytics class of 2015!
 > Here you'll find all course materials, guides and schedules.
-> In case you have questions, feel free to send an email to [2015-ba@googlegroups.com](mailto:2015-ba@googlegroups.com) (or directly write a new topic at the forum below).
+> In case you have questions, feel free to send an email to [2015-ba@googlegroups.com](mailto:2015-ba@googlegroups.com).
 
 Data mining and analytical skills are at the heart of solving many important problems in our world.
 In this course, we aim to derive technology-based solutions to such problems, and develop strategical decision making abilities based on data.
