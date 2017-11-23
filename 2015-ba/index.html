@@ -38,7 +38,7 @@
         <blockquote>
 <p>Welcome to Business Analytics class of 2015!
 Here you'll find all course materials, guides and schedules.
-In case you have questions, feel free to send an email to <a href="mailto:2015-ba@googlegroups.com">2015-ba@googlegroups.com</a>.</p>
+In case you have questions, feel free to send an email to <a href="mailto:2015-ba@googlegroups.com">2015-ba@googlegroups.com</a> (or directly write a new topic at the forum below).</p>
 </blockquote>
 <p>Data mining and analytical skills are at the heart of solving many important problems in our world.
 In this course, we aim to derive technology-based solutions to such problems, and develop strategical decision making abilities based on data.</p>
@@ -91,7 +91,21 @@ Memos for next time:
 - DM을 배우고 왔어도, 개념을 remind 해주는 class가 초반에 두 번 정도 있으면 좋을듯. 즉, 4/10, 4/24 2회를 강의 초반에 배치
 -->
 
-    </div>
+<h2 id="forum">Forum</h2>
+
+<iframe id="forum_embed"
+ src="javascript:void(0)"
+ scrolling="no"
+ frameborder="0"
+ width="100%"
+ height="450">
+</iframe>
+<script type="text/javascript">
+ document.getElementById("forum_embed").src =
+ "https://groups.google.com/forum/embed/?place=forum/2015-ba#!forum/2015-ba/" +
+  "&showsearch=true&showpopout=true&parenturl=" +
+  encodeURIComponent(window.location.href);
+</script>    </div>
     <div class="footnote">
         <div class="social-links pull-right">
             <div id="facebook-like">
@@ -200,17 +214,16 @@ $(function(){
 <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-13040549-10']);
+  _gaq.push(['_trackPageview']);
 
-ga('create', 'UA-4510606-3');
-ga('require', 'displayfeatures');
-ga('require', 'linkid', 'linkid.js');
-ga('send', 'pageview');
-
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 </script>
 </body>
 </html>
